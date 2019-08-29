@@ -1,0 +1,31 @@
+/* your custom css */
+
+.post article a {
+    /* add underlines to links in blocks of text for a11y */
+    color: $primaryColor;
+    text-decoration: underline;
+    overflow: hidden;
+    position: relative;
+    transition: outline-offset 0.2s ease-in-out;
+}
+
+.post article a:hover, .post article a:focus, .post article a:active {
+    /* change color and bg to display state change in more than one way for a11y */
+    background-color: $secondaryColor;
+    color: white;
+    outline: none;
+    text-decoration: underline;
+    overflow: hidden;
+    position: relative;
+    transition: outline-offset 0.2s ease-in-out;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
+
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1023px) {}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1500px) {}

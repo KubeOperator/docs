@@ -1,0 +1,23 @@
+{
+    "docs": {
+        "Introduction": [
+            "introduction/welcome",
+            "introduction/KubeOperator-intro"
+        ],
+        "Getting Started": [
+            "getting-started/introduction",
+            "getting-started/installation-offline",
+            "getting-started/installation-source"
+        ],
+        "Development Guide": [
+            "dev-guide/userguide-hand",
+            "dev-guide/userguide-auto"
+        ],
+        "API": [
+            "api/rpc"
+        ],
+        "References": [
+
+        ]
+    }
+}
