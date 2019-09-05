@@ -65,8 +65,8 @@ const siteConfig = {
     ],
 
     algolia: {
-        apiKey: '95ed2e6d8c8dd2383ef53911a428a257',
-        indexName: 'kubeOperator',
+        apiKey: '478e01143cbab954ebdc8ad0a654ffa3',
+        indexName: 'kubeoperator',
         placeholder: 'Ask me something',
         algoliaOptions: {} // Optional, if provided by Algolia
       },
