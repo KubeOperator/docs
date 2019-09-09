@@ -1,6 +1,6 @@
 ---
 id: introduction
-title: Introduction
+title: KubeOperator安装指南
 ---
 
 这一章节，你将会学习如何安装 KubeOperator , 包括离线包方式以及源码编译的方式。
