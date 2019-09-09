@@ -1,5 +1,5 @@
 ---
-id: userguide-manual
+id: userguide-auto
 title: 使用指南 (手动模式)
 ---
 
