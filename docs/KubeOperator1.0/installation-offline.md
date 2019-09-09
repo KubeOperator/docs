@@ -1,6 +1,6 @@
 ---
 id: installation-offline
-title: KubeOperator 离线包方式安装
+title: 离线包方式
 ---
 
 
