@@ -1,12 +1,11 @@
 ---
 id: introduction
-title: KubeOperator 简介
+title: 关于 KubeOperator
 ---
 
 ## 什么是 KubeOperator？
 
 KubeOperator 是一个开源项目，帮助运维人员通过 Web-based UI，在完全离线和多云环境下，部署和管理生产级别的 Kubernetes 集群。KubeOperator 尤其适合在云平台（比如 VMware 及 Openstack）上部署和管理 Kubernetes 集群，实现 Kubernetes as a Service。
-
 ![overview](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/KubeOperator.jpeg?raw=true)
 
 ## KubeOperator 的技术优势
@@ -25,34 +24,30 @@ KubeOperator 是一个开源项目，帮助运维人员通过 Web-based UI，在
 - [x] 提供原生 Kubernetes 的离线包仓库；
 - [x] 支持一主多节点部署模式；
 - [x] 支持离线环境下的一键自动化部署，可视化展示集群部署进展和结果；
-- [x] 支持 Kubernetes 常用组件安装，包括 Registry，Promethus，Dashboard、Traefik 等；
+- [x] 集成 Kubernetes 常用插件的安装，包括 Registry、Promethus、Dashboard、Traefik Ingress、Helm 等；
 - [x] 提供简易明了的 Kubernetes 集群运行状况面板；
 - [x] 支持 NFS 作为持久化存储；
 - [x] 支持 Flannel 作为网络方案；
 - [x] 支持 Kubernetes 集群手动部署模式（自行准备主机和 NFS）；
 
- v2.0.0 （开发中）
+ v2.0.0 （已发布）
 
 - [x] 支持调用 VMware vCenter API 自动创建集群主机；
-- [x] 支持 VMware vSAN 作为持久化存储；
-- [x] 支持通过 F5 BIG-IP Controller 对外暴露服务（Nodeport mode）；
-- [x] 支持 Kubernetes 集群扩缩容；
-- [x] 集成 Weave Scope；
+- [x] 支持 VMware vSAN 、VMFS/NFS 作为持久化存储；
+- [x] 支持 Multi AZ，支持多主多节点部署模式；
+- [x] 支持通过 F5 BIG-IP Controller 对外暴露服务（Nodeport mode, 七层和四层服务都支持）；
+- [x] 集成 Weave Scope (支持 Web Shell)；
+- [x] 支持 Calico 作为网络方案；
 
- v2.1.0 （计划中）
+ v2.1.0 （开发中）
  
-- [ ] 支持 Web Shell
-- [ ] 支持集群升级；
-- [ ] 支持集群备份及恢复；
-- [ ] 集成 KubeApps 应用管理器（支持常用应用部署，比如 CI/CD 应用组合 Jenkins、GitLab、Harbor 和 Tekton 等）；
-
- v2.2.0 （计划中）
- 
+- [ ] 支持 Kubernetes 集群升级；
+- [ ] 支持 Kubernetes 集群扩缩容；
+- [ ] 支持 etcd 备份及恢复；
 - [ ] 支持 Openstack 云平台；
 - [ ] 支持 Ceph 作为持久化存储；
-- [ ] 支持 Calico 作为网络方案；
 
- v2.3.0 （计划中）
+ v3.0.0 （计划中）
 
-- [ ] 支持 Multi AZ，主节点分布在不同的故障域；
+- [ ] 集成 KubeApps 应用管理器（支持常用应用部署，比如 CI/CD 应用组合 Jenkins、GitLab、Harbor 和 Tekton 等）
 - [ ] 支持 VMware NSX-T；

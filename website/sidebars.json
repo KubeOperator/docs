@@ -5,7 +5,7 @@
             "KubeOperator-v2.0.0/concept",
             "KubeOperator-v2.0.0/installation",
             "KubeOperator-v2.0.0/userguide-auto",
-             "KubeOperator-v2.0.0/userguide-manual",
+            "KubeOperator-v2.0.0/userguide-manual",
             "KubeOperator-v2.0.0/restapi"
         ],
         "References": [
