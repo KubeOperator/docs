@@ -9,7 +9,7 @@
 // site configuration options.
 
 const siteConfig = {
-    title: 'KubeOperator 在线文档', // Title for your website.
+    title: '', // Title for your website.
     tagline: 'KubeOperator 在线文档',
     url: 'https://docs.KubeOperator.io', // Your website URL
     baseUrl: '/', // Base URL for your project */

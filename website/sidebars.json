@@ -1,14 +1,12 @@
 {
     "docs": {
-        "KubeOperator1.0": [
-            "KubeOperator1.0/KubeOperator-intro",
-            "KubeOperator1.0/introduction",
-            "KubeOperator1.0/installation-offline",
-            "KubeOperator1.0/installation-source",
-            "KubeOperator1.0/userguide-hand",
-            "KubeOperator1.0/userguide-auto",
-            "KubeOperator1.0/RESTAPI",
-            "KubeOperator1.0/rpc"
+        "KubeOperator-v2.0.0": [
+            "KubeOperator-v2.0.0/introduction",
+            "KubeOperator-v2.0.0/concept",
+            "KubeOperator-v2.0.0/installation",
+            "KubeOperator-v2.0.0/userguide-auto",
+             "KubeOperator-v2.0.0/userguide-manual",
+            "KubeOperator-v2.0.0/restapi"
         ],
         "References": [
 
