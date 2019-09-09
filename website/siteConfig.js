@@ -9,19 +9,19 @@
 // site configuration options.
 
 const siteConfig = {
-    title: '', // Title for your website.
-    tagline: 'KubeOperator Documentations',
+    title: 'KubeOperator 在线文档', // Title for your website.
+    tagline: 'KubeOperator 在线文档',
     url: 'https://docs.KubeOperator.io', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
     //   baseUrl: '/test-site/',
 
-    cname: 'docs.KubeOperator.io',
+    cname: 'docs.kubeoperator.io',
 
     // Used for publishing and more
     projectName: 'docs',
-    organizationName: 'KubeOperator',
+    organizationName: 'FIT2CLOUD 飞致云',
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
     //   organizationName: 'JoelMarcey'
@@ -37,7 +37,7 @@ const siteConfig = {
 
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
-        {href: 'https://KubeOperator.io',label: 'Website',external: true},
+        {href: 'https://kubeoperator.io',label: '网站',external: true},
         {href: 'https://github.com/KubeOperator/KubeOperator',label: 'GitHub',external: true},
         {search:true}
     ],
@@ -67,7 +67,7 @@ const siteConfig = {
     algolia: {
         apiKey: '478e01143cbab954ebdc8ad0a654ffa3',
         indexName: 'kubeoperator',
-        placeholder: 'Ask me something',
+        placeholder: '搜索',
         algoliaOptions: {} // Optional, if provided by Algolia
       },
 
