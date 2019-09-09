@@ -5,11 +5,17 @@ title: 主要概念
 
 ## 1 部署模型
 
-KubeOperator 支持两种类型的 k8s 集群部署，一种是单主多节点类型，另外一种是多主多节点类型。 单主多节点类型的集群由一个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。单主多节点类型的集群由三个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
+KubeOperator 支持两种类型的 k8s 集群部署，一种是单主多节点类型，另外一种是多主多节点类型。 
+
+-  单主多节点类型的集群由一个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
+-  单主多节点类型的集群由三个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
 
 ## 2 部署模式
 
-KubeOperator 支持两种部署模式，一种是手动部署，一种是自动部署。手动模式下，用户需要自己准备主机及 NFS 持久化存储。自动模式下，用户只需要绑定云平台（比如 VMware）账号信息，KubeOperator 会根据预先定义的部署计划来自动创建主机实现一键自动化部署。
+KubeOperator 支持两种部署模式，一种是手动部署，一种是自动部署。
+
+-  手动模式下，用户需要自己准备主机及 NFS 持久化存储。
+-  自动模式下，用户只需要绑定云平台（比如 VMware）账号信息，KubeOperator 会根据预先定义的部署计划来自动创建主机实现一键自动化部署。
 
 ## 3 地域(Region)和可用区(AZ)
 
@@ -20,7 +26,8 @@ KubeOperator 支持两种部署模式，一种是手动部署，一种是自动�
 
 KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware 和 Openstack 等私有云平台上面。例如，在 VMware 云平台下，地域对应为 Datacenter，可用区对应于 cluster，或者 cluster 下面的 resource pool。
 
-如果用户只有一个 vSphere 集群，那么可以在集群下面建立三个 resource pool，每个resource pool 对应于一个可用区。如果用户有三个 vSphere 集群，那么每个集群对应于一个可用区。
+-  如果用户只有一个 vSphere 集群，那么可以在集群下面建立三个 resource pool，每个resource pool 对应于一个可用区。
+-  如果用户有三个 vSphere 集群，那么每个集群对应于一个可用区。
 
 注：vSAN 集群不能被多个 vSphere 集群共享，所以 3 个 vSphere 集群，持久化存储仅支持集中存储。
 
