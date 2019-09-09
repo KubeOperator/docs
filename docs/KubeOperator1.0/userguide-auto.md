@@ -1,6 +1,6 @@
 ---
 id: userguide-auto
-title: KubeOperator 用户手册(自动模式)
+title: 自动模式（VMware）
 ---
 
 KubeOperator 支持两种 Kubernetes 集群部署模式，一种是自动模式，另外一种是手动模式。本手册仅描述手自动模式下的集群部署和管理。
