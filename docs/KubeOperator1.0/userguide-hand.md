@@ -1,6 +1,6 @@
 ---
 id: userguide-hand
-title: KubeOperator 用户手册(手动模式)
+title: 手动模式
 ---
 
 KubeOperator 支持两种 Kubernetes 集群部署模式，一种是手动模式，另外一种是自动模式模式。本手册仅描述手动模式下的集群部署和管理。
