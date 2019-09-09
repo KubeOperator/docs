@@ -3,6 +3,6 @@ id: installation
 title: 安装指南
 ---
 
-## ova 方式
+## 1 ova 方式
 
-## 离线包方式
+## 2 离线包方式
