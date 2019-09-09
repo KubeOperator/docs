@@ -1,6 +1,6 @@
 ---
 id: installation-source
-title: KubeOperator 编译方式安装
+title: 编译方式
 ---
 
 
