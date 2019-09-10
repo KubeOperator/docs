@@ -6,7 +6,7 @@ title: 关于 KubeOperator
 ## 1 什么是 KubeOperator？
 
 KubeOperator 是一个开源项目，帮助运维人员通过 Web-based UI，在完全离线和多云环境下，部署和管理生产级别的 Kubernetes 集群。KubeOperator 尤其适合在云平台（比如 VMware 及 Openstack）上部署和管理 Kubernetes 集群，实现 Kubernetes as a Service。
-![overview](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/KubeOperator.jpeg?raw=true)
+![overview](https://github.com/KubeOperator/docs/blob/master/website/static/img/KubeOperator.jpeg?raw=true)
 
 ## 2 KubeOperator 的技术优势
 
@@ -41,11 +41,12 @@ KubeOperator 是一个开源项目，帮助运维人员通过 Web-based UI，在
 
  v2.1.0 （开发中）
  
-- 支持 Kubernetes 集群升级；
-- 支持 Kubernetes 集群扩缩容；
-- 支持 etcd 备份及恢复；
-- 支持 Openstack 云平台；
-- 支持 Ceph 作为持久化存储；
+ - 支持 Openstack 云平台；
+ - 支持 Ceph 作为持久化存储；
+ - 支持 Kubernetes 集群升级；
+ - 支持 Kubernetes 集群扩缩容；
+ - 支持 Kubernetes 集群备份与恢复；
+ - 支持 Kubernetes 集群健康检查与诊断；
 
  v3.0.0 （计划中）
 

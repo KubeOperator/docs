@@ -17,8 +17,10 @@ TBD
 
 ### 2.1 环境要求
 
-最低硬件配置: 2 CPU, 4G 内存, 50G 硬盘
+最低硬件配置: 2 CPU, 4G 内存, 50G 磁盘 （推荐大小是：4核8G内存100G磁盘）
 操作系统要求: CentOS 7.6 Minimal （必须）
+
+操作系统ISO下载链接为：http://mirrors.aliyun.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
 
 ### 2.2 下载离线包
 
