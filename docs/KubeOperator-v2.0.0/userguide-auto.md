@@ -32,7 +32,7 @@ KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。�
 
 集群域名后缀为集群节点访问地址的后缀，集群暴露出来的对外服务的 URL 都将以该域名后缀作为访问地址后缀。例如: grafana.apps.cluster.f2c.com。
 
-![setting-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/setting-1.png?raw=true)
+![setting-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/setting-system.png?raw=true)
 
 ## 3 创建部署计划
 
