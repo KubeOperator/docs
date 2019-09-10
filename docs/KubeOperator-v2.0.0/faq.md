@@ -3,7 +3,7 @@ id: faq
 title: 常见问题
 ---
 
-## 1 KubeOperator 与 Kubepray 等部署工具的区别是什么？
+## 1 KubeOperator 与 Kubespray 等部署工具的区别是什么？
 
 KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 0 规划和 Day 2 的Kubernetes 集群升级、变更的功能，除此之外，KubeOperator 还有如下优势：
 
