@@ -35,8 +35,10 @@ $ unzip kubeOperator-release-xx.zip
 $ cd kubeOperator-release
 # 运行安装脚本
 $ ./kubeopsctl install
-# 启动 KubeOperator
-$  ./kubeopsctl start
 # 查看 KubeOperator 状态
-$ ./kubeopsctl status
+$ systemctl start kubeops
+# 启动 KubeOperator 
+$ systemctl start kubeops
+# 停止 KubeOperator 
+$ systemctl stop kubeops
 ```
