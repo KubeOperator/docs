@@ -39,18 +39,26 @@ KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。�
 ### 3.1 创建区域(Region)
 
 Region：与 AWS 中的 Region 概念相似，可以简单理解为地理上的分区，比如亚洲地区，或者华北地区，再或者北京等等。在 Vsphere 体系中我们使用 DataCenter 实现 Region 的划分。
-![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region.png?raw=true)
+![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region1.png?raw=true)
 
 
 ### 3.2 创建可用区(Zone)
 
 Zone: 与 AWS 中的 AZ 概念相似，可以简单理解为 Region 中具体的机房，比如北京1区，北京2区。在 Vsphere 体系中我们使用 Cluster 实现 Zone 的划分。
-![zone-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-zone.png?raw=true)
+创建可用区时需要选择一个之前添加的区域，如下图：
+![zone-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-zone1.png?raw=true)
+选择可用区配置参数时，需要配置集群，资源池，存储类型以及网络适配器等信息。
+![zone-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-zone2.png?raw=true)
 
 
 ### 3.3 创建部署计划(Plan)
 
 Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念。
+这里我们选择单主多节点类型部署集群.
+![plan-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-plan1.png?raw=true)
+部署计划配置包括设置master节点，worker节点和Daemon节点的规格，即CPU，内存和磁盘大小。
+![plan-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-plan2.png?raw=true)
+
 
 ## 4 创建和部署集群
 
