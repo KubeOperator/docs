@@ -117,6 +117,10 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ![cluster-deploy-2](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/cluster-deploy-2.png?raw=true)
 
+### 4.3 服务暴露
+
+TBD：讲解 F5，如果没有 F5 也要讲一些配置 /etc/hosts 的方案。
+
 ## 5 管理集群
 
 ### 5.1 访问 Kubernetes Dashboard
