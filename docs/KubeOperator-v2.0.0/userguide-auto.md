@@ -12,15 +12,15 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
 
 - 1 系统登录：登录 KubeOperator Web 控制台;
 - 2 系统设置：设置主机登录凭据和集群域名后缀等；
-- 3 创建部署计划：创建地域、可用区和部署计划；
+- 3 创建部署计划：创建区域、可用区和部署计划；
 - 4 创建和部署集群：创建集群、配置集群和部署集群；
 - 5 管理集群：访问 Dashboard、监控、Registry、Weave Scope 等。
 
 ## 1 登录
 
-KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。默认的登录用户名为 admin，默认密码为 kubeoperator@admin123。
+KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。默认的登录用户名为 admin，默认密码为kubeoperator@admin123。
 
-> 为了保证系统的安全，请在完成登录后，点击控制台右上角的"修改密码"进行密码的重置。
+> 为了保证系统的安全，请在完成登录后，点击控制台右上角的"修改密码"进行密码的重置
 
 ## 2 系统设置
 
@@ -32,21 +32,35 @@ KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。�
 
 集群域名后缀为集群节点访问地址的后缀，集群暴露出来的对外服务的 URL 都将以该域名后缀作为访问地址后缀。例如: grafana.apps.cluster.f2c.com。
 
-![setting-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/setting-1.png?raw=true)
+![setting-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/setting-system.png?raw=true)
 
 ## 3 创建部署计划
 
-### 3.1 创建地域(Region)
+### 3.1 创建区域(Region)
 
 Region：与 AWS 中的 Region 概念相似，可以简单理解为地理上的分区，比如亚洲地区，或者华北地区，再或者北京等等。在 Vsphere 体系中我们使用 DataCenter 实现 Region 的划分。
+创建区域时，首先选择提供商，目前仅支持VMware vSphere。
+![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region1.png?raw=true)
+配置参数时，要已知vSphere环境信息，包括VCenter host ip，用户名和密码信息。最后一步选择vCenter的一个数据中心。
+![region-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region-conf.png?raw=true)
 
 ### 3.2 创建可用区(Zone)
 
 Zone: 与 AWS 中的 AZ 概念相似，可以简单理解为 Region 中具体的机房，比如北京1区，北京2区。在 Vsphere 体系中我们使用 Cluster 实现 Zone 的划分。
+创建可用区时需要选择一个之前添加的区域，如下图：
+![zone-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-zone1.png?raw=true)
+选择可用区配置参数时，需要配置集群，资源池，存储类型以及网络适配器等信息。
+![zone-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-zone2.png?raw=true)
+
 
 ### 3.3 创建部署计划(Plan)
 
 Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念。
+这里我们选择单主多节点类型部署集群.
+![plan-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-plan1.png?raw=true)
+部署计划配置包括设置master节点，worker节点和Daemon节点的规格，即CPU，内存和磁盘大小。
+![plan-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-plan2.png?raw=true)
+
 
 ## 4 创建和部署集群
 
