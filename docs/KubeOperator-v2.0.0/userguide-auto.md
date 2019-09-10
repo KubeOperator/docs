@@ -41,7 +41,7 @@ KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。�
 Region：与 AWS 中的 Region 概念相似，可以简单理解为地理上的分区，比如亚洲地区，或者华北地区，再或者北京等等。在 Vsphere 体系中我们使用 DataCenter 实现 Region 的划分。
 创建区域时，首先选择提供商，目前仅支持VMware vSphere。
 ![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region1.png?raw=true)
-配置参数时，要准备好的vSphere 环境，包括VCenter host ip，用户名和密码信息。最后一步选择vCenter的一个数据中心。
+配置参数时，要已知vSphere环境信息，包括VCenter host ip，用户名和密码信息。最后一步选择vCenter的一个数据中心。
 ![region-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region-conf.png?raw=true)
 
 ### 3.2 创建可用区(Zone)
