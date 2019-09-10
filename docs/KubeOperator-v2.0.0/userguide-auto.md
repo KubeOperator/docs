@@ -12,15 +12,15 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
 
 - 1 系统登录：登录 KubeOperator Web 控制台;
 - 2 系统设置：设置主机登录凭据和集群域名后缀等；
-- 3 创建部署计划：创建地域、可用区和部署计划；
+- 3 创建部署计划：创建区域、可用区和部署计划；
 - 4 创建和部署集群：创建集群、配置集群和部署集群；
 - 5 管理集群：访问 Dashboard、监控、Registry、Weave Scope 等。
 
 ## 1 登录
 
-KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。默认的登录用户名为 admin，默认密码为 kubeoperator@admin123。
+KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。默认的登录用户名为 admin，默认密码为kubeoperator@admin123。
 
-> 为了保证系统的安全，请在完成登录后，点击控制台右上角的"修改密码"进行密码的重置。
+> 为了保证系统的安全，请在完成登录后，点击控制台右上角的"修改密码"进行密码的重置
 
 ## 2 系统设置
 
@@ -36,7 +36,7 @@ KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。�
 
 ## 3 创建部署计划
 
-### 3.1 创建地域(Region)
+### 3.1 创建区域(Region)
 
 Region：与 AWS 中的 Region 概念相似，可以简单理解为地理上的分区，比如亚洲地区，或者华北地区，再或者北京等等。在 Vsphere 体系中我们使用 DataCenter 实现 Region 的划分。
 
