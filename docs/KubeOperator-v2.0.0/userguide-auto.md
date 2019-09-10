@@ -39,10 +39,14 @@ KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。�
 ### 3.1 创建区域(Region)
 
 Region：与 AWS 中的 Region 概念相似，可以简单理解为地理上的分区，比如亚洲地区，或者华北地区，再或者北京等等。在 Vsphere 体系中我们使用 DataCenter 实现 Region 的划分。
+![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region.png?raw=true)
+
 
 ### 3.2 创建可用区(Zone)
 
 Zone: 与 AWS 中的 AZ 概念相似，可以简单理解为 Region 中具体的机房，比如北京1区，北京2区。在 Vsphere 体系中我们使用 Cluster 实现 Zone 的划分。
+![zone-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-zone.png?raw=true)
+
 
 ### 3.3 创建部署计划(Plan)
 
