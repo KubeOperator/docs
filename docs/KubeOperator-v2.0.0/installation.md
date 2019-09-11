@@ -43,6 +43,7 @@ $ systemctl start kubeops
 $ systemctl stop kubeops
 ```
 
-### 2.3 安装步骤
+### 2.4 访问 KubeOperator
 
 KubeOperator 默认监听 HTTP 80端口, 默认用户名为: admin, 默认密码为: kubeoperator@admin123
+
