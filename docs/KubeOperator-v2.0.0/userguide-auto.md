@@ -114,25 +114,25 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 > 如果集群节点全部都在同一个二层网络下，请选择"host-gw"。如果不是，则选择"vxlan"。"host-gw" 性能优于 "vxlan"。
 
-![cluster-create-4](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confnetwork.png?raw=true)
+![cluster-create-3](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confnetwork.png?raw=true)
 
 #### 4.2.4 配置存储
 
 【添加存储】环节，选择外部持久化存储。
 
-![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confstore1.png?raw=true)
+![cluster-create-4](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confstore1.png?raw=true)
 
 #### 4.2.5 配置集群参数
 
 完成检测后，可以对集群的域名参数进行配置，如无特殊要求，推荐使用默认值。
 
-![cluster-create-7](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confpara.png?raw=true)
+![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confpara.png?raw=true)
 
 #### 4.2.6 集群配置概览
 
 所有步骤完成后，会有一个集群配置概览页对之前步骤所设参数进行汇总，用户可在此页进行集群配置的最后检查。
 
-![cluster-create-8](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-complate.png?raw=true)
+![cluster-create-6](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-complate.png?raw=true)
 
 ### 4.3 部署集群
 
