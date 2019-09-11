@@ -150,7 +150,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 【历史】页可以看到完成所有任务详情信息。
 
-![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-history.png?raw=true)
+![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-history1.png?raw=true)
 
 ### 4.4 卸载集群
 
