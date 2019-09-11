@@ -43,6 +43,8 @@ Region：与 AWS 中的 Region 概念相似，可以简单理解为地理上的�
 ![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region1.png?raw=true)
 配置参数时，要已知vSphere环境信息，包括vCenter host ip，用户名和密码信息。最后一步选择vCenter的一个数据中心。
 ![region-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region-conf.png?raw=true)
+![region-3](https://github.com/KubeOperator/docs/blob/master/website/static/img/region-datacenter.png?raw=true)
+
 
 ### 3.2 创建可用区(Zone)
 
@@ -68,7 +70,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 在左侧导航菜单中选择【集群】，进入【集群】页后可以看到已添加集群的详细信息，包括 集群部署的 Kubernetes 版本、部署模式、节点数及运行状态等。
 
-![cluster-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster.png?raw=true)
+![cluster-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster1.png?raw=true)
 
 ### 4.2 创建集群
 
@@ -102,13 +104,13 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 【添加存储】环节，选择外部持久化存储。
 
-![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confstore.png?raw=true)
+![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confstore1.png?raw=true)
 
 #### 4.2.5 配置集群参数
 
 完成检测后，可以对集群的域名参数进行配置，如无特殊要求，推荐使用默认值。
 
-![cluster-create-7](hhttps://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confpara.png?raw=true)
+![cluster-create-7](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confpara.png?raw=true)
 
 #### 4.2.6 集群配置概览
 
