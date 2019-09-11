@@ -40,9 +40,15 @@ KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。�
 
 Region：与 AWS 中的 Region 概念相似，可以简单理解为地理上的分区，比如亚洲地区，或者华北地区，再或者北京等等。在 Vsphere 体系中我们使用 DataCenter 实现 Region 的划分。
 创建区域时，首先选择提供商，目前仅支持VMware vSphere。
+
 ![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region1.png?raw=true)
-配置参数时，要已知vSphere环境信息，包括vCenter host ip，用户名和密码信息。最后一步选择vCenter的一个数据中心。
+
+配置参数时，要已知vSphere环境信息，包括vCenter host ip，用户名和密码信息。
+
 ![region-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-region-conf.png?raw=true)
+
+最后一步选择vCenter的一个数据中心。
+
 ![region-3](https://github.com/KubeOperator/docs/blob/master/website/static/img/region-datacenter.png?raw=true)
 
 
@@ -50,8 +56,11 @@ Region：与 AWS 中的 Region 概念相似，可以简单理解为地理上的�
 
 Zone: 与 AWS 中的 AZ 概念相似，可以简单理解为 Region 中具体的机房，比如北京1区，北京2区。在 Vsphere 体系中我们使用 Cluster 实现 Zone 的划分。
 创建可用区时需要选择一个之前添加的区域，如下图：
+
 ![zone-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-zone1.png?raw=true)
+
 选择可用区配置参数时，需要选择计算集群，资源池，存储类型以及网络适配器等信息，这些信息依赖于vCenter环境配置。
+
 ![zone-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-zone2.png?raw=true)
 
 
@@ -59,8 +68,11 @@ Zone: 与 AWS 中的 AZ 概念相似，可以简单理解为 Region 中具体的
 
 Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念。
 这里以单主多节点类型举例.
+
 ![plan-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-plan1.png?raw=true)
+
 部署计划配置包括设置master节点，worker节点和Daemon节点的规格，即CPU，内存和磁盘大小。
+
 ![plan-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/create-plan2.png?raw=true)
 
 
@@ -83,7 +95,11 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ![cluster-create-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-basicinfo.png?raw=true)
 
+离线包列表信息：
 ![package-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/package.png?raw=true)
+
+离线包详情信息：
+
 ![package-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/package-detail.png?raw=true)
 
 #### 4.2.2 部署计划
@@ -126,13 +142,23 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 集群部署开始后，将会自动跳转到【任务】页。在【任务】页里可以看到集群部署当前所执行的具体任务信息。
 
-![cluster-deploy-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/cluster-deploy-1.png?raw=true)
+![cluster-deploy-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-task1.png?raw=true)
 
-如果是内网环境的话，一个典型的 5 节点集群的部署大概需要10分钟左右的时间。在出现类似下图的信息后，表明集群已部署成功：
+如果是内网环境的话，一个典型的 5 节点集群的部署大概需要10分钟左右的时间,【历史】页可以看到详情部署时间信息。在出现类似下图的信息后，表明集群已部署成功：
 
-![cluster-deploy-2](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/cluster-deploy-2.png?raw=true)
+![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-task2.png?raw=true)
 
-### 4.3 服务暴露
+【历史】页可以看到完成所有任务详情信息。
+
+![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-history.png?raw=true)
+
+### 4.4 卸载集群
+
+在集群列表中点击要进行部署的集群名称，默认展示的是该集群的【概览】信息。【点击【概览】页最下方的【卸载】按钮进行 Kubernetes 集群的卸载。卸载后的集群所有主机将被彻底移除，不会保留在主机列表中。
+
+![cluster-uninstall](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-uninstall.png?raw=true)
+
+### 4.5 服务暴露
 
 TBD：讲解 F5，如果没有 F5 也要讲一些配置 /etc/hosts 的方案。
 
