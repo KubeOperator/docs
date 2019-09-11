@@ -19,8 +19,11 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
 ## 1 登录
 
 KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。默认的登录用户名为 admin，默认密码为kubeoperator@admin123。
+KubeOperator控制台URL：http://host-ip ，将host-ip改为安装KubeOperator的主机IP地址。
 
-> 为了保证系统的安全，请在完成登录后，点击控制台右上角的"修改密码"进行密码的重置
+![login-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/KubeOperator-login.png?raw=true)
+
+> 为了保证系统的安全，请在完成登录后，点击控制台右上角的"修改密码"进行密码的重置。
 
 ## 2 系统设置
 
@@ -148,7 +151,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-task2.png?raw=true)
 
-【历史】页可以看到完成所有任务详情信息。
+【历史】页可以看到所有完成的任务详情信息。
 
 ![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-history1.png?raw=true)
 
