@@ -12,7 +12,7 @@ title: 使用指南 (手动模式)
 - 3 选择离线包：选择 k8s  版本；
 - 4 准备主机：准备 k8s 集群所需要的主机；
 - 5 创建和部署集群：创建集群、配置集群和部署机器；
-- 6 管理集群：访问 Dashboard、监控系统和 Registry等。
+- 6 管理集群：访问 Dashboard、监控系统和 Registry 等。
 
 ## 1 登录
 
@@ -32,9 +32,9 @@ KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。�
 
 ![setting-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/setting-1.png?raw=true)
 
-## 2.2 凭据
+### 2.2 凭据
 
-凭据为 KubeOperator 连接主机资产的凭证，可以使用 password 或者 private key 。在左侧导航菜单中选择【设置】，进入【设置】页后点击【凭据】TAB 可以看到已添加凭据信息。
+凭据为 KubeOperator 连接主机资产的凭证，可以使用 password。在左侧导航菜单中选择【设置】，进入【设置】页后点击【凭据】TAB 可以看到已添加凭据信息。
 
 ![credential-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/credential-1.png?raw=true)
 
@@ -90,7 +90,7 @@ KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集�
     </tr>
 </table>
 
-### 4.2 增加主机
+### 4.2 添加主机
 
 在左侧导航菜单中选择【主机】，进入【主机】页后可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。点击【添加】按钮添加新的主机。在输入完主机名称、IP、主机的 SSH 登录信息后，点击【提交】按钮即可完成一台主机的添加。
 
@@ -108,7 +108,7 @@ KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集�
 
 ### 5.2 创建集群
 
-> KubeOperator 1.0 仅支持 NFS 作为外部持久化存储，按创建集群前，请自行准备 NFS 存储，并可以被集群主机挂载。我们推荐使用专用 NAS 产品，自行搭建的 NFS 服务仅适合在开发测试环境使用。
+> KubeOperator 2.0 手动模式仅支持 NFS 作为外部持久化存储，按创建集群前，请自行准备 NFS 存储，并可以被集群主机挂载。我们推荐使用专用 NAS 产品，自行搭建的 NFS 服务仅适合在开发测试环境使用。
 
 #### 5.2.1 基本信息
 
@@ -176,7 +176,7 @@ KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集�
 
 ![cluster-deploy-2](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/cluster-deploy-2.png?raw=true)
 
-## 6 管理 Kubernetes 集群
+## 6 管理集群
 
 回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 等四个管理系统快捷访问方式。这四个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如无条件，也可以通过修改本地 /etc/hosts 文件来达到相同的作用。
 
