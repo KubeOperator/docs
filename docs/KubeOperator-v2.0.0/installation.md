@@ -22,7 +22,7 @@ title: 安装指南
 ## 3 安装 KubeOperator
 
 ``` bash
-cd /tmp
+$ cd /tmp
 # 解压离线包
 $ unzip kubeOperator-release-xx.zip
 # 进入项目目录
