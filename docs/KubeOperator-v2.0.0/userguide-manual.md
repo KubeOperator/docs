@@ -180,7 +180,7 @@ KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集�
 
 在集群列表中点击要进行卸载的集群名称，点击【概览】页最下方的【卸载】按钮进行 Kubernetes 集群的卸载。注意的是和自动模式部署不同，卸载后的所有主机仍在该集群列表中，仅卸载kebernetes集群。
 
-![cluster-uninstall](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-uninstall1.png?raw=true)
+![cluster-uninstall](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-uninstall.png?raw=true)
 
 ## 6 管理集群
 
