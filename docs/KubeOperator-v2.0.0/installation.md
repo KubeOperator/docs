@@ -19,6 +19,8 @@ title: 安装指南
 -  地址：TBD
 -  提取码： TBD 
 
+> 注：KubeOperator 完整离线包大小约为 TBD G。
+
 ### 1.3 安装步骤
 
 ``` bash
@@ -50,6 +52,8 @@ KubeOperator 默认监听 HTTP 80 端口。安装完毕后，请使用浏览器�
 
 -  地址：TBD
 -  提取码：TBD 
+
+> 注：KubeOperator ova 文件大小约为 TBD G。
 
 ### 2.2 安装步骤
 
