@@ -19,16 +19,16 @@ KubeOperator 支持两种部署模式，一种是手动部署，一种是自动�
 
 ## 3 部署计划(Deploy Plan)
 
-在自动部署模式下，部署计划定义了 k8s 集群的部署细节，包括其部署模型、集群所在的地域、可用区、节点大小类型等。
+在自动部署模式下，部署计划定义了 k8s 集群的部署细节，包括其部署模型、集群所在的区域、可用区、节点大小类型等。
 
-## 4 地域(Region)和可用区(AZ)
+## 4 区域(Region)和可用区(AZ)
 
-地域(Region)和可用区(AZ)这两个术语来自公有云。每个地域完全独立。每个可用区完全隔离，但同一个地域内的可用区之间使用低时延链路相连。地域和可用区之间的关系如下图所示。
-![region-zone](https://github.com/KubeOperator/docs/blob/master/website/static/img/region-zone.jpg?raw=true)
+区域(Region)和可用区(AZ)这两个术语来自公有云。每个区域完全独立。每个可用区完全隔离，但同一个区域内的可用区之间使用低时延链路相连。区域和可用区之间的关系如下图所示。
+![region-zone](https://github.com/KubeOperator/docs/blob/master/website/static/img/region-zone1.jpg?raw=true)
 
 对于公有云厂商提供的托管 k8s 服务，master 节点由公有云厂商托管并维护，其 3 个master 节点会分布在同个地域下面的 3 个不同可用区上面，实现真正的高可用。
 
-KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware 和 Openstack 等私有云平台上面。例如，在 VMware 云平台下，地域对应为 Datacenter，可用区对应于 cluster，或者 cluster 下面的 resource pool。
+KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware 和 Openstack 等私有云平台上面。例如，在 VMware 云平台下，区域对应为 Datacenter，可用区对应于 cluster，或者 cluster 下面的 resource pool。
 
 -  如果用户只有一个 vSphere 集群，那么可以在集群下面建立三个 resource pool，每个resource pool 对应于一个可用区。
 -  如果用户有三个 vSphere 集群，那么每个集群对应于一个可用区。
