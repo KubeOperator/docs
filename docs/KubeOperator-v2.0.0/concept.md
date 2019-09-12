@@ -34,7 +34,7 @@ KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware 和 O
 -  如果用户只有一个 vSphere 集群，那么可以在集群下面建立三个 resource pool，每个resource pool 对应于一个可用区。
 -  如果用户有三个 vSphere 集群，那么每个集群对应于一个可用区。
 
-> 注：注：vSAN 集群不能被多个 vSphere 集群共享，所以 3 个 vSphere 集群，持久化存储仅支持集中存储。
+> 注：vSAN 集群不能被多个 vSphere 集群共享，所以 3 个 vSphere 集群，持久化存储仅支持集中存储。
 
 ## 5 离线包
 
@@ -51,9 +51,9 @@ Kubernetes 及其附属组件：
 | 存储 | quay.io/external_storage/nfs-client-provisioner  | v3.1.0-k8s1.11 |
 | 网络 | docker.io/coredns/coredns| 1.5.0 |
 | 网络 | quay.io/coreos/flannel| v0.11.0-amd64 |
-| 网络 | calico/node:v3.4.4 |
-| 网络 | calico/cni:v3.4.4 |
-| 网络 | calico/kube-controllers:v3.4.4 |
+| 网络 | calico/node| v3.4.4 |
+| 网络 | calico/cni| v3.4.4 |
+| 网络 | calico/kube-controllers| v3.4.4 |
 | 网络 | docker.io/traefik  | v1.7.11 |
 | 监控 | docker.io/grafana/grafana  | v1.7.11 |
 | 监控 | quay.io/prometheus/alertmanager  | v0.15.2 |
