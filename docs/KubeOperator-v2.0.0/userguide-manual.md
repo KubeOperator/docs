@@ -96,7 +96,7 @@ KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集�
 
 ![host-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/host.png?raw=true)
 
-![host-2](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/host-add.png?raw=true)
+![host-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/host-add.png?raw=true)
 
 ## 5 创建和部署集群
 
@@ -166,7 +166,7 @@ KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集�
 
 在集群列表中点击要进行部署的集群名称，默认展示的是该集群的【概览】信息。【概览】页中展示了 Kubernetes 集群的诸多详情，包括 Kubernetes 版本、集群所用存储、网络模式等。点击【概览】页最下方的【安装】按钮进行 Kubernetes 集群的部署。
 
-![cluster-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-install.png?raw=true)
+![cluster-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-summary.png?raw=true)
 
 集群部署开始后，将会自动跳转到【任务】页。在【任务】页里可以看到集群部署当前所执行的具体任务信息。
 
