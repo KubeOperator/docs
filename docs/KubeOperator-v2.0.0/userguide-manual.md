@@ -142,7 +142,7 @@ KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集�
 
 【添加存储】环节，选择外部持久化存储。
 
-![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-store.png?raw=true)
+![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-store1.png?raw=true)
 
 #### 5.2.6 配置检测
 
@@ -166,15 +166,15 @@ KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集�
 
 在集群列表中点击要进行部署的集群名称，默认展示的是该集群的【概览】信息。【概览】页中展示了 Kubernetes 集群的诸多详情，包括 Kubernetes 版本、集群所用存储、网络模式等。点击【概览】页最下方的【安装】按钮进行 Kubernetes 集群的部署。
 
-![cluster-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-summary.png?raw=true)
+![cluster-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-summary1.png?raw=true)
 
 集群部署开始后，将会自动跳转到【任务】页。在【任务】页里可以看到集群部署当前所执行的具体任务信息。
 
-![cluster-deploy-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/cluster-deploy-1.png?raw=true)
+![cluster-deploy-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-install.png?raw=true)
 
 如果是内网环境的话，一个典型的 5 节点集群的部署大概需要10分钟左右的时间。在出现类似下图的信息后，表明集群已部署成功：
 
-![cluster-deploy-2](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/cluster-deploy-2.png?raw=true)
+![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-install1.png?raw=true)
 
 ## 6 管理集群
 
@@ -197,11 +197,11 @@ WORKER_IP master-1.whfay.f2c.com
 
 Dashboard 对应的是 Kubernetes 的控制台，从浏览器中访问 Kubernetes 控制台需要用到【令牌】。点击【概览】页下方的【获取TOKEN】按钮获取令牌信息，将令牌信息复制到粘贴板。
 
-![dashboard-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/dashboard-1.png?raw=true)
+![dashboard-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/dashboard-1.png?raw=true)
 
 输入令牌信息后，点击【登录】，则可进入 Kubernetes 控制台。
 
-![dashboard-2](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/dashboard-2.png?raw=true)
+![dashboard-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/dashboard-2.png?raw=true)
 
 ### 6.2 访问 Grafana
 
@@ -209,20 +209,27 @@ Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化
 
 集群级别的监控面板：
 
-![grafana-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/grafana-1.png?raw=true)
+![grafana-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/grafana-1.png?raw=true)
 
 节点级别的监控面板：
 
-![grafana-2](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/grafana-2.png?raw=true)
+![grafana-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/grafana-2.png?raw=true)
 
 ### 6.3 访问 Registry
 
 Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。
 
-![regsitry-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/registry-1.png?raw=true)
+![regsitry-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/registry-1.png?raw=true)
 
 ### 6.4 访问 Prometheus
 
 Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。
 
-![prometheus-1](https://github.com/KubeOperator/KubeOperator/blob/master/docs/images/prometheus-1.png?raw=true)
+![prometheus-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/prometheus-1.png?raw=true)
+
+### 6.5 访问 Traefik
+
+Traefik 用来作为 kubernetes 集群的HTTP反向代理、负载均衡工具。点击 Trafik 下方的【转到】按钮即可访问 Traefik 控制台。
+
+![prometheus-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/traefik.png?raw=true)
+
