@@ -158,7 +158,9 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ### 4.5 服务暴露
 
-TBD：讲解 F5，如果没有 F5 也要讲一些配置 /etc/hosts 的方案。
+在集群列表中点击集群名称，点击【F5 BIG-IP】添加F5 BIG-IP，为Kubernetes配置 F5-BIGIP-CONTROLLER后，我们可以通过 F5 BIGIP 设备向外网暴露服务。
+
+![cluster-f5](https://github.com/KubeOperator/docs/blob/master/website/static/img/F5.jpeg?raw=true)
 
 ## 5 管理集群
 
