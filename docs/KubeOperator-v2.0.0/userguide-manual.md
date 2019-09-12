@@ -245,9 +245,9 @@ Traefik 用来作为 kubernetes 集群的HTTP反向代理、负载均衡工具�
 
 Weave Scope 用来监控、可视化和管理 kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。
 
-![weave-scope-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-2?raw=true)
+![weave-scope-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-2.png?raw=true)
 
 点击顶部的【Host】，可以远程shell登录各个节点，还可以看到主机的详细信息。
 
-![weave-scope-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-1?raw=true)
+![weave-scope-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-1.png?raw=true)
 
