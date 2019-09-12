@@ -160,7 +160,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 在集群列表中点击集群名称，点击【F5 BIG-IP】添加F5 BIG-IP，为Kubernetes配置 F5-BIGIP-CONTROLLER后，我们可以通过 F5 BIGIP 设备向外网暴露服务。
 
-![cluster-f5](https://github.com/KubeOperator/docs/blob/master/website/static/img/F5.jpeg?raw=true)
+![cluster-f5](https://github.com/KubeOperator/docs/blob/master/website/static/img/f5-bigip.jpeg?raw=true)
 
 ## 5 管理集群
 
