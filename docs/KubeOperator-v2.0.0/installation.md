@@ -10,7 +10,7 @@ title: 安装指南
 
 > 注：CentOS 7.6 Minimal ISO 下载链接：http://mirrors.aliyun.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
 
-## 2下载离线包
+## 2 下载离线包
 
 请自行至百度云盘下载完整离线包，并复制到目标机器的 /tmp 目录下。
 
@@ -19,7 +19,7 @@ title: 安装指南
 
 > 注：KubeOperator 完整离线包大小约为 TBD G。
 
-## 3 安装步骤
+## 3 安装 KubeOperator
 
 ``` bash
 cd /tmp
