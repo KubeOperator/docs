@@ -11,7 +11,7 @@ title: 常见问题
 -  开发模式方面：从 瀑布模型 到 敏捷开发 到 DevOps 的演讲；
 -  应用架构方面：从 单体架构 到 多层次架构 到 微服务 的演进。
 
-KubeOperator 专注于解决云原生基础实施的问题，为开发者交付生产级别可用的 k8s 集群，实现 Kubernetes as a Service。
+KubeOperator 专注于解决云原生基础实施层面的问题，为开发者交付生产级别可用的 k8s 集群，实现 Kubernetes as a Service。
 
 
 ## 2 KubeOperator 与 Kubespray 等部署工具的区别是什么？
@@ -20,7 +20,8 @@ KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 0 规划和 Day 2 �
 
 -  提供可视化的 Web UI，大大降低部署和管理 k8s 的门槛；
 -  提供离线的、经过全面验证和测试的安装包；
--  与 VMware 和 Openstack 等云平台紧密对接，能够实现一键虚机自动创建和部署（基于 Terraform 和 Ansible）。
+-  与 VMware 和 Openstack 等云平台紧密对接，能够实现一键虚机自动创建和部署（基于 Terraform 和 Ansible）；
+-  KubeOperator 会提供经过充分验证的成熟企业级存储和网络方案。
 
 ## 3 KubeOperator 与 OpenShift 等 PaaS 平台有什么区别？
 
