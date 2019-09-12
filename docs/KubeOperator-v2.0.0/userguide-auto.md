@@ -152,7 +152,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ### 4.4 卸载集群
 
-在集群列表中点击要进行部署的集群名称，默认展示的是该集群的【概览】信息。点击【概览】页最下方的【卸载】按钮进行 Kubernetes 集群的卸载。卸载后的集群所有主机将被彻底移除，不会保留在主机列表中。
+在集群列表中点击要进行卸载的集群名称，点击【概览】页最下方的【卸载】按钮进行 Kubernetes 集群的卸载。卸载后的集群所有主机将被彻底移除，不会保留在主机列表中。
 
 ![cluster-uninstall](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-uninstall.png?raw=true)
 
@@ -196,6 +196,22 @@ Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击
 
 ![prometheus-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/prometheus-1.png?raw=true)
 
-### 5.5 访问 Weave Scope
+### 5.5 访问 Traefik
 
-TBD
+Traefik 用来作为 kubernetes 集群的HTTP反向代理、负载均衡工具。点击 Trafik 下方的【转到】按钮即可访问 Traefik 控制台。
+
+![prometheus-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/traefik.png?raw=true)
+
+### 5.6 访问 Weave Scope
+
+Weave Scope 用来监控、可视化和管理 kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。
+
+![weave-scope-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-2.png?raw=true)
+
+点击顶部的【Host】，可以远程shell登录各个节点，还可以看到主机的详细信息。
+
+![weave-scope-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-1.png?raw=true)
+
+
+
+
