@@ -16,7 +16,7 @@ KubeOperator 专注于解决基础设施层面的问题，为开发者交付生�
 
 ## 2 KubeOperator 与 Kubespray 等部署工具的区别是什么？
 
-KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 0 规划和 Day 2 的Kubernetes 集群升级、变更的功能，除此之外，KubeOperator 还有如下优势：
+KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes 集群升级、扩容、监控检查、备份恢复等功能，除此之外，KubeOperator 还有如下优势：
 
 -  提供可视化的 Web UI，大大降低部署和管理 k8s 的门槛；
 -  提供离线的、经过全面验证和测试的安装包；
