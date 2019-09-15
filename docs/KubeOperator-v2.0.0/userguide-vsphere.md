@@ -1,6 +1,6 @@
 ---
-id: userguide-auto
-title: 使用指南 (自动模式)
+id: userguide-vsphere
+title: 在 vSphere 平台上部署 k8s 集群
 ---
 
 KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式，我们推荐使用自动模式。在自动模式下，用户需要准备软件定义的 IaaS 云平台，比如 VMware vSphere 和 Openstack 等。
