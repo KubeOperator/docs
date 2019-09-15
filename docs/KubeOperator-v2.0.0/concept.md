@@ -1,6 +1,6 @@
 ---
 id: concept
-title: 主要概念
+title: KubeOperator 的主要概念
 ---
 
 ## 1 部署模型

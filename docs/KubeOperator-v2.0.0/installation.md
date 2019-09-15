@@ -1,6 +1,6 @@
 ---
 id: installation
-title: 安装指南
+title: 安装 KubeOperator
 ---
 
 ## 1 环境要求
