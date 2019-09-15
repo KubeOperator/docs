@@ -41,6 +41,9 @@ KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 0 规划和 Day 2 �
  - IaaS 平台上有成熟的、基于软件定义的存储和网络方案，落地更容易和灵活；
  - KubeOperator 与 VMware、Openstack 等 IaaS 方案紧密集成，可以实现全栈的自动化，集群交付快，伸缩快；
 
+ ## 5 采用原生 Kubernetes 有什么好处？
 
+ 总的来说，相对于发行版，采纳原生 Kubernetes 有两个好处：
 
-
+ - Kubernetes 迭代很快，且只维护最新的三个大版本。如果采纳其他发行版，可能很容易出现和原生版本脱节的情况。
+ - 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 k8s 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
