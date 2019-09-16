@@ -5,9 +5,9 @@ title: KubeOperator 的主要概念
 
 ## 1 部署模型
 
-KubeOperator 支持两种类型的 k8s 集群部署，一种是单主多节点类型，另外一种是多主多节点类型。 
+KubeOperator 支持两种类型的 k8s 集群部署，一种是一主多节点类型，另外一种是多主多节点类型。 
 
--  单主多节点类型：k8s 集群由一个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
+-  一主多节点类型：k8s 集群由一个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
 -  多主多节点类型：k8s 集群由三个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
 
 单主多节点类型适用于开发和测试环境，生产环境请使用多主多节点类型。
@@ -30,7 +30,7 @@ KubeOperator 支持两种部署模式，一种是手动部署，一种是自动�
 
 ![region-zone](https://github.com/KubeOperator/docs/blob/master/website/static/img/region-zone2.png?raw=true)
 
-对于公有云厂商提供的托管 k8s 服务，master 节点由公有云厂商托管并维护，其 3 个master 节点会分布在同个地域下面的 3 个不同可用区上面，实现真正的高可用。
+对于公有云厂商提供的托管 k8s 服务，master 节点由公有云厂商托管并维护，其 3 个master 节点会分布在同个区域下面的 3 个不同可用区上面，实现真正的高可用。
 
 KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware 和 Openstack 等私有云平台上面。例如，在 VMware 云平台下，区域对应为 Datacenter，可用区对应于 cluster，或者 cluster 下面的 resource pool。
 
