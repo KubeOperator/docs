@@ -9,9 +9,9 @@
 // site configuration options.
 
 const siteConfig = {
-    title: 'KubeOperator 在线文档', // Title for your website.
+    title: '在线文档', // Title for your website.
     tagline: 'KubeOperator 在线文档',
-    url: 'https://docs.KubeOperator.io', // Your website URL
+    url: 'https://docs.kubeoperator.io', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
@@ -80,7 +80,7 @@ const siteConfig = {
     docsSideNavCollapsible: true,
 
     //base url for edit button
-    editUrl: 'https://github.com/KubeOperator/docs/edit/master/docs/',
+    //editUrl: 'https://github.com/KubeOperator/docs/edit/master/docs/',
 
     // Show documentation's last update time.
     enableUpdateTime: true,
