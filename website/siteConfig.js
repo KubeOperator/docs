@@ -29,7 +29,7 @@ const siteConfig = {
     docsUrl: '',
 
     //GA settings
-    gaTrackingId: 'UA-139882771-1',
+    gaTrackingId: 'UA-147297392-2',
     gaGtag: true,
     
     // enable scroll to top button
