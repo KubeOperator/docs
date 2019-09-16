@@ -5,9 +5,9 @@ title: KubeOperator 的主要概念
 
 ## 1 部署模型
 
-KubeOperator 支持两种类型的 k8s 集群部署，一种是单主多节点类型，另外一种是多主多节点类型。 
+KubeOperator 支持两种类型的 k8s 集群部署，一种是一主多节点类型，另外一种是多主多节点类型。 
 
--  单主多节点类型：k8s 集群由一个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
+-  一主多节点类型：k8s 集群由一个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
 -  多主多节点类型：k8s 集群由三个 master 节点、一个 daemon 节点、三个及以上 worker 节点组成。
 
 ## 2 部署模式
