@@ -14,7 +14,7 @@ title: 安装 KubeOperator
 
 请自行至百度云盘下载完整离线包，并复制到目标机器的 /tmp 目录下。
 
--  下载链接: https://kubeoperator-1256577600.cos.ap-beijing.myqcloud.com/release/2.0/kubeOperator-release-108.zip
+-  下载链接: https://kubeoperator-1256577600.file.myqcloud.com/release/2.0/kubeOperator-release-108.zip
 -  MD5: a85a6b6096c1783609df8222723469dc
 
 > 注：KubeOperator 完整离线包大小约为 5 G。
