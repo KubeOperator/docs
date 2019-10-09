@@ -150,6 +150,8 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-history1.png?raw=true)
 
+> 注：通过自动模式创建的集群里所有的主机，包括master，daemon和worker主机默认用户名和密码为：root / KubeOperator@2019。
+
 ### 4.4 卸载集群
 
 在集群列表中点击要进行卸载的集群名称，点击【概览】页最下方的【卸载】按钮进行 Kubernetes 集群的卸载。卸载后的集群所有主机将被彻底移除，不会保留在主机列表中。
