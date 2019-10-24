@@ -7,6 +7,7 @@ original_id: userguide-vsphere
 KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式，我们推荐使用自动模式。在自动模式下，用户需要准备软件定义的 IaaS 云平台，比如 VMware vSphere 和 Openstack 等。
 
 本章节以 VMware 作为示例，讲解整个部署过程，整个部署示意图如下图所示：
+
 ![overview](https://github.com/KubeOperator/docs/blob/master/website/static/img/vmware.png?raw=true)
 
 整个流程包括：
@@ -45,7 +46,7 @@ KubeOperator目前的备份功能支持三种不同种类的存储，即 AWS S3�
 
 添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。下图即是添加备份账号详细信息。
 
-以添加 S3 为例，输入名称和AccessKey，SecretKey和端点（对应AWS S3 系统里的 endpoint），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
+以添加 S3 为例，输入名称和 AccessKey，SecretKey 和端点（对应 AWS S3 系统里的 endpoint），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
 
 ![setting-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/setting-backup-add.png?raw=true)
 
@@ -138,6 +139,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 ![cluster-create-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-basicinfo-1.png?raw=true)
 
 离线包列表信息：
+
 ![package-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/package-1.png?raw=true)
 
 离线包详情信息：
