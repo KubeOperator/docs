@@ -227,9 +227,10 @@ KubeOperator 新增功能支持 Webkubectl 。
 
 ![cluster-healthy](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-heathy-1.png?raw=true)
 
+### 5.9 备份/恢复
 
 
-### 5.9 服务暴露
+### 5.10 服务暴露
 
 在集群列表中点击集群名称，点击【F5 BIG-IP】添加 F5 BIG-IP，为Kubernetes配置 F5-BIGIP-CONTROLLER 后，我们可以通过 F5 BIGIP 设备向外网暴露服务。
 
