@@ -203,11 +203,29 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ### 5.6 伸缩
 
+此版本 KubeOperator 支持重点新功能：扩缩容 K8s 集群 worker 节点数量。
+
+KubeOperator 控制台【集群】页，单击一个要扩缩容的集群名称，即【概览】页面，Worker 状态栏左下方单击【伸缩】，在弹出框中选中扩容或者缩容的 worker 节点数量。
+
+![cluster-expand-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-expand.png?raw=true)
+
+确认后，会自动转到【任务】页面，实时查看扩缩容进度，完成后可以看到如下图所示信息。
+
+![cluster-expand-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-expand-add.png?raw=true)
+
 
 ### 5.7 Webkubectl
 
+KubeOperator 新增功能支持 Webkubectl 。
+
+![cluster-webkubectl](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-webkubectl.png?raw=true)
+
 
 ### 5.8 健康状态
+
+在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括 Control Manager，Schedule，etcd 和 nodes 的实时健康状态以及过去半年 K8s 集群运行状态。
+
+![cluster-healthy](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-healthy-1.png?raw=true)
 
 
 ### 5.9 服务暴露
