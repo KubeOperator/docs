@@ -1,6 +1,7 @@
 ---
-id: introduction
+id: version-2.1.0-introduction
 title: 关于 KubeOperator
+original_id: introduction
 ---
 
 ## 1 什么是 KubeOperator？

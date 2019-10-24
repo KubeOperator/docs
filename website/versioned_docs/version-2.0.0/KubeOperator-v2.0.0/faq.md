@@ -1,6 +1,7 @@
 ---
-id: faq
+id: version-2.0.0-faq
 title: 常见问题
+original_id: faq
 ---
 
 ## 1 KubeOperator 的定位是什么？

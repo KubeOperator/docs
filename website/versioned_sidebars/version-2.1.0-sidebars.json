@@ -1,0 +1,14 @@
+{
+  "version-2.1.0-docs": {
+    "KubeOperator-v2.1.0": [
+      "version-2.1.0-KubeOperator-v2.1.0/introduction",
+      "version-2.1.0-KubeOperator-v2.1.0/concept",
+      "version-2.1.0-KubeOperator-v2.1.0/installation",
+      "version-2.1.0-KubeOperator-v2.1.0/userguide-vsphere",
+      "version-2.1.0-KubeOperator-v2.1.0/userguide-manual",
+      "version-2.1.0-KubeOperator-v2.1.0/support",
+      "version-2.1.0-KubeOperator-v2.1.0/faq"
+    ],
+    "References": []
+  }
+}

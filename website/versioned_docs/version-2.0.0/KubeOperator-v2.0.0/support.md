@@ -1,6 +1,7 @@
 ---
-id: support
+id: version-2.0.0-support
 title: 技术支持
+original_id: support
 ---
 
 ## 1 提交 Github Issue

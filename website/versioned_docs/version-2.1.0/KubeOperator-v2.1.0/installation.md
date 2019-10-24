@@ -1,6 +1,7 @@
 ---
-id: installation
+id: version-2.1.0-installation
 title: 安装 KubeOperator
+original_id: installation
 ---
 
 ## 1 环境要求

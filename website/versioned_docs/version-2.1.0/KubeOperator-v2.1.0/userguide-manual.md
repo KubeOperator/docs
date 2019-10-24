@@ -1,6 +1,7 @@
 ---
-id: userguide-manual
+id: version-2.1.0-userguide-manual
 title: 在自行准备的主机上部署 k8s 集群
+original_id: userguide-manual
 ---
 
 KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式。自动模式下，用户需要自行准备主机和 NFS 作为持久化存储。手动模式下的 k8s 集群部署流程为：

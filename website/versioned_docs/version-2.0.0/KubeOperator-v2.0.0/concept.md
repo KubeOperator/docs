@@ -1,6 +1,7 @@
 ---
-id: concept
+id: version-2.0.0-concept
 title: KubeOperator 的主要概念
+original_id: concept
 ---
 
 ## 1 部署模型
