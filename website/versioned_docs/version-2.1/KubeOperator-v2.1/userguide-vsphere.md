@@ -1,5 +1,5 @@
 ---
-id: version-2.1.0-userguide-vsphere
+id: version-2.1-userguide-vsphere
 title: 在 vSphere 平台上部署 k8s 集群
 original_id: userguide-vsphere
 ---

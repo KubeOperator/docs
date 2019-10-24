@@ -87,7 +87,7 @@ function Versions(props) {
                         <a
                           href={`https://docs.kubeoperator.io/${
                             props.language ? props.language + '/' : ''
-                          }${version}/KubeOperator-v2.0.0/introduction`}>
+                          }${version}/KubeOperator-v2.0/introduction`}>
                           Documentation
                         </a>
                       </td>

@@ -1,5 +1,5 @@
 ---
-id: version-2.0.0-concept
+id: version-2.0-concept
 title: KubeOperator 的主要概念
 original_id: concept
 ---

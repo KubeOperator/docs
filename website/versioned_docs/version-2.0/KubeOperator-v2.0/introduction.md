@@ -1,5 +1,5 @@
 ---
-id: version-2.0.0-introduction
+id: version-2.0-introduction
 title: 关于 KubeOperator
 original_id: introduction
 ---

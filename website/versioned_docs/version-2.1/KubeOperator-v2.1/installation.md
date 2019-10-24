@@ -1,5 +1,5 @@
 ---
-id: version-2.1.0-installation
+id: version-2.1-installation
 title: 安装 KubeOperator
 original_id: installation
 ---

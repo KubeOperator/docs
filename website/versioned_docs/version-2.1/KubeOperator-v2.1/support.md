@@ -1,5 +1,5 @@
 ---
-id: version-2.1.0-support
+id: version-2.1-support
 title: 技术支持
 original_id: support
 ---

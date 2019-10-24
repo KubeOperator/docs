@@ -1,5 +1,5 @@
 ---
-id: version-2.0.0-userguide-manual
+id: version-2.0-userguide-manual
 title: 在自行准备的主机上部署 k8s 集群
 original_id: userguide-manual
 ---
