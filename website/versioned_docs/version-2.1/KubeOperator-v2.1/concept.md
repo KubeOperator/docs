@@ -1,3 +1,9 @@
+---
+id: version-2.1-concept
+title: KubeOperator 的主要概念
+original_id: concept
+---
+
 ## 1 部署模型
 
 KubeOperator 支持两种类型的 k8s 集群部署，一种是一主多节点类型，另外一种是多主多节点类型。 
