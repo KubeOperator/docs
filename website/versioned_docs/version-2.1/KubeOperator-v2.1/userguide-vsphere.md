@@ -225,7 +225,7 @@ KubeOperator 新增功能支持 Webkubectl 。
 
 在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括 Control Manager，Schedule，etcd 和 nodes 的实时健康状态以及过去半年 K8s 集群运行状态。
 
-![cluster-healthy](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-healthy-1.png?raw=true)
+![cluster-healthy](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-heathy-1.png?raw=true)
 
 
 ### 5.9 服务暴露
