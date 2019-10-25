@@ -15,8 +15,8 @@ original_id: installation
 
 请自行至百度云盘下载完整离线包，并复制到目标机器的 /tmp 目录下。
 
--  下载链接: https://kubeoperator-1256577600.file.myqcloud.com/release/2.0/kubeOperator-release-108.zip
--  MD5: a85a6b6096c1783609df8222723469dc
+-  下载链接: 
+-  MD5: 
 
 > 注：KubeOperator 完整离线包大小约为 5 G。
 
@@ -27,7 +27,7 @@ $ cd /tmp
 # 解压离线包
 $ tar zxvf kubeOperator-v2.1.xx-release.tar.gz
 # 进入项目目录
-$ cd kubeOperator-v2.1-release
+$ cd kubeOperator-v2.1.xx-release
 # 运行安装脚本
 $ ./kubeopsctl install
 # 查看 KubeOperator 状态
