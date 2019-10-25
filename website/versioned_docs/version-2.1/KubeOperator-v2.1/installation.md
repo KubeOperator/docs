@@ -25,13 +25,11 @@ original_id: installation
 ``` bash
 $ cd /tmp
 # 解压离线包
-$ unzip kubeOperator-release-xx.zip
+$ tar zxvf kubeOperator-v2.1.xx-release.tar.gz
 # 进入项目目录
-$ cd kubeOperator-release
+$ cd kubeOperator-v2.1-release
 # 运行安装脚本
 $ ./kubeopsctl install
-# 启动 KubeOperator 
-$ systemctl start kubeops
 # 查看 KubeOperator 状态
 $ systemctl status kubeops
 ```
