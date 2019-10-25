@@ -70,9 +70,11 @@ Zone: 与 公有云中的 AZ 概念相似，可以简单理解为 Region 中具�
 
 ![zone-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/zone-basicinfo.png?raw=true)
 
-选择可用区配置参数时，需要选择计算集群，资源池，存储类型以及网络适配器等信息，这些信息依赖于 vCenter 环境配置。最后单击【检测】按钮，校验输入的起始 IP 地址和子网掩码等信息格式是否正确，检测通过之后才可以单击【完成】。添加成功后会有一个初始化的过程，状态变为就绪后可以选择该可用区创建部署计划。
+选择可用区配置参数时，需要选择计算集群，资源池，存储类型以及网络适配器等信息，这些信息依赖于 vCenter 环境配置。最后单击【检测】按钮，校验输入的起始 IP 地址和子网掩码等信息格式是否正确，检测通过之后才可以单击【完成】。
 
 ![zone-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/zone-basicinfo-1.png?raw=true)
+
+添加成功后会有一个初始化的过程，状态变为就绪后可以选择该可用区创建部署计划。
 
 ![zone-3](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/zone-status.png?raw=true)
 
@@ -267,9 +269,17 @@ KubeOperator支持 K8s 升级。
 
 ![cluster-upgrade-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade.png?raw=true)
 
+单击【确认】后，系统自动跳转到【任务】页，可以看到升级进度和详细 log 信息。
+
 ![cluster-upgrade-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade-1.png?raw=true)
 
+升级完成后，可以看到如下信息。
+
 ![cluster-upgrade-3](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade-2.png?raw=true)
+
+同时在集群【历史】页，可以通过单击【详情】按钮查看升级的所有 log 信息。
+
+![cluster-upgrade-4](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/log.png?raw=true).com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade-2.png?raw=true)
 
 ### 3.3 集群伸缩
 
@@ -284,5 +294,7 @@ KubeOperator 控制台【集群】页，单击一个要扩缩容的集群名称�
 ![cluster-expand-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-expand-1.jpg?raw=true)
 
 ### 3.4 集群备份
+
+在集群【备份】页面，可以看到，KubeOperator 支持的备份策略，包括备份间隔，复本保留分数以及可以开启户禁用备份策略，实现集群备份和恢复功能。
 
 ![cluster-backup](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-backup.png?raw=true)
