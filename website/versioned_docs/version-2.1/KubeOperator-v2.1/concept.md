@@ -38,7 +38,7 @@ KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware 和 O
 -  如果用户只有一个 vSphere 集群，那么可以在集群下面建立三个 resource pool，每个resource pool 对应于一个可用区。
 -  如果用户有三个 vSphere 集群，那么每个集群对应于一个可用区。
 
-> 注：vSAN 集群不能被多个 vSphere 集群共享，所以 3 个 vSphere 集群，持久化存储仅支持集中存储。
+> 注：vSAN 集群不能被多个 vSphere 集群共享，所以 3 个 vSphere 集群，持久化存储仅支持集中存储。 具体请参考：https://docs.vmware.com/en/VMware-Enterprise-PKS/1.5/vmware-enterprise-pks-15/GUID-vsphere-persistent-storage.html
 
 ## 5  Kubernetes 离线安装包
 
