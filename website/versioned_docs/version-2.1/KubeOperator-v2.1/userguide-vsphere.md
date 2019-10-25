@@ -1,10 +1,10 @@
 ---
 id: version-2.1-userguide-vsphere
-title:  在 vSphere 平台上规划、部署及管理 k8s 集群
+title:  在 vSphere 平台上规划、部署及管理 K8s 集群
 original_id: userguide-vsphere
 ---
 
-KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式，我们推荐使用自动模式。在自动模式下，用户需要准备软件定义的 IaaS 云平台，比如 VMware vSphere 和 Openstack 等。自动模式下 kubernetes 集群的规划、部署和管理包含以下内容：
+KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式，我们推荐使用自动模式。在自动模式下，用户需要准备软件定义的 IaaS 云平台，比如 VMware vSphere 和 Openstack 等。自动模式下 Kubernetes 集群的规划、部署和管理包含以下内容：
 
 - 集群规划 （Day 0）
   - 系统设置 
@@ -49,9 +49,9 @@ KubeOperator 控制台 URL：http://host-ip ，将 host-ip 改为安装 KubeOper
 
 ### 2.2 备份
 
-KubeOperator目前的备份功能支持三种不同种类的存储，即 AWS S3、aliyun oss 和 azure 存储。为集群备份和恢复提供存储支持，实现备份和恢复功能。
+KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3、aliyun oss 和 Azure 存储。为集群备份和恢复提供存储支持，实现备份和恢复功能。
 
-添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。下图即是添加备份账号详细信息。
+添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 Azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。下图即是添加备份账号详细信息。
 
 以添加 S3 为例，输入名称和 AccessKey，SecretKey 和端点（对应 AWS S3 系统里的 endpoint），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
 
@@ -63,13 +63,12 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 ### 3.1 新建 NFS
 
-首先要准备一个主机节点单独作为 NFS 存储资源，可以是虚拟机或物理机，操作系统要求：CentOS 7.6 Minimal，最低硬件配置为 2U/2G，磁盘大小建议 xxx G？，在kubeoperator控制台【主机】页面添加该主机。
+首先要准备一个主机节点单独作为 NFS 存储资源，可以是虚拟机或物理机，操作系统要求：CentOS 7.6 Minimal，最低硬件配置为 2核2G，磁盘大小建议 500 G，在 KubeOperator 控制台【主机】页面添加该主机。
 
 详细步骤：
   
 - 1 KubeOperator 控制台【主机】页面，添加主机，注意这个主机不可以作为 K8s 集群的节点；
-- 2 ssh登录该主机节点，为 NFS 新建一个挂载路径，添加存储使用(例如：#mkdir nfs，挂载路径为：/nfs)；
-- 3 KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，在主机下拉列表，选择上述第一步添加的 NFS 主机，如果外部所有网络可访问，白名单选项需要填 ” * “，挂载路径：/nfs，提交。
+- 2 KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，在主机下拉列表，选择上述第一步添加的 NFS 主机，如果 NFS 无网络访问限制，白名单选项可以填 ” * “，挂载路径可按需填写，如 /nfs，点击【提交】。NFS 安装成功后，可以在 NFS 列表中看到该存储处于运行中状态。
 
 添加成功后，创建集群时如果选择 NFS 存储，可以看到该 NFS 存储。
 
@@ -77,8 +76,8 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 ### 3.2 录入 NFS
 
-自行准备一个物理机或虚拟机作为 k8s 集群的 NFS 存储服务器。
-【存储】，单击【添加】选中“录入 NFS” ，输入存储名称，白名单选项需要填 “ * ”，服务地址输入准备好的 NFS 存储主机 IP 地址，输入设置好的挂载路径，提交
+自行准备一个物理机或虚拟机作为 K8s 集群的 NFS 存储服务器。
+【存储】，单击【添加】选中“录入 NFS” ，输入存储名称，白名单选项可填 “ * ”，服务地址输入准备好的 NFS 存储主机 IP 地址，输入设置好的挂载路径，提交
  。
 ![storage-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/nfs-manu.png?raw=true)
 
@@ -141,7 +140,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 #### 5.2.1 基本信息
 
 点击【集群】页的【添加】按钮进行集群的创建。在【基本信息】里输入集群的名称，选择该集群所要部署的 Kubernetes 版本和部署模式。
-在离线包列表中可以查看 KubeOperator 当前所提供的 Kubernetes 安装版本详细信息。在后续进行 Kubernetes 集群部署时，可以从这些版本中选择其一进行部署（当前支持1.15.0, 1.15.4，后续会继续跟随 Kubernetes 社区发布离线包）。
+在离线包列表中可以查看 KubeOperator 当前所提供的 Kubernetes 安装版本详细信息。在后续进行 Kubernetes 集群部署时，可以从这些版本中选择其一进行部署（当前支持1.15.4, 1.15.5，后续会继续跟随 Kubernetes 社区发布离线包）。
 
 ![cluster-create-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-basicinfo-1.png?raw=true)
 
@@ -155,7 +154,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 #### 5.2.2 部署计划
 
-选择 Kubernetes 集群的部署计划和 Worker 节点数量，至少 3 个 Worker 节点，Worker 节点配置建议 4 U / 16 G，请保证 vSphere 环境资源充足，尤其是内存资源。
+选择 Kubernetes 集群的部署计划和 Worker 节点数量，至少 3 个 Worker 节点，Worker 节点配置建议 4 核 16 G，请保证 vSphere 环境资源充足，尤其是内存资源。
 
 ![cluster-create-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-plan-1.png?raw=true)
 
@@ -169,7 +168,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 #### 5.2.4 配置存储
 
-【添加存储】环节，选择外部持久化存储 vSan 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是 自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见3.1和3.2节部分。
+【添加存储】环节，选择外部持久化存储 vSan 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是 自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 3.1 和 3.2 节部分。
 
 ![cluster-create-4](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-confstor-1.png?raw=true)
 
