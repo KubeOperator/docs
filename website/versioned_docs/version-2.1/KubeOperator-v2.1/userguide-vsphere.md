@@ -1,23 +1,30 @@
 ---
 id: version-2.1-userguide-vsphere
-title: 在 vSphere 平台上部署 k8s 集群
+title:  在 vSphere 平台上规划、部署及管理 k8s 集群
 original_id: userguide-vsphere
 ---
 
-KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式，我们推荐使用自动模式。在自动模式下，用户需要准备软件定义的 IaaS 云平台，比如 VMware vSphere 和 Openstack 等。
+KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式，我们推荐使用自动模式。在自动模式下，用户需要准备软件定义的 IaaS 云平台，比如 VMware vSphere 和 Openstack 等。自动模式下 kubernetes 集群的规划、部署和管理包含以下内容：
+
+- 集群规划 （Day 0）
+  - 系统设置 
+  - 创建部署计划
+  - 准备存储
+- 集群部署（Day 1）
+  - 创建集群
+  - 部署集群
+  - 服务暴露
+- 集群运维和变更（Day 2）
+  - 集群运维
+  - 集群升级
+  - 集群伸缩
+  - 集群备份
 
 本章节以 VMware 作为示例，讲解整个部署过程，整个部署示意图如下图所示：
 
 ![overview](https://github.com/KubeOperator/docs/blob/master/website/static/img/vmware.png?raw=true)
 
-整个流程包括：
 
-- 1 登录：登录 KubeOperator Web 控制台;
-- 2 系统设置：设置主机IP和集群域名后缀，添加备份账号；
-- 3 创建 NFS 存储：添加新建 NFS 或录入已有的 NFS；（可选项，如果集群使用 nfs 存储需要添加，如果使用 vSan 存储不需要添加）；
-- 4 创建部署计划：创建区域、可用区和部署计划；
-- 5 创建和部署集群：创建集群、配置集群和部署集群；
-- 6 管理集群：访问 Dashboard、监控、Registry、Weave Scope 等。
 
 ## 1 登录
 
