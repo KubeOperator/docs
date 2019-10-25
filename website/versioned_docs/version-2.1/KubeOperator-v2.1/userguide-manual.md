@@ -120,7 +120,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 ![storage-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/nfs-add-share.png?raw=true)
 
 
-## 2 集群部署
+## 2 集群部署（Day 1）
 
 ### 2.1 创建集群
 
@@ -193,7 +193,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 ![cluster-f5](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/f5-bigip-1.png?raw=true)
 
 
-## 3 集群运维和变更
+## 3 集群运维和变更（Day 2）
 
 ### 3.1 集群运维
 
