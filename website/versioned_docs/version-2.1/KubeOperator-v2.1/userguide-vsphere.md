@@ -200,6 +200,16 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ### 5.5 升级
 
+KubeOperator支持 K8s 升级。
+
+在集群列表中点击要进行升级的集群名称，点击【概览】页最下方的【升级】按钮进行 Kubernetes 集群的升级。
+
+![cluster-upgrade-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade.png?raw=true)
+
+![cluster-upgrade-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade-1.png?raw=true)
+
+![cluster-upgrade-3](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade-2.png?raw=true)
+
 
 ### 5.6 伸缩
 
