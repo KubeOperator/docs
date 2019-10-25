@@ -6,20 +6,20 @@ original_id: userguide-manual
 
 KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式，另外一种是自动模式。手动模式下，用户需要自行准备主机和 NFS 作为持久化存储。手动模式下 Kubernetes 集群的规划、部署和管理包含以下内容：
 
-- 集群规划 （Day 0）
+- 集群规划 （ Day 0）
   - 系统设置 
   - 准备主机
   - 准备存储
-- 集群部署（Day 1）
+- 集群部署（ Day 1）
   - 创建集群
   - 部署集群
   - 服务暴露
-- 集群运维和变更（Day 2）
+- 集群运维和变更（ Day 2）
   - 集群运维
   - 集群伸缩
   - 集群备份
 
-## 1 集群规划（Day 0）
+## 1 集群规划（ Day 0）
 
 ### 1.1 系统设置
 
@@ -49,7 +49,7 @@ KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3
 
 添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 Azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。下图即是添加备份账号详细信息。
 
-以添加 S3 为例，输入名称和 AccessKey，SecretKey 和端点（对应 AWS S3 系统里的 endpoint），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
+以添加 S3 为例，输入名称和 AccessKey，SecretKey 和端点（对应 AWS S3 系统里的 endpoint ），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
 
 ![setting-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/setting-backup.png?raw=true)
 
@@ -88,9 +88,11 @@ KubeOperator 支持一主一节点和多主多节点的部署和管理，对于�
 
 #### 1.2.2 添加主机
 
-在左侧导航菜单中选择【主机】，进入【主机】页后可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。点击【添加】按钮添加新的主机。在输入主机名称、IP、选择凭据后，点击【提交】按钮即可完成一台主机的添加。
+在左侧导航菜单中选择【主机】，进入【主机】页后可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。主机可分为集群的 master 节点，worker 节点以及单独为自动模式或手动模式部署的集群提供外部持久化存储的 NFS 存储节点三种。下面以添加集群 master 节点为例。
 
 ![host-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/host-list.jpg?raw=true)
+
+在【主机】页点击【添加】按钮添加主机。在输入主机名称、IP、选择凭据后，点击【提交】按钮即可完成一台主机的添加。
 
 ![host-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/host-add.jpg?raw=true)
 
