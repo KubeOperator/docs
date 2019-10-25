@@ -239,6 +239,7 @@ KubeOperator 新增功能支持 Webkubectl 。
 
 ### 5.9 备份/恢复
 
+![cluster-backup](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-backup.png?raw=true)
 
 ### 5.10 服务暴露
 
