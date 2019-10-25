@@ -39,3 +39,19 @@ $ systemctl status kubeops
 KubeOperator 默认监听 HTTP 80 端口。安装完毕后，请使用浏览器登录 KubeOperator 管理控制台。
 
 > 注：KubeOperator 默认用户名和密码为: admin / kubeoperator@admin123
+
+## 5 升级 KubeOperator
+
+``` bash
+$ cd /tmp
+#下载新版本离线包
+$ wget http://xxxxxxx.kubeOperator-v2.1.xx-release.tar.gz
+# 解压离线包
+$ tar zxvf kubeOperator-v2.1.xx-release.tar.gz
+# 进入项目目录
+$ cd kubeOperator-v2.1.xx-release
+# 运行升级脚本
+$ ./kubeopsctl upgrade
+# 查看 KubeOperator 状态
+$ systemctl status kubeops
+```
