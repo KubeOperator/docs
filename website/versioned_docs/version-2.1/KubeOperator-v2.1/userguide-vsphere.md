@@ -125,7 +125,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
  
 在左侧导航菜单中选择【集群】，进入【集群】页后可以看到已添加集群的详细信息，包括 集群部署的 Kubernetes 版本、部署模式、节点数及运行状态等。
 
-![cluster-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-2.png?raw=true)
+![cluster-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-list.png?raw=true)
 
 ### 5.2 创建集群
 
