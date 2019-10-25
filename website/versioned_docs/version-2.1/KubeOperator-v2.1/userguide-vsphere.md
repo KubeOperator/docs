@@ -279,7 +279,7 @@ KubeOperator支持 K8s 升级。
 
 同时在集群【历史】页，可以通过单击【详情】按钮查看升级的所有 log 信息。
 
-![cluster-upgrade-4](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/log.png?raw=true).com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade-2.png?raw=true)
+![cluster-upgrade-4](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/log.png?raw=true)
 
 ### 3.3 集群伸缩
 
