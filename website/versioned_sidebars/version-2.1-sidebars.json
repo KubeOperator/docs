@@ -6,8 +6,8 @@
       "version-2.1-KubeOperator-v2.1/installation",
       "version-2.1-KubeOperator-v2.1/userguide-manual",
       "version-2.1-KubeOperator-v2.1/userguide-vsphere",
-      "version-2.1-KubeOperator-v2.1/support",
-      "version-2.1-KubeOperator-v2.1/faq"
+      "version-2.1-KubeOperator-v2.1/faq",
+      "version-2.1-KubeOperator-v2.1/support"
     ],
     "References": []
   }
