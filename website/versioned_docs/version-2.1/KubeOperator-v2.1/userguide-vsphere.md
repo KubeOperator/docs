@@ -42,7 +42,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
 
 #### 1.2.1 创建区域(Region)
 
-Region：与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 vSphere 体系中我们使用 DataCenter 实现 Region 的划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere。
+Region：与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 vSphere 体系中我们使用 DataCenter 实现 Region 的划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere 和 Openstack。
 
 ![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/region-basicinfo.png?raw=true)
 
