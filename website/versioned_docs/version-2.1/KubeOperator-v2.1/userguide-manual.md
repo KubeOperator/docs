@@ -287,6 +287,13 @@ KubeOperator 支持 K8s 升级。
 
 ### 3.3 集群备份
 
+KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3、aliyun oss 和 Azure 存储。为集群备份和恢复提供存储支持，实现备份和恢复功能。
+
+添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 Azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。
+以添加 S3 为例，在【系统设置】的【备份】Tab 也中输入名称和 AccessKey，SecretKey 和端点（对应 AWS S3 系统里的 endpoint），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
+
+![setting-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/setting-backup.png?raw=true)
+
 在集群【备份】页面，可以看到，KubeOperator 支持的备份策略，包括备份间隔，复本保留分数以及可以开启户禁用备份策略，实现集群备份和恢复功能。
 
 ![cluster-backup](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-backup.png?raw=true)
