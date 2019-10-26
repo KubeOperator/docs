@@ -1,6 +1,6 @@
 ---
 id: version-2.1-userguide-vsphere
-title:  在 vSphere 平台上规划、部署及管理 K8s 集群
+title:  在 vSphere 平台上规划、部署及管理 K8S 集群
 original_id: userguide-vsphere
 ---
 
