@@ -105,7 +105,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 ![storage-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/nfs-add-new.png?raw=true)
 
-> 注：自行搭建的 NFS 服务仅适合在开发测试环境使用。KubeOperator 还支持录入已有的 NFS 存储（比如专业的 NAS 存储）。单击【添加】选中“录入 NFS” ，输入存储名称，白名单选项可填 “ * ”，服务地址输入准备好的 NFS IP 地址，输入设置好的挂载路径，提交即可。
+> 注：自行搭建的 NFS 服务仅适合在开发测试环境使用。KubeOperator 还支持录入已有的 NFS 存储（比如专业的 NAS 存储）。单击【添加】选中“录入 NFS” ，输入存储名称、白名单选项、服务地址、挂载路径，提交即可。
 
 ## 2 集群部署（Day 1）
 
