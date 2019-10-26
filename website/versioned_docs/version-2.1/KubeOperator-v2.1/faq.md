@@ -52,3 +52,16 @@ KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes �
 
  - Kubernetes 迭代很快，且只维护最新的三个大版本。如果采纳其他发行版，可能很容易出现和原生版本脱节的情况。
  - 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 k8s 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
+
+ ## 6 KubeOperator 支持哪些持久化存储？
+
+ KubeOperator 支持三类存储：
+
+ - NFS 存储：手动模式和自动模式下的集群都支持 NFS 作为持久化存储。
+ - 自动模式下，KubeOperator 通过 VMware 提供的 vSphere Cloud Provider 支持企业级存储，包括 具体请参考： https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/overview.html#vsphere-storage-concepts
+ - 自动模式，自动模式下，KubeOperator 通过 Openstack 提供的 Openstack Cloud Provider 对接 Cinder。Cinder 支持的存储种类包括：https://wiki.openstack.org/wiki/CinderSupportMatrix
+
+Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 平台为例，各种存储选项可以参考这篇文章：
+
+ https://docs.vmware.com/en/VMware-Enterprise-PKS/1.5/vmware-enterprise-pks-15/GUID-vsphere-persistent-storage.html
+
