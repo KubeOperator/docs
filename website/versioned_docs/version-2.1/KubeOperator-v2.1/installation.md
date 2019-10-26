@@ -13,10 +13,9 @@ original_id: installation
 
 ## 2 下载离线包
 
-请自行至百度云盘下载完整离线包，并复制到目标机器的 /tmp 目录下。
+请自行下载 KubeOperator 完整离线包，并复制到目标机器的 /tmp 目录下。
 
--  下载链接: 
--  MD5: 
+-  下载链接: https://github.com/KubeOperator/KubeOperator/releases
 
 > 注：KubeOperator 完整离线包大小约为 5 G。
 
