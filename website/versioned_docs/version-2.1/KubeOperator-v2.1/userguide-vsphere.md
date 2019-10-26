@@ -1,6 +1,6 @@
 ---
 id: version-2.1-userguide-vsphere
-title:  在 vSphere 平台上规划、部署及管理 k8s 集群
+title:  在 vSphere 平台上规划、部署及管理 K8s 集群
 original_id: userguide-vsphere
 ---
 
@@ -20,7 +20,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
   - 集群伸缩
   - 集群备份
 
-本章节以 VMware vSphere 平台作为示例，讲解整个 k8s 集群的规划、部署及管理过程。部署示意图如下图所示：
+本章节以 VMware vSphere 平台作为示例，讲解整个 K8s 集群的规划、部署及管理过程。部署示意图如下图所示：
 
 ![overview](https://github.com/KubeOperator/docs/blob/master/website/static/img/vmware.png?raw=true)
 
@@ -32,7 +32,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
 
 #### 1.1.1 主机 IP 和集群域名后缀
 
-主机 IP 指 KubeOperator 机器自身的 IP。KubeOperator 所管理的集群将使用该 IP 来访问 KubeOperator。
+主机 IP 指安装 KubeOperator 机器自身的 IP。KubeOperator 所管理的集群将使用该 IP 来访问 KubeOperator。
 
 集群域名后缀为集群节点访问地址的后缀，集群暴露出来的对外服务的 URL 都将以该域名后缀作为访问地址后缀。例如: grafana.apps.cluster.f2c.com。
 
@@ -42,8 +42,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
 
 KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3、aliyun oss 和 Azure 存储。为集群备份和恢复提供存储支持，实现备份和恢复功能。
 
-添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 Azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。下图即是添加备份账号详细信息。
-
+添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 Azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。
 以添加 S3 为例，输入名称和 AccessKey，SecretKey 和端点（对应 AWS S3 系统里的 endpoint），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
 
 ![setting-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/setting-backup.png?raw=true)
@@ -90,7 +89,7 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ![plan-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/creat-plan-conf.png?raw=true)
 
-> 注：如果多主多节点集群选择多个可用区的部署计划，创建集群时不支持 vsan 存储。
+> 注：如果多主多节点集群选择多个可用区的部署计划，创建集群时不支持 vSAN 存储。
 
 ### 1.3 准备存储
 
@@ -102,8 +101,9 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 详细步骤：
   
-- 1 KubeOperator 控制台【主机】页面，添加主机，注意这个主机不可以作为 K8s 集群的节点；
-- 2 KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，在主机下拉列表，选择上述第一步添加的 NFS 主机，如果 NFS 无网络访问限制，白名单选项可以填 ” * “，挂载路径可按需填写，如 /nfs，点击【提交】。NFS 安装成功后，可以在 NFS 列表中看到该存储处于运行中状态。
+- 1 KubeOperator 控制台 【系统】页面，单击【凭据】，为添加主机添加凭据信息，即登录主机的用户名和密码。
+- 2 【主机】页面，添加主机，注意这个主机不可以作为 K8s 集群的任何节点；
+- 3 【存储】页面，单击【添加】，选中新建 NFS ，在主机下拉列表，选择上述第一步添加的 NFS 主机，如果 NFS 无网络访问限制，白名单选项可以填 ” * “，挂载路径可按需填写，如 /nfs，点击【提交】。NFS 安装成功后，可以在 NFS 列表中看到该存储处于运行中状态。
 
 添加成功后，创建集群时如果选择 NFS 存储，可以看到该 NFS 存储。
 
@@ -155,7 +155,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 #### 2.1.4 配置存储
 
-【添加存储】环节，选择外部持久化存储 vSan 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是 自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 3.1 和 3.2 节部分。
+【添加存储】环节，选择外部持久化存储 vSAN 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是 自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 3.1 和 3.2 节部分。
 
 ![cluster-create-4](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-storage.jpg?raw=true)
 
@@ -167,7 +167,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 ### 2.2 部署集群
 
-在集群列表中点击要进行部署的集群名称，默认展示的是该集群的【概览】信息。【概览】页中展示了 Kubernetes 集群的诸多详情，包括集群状态，Worker 状态集群描述信息等。点击【概览】页最下方的【安装】按钮进行 Kubernetes 集群的部署。
+在集群列表中点击要部署的集群名称，默认展示的是该集群的【概览】信息。【概览】页中展示了 Kubernetes 集群的诸多详情，包括集群状态，Worker 状态集群描述信息等。点击【概览】页最下方的【安装】按钮进行 Kubernetes 集群的部署。
 
 ![cluster-deploy](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-summary.jpg?raw=true)
 
@@ -176,11 +176,11 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 ![cluster-deploy-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-install-1.jpg?raw=true)
 
 
-如果是内网环境的话，一个典型的 4 节点集群的部署大概需要10分钟左右的时间,【历史】页可以看到详情部署时间信息。在出现类似下图的信息后，表明集群已部署成功：
+如果是内网环境的话，一个典型的 4 节点集群的部署大概需要10分钟左右的时间,【历史】页可以看到详情部署时间信息。在出现类似下图的信息后，表明集群已部署成功。
 
 ![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-install-2.png?raw=true)
 
-【历史】页可以看到所有完成的任务详情信息。
+【历史】页可以看到所有完成的任务详情信息，包括部署过程中的日志详情。
 
 ![cluster-deploy-3](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-history.jpg?raw=true)
 
@@ -188,7 +188,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 ### 2.3 服务暴露
 
-在集群列表中点击集群名称，点击【F5 BIG-IP】添加 F5 BIG-IP，为Kubernetes配置 F5-BIGIP-CONTROLLER 后，我们可以通过 F5 BIGIP 设备向外网暴露服务。
+在集群列表中点击集群名称，点击【F5 BIG-IP】添加 F5 BIG-IP，为 Kubernetes 配置 F5-BIGIP-CONTROLLER 后，我们可以通过 F5 BIGIP 设备向外网暴露服务。
 
 ![cluster-f5](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/f5-bigip-1.png?raw=true)
 
@@ -229,23 +229,23 @@ Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。
 
 ##### 3.1.1.4 访问 Prometheus
 
-Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。
+Prometheus 用来对整个 Kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。
 
 ![prometheus-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/prometheus-1.png?raw=true)
 
 ##### 3.1.1.5 访问 Traefik
 
-Traefik 用来作为 kubernetes 集群的HTTP反向代理、负载均衡工具。点击 Trafik 下方的【转到】按钮即可访问 Traefik 控制台。
+Traefik 用来作为 Kubernetes 集群的HTTP反向代理、负载均衡工具。点击 Traefik 下方的【转到】按钮即可访问 Traefik 控制台。
 
 ![prometheus-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/traefik.png?raw=true)
 
 ##### 3.1.1.6 访问 Weave Scope
 
-Weave Scope 用来监控、可视化和管理 kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。
+Weave Scope 用来监控、可视化和管理 Kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。
 
 ![weave-scope-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-2.png?raw=true)
 
-点击顶部的【Host】，可以远程shell登录各个节点，还可以看到主机的详细信息。
+点击顶部的【Host】，可以远程 shell 登录各个节点，还可以看到主机的详细信息。
 
 ![weave-scope-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-1.png?raw=true)
 
