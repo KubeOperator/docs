@@ -51,6 +51,7 @@ function Versions(props) {
               )}
             </tbody>
           </table>
+        </table>
         </div>
       </Container>
     </div>
