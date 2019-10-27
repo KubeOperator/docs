@@ -1,7 +1,7 @@
 ---
-id: version-2.1-video
-title: 视频演示
-original_id: video
+id: version-2.1-screenshot
+title: 八、功能截屏
+original_id: screenshot
 ---
 
 从 Kubernetes 集群 Day 0 规划，到 Day 1 部署，到 Day 2 运维和变更，详细展示 KubeOperator 的功能。
