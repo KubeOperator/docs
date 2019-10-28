@@ -72,15 +72,15 @@ Zone: 与 公有云中的 AZ 概念相似，可以简单理解为 Region 中具�
 #### 1.2.3 创建部署计划(Plan)
 
 Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念。
-这里以单主多节点类型举例。
+这里以一主多节点类型举例。
 
 ![plan-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/create-plan-basicinfo.png?raw=true)
 
-部署计划配置包括选择可用区，可以单选或多选可用区，并设置 Master 节点，Worker 节点的规格，即 CPU，内存和磁盘大小。
+部署计划配置包括选择可用区（可用区可以单选或多选），并设置 Master 节点，Worker 节点的规格，即 CPU，内存和磁盘。
 
 ![plan-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/creat-plan-conf.png?raw=true)
 
-> 注：如果多主多节点集群选择多个可用区的部署计划，创建集群时不支持 vSAN 存储。
+> 注：多主多节点集群可以选择多个可用区的部署计划，该集群创建时不支持使用 vSAN 存储。
 
 ### 1.3 准备存储
 
@@ -132,7 +132,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 #### 2.1.2 部署计划
 
-选择 Kubernetes 集群的部署计划和 Worker 节点数量，至少 3 个 Worker 节点，Worker 节点配置建议 4 核 16 G，请保证 vSphere 环境资源充足，尤其是内存资源。
+选择 Kubernetes 集群的部署计划和 Worker 节点数量，至少 1 个 Worker 节点，Worker 节点配置建议 4 核 16 G，请保证 vSphere 环境资源充足，尤其是内存资源。
 
 ![cluster-create-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-plan.jpg?raw=true)
 
@@ -146,7 +146,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 #### 2.1.4 配置存储
 
-【添加存储】环节，选择外部持久化存储 vSAN 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是 自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 3.1 和 3.2 节部分。
+【添加存储】环节，选择外部持久化存储 vSAN 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 3.1 和 3.2 节部分。
 
 ![cluster-create-4](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-storage.jpg?raw=true)
 
