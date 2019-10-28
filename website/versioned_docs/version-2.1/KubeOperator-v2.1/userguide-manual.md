@@ -73,7 +73,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
 
 主机 IP 指安装 KubeOperator 机器自身的 IP。KubeOperator 所管理的集群将使用该 IP 来访问 KubeOperator。
 
-集群域名后缀为集群节点访问地址的后缀，集群暴露出来的对外服务的 URL 都将以该域名后缀作为访问地址后缀。例如: grafana.apps.cluster.f2c.com。
+集群域名后缀为集群节点访问地址的后缀，集群暴露出来的对外服务的 URL 都将以该域名后缀作为访问地址后缀。例如: grafana.apps.mycluster.fit2cloud.com。
 
 ![setting-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/setting-system.png?raw=true)
 
@@ -125,13 +125,17 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 > KubeOperator 支持 MultiAZ（多故障域），多主多节点模式适合在  MultiAZ 下部署，实现双活环境下的高可用。
 
+#### 2.1.3 选择节点
+
+【添加主机】环节，把集群所需的主机添加到了 KubeOperator 中。在【选择节点】环节，可以根据需求选择 worker 节点数量，这里以一个 master 和一个 worker 节点为例。
+
 #### 2.1.3 配置节点
 
-【添加主机】环节，把集群所需的主机添加到了 KubeOperator 中。在【配置节点】环节，则可以根据不同的节点角色，选择主机列表中的各个主机。
+在【配置节点】环节，则可以根据不同的节点角色，选择主机列表中的各个主机。
 
 ![cluster-create-3](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-manu-node.jpg?raw=true)
 
-#### 2.1.4 配置网络
+#### 2.1.5 配置网络
 
 【配置网络】环节，选择集群的网络插件，当前版本支持 Flannel 和 calico。
 
@@ -139,19 +143,19 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 ![cluster-create-4](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-manu-network.jpg?raw=true)
 
-#### 2.1.5 配置存储
+#### 2.1.6 配置存储
 
 【添加存储】环节，选择外部持久化存储。
 
 ![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-manu-storage-nfs.jpg?raw=true)
 
-#### 2.1.6 配置检测
+#### 2.1.7 配置检测
 
 完成上述 5 个步骤后，KubeOperator 会对当前集群所选择的部署节点进行配置检测，包含 CPU、内存和操作系统的检测。
 
 ![cluster-create-6](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-manu-check.jpg?raw=true)
 
-#### 2.1.7 集群配置概览
+#### 2.1.8 集群配置概览
 
 所有步骤完成后，会有一个集群配置概览页对之前步骤所设参数进行汇总，用户可在此页进行集群配置的最后检查。
 
@@ -167,7 +171,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 ![cluster-deploy-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-manu-install-1.jpg?raw=true)
 
-如果是内网环境的话，一个典型的 4 节点集群的部署大概需要 10 分钟左右的时间。在出现类似下图的信息后，表明集群已部署成功：
+如果是内网环境的话，一个典型的 3 节点集群的部署大概需要 10 分钟左右的时间。在出现类似下图的信息后，表明集群已部署成功：
 
 ![cluster-deploy-2](https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-install-2.png?raw=true)
 
@@ -184,7 +188,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 #### 3.1.1 集群管理
 
-回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如无条件，也可以通过修改本地 /etc/hosts 文件来达到相同的作用。
+回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地 /etc/hosts 文件来达到相同的作用。
 
 eg: 
 
@@ -192,13 +196,13 @@ eg:
 # 编辑 /etc/hosts
 $ vim /etc/hosts
 # 替换 WORKER_IP 为任意 worker 节点 IP 地址
-WORKER_IP grafana.apps.whfay.f2c.com
-WORKER_IP prometheus.apps.whfay.f2c.com
-WORKER_IP registry-ui.apps.whfay.f2c.com
-WORKER_IP dashboard.apps.whfay.f2c.com
-WORKER_IP master-1.whfay.f2c.com
-WORKER_IP traefik.apps.whfay.f2c.com
-WORKER_IP scope.weave.apps.whfay.f2c.com
+WORKER_IP grafana.apps.mycluster.fit2cloud.com
+WORKER_IP prometheus.apps.mycluster.fit2cloud.com
+WORKER_IP registry-ui.apps.mycluster.fit2cloud.com
+WORKER_IP dashboard.apps.mycluster.fit2cloud.com
+WORKER_IP master-1.mycluster.fit2cloud.com
+WORKER_IP traefik.apps.mycluster.fit2cloud.com
+WORKER_IP scope.weave.apps.mycluster.fit2cloud.com
 ```
 
 ##### 3.1.1.1 访问 Dashboard
