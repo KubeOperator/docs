@@ -48,7 +48,7 @@ Region：与 公有云中的 Region 概念相似，可以简单理解为地理�
 
 配置参数时，需要提供 vSphere 环境信息，包括 vCenter IP，用户名和密码，单击【验证】可以校验 vSphere 信息是否正确。
 
-![region-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/region-referance.png?raw=true)
+![region-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/vcenter-new.png?raw=true)
 
 最后一步选择 vCenter 的一个数据中心。
 
