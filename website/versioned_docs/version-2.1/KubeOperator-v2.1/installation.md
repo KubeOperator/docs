@@ -28,7 +28,7 @@ $ tar zxvf kubeOperator-v2.1.xx-release.tar.gz
 # 进入项目目录
 $ cd kubeOperator-v2.1.xx-release
 # 运行安装脚本
-$ ./kubeopsctl install
+$ ./kubeopsctl.sh install
 # 查看 KubeOperator 状态
 $ systemctl status kubeops
 ```
@@ -51,7 +51,7 @@ $ tar zxvf kubeOperator-v2.1.xx-release.tar.gz
 # 进入项目目录
 $ cd kubeOperator-v2.1.xx-release
 # 运行升级脚本
-$ ./kubeopsctl upgrade
+$ ./kubeopsctl.sh upgrade
 # 查看 KubeOperator 状态
 $ systemctl status kubeops
 ```
