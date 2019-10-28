@@ -85,7 +85,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
 
 点击【添加】按钮添加新的凭据。
 
-![add_credential-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/evidene-add-1.png?raw=true)
+![add_credential-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/evidence-add-1.png?raw=true)
 
 ### 1.2 准备主机
 
