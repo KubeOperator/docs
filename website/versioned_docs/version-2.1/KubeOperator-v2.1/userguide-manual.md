@@ -93,7 +93,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
 
 在左侧导航菜单中选择【主机】，进入【主机】页后可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。点击【添加】按钮添加主机。在输入主机名称、IP、选择凭据后，点击【提交】按钮即可完成一台主机的添加。
 
-![host-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/host-add.jpg?raw=true)
+![host-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/master-1.png?raw=true)
 
 ### 1.3 准备存储
 
@@ -103,7 +103,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 添加成功后，创建集群时如果选择 NFS 存储，可以看到该 NFS 存储。
 
-![storage-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/nfs-add-new.png?raw=true)
+![storage-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/nfs-auto-new.png?raw=true)
 
 > 注：自行搭建的 NFS 服务仅适合在开发测试环境使用。KubeOperator 还支持录入已有的 NFS 存储（比如专业的 NAS 存储）。单击【添加】选中“录入 NFS” ，输入存储名称、白名单选项、服务地址、挂载路径，提交即可。
 
