@@ -225,7 +225,7 @@ Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化
 
 ##### 3.1.1.3 访问 Registry
 
-Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。
+Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。Registry 默认的用户名是 admin，密码是 admin123。
 
 ![regsitry-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/registry-1.png?raw=true)
 
@@ -243,7 +243,7 @@ Traefik 用来作为 kubernetes 集群的HTTP反向代理、负载均衡工具�
 
 ##### 3.1.1.6 访问 Weave Scope
 
-Weave Scope 用来监控、可视化和管理 kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。
+Weave Scope 用来监控、可视化和管理 kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。Weave Scope 默认的用户名是 admin，密码是 admin123。
 
 ![weave-scope-1](https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-2.png?raw=true)
 
