@@ -67,4 +67,4 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
 
 ## 7 KubeOperator 内置应用默认账户和密码？
 
-访问 Registry， Traefik 和 Weave Scope 应用的默认账号和密码是相同的都是：admin/admin123 。
+访问 Registry 和 Weave Scope 应用的默认账号和密码是相同的都是：admin/admin123 。
