@@ -71,7 +71,7 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
 
 ## 8 KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 K8s 集群吗？
 
-不会有任何影戏。KubeOperator 是一个 100% 旁路系统，其与被管 K8s 集群完全解耦。
+不会有任何影响。KubeOperator 是一个 100% 旁路系统，其与被管 K8s 集群完全解耦。
 
 ## 9 重启 KubeOperator 部署的 K8s 集群的节点后，比如 Master 或者 Worker 节点，会自动恢复正常吗？
 
