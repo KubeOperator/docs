@@ -57,9 +57,13 @@ KubeOperator 提供可视化的界面和经过验证的原生 K8S 离线安装�
  - 支持 Kubernetes 集群健康检查与诊断（Day 2）；
  - 支持 webkubectl；
 
- v2.2 （计划中）
+ v2.2 （进行中，2019.11.30 发布）
 
- - 国际化支持；
- - 集成 KubeApps 应用商店；
- - 支持 VMware NSX-T；
- - 日志收集及管理方案；
+- [ ] 日志收集及管理方案；
+- [ ] 离线环境下使用 Sonobuoy 进行 Kubernetes 集群合规检查并可视化展示结果
+
+ v2.3 （计划中）
+
+- [ ] KubeApps 应用商店；
+- [ ] 国际化支持；
+- [ ] 支持 VMware NSX-T；
