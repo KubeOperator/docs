@@ -44,7 +44,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
 
 Region：与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 vSphere 体系中我们使用 DataCenter 实现 Region 的划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere 和 Openstack。
 
-![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/region-basicinfo.png?raw=true)
+![region-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/region-new.png?raw=true)
 
 配置参数时，需要提供 vSphere 环境信息，包括 vCenter IP，用户名和密码，单击【验证】可以校验 vSphere 信息是否正确。
 
@@ -74,7 +74,7 @@ Zone: 与 公有云中的 AZ 概念相似，可以简单理解为 Region 中具�
 Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念。
 这里以一主多节点类型举例。
 
-![plan-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/create-plan-basicinfo.png?raw=true)
+![plan-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/create-plan-1.png?raw=true)
 
 部署计划配置包括选择可用区（可用区可以单选或多选），并设置 Master 节点，Worker 节点的规格，即 CPU，内存和磁盘。
 
@@ -120,7 +120,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 点击【集群】页的【添加】按钮进行集群的创建。在【基本信息】里输入集群的名称，选择该集群所要部署的 Kubernetes 版本和部署模式。
 在离线包列表中可以查看 KubeOperator 当前所提供的 Kubernetes 安装版本详细信息。在后续进行 Kubernetes 集群部署时，可以从这些版本中选择其一进行部署（当前支持1.15.4, 1.15.5，后续会继续跟随 Kubernetes 社区发布离线包）。
 
-![cluster-create-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-basicinfo.png?raw=true)
+![cluster-create-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster.png?raw=true)
 
 离线包列表信息：
 
@@ -134,7 +134,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 选择 Kubernetes 集群的部署计划和 Worker 节点数量，至少 1 个 Worker 节点，Worker 节点配置建议 4 核 16 G，请保证 vSphere 环境资源充足，尤其是内存资源。
 
-![cluster-create-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-plan.jpg?raw=true)
+![cluster-create-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-plan-1.png?raw=true)
 
 #### 2.1.3 配置网络
 
@@ -154,7 +154,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 所有步骤完成后，会有一个集群配置概览页对之前步骤所设参数进行汇总，用户可在此页进行集群配置的最后检查。
 
-![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-complate.jpg?raw=true)
+![cluster-create-5](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-complate-1.png?raw=true)
 
 ### 2.2 部署集群
 
