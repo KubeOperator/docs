@@ -275,19 +275,19 @@ KubeOperator 支持 K8s 升级。
 
 在集群列表中点击要进行升级的集群名称，点击【概览】页最下方的【升级】按钮进行 Kubernetes 集群的升级。
 
-![cluster-upgrade-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade.png?raw=true)
+![cluster-upgrade-1](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/upgrade.png?raw=true)
 
 单击【确认】后，系统自动跳转到【任务】页，可以看到升级进度和详细 log 信息。
 
-![cluster-upgrade-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade-1.png?raw=true)
+![cluster-upgrade-2](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/upgrade-1.png?raw=true)
 
 升级完成后，可以看到如下信息。
 
-![cluster-upgrade-3](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/cluster-upgrade-2.png?raw=true)
+![cluster-upgrade-3](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/upgrade-2.png?raw=true)
 
 同时在集群【历史】页，可以通过单击【详情】按钮查看升级的所有 log 信息。
 
-![cluster-upgrade-4](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/log.png?raw=true)
+![cluster-upgrade-4](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/upgrade-3.png?raw=true)
 
 ### 3.3 集群备份
 
