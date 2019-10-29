@@ -29,7 +29,7 @@ KubeOperator 支持两种部署模式，一种是手动部署，一种是自动�
 
 区域(Region)和可用区(AZ)这两个术语来自公有云。每个区域完全独立。每个可用区完全隔离，但同一个区域内的可用区之间使用低时延链路相连。区域和可用区之间的关系如下图所示。
 
-![region-zone](https://github.com/KubeOperator/docs/blob/master/website/static/img-2.1/region.png?raw=true)
+![region-zone](../../../img-2.1/region.png)
 
 对于公有云厂商提供的托管 k8s 服务，master 节点由公有云厂商托管并维护，其 3 个master 节点会分布在同个区域下面的 3 个不同可用区上面，实现真正的高可用。
 
