@@ -76,3 +76,16 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
 ## 9 重启 KubeOperator 部署的 K8s 集群的节点后，比如 Master 或者 Worker 节点，会自动恢复正常吗？
 
 会自动恢复正常。
+
+## 10 KubeOperator 支持的 vSphere 版本是什么？
+
+KubeOperator 对 vSphere 的版本要求是：
+
+ - VMware vSphere 6.7 U1 
+ - VMware vSphere 6.7.0 
+ - VMware vSphere 6.5 U2
+ - VMware vSphere 6.5 U1 
+
+
+
+
