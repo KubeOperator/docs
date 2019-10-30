@@ -65,9 +65,10 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
 
  https://docs.vmware.com/en/VMware-Enterprise-PKS/1.5/vmware-enterprise-pks-15/GUID-vsphere-persistent-storage.html
 
-## 7 KubeOperator 内置应用默认账户和密码？
+## 7 K8s 集群里的 master 、 worker 节点以及相关内置应用默认账户/密码？
 
-访问 Registry 和 Weave Scope 应用的默认账号和密码是相同的都是：admin/admin123 。
+K8s 集群中 master 和 worker 节点的默认账号和密码为：root / KubeOperator@2019 。
+访问 Grafana 、Registry 和 Weave Scope 应用的默认账号和密码是相同的都是：admin/admin123 。
 
 ## 8 KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 K8s 集群吗？
 
