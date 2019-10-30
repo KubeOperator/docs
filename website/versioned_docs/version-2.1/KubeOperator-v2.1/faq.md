@@ -12,7 +12,7 @@ original_id: faq
 -  开发模式方面：从 瀑布模型 到 敏捷开发 到 DevOps 的演进；
 -  应用架构方面：从 单体架构 到 多层次架构 到 微服务 的演进。
 
-KubeOperator 专注于解决基础设施层面的问题，为开发者交付生产级别可用的 k8s 集群，实现 Kubernetes as a Service。
+KubeOperator 专注于解决基础设施层面的问题，为开发者交付生产级别可用的 K8s 集群，实现 Kubernetes as a Service。
 
 
 ## 2 KubeOperator 与 Kubespray 等部署工具的区别是什么？
@@ -23,7 +23,7 @@ KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes �
 
 除此之外，KubeOperator 还有如下优势：
 
--  提供可视化的 Web UI，大大降低部署和管理 k8s 的门槛；
+-  提供可视化的 Web UI，大大降低部署和管理 K8s 的门槛；
 -  提供离线的、经过全面验证和测试的安装包；
 -  与 VMware 和 Openstack 等云平台紧密对接，能够实现一键虚机自动创建和部署（基于 Terraform 和 Ansible）；
 -  KubeOperator 会提供经过充分验证的成熟企业级存储和网络方案。
@@ -37,10 +37,10 @@ KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes �
 
 总的来说，企业有两种方案选择：
 
-- 基于物理机部署大的 k8s 集群：通过 namespace 实现租户的隔离；
-- 基于 IaaS 平台之上部署多个 k8s 集群：为每个租户分配独立的 k8s 集群；
+- 基于物理机部署大的 K8s 集群：通过 namespace 实现租户的隔离；
+- 基于 IaaS 平台之上部署多个 K8s 集群：为每个租户分配独立的 K8s 集群；
 
-这两种方案各有好处，在 k8s 采纳初期，使用第二种方案更为理性，因为：
+这两种方案各有好处，在 K8s 采纳初期，使用第二种方案更为理性，因为：
 
  - 如果是单一大集群，升级会影响所有租户，风险比较大；
  - IaaS 平台上有成熟的、基于软件定义的存储和网络方案，落地更容易和灵活；
@@ -51,7 +51,7 @@ KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes �
  总的来说，相对于发行版，采纳原生 Kubernetes 有两个好处：
 
  - Kubernetes 迭代很快，且只维护最新的三个大版本。如果采纳其他发行版，可能很容易出现和原生版本脱节的情况。
- - 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 k8s 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
+ - 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 K8s 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
 
  ## 6 KubeOperator 支持哪些持久化存储？
 
