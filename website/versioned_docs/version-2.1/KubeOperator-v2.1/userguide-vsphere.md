@@ -295,6 +295,10 @@ KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3
 
 ![setting-2](../../../img-2.1/setting-backup.png)
 
-在集群【备份】页面，可以看到，KubeOperator 支持的备份策略，包括备份间隔，复本保留分数以及可以开启户禁用备份策略，实现集群备份和恢复功能。
+在集群【备份】页面，可以看到，KubeOperator 支持的自动备份策略和手动备份，自动备份包括备份间隔，复本保留份数以及可以开启户禁用备份策略，实现集群备份和恢复功能。
 
-![cluster-backup](../../../img-2.1/cluster-backup.png)
+![cluster-backup](../../../img-2.1/backup-recover.png)
+
+手动备份需要先设置备份策略信息，包括备份间隔、保留份数、选择存储设备以及开启备份，然后单击【立即备份】后，可以在【任务】页看到备份进度。
+
+![cluster-backup-1](../../../img-2.1/backup-recover-1.png)
