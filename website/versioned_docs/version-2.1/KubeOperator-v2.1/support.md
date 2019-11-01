@@ -18,4 +18,4 @@ original_id: support
 
 ## 4 商业支持
 
-FIT2CLOUD 飞致云提供 KubeOperator 软件订阅服务，详情请参加： https://www.fit2cloud.com/purchase/index.html
+FIT2CLOUD 飞致云提供 KubeOperator 软件订阅服务，详情请参见： https://www.fit2cloud.com/purchase/index.html
