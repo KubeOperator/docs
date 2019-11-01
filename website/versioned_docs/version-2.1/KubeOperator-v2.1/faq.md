@@ -80,12 +80,12 @@ K8s 集群中 master 和 worker 节点的默认账号和密码为：`root / Kube
 
 ## 10 KubeOperator 支持的 vSphere 版本是什么？
 
-KubeOperator 对 vSphere 的版本要求是：
+ - 如果是手动部署模式 + NFS，支持 vSphere 5.5 及以上版本。
+ - 如果是自动模式 + vSAN，支持 vSphere 6.5 及以上版本
 
- - VMware vSphere 6.7 U1 
- - VMware vSphere 6.7.0 
- - VMware vSphere 6.5 U2
- - VMware vSphere 6.5 U1 
+ ## 11 KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 K8s 节点的操作系统吗？
+
+ 是。KubeOperator 的管理范围包括操作系统，比如操作系统补丁升级，其提供的离线包包括操作系统（自动模式）及其 RPM 包，一个离线包版本代表一个终态，并被充分测试和验证。
 
 
 
