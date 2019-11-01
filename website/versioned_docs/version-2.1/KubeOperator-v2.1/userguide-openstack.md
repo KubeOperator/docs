@@ -291,4 +291,4 @@ KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3
 
 手动备份需要先设置备份策略信息，包括备份间隔、保留份数、选择存储设备以及开启备份，然后单击【立即备份】后，可以在【任务】页看到备份进度。
 
-![cluster-backup-1](../../../img-2.1/backup-recover-2.png)
+![cluster-backup-1](../../../img-2.1/backup-finish.png)
