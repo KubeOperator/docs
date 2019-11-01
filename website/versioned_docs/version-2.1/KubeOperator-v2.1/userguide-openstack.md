@@ -40,26 +40,26 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
 
 #### 1.2.1 创建区域(Region)
 
-Region：与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 OpenStack 体系中我们使用平台自身Region实现划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere 和 Openstack。
+Region：与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 OpenStack 体系中我们使用平台自身 Region 实现划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere 和 Openstack。
 
 ![region-1](../../../img-2.1/region-new-openstack.png)
 
-配置参数时，需要提供 OpenStack 环境信息，包括认证地址、用户名、密码，项目ID和Domain 名称，单击【验证】可以校验 OpenStack 信息是否正确。
+配置参数时，需要提供 OpenStack 环境信息，包括认证地址、用户名、密码，项目 ID 和 Domain 名称，单击【验证】可以校验 OpenStack 信息是否正确。
 
 ![region-2](../../../img-2.1/region-new-openstack-2.png)
 
 
-最后一步选择 OpenStack 的一个Region。
+最后一步选择 OpenStack 的一个 Region。
 
 ![region-3](../../../img-2.1/region-new-openstack-3.png)
 
 #### 1.2.2 创建可用区(Zone)
 
-Zone: 与 公有云中的 AZ 概念相似，可以简单理解为 Region 中具体的机房。在 OpenStack 体系中我们使用平台自身的Zone来划分。创建可用区时需要选择一个之前添加的区域，如下图：
+Zone: 与 公有云中的 AZ 概念相似，可以简单理解为 Region 中具体的机房。在 OpenStack 体系中我们使用平台自身的 Zone 来划分。创建可用区时需要选择一个之前添加的区域，如下图：
 
 ![zone-1](../../../img-2.1/zone-basicinfo-openstack.png)
 
-选择可用区配置参数时，需要选择OpenStack可用区，存储类型以及网络等信息，这些信息依赖于 OpenStack 环境配置。最后单击【检测】按钮，校验输入的起始 IP 地址等信息格式是否正确，检测通过之后才可以单击【完成】。
+选择可用区配置参数时，需要选择 OpenStack 可用区，存储类型以及网络等信息，这些信息依赖于 OpenStack 环境配置。最后单击【检测】按钮，校验输入的起始 IP 地址等信息格式是否正确，检测通过之后才可以单击【完成】。
 
 ![zone-2](../../../img-2.1/zone-basicinfo-openstack-2.png)
 
@@ -144,7 +144,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 #### 2.1.4 配置存储
 
-【添加存储】环节，选择持久化存储 Cinder 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 3.1 和 3.2 节部分。
+【添加存储】环节，选择持久化存储 Cinder 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 1.3.1 和 1.3.2 节部分。
 
 ![cluster-create-4](../../../img-2.1/cluster-storage-cinder.png)
 
@@ -246,7 +246,7 @@ KubeOperator 新增功能支持 Webkubectl 。
 
 ### 3.2 集群升级
 
-KubeOperator支持 K8s 升级。
+KubeOperator 支持 K8s 升级。
 
 在集群列表中点击要进行升级的集群名称，点击【概览】页最下方的【升级】按钮进行 Kubernetes 集群的升级。
 
@@ -275,3 +275,20 @@ KubeOperator 控制台【集群】页，单击一个要扩缩容的集群名称�
 确认后，会自动转到【任务】页面，实时查看扩缩容进度，完成后可以看到如下图所示信息。
 
 ![cluster-expand-2](../../../img-2.1/cluster-expand-openstack-1.png)
+
+### 3.4 集群备份
+
+KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3、aliyun oss 和 Azure 存储。为集群备份和恢复提供存储支持，实现备份和恢复功能。
+
+添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 Azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。
+以添加 S3 为例，在【系统设置】的【备份】Tab 也中输入名称和 AccessKey，SecretKey 和端点（对应 AWS S3 系统里的 endpoint），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
+
+![setting-2](../../../img-2.1/setting-backup.png)
+
+在集群【备份】页面，可以看到，KubeOperator 支持的自动备份和手动备份，自动备份包括备份间隔，复本保留份数以及可以开启户禁用备份策略，实现集群备份和恢复功能。
+
+![cluster-backup](../../../img-2.1/backup-recover-1.png)
+
+手动备份需要先设置备份策略信息，包括备份间隔、保留份数、选择存储设备以及开启备份，然后单击【立即备份】后，可以在【任务】页看到备份进度。
+
+![cluster-backup-1](../../../img-2.1/backup-recover-2.png)

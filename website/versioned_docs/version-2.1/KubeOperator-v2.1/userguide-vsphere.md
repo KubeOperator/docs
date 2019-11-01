@@ -148,7 +148,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 #### 2.1.4 配置存储
 
-【添加存储】环节，选择外部持久化存储 vSAN 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 3.1 和 3.2 节部分。
+【添加存储】环节，选择外部持久化存储 vSAN 或者 NFS ，如果选择 NFS，支持两种方式的 NFS，一种是自动创建 NFS 存储，另外一种是用户自行准备的 NFS 存储。 详细描述见 1.3.1 和 1.3.2 节部分。
 
 ![cluster-create-4](../../../img-2.1/cluster-storage.jpg)
 
@@ -256,7 +256,7 @@ KubeOperator 新增功能支持 Webkubectl 。
 
 ### 3.2 集群升级
 
-KubeOperator支持 K8s 升级。
+KubeOperator 支持 K8s 升级。
 
 在集群列表中点击要进行升级的集群名称，点击【概览】页最下方的【升级】按钮进行 Kubernetes 集群的升级。
 
