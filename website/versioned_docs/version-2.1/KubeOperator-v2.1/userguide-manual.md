@@ -297,7 +297,7 @@ KubeOperator 控制台【集群】页，单击一个要扩容的集群名称，�
 
 ![cluster-expand-1](../../../img-2.1/cluster-expand-3.jpg)
 
-确认后，会自动转到【任务】页面，实时查看扩缩容进度，完成后可以看到如下图所示信息。
+确认后，会自动转到【任务】页面，实时查看扩容进度，完成后可以看到如下图所示信息。
 
 ![cluster-expand-2](../../../img-2.1/cluster-expand-4.jpg)
 
