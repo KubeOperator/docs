@@ -1,6 +1,6 @@
 ---
 id: version-2.1-faq
-title: 六、常见问题
+title: 七、常见问题
 original_id: faq
 ---
 

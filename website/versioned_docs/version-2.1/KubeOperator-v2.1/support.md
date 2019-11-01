@@ -1,6 +1,6 @@
 ---
 id: version-2.1-support
-title: 九、技术支持
+title: 十、技术支持
 original_id: support
 ---
 
