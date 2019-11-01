@@ -295,11 +295,11 @@ KubeOperator 支持 K8s 升级。
 
 KubeOperator 控制台【集群】页，单击一个要扩容的集群名称，即【概览】页面，Worker 状态栏左下方单击【扩容】，在弹出框中选中扩容 worker 节点数量。
 
-![cluster-expand-1](../../../img-2.1/cluster-expand-3.jpg)
+![cluster-expand-1](../../../img-2.1/cluster-expand-3.png)
 
 确认后，会自动转到【任务】页面，实时查看扩容进度，完成后可以看到如下图所示信息。
 
-![cluster-expand-2](../../../img-2.1/cluster-expand-4.jpg)
+![cluster-expand-2](../../../img-2.1/cluster-expand-4.png)
 
 ### 3.4 集群备份
 
