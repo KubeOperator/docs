@@ -9,7 +9,7 @@ original_id: installation
 -  最低硬件配置: 2 CPU, 4G 内存, 50G 磁盘 （推荐大小是：4核8G内存100G磁盘）
 -  操作系统要求: CentOS 7.6 / 7.7 Minimal  （不支持 CentOS 8）
 
-> 注：CentOS 7.7 Minimal ISO 下载链接：http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso
+> 注：CentOS 7.6 Minimal ISO 下载链接：http://mirrors.cqu.edu.cn/CentOS/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
 ## 2 下载离线包
 
 请自行下载 KubeOperator 完整离线包，并复制到目标机器的 /tmp 目录下。
