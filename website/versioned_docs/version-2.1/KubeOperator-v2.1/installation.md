@@ -7,7 +7,7 @@ original_id: installation
 ## 1 环境要求
 
 -  最低硬件配置: 2 CPU, 4G 内存, 50G 磁盘 （推荐大小是：4核8G内存100G磁盘）
--  操作系统要求: CentOS 7.6 及以上 Minimal  （推荐）
+-  操作系统要求: CentOS 7.6 / 7.7 Minimal  （不支持 CentOS 8）
 
 > 注：CentOS 7.7 Minimal ISO 下载链接：http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso
 ## 2 下载离线包
