@@ -115,7 +115,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 点击【集群】页的【添加】按钮进行集群的创建。在【基本信息】里输入集群的名称，选择该集群所要部署的 Kubernetes 版本。
 
-![cluster-create-1](../../../img-2.1/cluster-manu-1.png)
+![cluster-create-1](../../../img-2.1/cluster-manu-1new.png)
 
 #### 2.1.2 部署模型
 
@@ -135,13 +135,13 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 在【选择节点】环节，则可以根据不同的节点角色，选择主机列表中的各个主机。
 
-![cluster-create-3](../../../img-2.1/cluster-manu-4.png)
+![cluster-create-3](../../../img-2.1/cluster-manu-4new.png)
 
 #### 2.1.5 配置网络
 
 【配置网络】环节，选择集群的网络插件，当前版本支持 Flannel 和 calico。
 
-> 如果集群节点全部都在同一个二层网络下，请选择"host-gw"。如果不是，则选择"vxlan"。"host-gw" 性能优于 "vxlan"。
+> 如果集群节点全部都在同一个二层网络下，请选择"host-gw"。如果不是，则选择"vxlan"。"host-gw" 性能优于 "vxlan"。Flannel 网络 Service CIDR 和 POD CIDR 保证不和已有主机节点 IP 段冲突即可使用，这里使用默认值。 
 
 ![cluster-create-4](../../../img-2.1/cluster-manu-5.png)
 
@@ -161,7 +161,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 所有步骤完成后，会有一个集群配置概览页对之前步骤所设参数进行汇总，用户可在此页进行集群配置的最后检查。
 
-![cluster-create-8](../../../img-2.1/cluster-manu-8.png)
+![cluster-create-8](../../../img-2.1/cluster-manu-8new.png)
 
 ### 2.2 部署集群
 
