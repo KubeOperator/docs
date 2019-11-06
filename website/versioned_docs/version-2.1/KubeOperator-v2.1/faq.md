@@ -93,6 +93,10 @@ K8s 集群中 master 和 worker 节点的默认账号和密码为：`root / Kube
 
  KubeOperator 支持小版本的升级，比如 1.15.2 升级到 1.15.*， 不能升级到 1.16.* 。
 
+  ## 13 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
+
+  是的。KubeOperator 2.1 版本已经通过认证，具体请参加：https://landscape.cncf.io
+
 
 
 
