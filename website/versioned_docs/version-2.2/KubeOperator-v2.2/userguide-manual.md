@@ -16,8 +16,8 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
   - 创建集群
   - 部署集群
   - 服务暴露
-- 集群运维和变更（ Day 2）
-  - 集群运维
+- 集群运营和变更（ Day 2）
+  - 集群运营
   - 集群伸缩
   - 集群备份
 
@@ -47,7 +47,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
         <td>Worker</td>
         <td>1</td>
         <td>CentOS 7.6</td>
-        <td>2C 8G</td>
+        <td>4C 16G</td>
         <td>8C 32G</td>
         <td>运行 kubelet、应用工作负载。</td>
     </tr>
@@ -184,9 +184,9 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 ![cluster-f5](../../../img-2.1/f5.png)
 
 
-## 3 集群运维和变更（Day 2）
+## 3 集群运营和变更（Day 2）
 
-### 3.1 集群运维
+### 3.1 集群运营
 
 #### 3.1.1 集群管理
 
