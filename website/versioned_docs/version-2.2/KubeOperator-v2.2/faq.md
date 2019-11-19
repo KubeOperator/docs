@@ -1,5 +1,5 @@
 ---
-id: version-2.1-faq
+id: version-2.2-faq
 title: 七、常见问题
 original_id: faq
 ---
@@ -19,7 +19,7 @@ KubeOperator 专注于解决基础设施层面的问题，为开发者交付生�
 
 KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes 集群升级、扩容、监控检查、备份恢复等功能，如下图所示。
 
-![overview](../../../img/fullcycle.png)
+![overview](../../../img/overview.png)
 
 除此之外，KubeOperator 还有如下优势：
 

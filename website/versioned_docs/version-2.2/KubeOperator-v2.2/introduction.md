@@ -1,20 +1,18 @@
 ---
-id: version-2.1-introduction
+id: version-2.2-introduction
 title: 一、关于 KubeOperator
 original_id: introduction
 ---
 
 ## 1 什么是 KubeOperator？
 
-KubeOperator 是一个开源项目，在离线网络环境下，通过可视化 Web UI 在 VMware、Openstack 或者物理机上规划、部署和运营生产级别的 Kubernetes 集群。KubeOperator 是 [Jumpserver](https://github.com/jumpserver/jumpserver) 明星开源团队在 Kubernetes 领域的的又一全新力作。
+KubeOperator 是一个开源项目，在离线网络环境下，通过可视化 Web UI 在 VMware、Openstack 或者物理机上规划、部署和管理生产级别的 Kubernetes 集群。KubeOperator 已经通过云原生基金会（CNCF）的 Kubernetes 软件一致性认证。
 
 ![overview](../../../img/overview.png)
 
-> 注： KubeOperator 2.1 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)。
-
 ## 2 KubeOperator 的整体架构
 
-KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或者虚机），通过 Ansible 完成自动化部署和变更操作，支持 Kubernetes 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营的全生命周期管理。
+KubeOperator 提供可视化的界面和经过验证的原生 K8s 离线安装包，使用 Terraform 在IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或虚拟机），通过 Ansible 完成自动化部署和变更操作，支持 Kubernetes 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营及变更的全生命周期管理。
 
 ![architecture](../../../img/KubeOperator.jpeg)
 

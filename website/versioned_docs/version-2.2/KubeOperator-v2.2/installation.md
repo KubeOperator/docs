@@ -1,13 +1,13 @@
 ---
-id: version-2.1-installation
+id: version-2.2-installation
 title: 三、安装和升级 KubeOperator
 original_id: installation
 ---
 
 ## 1 环境要求
 
--  最低硬件配置: 2 CPU, 4G 内存, 50G 磁盘 （推荐大小是：4核8G内存100G磁盘）
--  操作系统要求: CentOS 7.6 / 7.7 Minimal  （不支持 CentOS 8）
+-  最低硬件配置: 2 CPU, 8G 内存, 50G 磁盘 （推荐大小是：4核16G内存100G磁盘）
+-  操作系统要求: CentOS 7.4 / 7.5 / 7.6 / 7.7 Minimal  （不支持 CentOS 8）
 
 > 注：CentOS 7.6 Minimal ISO 下载链接：http://mirrors.cqu.edu.cn/CentOS/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
 ## 2 下载离线包
