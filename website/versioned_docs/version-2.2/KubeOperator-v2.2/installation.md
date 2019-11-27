@@ -10,6 +10,7 @@ original_id: installation
 -  操作系统要求: CentOS 7.4 / 7.5 / 7.6 / 7.7 Minimal  （不支持 CentOS 8）
 
 > 注：CentOS 7.6 Minimal ISO 下载链接：http://mirrors.cqu.edu.cn/CentOS/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
+
 ## 2 下载离线包
 
 请自行下载 KubeOperator 完整离线包，并复制到目标机器的 /tmp 目录下。

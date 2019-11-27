@@ -69,6 +69,13 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
 
 如果是自动模式创建的 K8s 集群，集群中 master 和 worker 节点的默认用户名和密码为：`root / KubeOperator@2019` </br>
 访问 Grafana 、Registry 和 Weave Scope 应用的默认用户名和密码是相同的都是：`admin / admin123` 
+访问 Ceph 控制台用户名为 admin ，密码需要执行命令获取，获取方法如下：
+
+``` bash
+#此命令可以在集群概览页下面的 WebKubectl 中或者在集群中任意节点中执行。
+$ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
+
+```
 
 ## 8 KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 K8s 集群吗？
 
