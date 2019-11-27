@@ -179,7 +179,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 ## 3 集群运营（Day 2）
 
-### 3.1 集群管理
+### 3.1 集群运维
 
 回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 /etc/hosts 文件来达到相同的作用。
 
