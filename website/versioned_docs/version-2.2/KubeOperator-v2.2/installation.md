@@ -37,6 +37,26 @@ $ ./kubeopsctl.sh install
 $ systemctl status kubeops
 ```
 
+⚠️备注:默认KubeOperator的部署机防火墙是关闭状态，若需要开启防火墙，请放行以下端口以保证KubeOperator正常使用
+应用|协议类型|端口
+--|:--:|--:
+KubeOperator-web|TCP|80
+kubeOperator-预留（升级使用）|TCP|8080-8089
+kubeOperator-预留（升级使用）|TCP|8090-8099
+```bash
+# 启动防火墙
+$ systemctl start firewalld
+# 加入开机自动启动
+$ systemctl enable firewalld
+# 开放端口
+$ firewall-cmd --zone=public --add-port=80/tcp --permanent
+$ firewall-cmd --zone=public --add-port=8080-8089/tcp --permanent
+$ firewall-cmd --zone=public --add-port=8090-8099/tcp --permanent
+# 重新加载防火墙配置使生效
+$ firewall-cmd --reload
+# 查看防火墙状态
+$ firewall-cmd --list-all
+```
 ## 4 访问 KubeOperator
 
 KubeOperator 默认监听 HTTP 80 端口。安装完毕后，请使用浏览器登录 KubeOperator 管理控制台。
