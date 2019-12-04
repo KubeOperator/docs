@@ -215,7 +215,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 ### 3.1 集群管理
 
-回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 /etc/hosts 文件来达到相同的作用。
+回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 hosts 文件来达到相同的作用。
 
 eg: 
 
@@ -230,6 +230,7 @@ WORKER_IP dashboard.apps.mycluster.fit2cloud.com
 WORKER_IP master-1.mycluster.fit2cloud.com
 WORKER_IP traefik.apps.mycluster.fit2cloud.com
 WORKER_IP scope.weave.apps.mycluster.fit2cloud.com
+WORKER_IP ceph.apps.mycluster.fit2cloud.com
 ```
 
 #### 3.1.1 Dashboard
@@ -255,7 +256,7 @@ K8s Dashboard 对应的是 Kubernetes 的控制台，从浏览器中访问 Kuber
 
 ##### 3.1.2.1 访问 Ceph 控制台
 
-KubeOperator 新增支持云原生存储解决方案 Rook Ceph，当创建手机模式集群，存储方案选择 Rook Ceph 时 ，在集群【概览】页，描述信息存储类型中可以通过 Rook Ceph 图标链接跳转至 Ceph 控制台。
+KubeOperator 新增支持云原生存储解决方案 Rook Ceph，当创建手动模式集群，存储方案选择 Rook Ceph 时 ，在集群【概览】页，描述信息存储类型中可以通过 Rook Ceph 图标链接跳转至 Ceph 控制台。
 
 ![grafana-1](../../../img-2.2/rook-ceph-1.png)
 
