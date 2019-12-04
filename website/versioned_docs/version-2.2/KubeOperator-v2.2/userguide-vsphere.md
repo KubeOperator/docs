@@ -181,7 +181,8 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 ### 3.1 集群运维
 
-回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 /etc/hosts 文件来达到相同的作用。
+回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 hosts 文件来达到相同的作用。如果创建集群时选择 Rook Ceph 存储方案，访问 Ceph 控制台前也需要添加该域名解析规则。
+
 
 eg: 
 
@@ -197,6 +198,7 @@ WORKER_IP master-1.mycluster.fit2cloud.com
 WORKER_IP traefik.apps.mycluster.fit2cloud.com
 WORKER_IP scope.weave.apps.mycluster.fit2cloud.com
 ```
+以上文本也可以直接在集群的【概览】页单击【域名解析规则】中获取。
 
 #### 3.1.1 Dashboard
 
@@ -258,7 +260,7 @@ Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击
 
 ##### 3.1.2.5 健康状态
 
-在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括核心组件 Control Manager，Schedule，etcd 状态和系统组件状态 Namespace 等实时健康状态。
+在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括核心组件 Control Manager，Schedule，etcd 状态和系统组件健康状态。
 
 ![cluster-healthy](../../../img-2.2/cluster-heathy.png)
 
@@ -328,7 +330,7 @@ KubeOperator 支持 K8s 升级。
 
 KubeOperator 控制台【集群】页，单击一个要扩缩容的集群名称，即【概览】页面，Worker 状态栏左下方单击【伸缩】，在弹出框中选中扩容或者缩容的 worker 节点数量。
 
-![cluster-expand-1](../../../img-2.2/cluster-expand-1.png)
+![cluster-expand-1](../../../img-2.2/vsphere-expand.png)
 
 确认后，会自动转到【任务】页面，实时查看扩缩容进度，完成后可以看到如下图所示信息。
 

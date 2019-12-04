@@ -79,32 +79,17 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ![plan-2](../../../img-2.2/create-plan-openstack-conf.png)
 
-
 ### 1.3 准备存储
 
-KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，供自动模式和手动模式的 K8s 集群使用。下面先介绍如何添加 KubeOperator 自动创建的 NFS 存储。
-
-#### 1.3.1 新建 NFS
-
-首先要准备一个主机节点单独作为 NFS 存储资源，可以是虚拟机或物理机，操作系统要求：CentOS 7.6 Minimal，最低硬件配置为 2核2G，磁盘大小建议 500 G，在 KubeOperator 控制台【主机】页面添加该主机。
-
-详细步骤：
+KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，下面介绍如何添加 KubeOperator 为集群自动创建的 NFS 存储：
   
-- 1 KubeOperator 控制台 【系统】页面，单击【凭据】，为添加主机添加凭据信息，即登录主机的用户名和密码。
-- 2 【主机】页面，添加主机，注意这个主机不可以作为 K8s 集群的任何节点；
-- 3 【存储】页面，单击【添加】，选中新建 NFS ，在主机下拉列表，选择上述第一步添加的 NFS 主机，如果 NFS 无网络访问限制，白名单选项可以填 ” * “，挂载路径可按需填写，如 /nfs，点击【提交】。NFS 安装成功后，可以在 NFS 列表中看到该存储处于运行中状态。
+KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，在主机下拉列表，选择事先添加的作为 NFS 的主机 (名称为：nfs-storage)，如果 NFS 无网络访问限制，白名单选项可以默认填 ” * “，挂载路径可按需填写，如 /nfs，点击【提交】。NFS 安装成功后，可以在 NFS 列表中看到该存储处于运行中状态。
 
 添加成功后，创建集群时如果选择 NFS 存储，可以看到该 NFS 存储。
 
-![storage-1](../../../img-2.1/nfs-add-new.png)
+![storage-1](../../../img-2.2/storage-nfs.png)
 
-
-#### 1.3.2 录入 NFS
-
-自行准备一个物理机或虚拟机作为 K8s 集群的 NFS 存储服务器。
-【存储】，单击【添加】选中“录入 NFS” ，输入存储名称，白名单选项可填 “ * ”，服务地址输入准备好的 NFS 存储主机 IP 地址，输入设置好的挂载路径，提交
- 。
-![storage-2](../../../img-2.1/nfs-add-share.png)
+> 注：自行搭建的 NFS 服务仅适合在开发测试环境使用。KubeOperator 还支持录入已有的 NFS 存储（比如专业的 NAS 存储）。单击【添加】选中“录入 NFS” ，输入存储名称、白名单选项可以默认选项、服务地址、挂载路径，提交即可。需要注意另外一点添加 NFS 存储时，存储的名称不能和集群名称相同。
 
 
 ## 2  集群部署（Day 1）
@@ -116,7 +101,7 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 #### 2.1.1 基本信息
 
 点击【集群】页的【添加】按钮进行集群的创建。在【基本信息】里输入集群的名称，选择该集群所要部署的 Kubernetes 版本和部署模式。
-在离线包列表中可以查看 KubeOperator 当前所提供的 Kubernetes 安装版本详细信息。在后续进行 Kubernetes 集群部署时，可以从这些版本中选择其一进行部署（当前支持1.15.4, 1.15.5，后续会继续跟随 Kubernetes 社区发布离线包）。
+在离线包列表中可以查看 KubeOperator 当前所提供的 Kubernetes 安装版本详细信息。在后续进行 Kubernetes 集群部署时，可以从这些版本中选择其一进行部署（当前支持1.16.3,1.16.2, 1.15.5，后续会继续跟随 Kubernetes 社区发布离线包）。
 
 ![cluster-create-1](../../../img-2.2/cluster-openstack.png)
 
@@ -178,103 +163,162 @@ KubeOperator 支持自动创建 NFS 存储和添加自行准备的 NFS 存储，
 
 ## 3 集群运营（Day 2）
 
-### 3.1 集群运维
+### 3.1 集群管理
 
-#### 3.1.1 集群管理
+回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 hosts 文件来达到相同的作用。
 
-##### 3.1.1.1 访问 Dashboard
+eg: 
 
-Dashboard 对应的是 Kubernetes 的控制台，从浏览器中访问 Kubernetes 控制台需要用到【令牌】。点击【概览】页下方的【获取TOKEN】按钮获取令牌信息，将令牌信息复制到粘贴板。
+``` bash
+# 编辑 /etc/hosts
+testerdeMacBook-Pro:~ tester$sudo vim /etc/hosts
+# 替换 WORKER_IP 为任意 worker 节点 IP 地址
+WORKER_IP grafana.apps.mycluster.fit2cloud.com
+WORKER_IP prometheus.apps.mycluster.fit2cloud.com
+WORKER_IP registry-ui.apps.mycluster.fit2cloud.com
+WORKER_IP dashboard.apps.mycluster.fit2cloud.com
+WORKER_IP master-1.mycluster.fit2cloud.com
+WORKER_IP traefik.apps.mycluster.fit2cloud.com
+WORKER_IP scope.weave.apps.mycluster.fit2cloud.com
+```
+以上文本也可以直接在集群的【概览】页最下角单击【域名解析规则】中获取。
 
-![dashboard-1](../../../img/dashboard-1.png)
+#### 3.1.1 Dashboard
+
+##### 3.1.1.1 KubeOperator Dashboard
+
+KubeOperator 2.2 中新增功能【概览】页，该页面集中显示了集群相关的统计信息，包括集群状态，容量信息，Nodes 数量、Namespaces 数量、Pods 数量等，还包括异常日志，异常 Pod 的信息统计。
+
+![Dashboard-1](../../../img-2.2/kube-dashboard.png)
+
+##### 3.1.1.2 K8s Dashboard
+
+K8s Dashboard 对应的是 Kubernetes 的控制台，从浏览器中访问 Kubernetes 控制台需要用到【令牌】。点击【概览】页下方的【获取TOKEN】按钮获取令牌信息，将令牌信息复制到粘贴板。
+
+![dashboard-1](../../../img-2.2/k8s-dashboard.png)
 
 输入令牌信息后，点击【登录】，则可进入 Kubernetes 控制台。
 
-![dashboard-2](../../../img/dashboard-2.png)
+![dashboard-2](../../../img-2.2/k8s-dashboard-1.png)
 
-##### 3.1.1.2 访问 Grafana
+#### 3.1.2 集群监控
+
+##### 3.1.2.1 集群事件
+
+KubeOperator 支持获取 K8s 事件，实时更新在 KubeOperator 集群事件页面，包括正常和异常事件，可搜索过去一天/周/月的 Normal 和 Warning 事件，同时支持关键字搜索事件。事件内容和 K8s Dashboard 的 Event 一致，通过 KubeOperator 控制台能够更加直观快速的看到集群的状态信息。
+
+![event-1](../../../img-2.2/event-1.png)
+
+在集群【事件】页，单击信息列的事件，可以获取事件详情信息。
+
+![event-2](../../../img-2.2/event-2.png)
+
+##### 3.1.2.2 访问 Grafana
 
 Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化展示，更方便用户了解整个 Kubernetes 集群的运行状况。点击 Grafana 下方的【转到】按钮访问 Grafana 控制台。
 
 集群级别的监控面板：
 
-![grafana-1](../../../img/grafana-1.png)
+![grafana-3](../../../img-2.2/grafana-1.png)
 
 节点级别的监控面板：
 
-![grafana-2](../../../img/grafana-2.png)
+![grafana-4](../../../img-2.2/grafana-2.png)
 
-##### 3.1.1.3 访问 Registry
-
-Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。Registry 默认的用户名是 admin，密码是 admin123。
-
-![regsitry-1](../../../img/registry-1.png)
-
-##### 3.1.1.4 访问 Prometheus
-
-Prometheus 用来对整个 Kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。
-
-![prometheus-1](../../../img/prometheus-1.png)
-
-##### 3.1.1.5 访问 Traefik
-
-Traefik 用来作为 Kubernetes 集群的HTTP反向代理、负载均衡工具。点击 Traefik 下方的【转到】按钮即可访问 Traefik 控制台。
-
-![prometheus-1](../../../img/traefik.png)
-
-##### 3.1.1.6 访问 Weave Scope
+#### 3.1.2.3 访问 Weave Scope
 
 Weave Scope 用来监控、可视化和管理 Kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。Weave Scope 默认的用户名是 admin，密码是 admin123。
 
-![weave-scope-1](../../../img/weave-scope-2.png)
+![weave-scope-1](../../../img-2.2/weave-scope-2.png)
 
-点击顶部的【Host】，可以远程 shell 登录各个节点，还可以看到主机的详细信息。
+点击顶部的【Host】，可以远程shell登录各个节点，还可以看到主机的详细信息。
 
-![weave-scope-2](../../../img/weave-scope-1.png)
+![weave-scope-2](../../../img-2.2/weave-scope-1.png)
 
-##### 3.1.1.7 Webkubectl
+##### 3.1.2.4 访问 Prometheus
 
-KubeOperator 新增功能支持 Webkubectl 。
+Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。
 
-![cluster-webkubectl](../../../img/cluster-webkubectl.png)
+![prometheus-1](../../../img-2.2/prometheus-1.png)
 
-#### 3.1.2 集群监控
+##### 3.1.2.5 健康状态
 
-在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括 Control Manager，Schedule，etcd 和 nodes 的实时健康状态以及过去半年 K8s 集群运行状态。
+在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括核心组件 Control Manager，Schedule，etcd 状态和系统组件健康状态。
 
-![cluster-healthy](../../../img/cluster-heathy-1.png)
+![cluster-healthy](../../../img-2.2/cluster-heathy.png)
+
+
+#### 3.1.3 集群日志
+
+KubeOperator 系统新增加支持获取 KubeOperator 系统日志和 K8s 集群日志功能。
+
+##### 3.1.3.1 系统日志
+
+【系统日志】页支持查找 KubeOperator 系统日志信息， 日志类型包括 info、debug 和 error 日志，还可以用关键字搜索日志等等日志信息。
+
+![log-1](../../../img-2.2/system-log.png)
+
+##### 3.1.3.2 集群日志
+
+K8s 集群日志使用 Grafana 日志聚合工具 Loki。Loki 是Grafana Labs 团队的开源项目，它的设计非常经济高效且易于操作，特别适合存储 Kubernetes Pod 日志。
+
+通过访问 Grafana 控制台看到 Loki 日志。
+
+![log-2](../../../img-2.2/loki-2.png)
+
+
+#### 3.1.4 集群管理
+ 
+##### 3.1.4.1 访问 Registry
+
+Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。Registry 默认的用户名是 admin，密码是 admin123。
+
+![regsitry-1](../../../img-2.2/registry-1.png)
+
+##### 3.1.4.2 访问 Traefik
+
+Traefik 用来作为 kubernetes 集群的HTTP反向代理、负载均衡工具。点击 Trafik 下方的【转到】按钮即可访问 Traefik 控制台。
+
+![traefik-1](../../../img-2.2/traefik.png)
+
+##### 3.1.4.3 Webkubectl
+
+KubeOperator 新增功能支持 Webkubectl 。在集群【概览】页最下面单击 WEBKUBECTL ，在弹出框中可以像在集群中节点执行命令，查询集群信息等操作。
+
+![cluster-webkubectl](../../../img-2.2/webkubectl.png)
+
 
 ### 3.2 集群升级
 
-KubeOperator 支持 K8s 升级。
+KubeOperator 支持 K8s 升级。请注意由于 1.15 和 1.16 版本之后变化较大，目前不支持升级从 1.15 升级到 1.16 版本。
 
 在集群列表中点击要进行升级的集群名称，点击【概览】页最下方的【升级】按钮进行 Kubernetes 集群的升级。
 
-![cluster-upgrade-1](../../../img-2.1/cluster-upgrade.png)
+![cluster-upgrade-1](../../../img-2.2/upgrade.png)
 
 单击【确认】后，系统自动跳转到【任务】页，可以看到升级进度和详细 log 信息。
 
-![cluster-upgrade-2](../../../img-2.1/cluster-upgrade-1.png)
+![cluster-upgrade-2](../../../img-2.2/upgrade-1.png)
 
 升级完成后，可以看到如下信息。
 
-![cluster-upgrade-3](../../../img-2.1/cluster-upgrade-2.png)
+![cluster-upgrade-3](../../../img-2.2/upgrade-2.png)
 
 同时在集群【历史】页，可以通过单击【详情】按钮查看升级的所有 log 信息。
 
-![cluster-upgrade-4](../../../img-2.1/log.png)
+![cluster-upgrade-4](../../../img-2.2/upgrade-3.png)
 
 ### 3.3 集群伸缩
 
-此版本 KubeOperator 支持重点新功能：扩缩容 K8s 集群 worker 节点数量。
+此版本 KubeOperator 支持重点新功能：扩容 K8s 集群 worker 节点数量。
 
-KubeOperator 控制台【集群】页，单击一个要扩缩容的集群名称，即【概览】页面，Worker 状态栏左下方单击【伸缩】，在弹出框中选中扩容或者缩容的 worker 节点数量。
+KubeOperator 控制台【集群】页，单击一个要扩容的集群名称，即【概览】页面，Worker 状态栏左下方单击【扩容】，在弹出框中选中扩容 worker 节点数量。
 
-![cluster-expand-1](../../../img-2.2/cluster-expand-openstack.png)
+![cluster-expand-1](../../../img-2.2/vsphere-expand.png)
 
-确认后，会自动转到【任务】页面，实时查看扩缩容进度，完成后可以看到如下图所示信息。
+确认后，会自动转到【任务】页面，实时查看扩容进度，完成后可以看到如下图所示信息。
 
-![cluster-expand-2](../../../img-2.2/cluster-expand-openstack-1.png)
+![cluster-expand-2](../../../img-2.2/cluster-expand-2.png)
 
 ### 3.4 集群备份
 
@@ -283,12 +327,12 @@ KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3
 添加备份账号之前，请首先自行准备好 AWS S3 ，aliyun oss 或者 Azure 存储账号信息，包括 AccessKey，SecretKey，endpoint 和桶/容器信息。
 以添加 S3 为例，在【系统设置】的【备份】Tab 也中输入名称和 AccessKey，SecretKey 和端点（对应 AWS S3 系统里的 endpoint），单击【获取桶/容器】获取桶名称，建议在 S3 新建一个桶单独使用，最后提交。
 
-![setting-2](../../../img-2.1/setting-backup.png)
+![setting-2](../../../img-2.2/awsbackup.png)
 
-在集群【备份】页面，可以看到，KubeOperator 支持的自动备份和手动备份，自动备份包括备份间隔，复本保留份数以及可以开启户禁用备份策略，实现集群备份和恢复功能。
+在集群【备份】页面，可以看到，KubeOperator 支持的自动备份策略和手动备份，自动备份包括备份间隔，复本保留份数以及可以开启户禁用备份策略，实现集群备份和恢复功能。
 
-![cluster-backup](../../../img-2.1/backup-recover-1.png)
+![cluster-backup](../../../img-2.2/backup-1.png)
 
 手动备份需要先设置备份策略信息，包括备份间隔、保留份数、选择存储设备以及开启备份，然后单击【立即备份】后，可以在【任务】页看到备份进度。
 
-![cluster-backup-1](../../../img-2.1/backup-finish.png)
+![cluster-backup-1](../../../img-2.2/backup-finish.png)

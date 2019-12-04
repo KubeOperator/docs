@@ -72,17 +72,19 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
 
 #### 1.1.1 主机 IP 、集群域名后缀 和 NTP Server
 
-本机 IP 指安装 KubeOperator 机器自身的 IP。KubeOperator 所管理的集群将使用该 IP 来访问 KubeOperator。
+在左侧导航菜单中选择【系统设置】，默认显示系统页中，
 
-域名后缀为集群节点默认访问地址的后缀，集群暴露出来的对外服务的 URL 都将以该域名后缀作为访问地址后缀，例如: grafana.apps.mycluster.fit2cloud.com。同时支持创建集群时修改域名后缀。
+本机 IP ：指安装 KubeOperator 机器自身的 IP。KubeOperator 所管理的集群将使用该 IP 来访问 KubeOperator。
+
+域名后缀：为集群节点默认访问地址的后缀，集群暴露出来的对外服务的 URL 都将以该域名后缀作为访问地址后缀，例如: grafana.apps.mycluster.fit2cloud.com。同时支持创建集群时修改域名后缀。
 
 ![setting-1](../../../img-2.2/system-1.png)
 
-NTP Server 用来实现集群所有主机时间同步，默认可以为空，也可以自建或网上查找公共的 NTP Server。
+NTP Server ：用来实现集群所有主机时间同步，默认可以为空，也可以自建或网上查找公共的 NTP Server。
 
 #### 1.1.2 凭据
 
-凭据为 KubeOperator 连接主机资产的凭证。在左侧导航菜单中选择【设置】，进入【设置】页后点击【凭据】TAB 可以看到已添加凭据信息。
+凭据为 KubeOperator 连接主机资产的凭证。在左侧导航菜单中选择【系统设置】，进入【系统设置】页后点击【凭据】TAB 可以看到已添加凭据信息。
 
 ![setting-2](../../../img-2.2/evidencelist-1.png)
 
@@ -98,7 +100,7 @@ NTP Server 用来实现集群所有主机时间同步，默认可以为空，也
 
 ### 1.2 准备主机
 
-我们将准备添加三台主机 master-1、worker-1、nfs-storage，用来作为 master 节点、worker 节点 及 NFS 存储。
+我们将准备添加两台主机 master-1、worker-1、如果使用 NFS 持久化存储，还需要 NFS 存储主机，例如名称为 nfs-storage，用来作为 master 节点、worker 节点 及 NFS 存储。
 
 在左侧导航菜单中选择【主机】，进入【主机】页后可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
 点击【添加】按钮添加主机。输入名称和 IP 地址、指定端口号、选择对应的凭据，最后点击【提交】按钮即可完成一台主机的添加。同样地，依次添加 master-1，worker-1 和 nfs-storage 三台主机。
@@ -115,7 +117,8 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 ![storage-1](../../../img-2.2/storage-nfs.png)
 
-> 注：自行搭建的 NFS 服务仅适合在开发测试环境使用。KubeOperator 还支持录入已有的 NFS 存储（比如专业的 NAS 存储）。单击【添加】选中“录入 NFS” ，输入存储名称、白名单选项可以默认选项、服务地址、挂载路径，提交即可。需要注意另外一点添加 NFS 存储时，存储的名称不能和集群名称相同。
+> 注：本小节是可选章节，如果使用 Rook Ceph 存储方案，则不需要事前准备 NFS 存储。
+自行搭建的 NFS 服务仅适合在开发测试环境使用。KubeOperator 还支持录入已有的 NFS 存储（比如专业的 NAS 存储）。单击【添加】选中“录入 NFS” ，输入存储名称、白名单选项可以默认选项、服务地址、挂载路径，提交即可。需要注意另外一点添加 NFS 存储时，存储的名称不能和集群名称相同。
 
 ## 2 集群部署（Day 1）
 
@@ -128,8 +131,6 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 ![cluster-create-1](../../../img-2.2/cluster-manu-1.png)
 
 > 注：集群名称不要和主机名称、存储节点名称相同。
-
-![cluster-create-1](../../../img-2.2/cluster-manu-1.png)
 
 #### 2.1.2 部署模型
 
@@ -153,7 +154,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 #### 2.1.5 配置网络
 
-【配置网络】环节，选择集群的网络插件，当前版本支持 Flannel 和 Calico，这里我们选择 Calico BGP 网络方式。
+【配置网络】环节，选择集群的网络插件，当前版本支持 Flannel 和 Calico，这里我们选择 Flannel 网络方式。
 
 > 如果集群节点全部都在同一个二层网络下，请选择"host-gw"。如果不是，则选择"vxlan"。"host-gw" 性能优于 "vxlan"。选项 Service CIDR 和 POD CIDR 保证不和已有主机节点 IP 段冲突即可使用。 
 
@@ -163,12 +164,12 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 【添加存储】环节，支持两张存储方案，一种是 NFS 存储，新增加 Rook Ceph 存储方案。
 
-选择使用 Rook Ceph 存储时，需要设置存储介质和存储路径，存储介质使用推荐测试环境使用的配置，Path 使用推荐路径 /data/ceph，当然可以根据实际环境修改配置。
+如果选择使用 Rook Ceph 存储时，需要设置存储介质和存储路径，存储介质使用推荐测试环境使用的配置，Path 使用推荐路径 /data/ceph，当然可以根据实际环境修改配置。
 如何登录 Ceph 控制台查看存储监控信息，请参考第 3.1.2.1 节详细内容。
 
 ![cluster-create-7](../../../img-2.2/cluster-manu-10.png)
 
-如果选择 NFS 存储， NFS 主机的节点已经在 1.3 节添加到【存储】页面，这里选择外部持久化存储时，在下来菜单中会列出该节点。
+如果选择 NFS 存储， NFS 主机的节点已经在 1.3 节添加到【存储】页面，选择外部持久化存储时，在下来菜单中会列出该节点。
 
 ![cluster-create-6](../../../img-2.2/cluster-manu-6.png)
 
@@ -215,7 +216,7 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 
 ### 3.1 集群管理
 
-回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 hosts 文件来达到相同的作用。
+回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 hosts 文件来达到相同的作用。如果创建集群时选择 Rook Ceph 存储方案，访问 Ceph 控制台前也需要添加该域名解析规则。
 
 eg: 
 
@@ -232,6 +233,7 @@ WORKER_IP traefik.apps.mycluster.fit2cloud.com
 WORKER_IP scope.weave.apps.mycluster.fit2cloud.com
 WORKER_IP ceph.apps.mycluster.fit2cloud.com
 ```
+以上文本也可以直接在集群的【概览】页单击【域名解析规则】中获取。
 
 #### 3.1.1 Dashboard
 
@@ -313,7 +315,7 @@ Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击
 
 ##### 3.1.2.6 健康状态
 
-在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括 Control Manager，Schedule，etcd 和 nodes 的实时健康状态以及过去半年 K8s 集群运行状态。
+在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括核心组件 Control Manager，Schedule，etcd 状态和系统组件实时健康状态。
 
 ![cluster-healthy](../../../img-2.2/cluster-heathy.png)
 
@@ -324,7 +326,7 @@ KubeOperator 系统新增加支持获取 KubeOperator 系统日志和 K8s 集群
 
 ##### 3.1.3.1 系统日志
 
-【系统日志】页支持查找 KubeOperator 系统日志信息， 日志类型包括 info、debug 和 error 日志，还可以用关键字搜索日志等等日志信息。
+【系统日志】页支持查找 KubeOperator 系统相关的日志信息， 日志类型包括 info、debug 和 error 日志，还可以用关键字搜索日志等等日志信息。
 
 ![log-1](../../../img-2.2/system-log.png)
 
