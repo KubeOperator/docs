@@ -210,15 +210,25 @@ KubeOperator 2.2 中新增功能【概览】页，该页面集中显示了集群
 
 K8s Dashboard 对应的是 Kubernetes 的控制台，从浏览器中访问 Kubernetes 控制台需要用到【令牌】。点击【概览】页下方的【获取TOKEN】按钮获取令牌信息，将令牌信息复制到粘贴板。
 
-![dashboard-1](../../../img-2.2/dashboard-1.png)
+![dashboard-1](../../../img-2.2/k8s-dashboard.png)
 
 输入令牌信息后，点击【登录】，则可进入 Kubernetes 控制台。
 
-![dashboard-2](../../../img-2.2/dashboard-2.png)
+![dashboard-2](../../../img-2.2/k8s-dashboard-1.png)
 
 #### 3.1.2 集群监控
 
-##### 3.1.2.1 访问 Grafana
+##### 3.1.2.1 集群事件
+
+KubeOperator 支持获取 K8s 事件，实时更新在 KubeOperator 集群事件页面，包括正常和异常事件，可搜索过去一天/周/月的 Normal 和 Warning 事件，同时支持关键字搜索事件。事件内容和 K8s Dashboard 的 Event 一致，通过 KubeOperator 控制台能够更加直观快速的看到集群的状态信息。
+
+![event-1](../../../img-2.2/event-1.png)
+
+在集群【事件】页，单击信息列的事件，可以获取事件详情信息。
+
+![event-2](../../../img-2.2/event-2.png)
+
+##### 3.1.2.2 访问 Grafana
 
 Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化展示，更方便用户了解整个 Kubernetes 集群的运行状况。点击 Grafana 下方的【转到】按钮访问 Grafana 控制台。
 
@@ -230,7 +240,7 @@ Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化
 
 ![grafana-4](../../../img-2.2/grafana-2.png)
 
-#### 3.1.2.2 访问 Weave Scope
+#### 3.1.2.3 访问 Weave Scope
 
 Weave Scope 用来监控、可视化和管理 Kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。Weave Scope 默认的用户名是 admin，密码是 admin123。
 
@@ -240,15 +250,15 @@ Weave Scope 用来监控、可视化和管理 Kubernetes 集群。点击 Weave S
 
 ![weave-scope-2](../../../img-2.2/weave-scope-1.png)
 
-##### 3.1.2.3 访问 Prometheus
+##### 3.1.2.4 访问 Prometheus
 
 Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。
 
 ![prometheus-1](../../../img-2.2/prometheus-1.png)
 
-##### 3.1.2.4 健康状态
+##### 3.1.2.5 健康状态
 
-在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括 Control Manager，Schedule，etcd 和 nodes 的实时健康状态以及过去半年 K8s 集群运行状态。
+在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括核心组件 Control Manager，Schedule，etcd 状态和系统组件状态 Namespace 等实时健康状态。
 
 ![cluster-healthy](../../../img-2.2/cluster-heathy.png)
 
@@ -259,7 +269,7 @@ KubeOperator 系统新增加支持获取 KubeOperator 系统日志和 K8s 集群
 
 ##### 3.1.3.1 系统日志
 
-【系统日志】页支持查找 KubeOperator 系统里所有 K8s 集群日志信息， 日志类型包括 info、debug 和 error 日志，还可以用关键字搜索日志等等日志信息。
+【系统日志】页支持查找 KubeOperator 系统日志信息， 日志类型包括 info、debug 和 error 日志，还可以用关键字搜索日志等等日志信息。
 
 ![log-1](../../../img-2.2/system-log.png)
 

@@ -4,7 +4,7 @@ title: 四、在自行准备的主机上规划、部署及管理 K8s 集群
 original_id: userguide-manual
 ---
 
-KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式，另外一种是自动模式。手动模式下，用户需要自行准备主机和 NFS 作为持久化存储。
+KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式，另外一种是自动模式。手动模式下，用户需要自行准备主机,如果使用 NFS 作为持久化存储还需要准备 NFS 存储主机。
 
 手动模式下 Kubernetes 集群的规划、部署和管理包含以下内容：
 
@@ -22,7 +22,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
   - 集群伸缩
   - 集群备份
 
-本章节以手动模式部署一个开发测试用集群为例，需要准备三台主机，每个主机的用途和需求是：
+本章节以手动模式部署一个开发测试用集群为例，需要准备三台主机，如果使用通过 Rook 支持 Ceph 存储方案，则不需要准备存储主机。每个主机的用途和需求是：
 
 <table>
     <tr>
@@ -78,7 +78,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
 
 ![setting-1](../../../img-2.2/system-1.png)
 
-NTP Server 用来实现集群所有主机时间同步，默认可以为空，也可以网上查找可用的 NTP Server 。
+NTP Server 用来实现集群所有主机时间同步，默认可以为空，也可以自建或网上查找公共的 NTP Server。
 
 #### 1.1.2 凭据
 
@@ -268,7 +268,17 @@ $ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['d
 
 ![grafana-3](../../../img-2.2/rook-ceph-2.png)
 
-##### 3.1.2.2 访问 Grafana
+##### 3.1.2.2 集群事件
+
+KubeOperator 支持获取 K8s 事件，实时更新在 KubeOperator 集群事件页面，包括正常和异常事件，可搜索过去一天/周/月的 Normal 和 Warning 事件，同时支持关键字搜索事件。事件内容和 K8s Dashboard 的 Event 一致，通过 KubeOperator 控制台能够更加直观快速的看到集群的状态信息。
+
+![event-1](../../../img-2.2/event-1.png)
+
+在集群【事件】页，单击信息列的事件，可以获取事件详情信息。
+
+![event-2](../../../img-2.2/event-2.png)
+
+##### 3.1.2.3 访问 Grafana
 
 Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化展示，更方便用户了解整个 Kubernetes 集群的运行状况。点击 Grafana 下方的【转到】按钮访问 Grafana 控制台。
 
@@ -280,7 +290,7 @@ Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化
 
 ![grafana-4](../../../img-2.2/grafana-2.png)
 
-#### 3.1.2.3 访问 Weave Scope
+#### 3.1.2.4 访问 Weave Scope
 
 Weave Scope 用来监控、可视化和管理 Kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。Weave Scope 默认的用户名是 admin，密码是 admin123。
 
@@ -290,13 +300,13 @@ Weave Scope 用来监控、可视化和管理 Kubernetes 集群。点击 Weave S
 
 ![weave-scope-2](../../../img-2.2/weave-scope-1.png)
 
-##### 3.1.2.4 访问 Prometheus
+##### 3.1.2.5 访问 Prometheus
 
 Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。
 
 ![prometheus-1](../../../img-2.2/prometheus-1.png)
 
-##### 3.1.2.5 健康状态
+##### 3.1.2.6 健康状态
 
 在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括 Control Manager，Schedule，etcd 和 nodes 的实时健康状态以及过去半年 K8s 集群运行状态。
 
@@ -309,7 +319,7 @@ KubeOperator 系统新增加支持获取 KubeOperator 系统日志和 K8s 集群
 
 ##### 3.1.3.1 系统日志
 
-【系统日志】页支持查找 KubeOperator 系统里所有 K8s 集群日志信息， 日志类型包括 info、debug 和 error 日志，还可以用关键字搜索日志等等日志信息。
+【系统日志】页支持查找 KubeOperator 系统日志信息， 日志类型包括 info、debug 和 error 日志，还可以用关键字搜索日志等等日志信息。
 
 ![log-1](../../../img-2.2/system-log.png)
 
@@ -321,8 +331,9 @@ K8s 集群日志使用 Grafana 日志聚合工具 Loki。Loki 是Grafana Labs �
 
 ![log-2](../../../img-2.2/loki-2.png)
 
-#### 3.1.4 集群管理
 
+#### 3.1.4 集群管理
+ 
 ##### 3.1.4.1 访问 Registry
 
 Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。Registry 默认的用户名是 admin，密码是 admin123。
