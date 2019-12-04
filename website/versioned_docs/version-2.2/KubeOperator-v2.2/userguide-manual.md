@@ -245,11 +245,11 @@ KubeOperator 2.2 中新增功能【概览】页，该页面集中显示了集群
 
 K8s Dashboard 对应的是 Kubernetes 的控制台，从浏览器中访问 Kubernetes 控制台需要用到【令牌】。点击【概览】页下方的【获取TOKEN】按钮获取令牌信息，将令牌信息复制到粘贴板。
 
-![dashboard-1](../../../img-2.2/dashboard-1.png)
+![dashboard-1](../../../img-2.2/k8s-dashboard.png)
 
 输入令牌信息后，点击【登录】，则可进入 Kubernetes 控制台。
 
-![dashboard-2](../../../img-2.2/dashboard-2.png)
+![dashboard-2](../../../img-2.2/k8s-dashboard-1.png)
 
 #### 3.1.2 集群监控
 
