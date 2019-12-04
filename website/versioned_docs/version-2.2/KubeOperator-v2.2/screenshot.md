@@ -4,63 +4,96 @@ title: 九、功能截屏
 original_id: screenshot
 ---
 
-## 1 登录页面
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/01.jpg)
+## 1 概览页面
 
-## 2 集群概览
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/1.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/02.jpg)
+## 2 集群节点
 
-## 3 集群节点
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/2.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/03.jpg)
+## 3 集群概览
 
-## 4 部署集群
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/3.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/04.jpg)
+## 4 集群节点
 
-## 5 内置应用
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/4.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/06.jpg)
+## 5 集群存储
 
-## 6 集群状态
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/5.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/07.jpg)
+## 6 任务
 
-## 7 主机列表
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/6.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/10.jpg)
+## 7 历史
 
-## 8 NFS 存储
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/7.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/20.jpg)
+## 8 内置应用
 
-## 9 部署计划
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/8.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/30.jpg)
+## 9 健康状态
 
-## 10 离线包
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/9.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/40.jpg)
+## 10 集群备份
 
-## 11 备份设置
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/10.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/52.jpg)
+## 11 F5 对接
 
-## 12 Dashboard
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/11.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/60.jpg)
+## 12 主机列表
 
-## 13 集群监控
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/12.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/61.jpg)
+## 13 离线包
 
-## 14 节点监控
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/13.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/62.jpg)
+## 14 外部 NFS 存储
 
-## 15 Weave Scope
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/14.png)
 
-![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/65.jpg)
+## 15 部署计划
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/15.png)
+
+## 16 系统日志
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/18.png)
+
+## 17 系统设置
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/19.png)
+
+## 18 K8s Dashboard
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/22.png)
+
+## 19 集群 Grafana 监控
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/24.png)
+
+## 20 节点 Grafana 监控
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/25.png)
+
+## 21 集群 Loki 日志
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/27.png)
+
+## 22 Weave Scope
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/29.png)
+
+## 22 Ceph Dashboard (Rook)
+
+![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/30.png)
 

@@ -14,8 +14,8 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式�
   - 创建集群
   - 部署集群
   - 服务暴露
-- 集群运营和变更（Day 2）
-  - 集群运营
+- 集群运营（Day 2）
+  - 集群管理
   - 集群升级
   - 集群伸缩
   - 集群备份
@@ -177,9 +177,9 @@ KubeOpeartor 控制台【存储】，单击【添加】，选中新建 NFS ，�
 ![cluster-f5](../../../img-2.2/f5.png)
 
 
-## 3 集群运营和变更（Day 2）
+## 3 集群运营（Day 2）
 
-### 3.1 集群运营
+### 3.1 集群运维
 
 回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 /etc/hosts 文件来达到相同的作用。
 

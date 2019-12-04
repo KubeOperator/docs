@@ -10,7 +10,7 @@ KubeOperator 是一个开源项目，在离线网络环境下，通过可视化 
 
 ![overview](../../../img/overview.png)
 
-> 注： KubeOperator 2.1 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)。
+> 注： KubeOperator 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)。
 
 ## 2 KubeOperator 的整体架构
 
@@ -20,58 +20,166 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
 
 ## 3 KubeOperator 的技术优势
 
--  按需创建：调用云平台 API，一键快速创建和部署 Kubernetes 集群 (即 Kubernetes as a Service)；
+-  简单易用：提供可视化的 Web UI，极大降低部署和管理门槛；
+-  离线部署：持续更新包括 Kubernetes 及常用组件（即内置应用）的离线包；
+-  按需创建：调用云平台 API，一键快速创建和部署 Kubernetes 集群；
 -  按需伸缩：快速伸缩 Kubernetes 集群，优化资源使用效率；
 -  按需修补：快速升级和修补 Kubernetes 集群，并与社区最新版本同步，保证安全性；
 -  自我修复：通过重建故障节点确保集群可用性；
--  离线部署：持续更新包括 Kubernetes 及常用组件的离线包；
--  Multi-AZ 支持：通过把 Kuernetes 集群 Master 节点分布在不同的故障域上确保高可用；
+-  全栈监控：提供从Pod、Node到集群的事件、监控、告警、和日志方案；
+-  Multi-AZ 支持：通过把 Kubernetes 集群 Master 节点分布在不同的故障域上确保的高可用；
 
-## 4 KubeOperator 的版本规划
+## 4 KubeOperator 的功能列表
 
- v1.0 （已发布）
+<table class="subscription-level-table">
+    <tr class="subscription-level-tr-border">
+        <td class="features-first-td-background-style" rowspan="13">集群 Day 0 规划</td>
+        </td>
+        <td class="features-third-td-background-style" rowspan="2">集群模式
+        </td>
+        <td class="features-third-td-background-style">1 个 Master 节点 n 个 Worker 节点模式：适合开发测试用途
+        </td>       
+    </tr>
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">3 个 Master 节点 n 个 Worker 节点模式：适合生产用途
+        </td>
+    </tr>    
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style" rowspan="3">计算方案
+        </td>
+        <td class="features-third-td-background-style">独立主机：支持自行准备的虚机和物理机
+        </td>  
+    </tr>    
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">vSphere 平台：支持自动创建主机（使用 Terraform）
+        </td>
+    </tr>
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">Openstack 平台：支持自动创建主机 （使用 Terraform）
+        </td>
+    </tr>
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style" rowspan="3">存储方案
+        </td>
+        <td class="features-third-td-background-style">独立主机：支持 NFS / Ceph RBD (通过 Rook) 
+        </td>
+    </tr>
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">vSphere 平台：支持 vSphere Datastore （vSAN 及 vSphere 兼容的集中存储）
+        </td>
+    </tr> 
+     <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">Openstack 平台：支持 Openstack Cinder （Ceph 及 Cinder 兼容的集中存储）
+        </td>
+    </tr>
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style" rowspan="4">网络方案
+        </td>
+        <td class="features-third-td-background-style">支持 Flannel / Calico 网络插件
+        </td>
+    </tr>
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">支持通过 F5 Big IP 对外暴露服务
+        </td>
+    </tr> 
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">支持 Traefik
+        </td>
+    </tr>    
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">支持 CoreDNS
+        </td>
+    </tr>
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">操作系统
+        </td>
+        <td class="features-third-td-background-style">支持 CentOS 7.4 / 7.5 / 7.6 / 7.7
+        </td>
+    </tr>    
+    <tr class="subscription-level-tr-border">
+        <td class="features-first-td-background-style" rowspan="3">集群 Day 1 部署
+        </td>
+        <td class="features-third-td-background-style" rowspan="3">部署
+        </td>  
+        <td class="features-third-td-background-style">提供离线环境下的完整安装包
+        </td>         
+    </tr>
+     <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">支持可视化方式展示部署过程
+        </td>
+    </tr>
+     <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">支持一键自动化部署（使用 Ansible）
+        </td>
+    </tr> 
+    <tr class="subscription-level-tr-border">
+        <td class="features-first-td-background-style" rowspan="13">集群 Day 2 运营
+        </td>
+        <td class="features-third-td-background-style" rowspan="4">管理
+        </td>  
+        <td class="features-third-td-background-style">内置 K8s 官方的 Dashboard 管理应用
+        </td>         
+    </tr>
+     <tr class="subscription-level-tr-border">
+         <td class="features-third-td-background-style">内置 Weave Scope 管理应用
+        </td>
+    </tr>  
+    <tr class="subscription-level-tr-border">
+         <td class="features-third-td-background-style">提供 Web Kubectl 界面
+        </td>
+    </tr> 
+    <tr class="subscription-level-tr-border">
+         <td class="features-third-td-background-style">内置 Helm 
+        </td>
+    </tr>   
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style" rowspan="4">可观察性
+        </td>
+         <td class="features-third-td-background-style">内置 Promethus，支持对集群、节点、Pod、Container的全方位监控和告警
+        </td>
+    </tr>
+     <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">内置 Loki 日志方案
+        </td>
+    </tr> 
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">内置 Grafana 作为监控和日志展示
+        </td>
+    </tr> 
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style"> 在 Web UI 上面查看集群事件，并可以通过钉钉、微信进行通知；
+        </td>
+    </tr>      
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">升级
+        </td>
+         <td class="features-third-td-background-style">支持集群升级
+        </td>
+    </tr> 
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">伸缩
+        </td>
+         <td class="features-third-td-background-style">支持增加或者减少 Worker 节点
+        </td>
+    </tr>
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">备份
+        </td>
+         <td class="features-third-td-background-style">支持 etcd 定期备份
+        </td>
+    </tr>  
+    <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">合规
+        </td>
+         <td class="features-third-td-background-style">使用 Sonobuoy 进行合规检查并可视化展示结果
+        </td>
+    </tr>      
+     <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">应用商店
+        </td>
+         <td class="features-third-td-background-style">集成 KubeApps 应用商店
+        </td>
+    </tr>     
+ </table>
 
-- 提供原生 Kubernetes 的离线包仓库；
-- 支持一主多节点部署模式；
-- 支持离线环境下的一键自动化部署，可视化展示集群部署进展和结果；
-- 内置 Kubernetes 常用系统应用的安装，包括 Registry、Promethus、Dashboard、Traefik Ingress、Helm 等；
-- 提供简易明了的 Kubernetes 集群运行状况面板；
-- 支持 NFS 作为持久化存储；
-- 支持 Flannel 作为网络方案；
-- 支持 Kubernetes 集群手动部署模式（自行准备主机和 NFS）；
-
- v2.0 （已发布）
-
-- 支持调用 VMware vCenter API 自动创建集群主机；
-- 支持 VMware vSAN 、VMFS/NFS 作为持久化存储；
-- 支持 Multi AZ，支持多主多节点部署模式；
-- 内置 Weave Scope；
-- 支持 Calico 网络插件；
-- 支持通过 F5 BIG-IP Controller 对外暴露服务（Nodeport mode, 七层和四层服务都支持）
-
- v2.1 （已发布）
- 
- - 支持 Openstack 云平台；
- - 支持 Openstack Cinder 作为持久化存储；
- - 支持 Kubernetes 集群升级（Day 2）；
- - 支持 Kubernetes 集群扩缩容（Day 2）；
- - 支持 Kubernetes 集群备份与恢复（Day 2）；
- - 支持 Kubernetes 集群健康检查与诊断（Day 2）；
- - 支持 webkubectl；
-
-v2.2 （进行中，2019.11.30 发布）
-
-  - K8s 日志收集及管理方案（Loki）；
-  - KubeOperator 自身的系统日志收集和管理；
-  - 新增概览页面：展示关键信息，比如状态、容量、TOP 使用率、异常日志、异常容器等信息；
-  - 支持云原生存储 Rook；
-
-v2.3 （计划中，2019.12.31 发布）
-
-  - KubeApps 应用商店；
-
-v3.0 （计划中）
-
-  - 离线环境下使用 Sonobuoy 进行 Kubernetes 集群合规检查并可视化展示结果；
-  - 国际化支持；
-  - 支持 VMware NSX-T；
+具体版本路线图请参考：[Roadmap](https://github.com/KubeOperator/KubeOperator/blob/master/ROADMAP.md)

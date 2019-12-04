@@ -14,7 +14,6 @@ original_id: faq
 
 KubeOperator 专注于解决基础设施层面的问题，为开发者交付生产级别可用的 K8s 集群，实现 Kubernetes as a Service。
 
-
 ## 2 KubeOperator 与 Kubespray 等部署工具的区别是什么？
 
 KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes 集群升级、扩容、监控检查、备份恢复等功能，如下图所示。
@@ -94,7 +93,7 @@ $ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['d
 
  是。KubeOperator 的管理范围包括操作系统，比如操作系统补丁升级，其提供的离线包包括操作系统（自动模式）及其 RPM 包，一个离线包版本代表一个终态，并被充分测试和验证。
 
- > 注：KubeOperator 不支持 CentOS 8，目前支持的版本是 CentOS 7.6, 7.7 Minimal.
+ > 注：KubeOperator 不支持 CentOS 8，目前支持的版本是 CentOS 7.4 7.5 7.6 7.7.
 
  ## 12 K8s 集群的升级策略是什么？
 
@@ -102,7 +101,7 @@ $ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['d
 
  ## 13 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
 
-  是的。KubeOperator 2.1 版本已经通过认证，具体请参加：https://landscape.cncf.io
+  是的。KubeOperator 已经通过认证，具体请参加：https://landscape.cncf.io
 
 
 
