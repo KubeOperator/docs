@@ -102,6 +102,12 @@ $ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['d
  ## 13 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
 
   是的。KubeOperator 已经通过认证，具体请参加：https://landscape.cncf.io
+  
+ ## 14 KubeOperator 和 Rancher 有什么区别？
+
+Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业规划、部署和运营生产级别的 K8s 集群，和 KubeOperator 有可比性的是 Rancher RKE，而不是 Rancher 全部。
+
+KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的DevOps平台、微服务治理平台、AI平台、应用商店等是解耦的。
 
 
 
