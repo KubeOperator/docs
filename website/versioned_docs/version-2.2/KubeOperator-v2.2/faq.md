@@ -112,17 +112,19 @@ KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就�
 
  ## 15 KubeOperator 是否支持用户自主选择 K8s 离线包版本？
 
- 支持。
- 目前支持的 K8s 离线包下载地址：https://github.com/KubeOperator/k8s-package/releases 
- 选择 K8s 离线包方法举例：
- 下载 kubernetes v1.15.5 离线包，目前离线包通过百度网盘下载，例如： https://pan.baidu.com/s/1oiDyVc9J10gUzg4vjo5oTw
- 将 K8s 离线包 copy 到 KubeOperator 部署机下面目录中，
- #cd /opt/kubeoperator/data/packages
- 解压 K8s 离线包
- #tar zxvf k8s-package-1.15.5.tar.gz
- 修改 K8s 离线包权限
- #chmod -R 777 v1-15-5
- 在KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可用使该版本。
+  支持。</br>
+  目前支持的 K8s 离线包下载地址：https://github.com/KubeOperator/k8s-package/releases  </br>
+  选择 K8s 离线包方法举例：</br>
+  下载 kubernetes v1.15.5 离线包，目前离线包通过百度网盘下载。</br>
+  链接：https://pan.baidu.com/s/1oiDyVc9J10gUzg4vjo5oTw </br>
+  提取码：18vw </br>
+  将 K8s 离线包 copy 到 KubeOperator 部署机下面目录中 </br>
+  #cd /opt/kubeoperator/data/packages </br>
+  解压 K8s 离线包 </br>
+  #tar zxvf k8s-package-1.15.5.tar.gz </br>
+  修改 K8s 离线包权限 </br> 
+  #chmod -R 777 v1-15-5 </br>
+  在KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可用使该版本。 
 
 
 
