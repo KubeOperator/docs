@@ -20,7 +20,7 @@ KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes �
 
 ![overview](../../../img/overview.png)
 
-除此之外，KubeOperator 还有如下优势：
+KubeOperator 不仅支持安装程序本身，还提供了一组工具来监视 Kubernetes 集群的持续运行。KubeOperator 的优势包括：
 
 -  提供可视化的 Web UI，大大降低部署和管理 K8s 的门槛；
 -  提供离线的、经过全面验证和测试的安装包；
@@ -109,15 +109,16 @@ Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业�
 
 KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的DevOps平台、微服务治理平台、AI平台、应用商店等是解耦的。
 
-
  ## 15 KubeOperator 是否支持用户自主选择 K8s 离线包版本？
 
-  支持。</br>
+  支持。
   目前支持的 K8s 离线包下载地址：https://github.com/KubeOperator/k8s-package/releases  </br>
   选择 K8s 离线包方法举例：</br>
   下载 kubernetes v1.15.5 离线包，目前离线包通过百度网盘下载。</br>
   链接：https://pan.baidu.com/s/1oiDyVc9J10gUzg4vjo5oTw </br>
-  提取码：18vw </br>
+  提取码：18vw 
+  
+  ``` bash
   将 K8s 离线包 copy 到 KubeOperator 部署机下面目录中 </br>
   #cd /opt/kubeoperator/data/packages </br>
   解压 K8s 离线包 </br>
@@ -125,7 +126,5 @@ KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就�
   修改 K8s 离线包权限 </br> 
   #chmod -R 777 v1-15-5 </br>
   在KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可用使该版本。 
-
-
-
-
+  ```
+  
