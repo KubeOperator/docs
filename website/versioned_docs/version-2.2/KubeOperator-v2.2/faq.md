@@ -118,13 +118,13 @@ KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就�
   链接：https://pan.baidu.com/s/1oiDyVc9J10gUzg4vjo5oTw </br>
   提取码：18vw 
   
-  ``` bash
-  将 K8s 离线包 copy 到 KubeOperator 部署机下面目录中 </br>
-  #cd /opt/kubeoperator/data/packages </br>
-  解压 K8s 离线包 </br>
-  #tar zxvf k8s-package-1.15.5.tar.gz </br>
-  修改 K8s 离线包权限 </br> 
-  #chmod -R 777 v1-15-5 </br>
-  在KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可用使该版本。 
-  ```
+ ``` bash
+# 将 K8s 离线包 copy 到 KubeOperator 部署机下面目录中
+# cd /opt/kubeoperator/data/packages
+# 解压 K8s 离线包
+tar zxvf k8s-package-1.15.5.tar.gz
+# 修改 K8s 离线包权限
+chmod -R 777 v1-15-5
+# 在KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可用使该版本。 
+ ```
   
