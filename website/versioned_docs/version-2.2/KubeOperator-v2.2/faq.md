@@ -125,6 +125,6 @@ KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就�
 tar zxvf k8s-package-1.15.5.tar.gz
 # 修改 K8s 离线包权限
 chmod -R 777 v1-15-5
-# 在KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可用使该版本。 
+# 在 KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可使用该版本。 
  ```
   
