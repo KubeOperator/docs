@@ -1,6 +1,6 @@
 ---
 id: version-2.1-userguide-manual
-title: 四、在自行准备的主机上规划、部署及管理 K8s 集群
+title: 四、在自行准备的主机上规划、部署及运营 K8s 集群
 original_id: userguide-manual
 ---
 

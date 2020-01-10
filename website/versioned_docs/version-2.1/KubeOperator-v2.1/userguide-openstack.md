@@ -1,6 +1,6 @@
 ---
 id: version-2.1-userguide-openstack
-title:  六、在 OpenStack 平台上规划、部署及管理 K8s 集群
+title:  六、在 OpenStack 平台上规划、部署及运营 K8s 集群
 original_id: userguide-openstack
 ---
 

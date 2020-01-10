@@ -18,6 +18,7 @@ original_id: installation
 -  下载链接: https://github.com/KubeOperator/KubeOperator/releases
 
 > 注：KubeOperator 完整离线包大小约为 6 G。
+> 如需要高速下载通道，请加微信号 wh_it0224，添加好友，备注（城市-github用户名）。
 
 ## 3 安装 KubeOperator
 
