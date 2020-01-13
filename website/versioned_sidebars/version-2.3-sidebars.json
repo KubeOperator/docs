@@ -1,0 +1,19 @@
+{
+  "version-2.3-docs": {
+    "KubeOperator-v2.3": [
+      "version-2.3-KubeOperator-v2.3/introduction",
+      "version-2.3-KubeOperator-v2.3/concept",
+      "version-2.3-KubeOperator-v2.3/installation",
+      "version-2.3-KubeOperator-v2.3/userguide-manual",
+      "version-2.3-KubeOperator-v2.3/userguide-vsphere",
+      "version-2.3-KubeOperator-v2.3/userguide-openstack",
+      "version-2.3-KubeOperator-v2.3/userguide-aliyun",
+      "version-2.3-KubeOperator-v2.3/faq",
+      "version-2.3-KubeOperator-v2.3/video",  
+      "version-2.3-KubeOperator-v2.3/screenshot",      
+      "version-2.3-KubeOperator-v2.3/support",
+      "version-2.3-KubeOperator-v2.3/known-issue"
+    ],
+    "References": []
+  }
+}
