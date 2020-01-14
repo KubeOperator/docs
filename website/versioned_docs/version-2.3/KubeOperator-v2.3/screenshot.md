@@ -1,6 +1,6 @@
 ---
 id: version-2.3-screenshot
-title: 十一、功能截屏
+title: 十二、功能截屏
 original_id: screenshot
 ---
 
