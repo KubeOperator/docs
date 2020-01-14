@@ -25,13 +25,13 @@ original_id: installation
 ``` bash
 $ cd /tmp
 # 解压离线包
-$ tar zxvf kubeOperator-v2.2.xx-release.tar.gz
+$ tar zxvf kubeOperator-v2.3.xx-release.tar.gz
 # 查看防火墙状态
 $ firewall-cmd --state
 # 关闭防火墙
 $ systemctl stop firewalld.service
 # 进入项目目录
-$ cd kubeOperator-v2.2.xx-release
+$ cd kubeOperator-v2.3.xx-release
 # 运行安装脚本
 $ ./kubeopsctl.sh install
 # 查看 KubeOperator 状态
@@ -70,11 +70,11 @@ KubeOperator 默认监听 HTTP 80 端口。安装完毕后，请使用浏览器�
 ``` bash
 $ cd /tmp
 # 下载新版本离线包
-$ wget http://xxxxxxx.kubeOperator-v2.2.xx-release.tar.gz
+$ wget http://xxxxxxx.kubeOperator-v2.3.xx-release.tar.gz
 # 解压离线包
-$ tar zxvf kubeOperator-v2.2.xx-release.tar.gz
+$ tar zxvf kubeOperator-v2.3.xx-release.tar.gz
 # 进入项目目录
-$ cd kubeOperator-v2.2.xx-release
+$ cd kubeOperator-v2.3.xx-release
 # 运行升级脚本
 $ ./kubeopsctl.sh upgrade
 # 查看 KubeOperator 状态

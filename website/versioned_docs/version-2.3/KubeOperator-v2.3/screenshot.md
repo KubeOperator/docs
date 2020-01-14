@@ -1,6 +1,6 @@
 ---
 id: version-2.3-screenshot
-title: 十、功能截屏
+title: 十一、功能截屏
 original_id: screenshot
 ---
 
@@ -96,4 +96,3 @@ original_id: screenshot
 ## 22 Ceph Dashboard (Rook)
 
 ![sceenshot](https://raw.githubusercontent.com/KubeOperator/website/master/images/30.png)
-
