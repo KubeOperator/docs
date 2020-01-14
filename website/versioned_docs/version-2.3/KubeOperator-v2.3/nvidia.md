@@ -1,33 +1,41 @@
 ---
 id: version-2.3-nvidia-gpu
-title: 九、GPU 与机器学习服务
+title: 九、GPU 与机器学习
 original_id: nvidia-gpu
 ---
 
-## 1 为什么要在 Kubernetes 上使用 GPU？
+除了传统的无状态 Web 应用外，越来越多的数据库 Workload、实时计算 Workload、AI 机器学习 Workload 会跑在 K8s 之上。其中，尤其是 AI 机器学习，天然适合运行在 K8s 之上。对于一些用户，其构建 K8s 集群就是专门用来运行机器学习、通用 GPU、高性能计算，以及受益于专用硬件加速器的其他工作负载。
 
-除了传统的无状态 Web 应用外，越来越多的数据库 Workload、实时计算 Workload、AI 机器学习 Workload 会跑在 Kubernetes 之上。其中，尤其是 AI 机器学习，天然适合运行在 Kubernetes 之上。对于一些用户来说，其构建 K8s 集群就是专门用来运行机器学习、通用 GPU、高性能计算，以及受益于专用硬件加速器的其他工作负载。
+## 1 使用 Kubeoperator 部署带有 GPU 的 Kubernetes 集群
 
-## 2 Kubernetes + Nvidia 标准化方案
-
-## 3 使用 Kubeoperator 部署带有 GPU 的 Kubernetes 集群
-
-### 3.1 先决条件
+### 1.1 先决条件
 
 - 至少一台 Worker 节点拥有 NVIDIA GPU 显卡设备
 - Kubernetes 1.6.X: Package >= 1.16.4 
 - Kubernetes 1.5.X: Package >= 1.15.7
 
-### 3.2 添加 GPU 主机
+### 1.2 集群规划
 
-截图
+name | CPU (核心) |  内存 （GB） | 操作系统 | GPU (个) | 角色
+-|-|-|-|-|-
+master  | 4 | 8  | CentOS 7.6 | 0 | Master
+worker1 | 4 | 20 | CentOS 7.6 | 1 | Worker
+worker2 | 4 | 8  | CentOS 7.6 | 0 | Worker
+nfs     | 1 | 2  | CentOS 7.6 | 0 | NFS
 
-### 3.3 创建集群
+### 1.3 添加 GPU 主机
 
-截图
+![gpu-host-list](../../../img-nivdia/gpu-host-list.jpg)
 
-### 3.4 验证 GPU 调度
+![gpu-host-detail](../../../img-nivdia/gpu-host-detail.png)
 
+### 1.4 创建集群
+
+部署步骤请参考在自行准备的主机上部署 k8s 集群。
+
+### 1.5 验证 GPU 调度
+
+使用 Webkubectl 进入集群 Terminal, 新建文件 gpu.yml 并输入以下内容:
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -86,15 +94,15 @@ Mon Jan 13 08:16:36 2020
 
 ```
 
-## 4.Tensorflow on Kubernetes 
+## 2.Tensorflow on Kubernetes 
 
-### 4.1 关于 Tensorflow
+### 2.1 关于 Tensorflow
 
-TensorFlow 是一个端到端开源机器学习平台。它拥有一个包含各种工具、库和社区资源的全面灵活生态系统，可以让研究人员推动机器学习领域的先进技术的发展，并让开发者轻松地构建和部署由机器学习提供支持的应用。
+[TensorFlow](https://www.tensorflow.org/) 是一个端到端开源机器学习平台。它拥有一个包含各种工具、库和社区资源的全面灵活生态系统，可以让研究人员推动机器学习领域的先进技术的发展，并让开发者轻松地构建和部署由机器学习提供支持的应用。
 
-### 4.2 安装 Tensorflow
+### 2.2 在 Kuberneters 中安装 Tensorflow
 
-新建文件 tensorflow.yml 并输入一下内容:
+使用 Webkubectl 进入集群 Terminal, 新建文件 tensorflow.yml 并输入以下内容:
 ```
 
 ---
@@ -175,25 +183,25 @@ tensorflow-svc   NodePort   179.10.100.67   <none>        80:32604/TCP   2m15s
 ```
 访问 http://NODE_IP:32604 访问 Jupyter
 
-![jupter-login](../../../static/img-nivdia/tensorflow-login.png)
+![jupter-login](../../../img-nivdia/tensorflow-login.png)
 
 
 
-### 4.3 开始一个 Tensorflow 机器学习
+### 2.3 开始一个 Tensorflow 机器学习示例
 
-#### 4.3.1 打开一个终端
+#### 2.3.1 打开一个终端
 
-![jupter-select-terminal](../../../static/img-nivdia/tensorflow-select-terminal.png)
+![jupter-select-terminal](../../../img-nivdia/tensorflow-select-terminal.png)
 
-![jupter-terminal](../../../static/img-nivdia/tensorflow-terminal.png)
+![jupter-terminal](../../../img-nivdia/tensorflow-terminal.png)
 
-#### 4.3.2 使用 PIP 下载 keras
+#### 2.3.2 使用 PIP 下载 KERAS
 
 ```
 pip install keras==2.0.6
 ```
 
-#### 4.3.3 代码实现
+#### 2.3.3 代码实现
 
 ```
 import keras
@@ -224,5 +232,25 @@ model.compile(optimizer='adam',
 # 训练并验证模型
 model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test,  y_test, verbose=2)
+
+```
+
+#### 2.3.4 运行学习服务
+
+```bash
+python mnist.py
+
+Epoch 1/5
+60000/60000 [==============================] - 9s - loss: 0.2984 - acc: 0.9137     
+Epoch 2/5
+60000/60000 [==============================] - 7s - loss: 0.1422 - acc: 0.9575     
+Epoch 3/5
+60000/60000 [==============================] - 7s - loss: 0.1102 - acc: 0.9671     
+Epoch 4/5
+60000/60000 [==============================] - 7s - loss: 0.0885 - acc: 0.9728     
+Epoch 5/5
+60000/60000 [==============================] - 7s - loss: 0.0758 - acc: 0.9761 
+
+[0.074264542010473084, 0.97750000000000004] #这个照片分类器的准确度已经达到 98%
 
 ```
