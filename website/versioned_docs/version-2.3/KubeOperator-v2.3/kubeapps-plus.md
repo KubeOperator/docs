@@ -12,14 +12,23 @@ KubeApps Plus 是 KubeOperator 内置的应用商店方案，目前应用商店�
 
 DevOps 工具链应用：GitLab、Jenkins、Harbor、Sonarqube 等；
 AI 深度学习应用：Tensorflow 等;
+
 其他的应用可以通过自定义 Helm Chart 仓库进行安装。
 
-## 2 安装 KubeApps Plus
+#### 主要功能
+
+- 从 Helm Chart 仓库中浏览并部署 Helm Chart 应用；
+- 集群中已有 Helm chart 应用的查看、升级和卸载；
+- 支持自定义 Helm Chart 仓库（比如 ChartMuseum 和 JFrog Artifactory 等）；
+- 基于 Kubernetes RBAC 的身份验证和授权；
+
+![流程图](../../../static/img-kubeapps-plus/user-role-process-old.png)
+
+## 2 安装指南
 
 ### 2.1 自动安装
 
 KubeApps Plus 是 KubeOperator 的一个内置应用。通过 KubeOperator 部署的 K8s 集群会自动安装上 KubeApps Plus；
-
 
 ### 2.2 手动安装
 
@@ -33,7 +42,27 @@ helm install --name kubeapps-plus --namespace kubeapps-plus ./chart
 
 上面的命令会将 KubeApps Plus 部署到集群中的 `kubeapps-plus` 名称空间中。 执行可能需要几分钟。 部署完成并且 KubeApps Plus 容器运行后, 继续执行步骤2。
 
-## 3 部署应用
+### 2.3 安装Helm Charts 离线包
+
+离线推送脚本，将 Kubeapps-plus 默认的 Chart 推送至指定的仓库。
+
+默认使用本地ChartMuseum 仓库，如果需要修改仓库地址，请修改 kubeappsctl.sh 文件里的 repo_url、repo_username、repo_password 等参数。
+
+#### 使用方法:
+
+```
+# 首先登录 master 节点，其次进入 tmp (或其他自定义)目录
+cd /tmp
+wget http://172.16.10.63/kubeapps-plus/kubeapps-offline-scripts-v1.0-38.tar.gz
+# 解压文件到本目录
+tar zxvf kubeapps-offline-scripts-v1.0-38.tar.gz
+# 解压后会出现一个 script 目录
+cd script
+# 执行 kubeappsctl.sh shell 文件,将会下载镜像并推送到本地(或自定义)仓库
+./kubeappsctl.sh start
+```
+
+## 3 使用指南
 
 ### 3.1 登录 KubeApps Plus 
 
@@ -41,11 +70,11 @@ helm install --name kubeapps-plus --namespace kubeapps-plus ./chart
 
 这将启动 HTTP 代理, 以安全地访问 KubeApps Plus 仪表板。 在您喜欢的网络浏览器中访问 `http://127.0.0.1:8080/` 以打开仪表板。 这是您应该看到的: 
 
-![控制台登录页面](../../../img/dashboard-login.png)
+![控制台登录页面](../../../static/img-kubeapps-plus/dashboard-login.png)
 
 粘贴集群概览页获取的令牌以认证和访问 Kubernetes 的 KubeApps Plus 仪表板。
 
-![仪表板主页](../../../img/dashboard-home.png)
+![仪表板主页](../../../static/img-kubeapps-plus/dashboard-home.png)
 
  ### 3.2 部署 WordPress
 
@@ -53,19 +82,19 @@ helm install --name kubeapps-plus --namespace kubeapps-plus ./chart
 
 - 使用仪表板中的 “目录” 页面从任何已配置的Helm图表存储库中的图表列表中选择一个应用程序。 本示例假定您要部署 WordPress。
 
-  ![WordPress图表](../../../img/wordpress-search.png)
+  ![WordPress图表](../../../static/img-kubeapps-plus/wordpress-search.png)
 
 - 单击 “使用 Helm 部署”按钮。
 
-  ![WordPress图表](../../../img/wordpress-chart.png)
+  ![WordPress图表](../../../static/img-kubeapps-plus/wordpress-chart.png)
 
 - 系统将提示您输入应用程序的发行名称和值。
 
-  ![WordPress安装](../../../img/wordpress-installation.png)
+  ![WordPress安装](../../../static/img-kubeapps-plus/wordpress-installation.png)
 
 - 点击“提交”按钮。 该应用程序将被部署。 您将能够直接从浏览器跟踪新的 Kubernetes 部署。
 
-  ![WordPress部署](../../../img/wordpress-deployment.png)
+  ![WordPress部署](../../../static/img-kubeapps-plus/wordpress-deployment.png)
 
 要获取 WordPress 用户名和密码, 请参考部署页面的 “注释” 部分, 其中包含您需要运行以获取部署凭据的命令。
 
@@ -73,4 +102,4 @@ helm install --name kubeapps-plus --namespace kubeapps-plus ./chart
 请注意, 根据您选择的云提供商的不同, 访问URL可能需要一些时间才能用于应用程序, 并且该服务将保持“待处理”状态, 直到分配了URL。 
 如果使用 Minikube, 则需要在终端中运行 `minikube tunnel`, 以便将IP地址分配给您的应用程序。
 
-![WordPress部署说明](../../../img/wordpress-notes.png)
+![WordPress部署说明](../../../static/img-kubeapps-plus/wordpress-notes.png)
