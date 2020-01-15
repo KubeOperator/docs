@@ -22,7 +22,7 @@ AI 深度学习应用：Tensorflow 等;
 - 支持自定义 Helm Chart 仓库（比如 ChartMuseum 和 JFrog Artifactory 等）；
 - 基于 Kubernetes RBAC 的身份验证和授权；
 
-![流程图](../../../static/img-kubeapps-plus/user-role-process-old.png)
+![流程图](../../../img-kubeapps-plus/user-role-process-old.png)
 
 ## 2 安装指南
 
@@ -70,11 +70,11 @@ cd script
 
 这将启动 HTTP 代理, 以安全地访问 KubeApps Plus 仪表板。 在您喜欢的网络浏览器中访问 `http://127.0.0.1:8080/` 以打开仪表板。 这是您应该看到的: 
 
-![控制台登录页面](../../../static/img-kubeapps-plus/dashboard-login.png)
+![控制台登录页面](../../../img-kubeapps-plus/dashboard-login.png)
 
 粘贴集群概览页获取的令牌以认证和访问 Kubernetes 的 KubeApps Plus 仪表板。
 
-![仪表板主页](../../../static/img-kubeapps-plus/dashboard-home.png)
+![仪表板主页](../../../img-kubeapps-plus/dashboard-home.png)
 
  ### 3.2 部署 WordPress
 
@@ -82,19 +82,19 @@ cd script
 
 - 使用仪表板中的 “目录” 页面从任何已配置的Helm图表存储库中的图表列表中选择一个应用程序。 本示例假定您要部署 WordPress。
 
-  ![WordPress图表](../../../static/img-kubeapps-plus/wordpress-search.png)
+  ![WordPress图表](../../../img-kubeapps-plus/wordpress-search.png)
 
 - 单击 “使用 Helm 部署”按钮。
 
-  ![WordPress图表](../../../static/img-kubeapps-plus/wordpress-chart.png)
+  ![WordPress图表](../../../img-kubeapps-plus/wordpress-chart.png)
 
 - 系统将提示您输入应用程序的发行名称和值。
 
-  ![WordPress安装](../../../static/img-kubeapps-plus/wordpress-installation.png)
+  ![WordPress安装](../../../img-kubeapps-plus/wordpress-installation.png)
 
 - 点击“提交”按钮。 该应用程序将被部署。 您将能够直接从浏览器跟踪新的 Kubernetes 部署。
 
-  ![WordPress部署](../../../static/img-kubeapps-plus/wordpress-deployment.png)
+  ![WordPress部署](../../../img-kubeapps-plus/wordpress-deployment.png)
 
 要获取 WordPress 用户名和密码, 请参考部署页面的 “注释” 部分, 其中包含您需要运行以获取部署凭据的命令。
 
@@ -102,4 +102,10 @@ cd script
 请注意, 根据您选择的云提供商的不同, 访问URL可能需要一些时间才能用于应用程序, 并且该服务将保持“待处理”状态, 直到分配了URL。 
 如果使用 Minikube, 则需要在终端中运行 `minikube tunnel`, 以便将IP地址分配给您的应用程序。
 
-![WordPress部署说明](../../../static/img-kubeapps-plus/wordpress-notes.png)
+![WordPress部署说明](../../../img-kubeapps-plus/wordpress-notes.png)
+
+### 3.3 删除 WordPress
+
+### 3.4 添加存储库
+
+### 3.5 更新 namesapce
