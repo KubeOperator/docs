@@ -26,11 +26,11 @@ AI 深度学习应用：Tensorflow 等;
 
 ## 2 安装指南
 
-### 2.1 自动安装
+KubeApps Plus 安装分为两部分，首选安装 KubeApps Plus（自动或者手动安装），然后在 K8s 集群的 master 节点中安装 Helm Charts 离线包。下面分别介绍这两部分内容。
 
-KubeApps Plus 是 KubeOperator 的一个内置应用。通过 KubeOperator 部署的 K8s 集群会自动安装上 KubeApps Plus；
+### 2.1 安装 KubeApps Plus
 
-### 2.2 手动安装
+KubeApps Plus 的安装方式有两种，一种是作为 KubeOperator 的内置应用，在 KubeOperator 里面安装 K8s 集群时自动安装 KubeApps plus，这里不在赘述。另外一种是使用 Helm 图表手动安装到集群。下面仅简单介绍手动安装方法。
 
 使用 Helm 图表安装最新版本的 KubeApps Plus: 
 
@@ -40,13 +40,13 @@ cd kubeapps-plus
 helm install --name kubeapps-plus --namespace kubeapps-plus ./chart
 ```
 
-上面的命令会将 KubeApps Plus 部署到集群中的 `kubeapps-plus` 名称空间中。 执行可能需要几分钟。 部署完成并且 KubeApps Plus 容器运行后, 继续执行步骤2。
+上面的命令会将 KubeApps Plus 部署到集群中的 `kubeapps-plus` 名称空间中，该安装过程可能需要几分钟。后面章节详述怎样登录 KubeApps Plus Web UI。 
 
-### 2.3 安装Helm Charts 离线包
+### 2.2 安装Helm Charts 离线包
 
 离线推送脚本，将 Kubeapps-plus 默认的 Chart 推送至指定的仓库。
 
-默认使用本地ChartMuseum 仓库，如果需要修改仓库地址，请修改 kubeappsctl.sh 文件里的 repo_url、repo_username、repo_password 等参数。
+默认使用本地 ChartMuseum 仓库，如果需要修改仓库地址，请修改 kubeappsctl.sh 文件里的 repo_url、repo_username、repo_password 等参数。
 
 #### 使用方法:
 
