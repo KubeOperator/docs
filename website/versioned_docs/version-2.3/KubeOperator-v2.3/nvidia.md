@@ -181,7 +181,7 @@ NAME             TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
 tensorflow-svc   NodePort   179.10.100.67   <none>        80:32604/TCP   2m15s
 
 ```
-访问 http://NODE_IP:32604 访问 Jupyter
+访问 http://NODE_IP:32604 访问 Jupyter ，密码: `mypassw0rd`
 
 ![jupter-login](../../../img-nivdia/tensorflow-login.png)
 
@@ -208,8 +208,8 @@ import keras
 from tensorflow.python.client import device_lib
 
 # 获取 GPU 信息
-num_gpus = sum([1 for d in local_device_protos if d.device_type == 'GPU'])
-print("GPU : {}".format(num_gpus))
+#num_gpus = sum([1 for d in local_device_protos if d.device_type == 'GPU'])
+#print("GPU : {}".format(num_gpus))
 
 # 下载 MNIST 数据集
 mnist = keras.datasets.mnist
