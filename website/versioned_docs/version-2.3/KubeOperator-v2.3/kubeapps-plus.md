@@ -1,6 +1,6 @@
 ---
 id: version-2.3-kubeapps-plus
-title: 八、安装和使用应用商店
+title: 八、KubeApps Plus 应用商店使用指南
 original_id: kubeapps-plus
 ---
 
@@ -26,7 +26,7 @@ AI 深度学习应用：Tensorflow 等;
 
 ## 2 安装指南
 
-KubeApps Plus 安装分为两部分，首选安装 KubeApps Plus（自动或者手动安装），然后在 K8s 集群的 master 节点中安装 Helm Charts 离线包。下面分别介绍这两部分内容。
+KubeApps Plus 安装分为两个步骤，首选安装 KubeApps Plus（自动或者手动安装），然后在 K8s 集群的 master 节点中安装 Helm Charts 离线包。下面分别介绍这两部分内容。
 
 ### 2.1 安装 KubeApps Plus
 
@@ -34,7 +34,8 @@ KubeApps Plus 的安装方式有两种，一种是作为 KubeOperator 的内置�
 
 使用 Helm 图表安装最新版本的 KubeApps Plus: 
 
-```bash
+```bash 
+#登录 K8s 集群的 master 节点
 git clone https://github.com/KubeOperator/kubeapps-plus.git
 cd kubeapps-plus
 helm install --name kubeapps-plus --namespace kubeapps-plus ./chart
@@ -42,7 +43,7 @@ helm install --name kubeapps-plus --namespace kubeapps-plus ./chart
 
 上面的命令会将 KubeApps Plus 部署到集群中的 `kubeapps-plus` 名称空间中，该安装过程可能需要几分钟。后面章节详述怎样登录 KubeApps Plus Web UI。 
 
-### 2.2 安装Helm Charts 离线包
+### 2.2 安装 Helm Charts 离线包
 
 离线推送脚本，将 Kubeapps-plus 默认的 Chart 推送至指定的仓库。
 
@@ -80,7 +81,7 @@ cd script
 
 一旦 KubeApps Plus 仪表板启动并运行, 就可以开始将应用程序部署到群集中。
 
-- 使用仪表板中的 “目录” 页面从任何已配置的Helm图表存储库中的图表列表中选择一个应用程序。 本示例假定您要部署 WordPress。
+- 使用仪表板中的 “目录” 页面从任何已配置的 Helm 图表存储库中的图表列表中选择一个应用程序。 本示例假定您要部署 WordPress。
 
   ![WordPress图表](../../../img-kubeapps-plus/wordpress-search.png)
 
@@ -98,9 +99,9 @@ cd script
 
 要获取 WordPress 用户名和密码, 请参考部署页面的 “注释” 部分, 其中包含您需要运行以获取部署凭据的命令。
 
-您也可以使用显示的URL直接访问应用程序。 
-请注意, 根据您选择的云提供商的不同, 访问URL可能需要一些时间才能用于应用程序, 并且该服务将保持“待处理”状态, 直到分配了URL。 
-如果使用 Minikube, 则需要在终端中运行 `minikube tunnel`, 以便将IP地址分配给您的应用程序。
+您也可以使用显示的 URL 直接访问应用程序。 
+请注意, 根据您选择的云提供商的不同, 访问URL可能需要一些时间才能用于应用程序, 并且该服务将保持“待处理”状态, 直到分配了 URL。 
+如果使用 Minikube, 则需要在终端中运行 `minikube tunnel`, 以便将 IP 地址分配给您的应用程序。
 
 ![WordPress部署说明](../../../img-kubeapps-plus/wordpress-notes.png)
 
