@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>一、关于 KubeOperator · 在线文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 1 什么是 KubeOperator？"/><meta name="docsearch:version" content="2.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="一、关于 KubeOperator · 在线文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.kubeoperator.io/"/><meta property="og:description" content="## 1 什么是 KubeOperator？"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-147297392-2"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-147297392-2');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/kubeOperator-white.png" alt="在线文档"/><h2 class="headerTitleWithLogo">在线文档</h2></a><a href="/versions"><h3>2.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://kubeoperator.io" target="_blank">网站</a></li><li class=""><a href="https://github.com/KubeOperator/KubeOperator" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="搜索" title="搜索"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>KubeOperator-v2.1</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">KubeOperator-v2.1<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/2.1/KubeOperator-v2.1/introduction">一、关于 KubeOperator</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/concept">二、KubeOperator 的主要概念</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/installation">三、安装和升级 KubeOperator</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/userguide-manual">四、在自行准备的主机上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/userguide-vsphere">五、在 vSphere 平台上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/userguide-openstack">六、在 OpenStack 平台上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/faq">七、常见问题</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/video">八、视频演示</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/screenshot">九、功能截屏</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/support">十、技术支持</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">一、关于 KubeOperator</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="1-什么是-kubeoperator？"></a><a href="#1-什么是-kubeoperator？" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1 什么是 KubeOperator？</h2>
+<p>KubeOperator 是一个开源项目，在离线网络环境下，通过可视化 Web UI 在 VMware、Openstack 或者物理机上规划、部署和运营生产级别的 Kubernetes 集群。KubeOperator 是 <a href="https://github.com/jumpserver/jumpserver">Jumpserver</a> 明星开源团队在 Kubernetes 领域的的又一全新力作。</p>
+<p><img src="../../../img/overview.png" alt="overview"></p>
+<blockquote>
+<p>注： KubeOperator 2.1 已通过云原生基金会（CNCF）的 <a href="https://landscape.cncf.io/selected=kube-operator">Kubernetes 软件一致性认证</a>。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="2-kubeoperator-的整体架构"></a><a href="#2-kubeoperator-的整体架构" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2 KubeOperator 的整体架构</h2>
+<p>KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或者虚机），通过 Ansible 完成自动化部署和变更操作，支持 Kubernetes 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营的全生命周期管理。</p>
+<p><img src="../../../img/KubeOperator.jpeg" alt="architecture"></p>
+<h2><a class="anchor" aria-hidden="true" id="3-kubeoperator-的技术优势"></a><a href="#3-kubeoperator-的技术优势" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3 KubeOperator 的技术优势</h2>
+<ul>
+<li>按需创建：调用云平台 API，一键快速创建和部署 Kubernetes 集群 (即 Kubernetes as a Service)；</li>
+<li>按需伸缩：快速伸缩 Kubernetes 集群，优化资源使用效率；</li>
+<li>按需修补：快速升级和修补 Kubernetes 集群，并与社区最新版本同步，保证安全性；</li>
+<li>自我修复：通过重建故障节点确保集群可用性；</li>
+<li>离线部署：持续更新包括 Kubernetes 及常用组件的离线包；</li>
+<li>Multi-AZ 支持：通过把 Kuernetes 集群 Master 节点分布在不同的故障域上确保高可用；</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="4-kubeoperator-的版本规划"></a><a href="#4-kubeoperator-的版本规划" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4 KubeOperator 的版本规划</h2>
+<p>v1.0 （已发布）</p>
+<ul>
+<li>提供原生 Kubernetes 的离线包仓库；</li>
+<li>支持一主多节点部署模式；</li>
+<li>支持离线环境下的一键自动化部署，可视化展示集群部署进展和结果；</li>
+<li>内置 Kubernetes 常用系统应用的安装，包括 Registry、Promethus、Dashboard、Traefik Ingress、Helm 等；</li>
+<li>提供简易明了的 Kubernetes 集群运行状况面板；</li>
+<li>支持 NFS 作为持久化存储；</li>
+<li>支持 Flannel 作为网络方案；</li>
+<li>支持 Kubernetes 集群手动部署模式（自行准备主机和 NFS）；</li>
+</ul>
+<p>v2.0 （已发布）</p>
+<ul>
+<li>支持调用 VMware vCenter API 自动创建集群主机；</li>
+<li>支持 VMware vSAN 、VMFS/NFS 作为持久化存储；</li>
+<li>支持 Multi AZ，支持多主多节点部署模式；</li>
+<li>内置 Weave Scope；</li>
+<li>支持 Calico 网络插件；</li>
+<li>支持通过 F5 BIG-IP Controller 对外暴露服务（Nodeport mode, 七层和四层服务都支持）</li>
+</ul>
+<p>v2.1 （已发布）</p>
+<ul>
+<li>支持 Openstack 云平台；</li>
+<li>支持 Openstack Cinder 作为持久化存储；</li>
+<li>支持 Kubernetes 集群升级（Day 2）；</li>
+<li>支持 Kubernetes 集群扩缩容（Day 2）；</li>
+<li>支持 Kubernetes 集群备份与恢复（Day 2）；</li>
+<li>支持 Kubernetes 集群健康检查与诊断（Day 2）；</li>
+<li>支持 webkubectl；</li>
+</ul>
+<p>v2.2 （进行中，2019.11.30 发布）</p>
+<ul>
+<li>K8s 日志收集及管理方案（Loki）；</li>
+<li>KubeOperator 自身的系统日志收集和管理；</li>
+<li>新增概览页面：展示关键信息，比如状态、容量、TOP 使用率、异常日志、异常容器等信息；</li>
+<li>支持云原生存储 Rook；</li>
+</ul>
+<p>v2.3 （计划中，2019.12.31 发布）</p>
+<ul>
+<li>KubeApps 应用商店；</li>
+</ul>
+<p>v3.0 （计划中）</p>
+<ul>
+<li>离线环境下使用 Sonobuoy 进行 Kubernetes 集群合规检查并可视化展示结果；</li>
+<li>国际化支持；</li>
+<li>支持 VMware NSX-T；</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 11/14/2019</em></div><div class="docs-prevnext"><a class="docs-next button" href="/2.1/KubeOperator-v2.1/concept"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-什么是-kubeoperator？">1 什么是 KubeOperator？</a></li><li><a href="#2-kubeoperator-的整体架构">2 KubeOperator 的整体架构</a></li><li><a href="#3-kubeoperator-的技术优势">3 KubeOperator 的技术优势</a></li><li><a href="#4-kubeoperator-的版本规划">4 KubeOperator 的版本规划</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '478e01143cbab954ebdc8ad0a654ffa3',
+                indexName: 'kubeoperator',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

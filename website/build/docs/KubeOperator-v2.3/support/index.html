@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>十三、技术支持 · 在线文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 1 提交 Github Issue"/><meta name="docsearch:version" content="2.3"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="十三、技术支持 · 在线文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.kubeoperator.io/"/><meta property="og:description" content="## 1 提交 Github Issue"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-147297392-2"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-147297392-2');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/kubeOperator-white.png" alt="在线文档"/><h2 class="headerTitleWithLogo">在线文档</h2></a><a href="/versions"><h3>2.3</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://kubeoperator.io" target="_blank">网站</a></li><li class=""><a href="https://github.com/KubeOperator/KubeOperator" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="搜索" title="搜索"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>KubeOperator-v2.3</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">KubeOperator-v2.3<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/introduction">一、关于 KubeOperator</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/concept">二、KubeOperator 的主要概念</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/installation">三、安装和升级 KubeOperator</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/userguide-manual">四、在自行准备的主机上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/userguide-vsphere">五、在 vSphere 平台上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/userguide-openstack">六、在 OpenStack 平台上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/userguide-aliyun">七、在阿里云 平台上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/kubeapps-plus">八、安装和使用应用商店</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/nvidia-gpu">九、GPU 与机器学习</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/faq">十、常见问题</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/video">十一、视频演示</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/screenshot">十二、功能截屏</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/KubeOperator-v2.3/support">十三、技术支持</a></li><li class="navListItem"><a class="navItem" href="/KubeOperator-v2.3/known-issue">十四、已知问题</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">十三、技术支持</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="1-提交-github-issue"></a><a href="#1-提交-github-issue" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1 提交 Github Issue</h2>
+<p>欢迎提交 Github Issue：<a href="https://github.com/KubeOperator/KubeOperator/issues">https://github.com/KubeOperator/KubeOperator/issues</a></p>
+<h2><a class="anchor" aria-hidden="true" id="2-技术交流-qq-群"></a><a href="#2-技术交流-qq-群" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2 技术交流 QQ 群</h2>
+<p>请加 QQ 群号：825046920</p>
+<h2><a class="anchor" aria-hidden="true" id="3-微信群"></a><a href="#3-微信群" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3 微信群</h2>
+<p>搜索微信号 wh_it0224，添加好友，备注（城市-github用户名）, 验证通过会加入群聊。</p>
+<h2><a class="anchor" aria-hidden="true" id="4-商业支持"></a><a href="#4-商业支持" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4 商业支持</h2>
+<p>FIT2CLOUD 飞致云提供 KubeOperator 软件订阅服务，详情请参见： <a href="https://www.fit2cloud.com/purchase/index.html">https://www.fit2cloud.com/purchase/index.html</a></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 1/14/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/KubeOperator-v2.3/screenshot"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/KubeOperator-v2.3/known-issue"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-提交-github-issue">1 提交 Github Issue</a></li><li><a href="#2-技术交流-qq-群">2 技术交流 QQ 群</a></li><li><a href="#3-微信群">3 微信群</a></li><li><a href="#4-商业支持">4 商业支持</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '478e01143cbab954ebdc8ad0a654ffa3',
+                indexName: 'kubeoperator',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>在自行准备的主机上部署 k8s 集群 · 在线文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式。自动模式下，用户需要自行准备主机和 NFS 作为持久化存储。手动模式下的 k8s 集群部署流程为："/><meta name="docsearch:version" content="2.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="在自行准备的主机上部署 k8s 集群 · 在线文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.kubeoperator.io/"/><meta property="og:description" content="KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式。自动模式下，用户需要自行准备主机和 NFS 作为持久化存储。手动模式下的 k8s 集群部署流程为："/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-147297392-2"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-147297392-2');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/kubeOperator-white.png" alt="在线文档"/><h2 class="headerTitleWithLogo">在线文档</h2></a><a href="/versions"><h3>2.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://kubeoperator.io" target="_blank">网站</a></li><li class=""><a href="https://github.com/KubeOperator/KubeOperator" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="搜索" title="搜索"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>KubeOperator-v2.0</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">KubeOperator-v2.0<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/2.0/KubeOperator-v2.0/introduction">关于 KubeOperator</a></li><li class="navListItem"><a class="navItem" href="/2.0/KubeOperator-v2.0/concept">KubeOperator 的主要概念</a></li><li class="navListItem"><a class="navItem" href="/2.0/KubeOperator-v2.0/installation">安装 KubeOperator</a></li><li class="navListItem"><a class="navItem" href="/2.0/KubeOperator-v2.0/userguide-vsphere">在 vSphere 平台上部署 k8s 集群</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/2.0/KubeOperator-v2.0/userguide-manual">在自行准备的主机上部署 k8s 集群</a></li><li class="navListItem"><a class="navItem" href="/2.0/KubeOperator-v2.0/support">技术支持</a></li><li class="navListItem"><a class="navItem" href="/2.0/KubeOperator-v2.0/faq">常见问题</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">在自行准备的主机上部署 k8s 集群</h1></header><article><div><span><p>KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式。自动模式下，用户需要自行准备主机和 NFS 作为持久化存储。手动模式下的 k8s 集群部署流程为：</p>
+<ul>
+<li>1 登录：登录 Web 控制台;</li>
+<li>2 系统设置：包括主机登录凭据和集群域名后缀等；</li>
+<li>3 选择离线包：选择 k8s 版本；</li>
+<li>4 准备主机：准备 k8s 集群所需要的主机；</li>
+<li>5 创建和部署集群：创建集群、配置集群和部署集群</li>
+<li>6 管理集群：访问 Dashboard、监控系统和 Registry 等。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="1-登录"></a><a href="#1-登录" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1 登录</h2>
+<p>KubeOperator 完全启动后，访问 KubeOperator 控制台，进行登录。默认的登录用户名为 admin，默认密码为 kubeoperator@admin123。</p>
+<blockquote>
+<p>为了保证系统的安全，请在完成登录后，点击控制台右上角的&quot;修改密码&quot;进行密码的重置。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="2-系统设置"></a><a href="#2-系统设置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2 系统设置</h2>
+<p>在使用 KubeOperator 之前，需要先对 KubeOperator 进行必要的参数设置。这些系统参数将影响到 Kubernetes 集群的安装及相关服务的访问。</p>
+<h3><a class="anchor" aria-hidden="true" id="21-主机-ip-和-集群域名后缀"></a><a href="#21-主机-ip-和-集群域名后缀" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1 主机 IP 和 集群域名后缀</h3>
+<p>主机 IP 指 KubeOperator 机器自身的 IP。KubeOperator 所管理的集群将使用该 IP 来访问 KubeOperator。</p>
+<p>集群域名后缀为集群节点访问地址的后缀，集群暴露出来的对外服务的 URL 都将以该域名后缀作为访问地址后缀。例如: grafana.apps.cluster.f2c.com。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/setting-system.png?raw=true" alt="setting-1"></p>
+<h3><a class="anchor" aria-hidden="true" id="22-凭据"></a><a href="#22-凭据" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2 凭据</h3>
+<p>凭据为 KubeOperator 连接主机资产的凭证，可以使用 password。在左侧导航菜单中选择【设置】，进入【设置】页后点击【凭据】TAB 可以看到已添加凭据信息。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/setting-credential.png?raw=true" alt="credential-1"></p>
+<p>点击【添加】按钮添加新的凭据。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/setting-credential1.png?raw=true" alt="add_credential-1"></p>
+<h2><a class="anchor" aria-hidden="true" id="3-选择离线包"></a><a href="#3-选择离线包" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3 选择离线包</h2>
+<p>在离线包列表中可以查看 KubeOperator 当前所提供的 Kubernetes 安装版本详细信息。在后续进行 Kubernetes 集群部署时，可以从这些版本中选择其一进行部署（当前支持1.15.0和1.15.3版本后续会跟随 Kubernetes 社区发布离线包）。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/package.png?raw=true" alt="package-1"></p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/package-detail.png?raw=true" alt="package-2"></p>
+<h2><a class="anchor" aria-hidden="true" id="4-准备主机"></a><a href="#4-准备主机" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4 准备主机</h2>
+<h3><a class="anchor" aria-hidden="true" id="41-主机需求"></a><a href="#41-主机需求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.1 主机需求</h3>
+<p>KubeOperator 当前版本仅支持一主多节点的部署和管理，对于集群中各节点的要求如下：</p>
+<table>
+    <tr>
+        <td>角色</td>
+        <td>数量</td>
+        <td>操作系统</td>
+        <td>最低配置</td>
+        <td>推荐配置</td>
+        <td>描述</td>
+    </tr>
+    <tr>
+        <td>daemon</td>
+        <td>1</td>
+        <td>CentOS 7.6</td>
+        <td>1C 2G</td>
+        <td>2C 4G</td>
+        <td>集群内 NTP 服务和 DNS 服务。</td>
+    </tr>
+    <tr>
+        <td>master</td>
+        <td>1</td>
+        <td>CentOS 7.6</td>
+        <td>2C 4G</td>
+        <td>4C 16G</td>
+        <td>运行 etcd、kube-apiserver、kube-scheduler、kube-apiserver。</td>
+    </tr>
+    <tr>
+        <td>worker</td>
+        <td>3+</td>
+        <td>CentOS 7.6</td>
+        <td>2C 8G</td>
+        <td>8C 32G</td>
+        <td>运行 kubelet、应用工作负载。</td>
+    </tr>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="42-添加主机"></a><a href="#42-添加主机" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.2 添加主机</h3>
+<p>在左侧导航菜单中选择【主机】，进入【主机】页后可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。点击【添加】按钮添加新的主机。在输入完主机名称、IP、选择凭据后，点击【提交】按钮即可完成一台主机的添加。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/host.png?raw=true" alt="host-1"></p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/host-add.png?raw=true" alt="host-2"></p>
+<h2><a class="anchor" aria-hidden="true" id="5-创建和部署集群"></a><a href="#5-创建和部署集群" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5 创建和部署集群</h2>
+<h3><a class="anchor" aria-hidden="true" id="51-集群列表"></a><a href="#51-集群列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.1 集群列表</h3>
+<p>在左侧导航菜单中选择【集群】，进入【集群】页后可以看到已添加集群的详细信息，包括 集群部署的 Kubernetes 版本、节点数，部署模式、选择的部署计划及运行状态等。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster1.png?raw=true" alt="cluster-1"></p>
+<h3><a class="anchor" aria-hidden="true" id="52-创建集群"></a><a href="#52-创建集群" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2 创建集群</h3>
+<blockquote>
+<p>KubeOperator 2.0 手动模式仅支持 NFS 作为外部持久化存储，创建集群前，请自行准备 NFS 存储，并可以被集群主机挂载。我们推荐使用专用 NAS 产品，自行搭建的 NFS 服务仅适合在开发测试环境使用。</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="521-基本信息"></a><a href="#521-基本信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.1 基本信息</h4>
+<p>点击【集群】页的【添加】按钮进行集群的创建。在【基本信息】里输入集群的名称，选择该集群所要部署的 Kubernetes 版本。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-basicinfo.png?raw=true" alt="cluster-create-1"></p>
+<h4><a class="anchor" aria-hidden="true" id="522-部署模型"></a><a href="#522-部署模型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.2 部署模型</h4>
+<p>选择 Kubernetes 集群的部署模型。KubeOperator 当前版本支持一主多节点和多主多节点。选择部署模型后，KubeOperator 将展示集群中各个角色节点的详细配置要求。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-model.png?raw=true" alt="cluster-create-2"></p>
+<blockquote>
+<p>多主多节点模式适合在 MultiAZ（多故障域）下部署，实现双活环境下的高可用。KubeOperator 2.1 版本会支持 MultiAZ。</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="523-配置节点"></a><a href="#523-配置节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.3 配置节点</h4>
+<p>【添加主机】环节，把集群所需的主机添加到了 KubeOperator 中。在【配置节点】环节，则可以根据不同的节点角色，选择主机列表中的各个主机。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-node1.png?raw=true" alt="cluster-create-3"></p>
+<h4><a class="anchor" aria-hidden="true" id="524-配置网络"></a><a href="#524-配置网络" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.4 配置网络</h4>
+<p>【配置网络】环节，选择集群的网络插件，当前版本支持 Flannel和calico。</p>
+<blockquote>
+<p>如果集群节点全部都在同一个二层网络下，请选择&quot;host-gw&quot;。如果不是，则选择&quot;vxlan&quot;。&quot;host-gw&quot; 性能优于 &quot;vxlan&quot;。</p>
+</blockquote>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-network.png?raw=true" alt="cluster-create-4"></p>
+<h4><a class="anchor" aria-hidden="true" id="525-配置存储"></a><a href="#525-配置存储" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.5 配置存储</h4>
+<p>【添加存储】环节，选择外部持久化存储。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-store1.png?raw=true" alt="cluster-create-5"></p>
+<h4><a class="anchor" aria-hidden="true" id="526-配置检测"></a><a href="#526-配置检测" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.6 配置检测</h4>
+<p>完成上述 5 个步骤后，KubeOperator 会对当前集群所选择的部署节点进行配置检测，包含 CPU、内存和操作系统的检测。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-check.png?raw=true" alt="cluster-create-6"></p>
+<h4><a class="anchor" aria-hidden="true" id="527-配置集群参数"></a><a href="#527-配置集群参数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.7 配置集群参数</h4>
+<p>完成检测后，可以对集群的域名参数进行配置，如无特殊要求，推荐使用默认值。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-para.png?raw=true" alt="cluster-create-7"></p>
+<h4><a class="anchor" aria-hidden="true" id="528-集群配置概览"></a><a href="#528-集群配置概览" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.8 集群配置概览</h4>
+<p>所有步骤完成后，会有一个集群配置概览页对之前步骤所设参数进行汇总，用户可在此页进行集群配置的最后检查。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-complate.png?raw=true" alt="cluster-create-8"></p>
+<h3><a class="anchor" aria-hidden="true" id="53-部署集群"></a><a href="#53-部署集群" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.3 部署集群</h3>
+<p>在集群列表中点击要进行部署的集群名称，默认展示的是该集群的【概览】信息。【概览】页中展示了 Kubernetes 集群的诸多详情，包括 Kubernetes 版本、集群所用存储、网络模式等。点击【概览】页最下方的【安装】按钮进行 Kubernetes 集群的部署。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-summary1.png?raw=true" alt="cluster-2"></p>
+<p>集群部署开始后，将会自动跳转到【任务】页。在【任务】页里可以看到集群部署当前所执行的具体任务信息。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-install.png?raw=true" alt="cluster-deploy-1"></p>
+<p>如果是内网环境的话，一个典型的 5 节点集群的部署大概需要10分钟左右的时间。在出现类似下图的信息后，表明集群已部署成功：</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-install1.png?raw=true" alt="cluster-deploy-2"></p>
+<h3><a class="anchor" aria-hidden="true" id="54-卸载集群"></a><a href="#54-卸载集群" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.4 卸载集群</h3>
+<p>在集群列表中点击要进行卸载的集群名称，点击【概览】页最下方的【卸载】按钮进行 Kubernetes 集群的卸载。注意的是和自动模式部署不同，卸载后的所有主机仍在该集群列表中，仅卸载kebernetes集群。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/cluster-manu-uninstall.png?raw=true" alt="cluster-uninstall"></p>
+<h2><a class="anchor" aria-hidden="true" id="6-管理集群"></a><a href="#6-管理集群" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6 管理集群</h2>
+<p>回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如无条件，也可以通过修改本地 /etc/hosts 文件来达到相同的作用。</p>
+<p>eg:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># 编辑 /etc/hosts</span>
+$ vim /etc/hosts
+<span class="hljs-comment"># 替换 WORKER_IP 为任意 worker 节点 IP 地址</span>
+WORKER_IP grafana.apps.whfay.f2c.com
+WORKER_IP prometheus.apps.whfay.f2c.com
+WORKER_IP registry-ui.apps.whfay.f2c.com
+WORKER_IP dashboard.apps.whfay.f2c.com
+WORKER_IP master-1.whfay.f2c.com
+WORKER_IP traefik.apps.whfay.f2c.com
+WORKER_IP scope.weave.apps.whfay.f2c.com
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="61-访问-dashboard"></a><a href="#61-访问-dashboard" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.1 访问 Dashboard</h3>
+<p>Dashboard 对应的是 Kubernetes 的控制台，从浏览器中访问 Kubernetes 控制台需要用到【令牌】。点击【概览】页下方的【获取TOKEN】按钮获取令牌信息，将令牌信息复制到粘贴板。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/dashboard-1.png?raw=true" alt="dashboard-1"></p>
+<p>输入令牌信息后，点击【登录】，则可进入 Kubernetes 控制台。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/dashboard-2.png?raw=true" alt="dashboard-2"></p>
+<h3><a class="anchor" aria-hidden="true" id="62-访问-grafana"></a><a href="#62-访问-grafana" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.2 访问 Grafana</h3>
+<p>Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化展示，更方便用户了解整个 Kubernetes 集群的运行状况。点击 Grafana 下方的【转到】按钮访问 Grafana 控制台。</p>
+<p>集群级别的监控面板：</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/grafana-1.png?raw=true" alt="grafana-1"></p>
+<p>节点级别的监控面板：</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/grafana-2.png?raw=true" alt="grafana-2"></p>
+<h3><a class="anchor" aria-hidden="true" id="63-访问-registry"></a><a href="#63-访问-registry" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3 访问 Registry</h3>
+<p>Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/registry-1.png?raw=true" alt="regsitry-1"></p>
+<h3><a class="anchor" aria-hidden="true" id="64-访问-prometheus"></a><a href="#64-访问-prometheus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.4 访问 Prometheus</h3>
+<p>Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/prometheus-1.png?raw=true" alt="prometheus-1"></p>
+<h3><a class="anchor" aria-hidden="true" id="65-访问-traefik"></a><a href="#65-访问-traefik" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.5 访问 Traefik</h3>
+<p>Traefik 用来作为 kubernetes 集群的HTTP反向代理、负载均衡工具。点击 Trafik 下方的【转到】按钮即可访问 Traefik 控制台。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/traefik.png?raw=true" alt="prometheus-1"></p>
+<h3><a class="anchor" aria-hidden="true" id="66-访问-weave-scope"></a><a href="#66-访问-weave-scope" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.6 访问 Weave Scope</h3>
+<p>Weave Scope 用来监控、可视化和管理 kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-2.png?raw=true" alt="weave-scope-1"></p>
+<p>点击顶部的【Host】，可以远程shell登录各个节点，还可以看到主机的详细信息。</p>
+<p><img src="https://github.com/KubeOperator/docs/blob/master/website/static/img/weave-scope-1.png?raw=true" alt="weave-scope-2"></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/15/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/2.0/KubeOperator-v2.0/userguide-vsphere"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/2.0/KubeOperator-v2.0/support"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-登录">1 登录</a></li><li><a href="#2-系统设置">2 系统设置</a><ul class="toc-headings"><li><a href="#21-主机-ip-和-集群域名后缀">2.1 主机 IP 和 集群域名后缀</a></li><li><a href="#22-凭据">2.2 凭据</a></li></ul></li><li><a href="#3-选择离线包">3 选择离线包</a></li><li><a href="#4-准备主机">4 准备主机</a><ul class="toc-headings"><li><a href="#41-主机需求">4.1 主机需求</a></li><li><a href="#42-添加主机">4.2 添加主机</a></li></ul></li><li><a href="#5-创建和部署集群">5 创建和部署集群</a><ul class="toc-headings"><li><a href="#51-集群列表">5.1 集群列表</a></li><li><a href="#52-创建集群">5.2 创建集群</a></li><li><a href="#53-部署集群">5.3 部署集群</a></li><li><a href="#54-卸载集群">5.4 卸载集群</a></li></ul></li><li><a href="#6-管理集群">6 管理集群</a><ul class="toc-headings"><li><a href="#61-访问-dashboard">6.1 访问 Dashboard</a></li><li><a href="#62-访问-grafana">6.2 访问 Grafana</a></li><li><a href="#63-访问-registry">6.3 访问 Registry</a></li><li><a href="#64-访问-prometheus">6.4 访问 Prometheus</a></li><li><a href="#65-访问-traefik">6.5 访问 Traefik</a></li><li><a href="#66-访问-weave-scope">6.6 访问 Weave Scope</a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '478e01143cbab954ebdc8ad0a654ffa3',
+                indexName: 'kubeoperator',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

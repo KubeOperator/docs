@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>三、安装和升级 KubeOperator · 在线文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 1 环境要求"/><meta name="docsearch:version" content="2.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="三、安装和升级 KubeOperator · 在线文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.kubeoperator.io/"/><meta property="og:description" content="## 1 环境要求"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-147297392-2"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-147297392-2');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/kubeOperator-white.png" alt="在线文档"/><h2 class="headerTitleWithLogo">在线文档</h2></a><a href="/versions"><h3>2.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://kubeoperator.io" target="_blank">网站</a></li><li class=""><a href="https://github.com/KubeOperator/KubeOperator" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="搜索" title="搜索"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>KubeOperator-v2.1</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">KubeOperator-v2.1<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/introduction">一、关于 KubeOperator</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/concept">二、KubeOperator 的主要概念</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/2.1/KubeOperator-v2.1/installation">三、安装和升级 KubeOperator</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/userguide-manual">四、在自行准备的主机上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/userguide-vsphere">五、在 vSphere 平台上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/userguide-openstack">六、在 OpenStack 平台上规划、部署及运营 K8s 集群</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/faq">七、常见问题</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/video">八、视频演示</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/screenshot">九、功能截屏</a></li><li class="navListItem"><a class="navItem" href="/2.1/KubeOperator-v2.1/support">十、技术支持</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">三、安装和升级 KubeOperator</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="1-环境要求"></a><a href="#1-环境要求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1 环境要求</h2>
+<ul>
+<li>最低硬件配置: 2 CPU, 4G 内存, 50G 磁盘 （推荐大小是：4核8G内存100G磁盘）</li>
+<li>操作系统要求: CentOS 7.6 / 7.7 Minimal  （不支持 CentOS 8）</li>
+</ul>
+<blockquote>
+<p>注：CentOS 7.6 Minimal ISO 下载链接：<a href="http://mirrors.cqu.edu.cn/CentOS/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso">http://mirrors.cqu.edu.cn/CentOS/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso</a></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="2-下载离线包"></a><a href="#2-下载离线包" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2 下载离线包</h2>
+<p>请自行下载 KubeOperator 完整离线包，并复制到目标机器的 /tmp 目录下。</p>
+<ul>
+<li>下载链接: <a href="https://github.com/KubeOperator/KubeOperator/releases">https://github.com/KubeOperator/KubeOperator/releases</a></li>
+</ul>
+<blockquote>
+<p>注：KubeOperator 完整离线包大小约为 5 G。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="3-安装-kubeoperator"></a><a href="#3-安装-kubeoperator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3 安装 KubeOperator</h2>
+<pre><code class="hljs css language-bash">$ <span class="hljs-built_in">cd</span> /tmp
+<span class="hljs-comment"># 解压离线包</span>
+$ tar zxvf kubeOperator-v2.1.xx-release.tar.gz
+<span class="hljs-comment"># 查看防火墙状态</span>
+$ firewall-cmd --state
+<span class="hljs-comment"># 关闭防火墙</span>
+$ systemctl stop firewalld.service
+<span class="hljs-comment"># 进入项目目录</span>
+$ <span class="hljs-built_in">cd</span> kubeOperator-v2.1.xx-release
+<span class="hljs-comment"># 运行安装脚本</span>
+$ ./kubeopsctl.sh install
+<span class="hljs-comment"># 查看 KubeOperator 状态</span>
+$ systemctl status kubeops
+</code></pre>
+<p>⚠️备注:默认KubeOperator的部署机防火墙是关闭状态，若需要开启防火墙，请放行以下端口以保证KubeOperator正常使用</p>
+<table>
+<thead>
+<tr><th>应用</th><th style="text-align:center">协议类型</th><th style="text-align:right">端口</th></tr>
+</thead>
+<tbody>
+<tr><td>KubeOperator-web</td><td style="text-align:center">TCP</td><td style="text-align:right">80</td></tr>
+<tr><td>kubeOperator-预留（升级使用）</td><td style="text-align:center">TCP</td><td style="text-align:right">8080-8089</td></tr>
+<tr><td>kubeOperator-预留（升级使用）</td><td style="text-align:center">TCP</td><td style="text-align:right">8090-8099</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># 启动防火墙</span>
+$ systemctl start firewalld
+<span class="hljs-comment"># 加入开机自动启动</span>
+$ systemctl <span class="hljs-built_in">enable</span> firewalld
+<span class="hljs-comment"># 开放端口</span>
+$ firewall-cmd --zone=public --add-port=80/tcp --permanent
+$ firewall-cmd --zone=public --add-port=8080-8089/tcp --permanent
+$ firewall-cmd --zone=public --add-port=8090-8099/tcp --permanent
+<span class="hljs-comment"># 重新加载防火墙配置使生效</span>
+$ firewall-cmd --reload
+<span class="hljs-comment"># 查看防火墙状态</span>
+$ firewall-cmd --list-all
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="4-访问-kubeoperator"></a><a href="#4-访问-kubeoperator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4 访问 KubeOperator</h2>
+<p>KubeOperator 默认监听 HTTP 80 端口。安装完毕后，请使用浏览器登录 KubeOperator 管理控制台。</p>
+<blockquote>
+<p>注：KubeOperator 默认用户名和密码为: admin / kubeoperator@admin123
+为了保证系统的安全，请在完成登录后，点击控制台右上角的&quot;修改密码&quot;进行密码的重置。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="5-升级-kubeoperator"></a><a href="#5-升级-kubeoperator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5 升级 KubeOperator</h2>
+<pre><code class="hljs css language-bash">$ <span class="hljs-built_in">cd</span> /tmp
+<span class="hljs-comment"># 下载新版本离线包</span>
+$ wget http://xxxxxxx.kubeOperator-v2.1.xx-release.tar.gz
+<span class="hljs-comment"># 解压离线包</span>
+$ tar zxvf kubeOperator-v2.1.xx-release.tar.gz
+<span class="hljs-comment"># 进入项目目录</span>
+$ <span class="hljs-built_in">cd</span> kubeOperator-v2.1.xx-release
+<span class="hljs-comment"># 运行升级脚本</span>
+$ ./kubeopsctl.sh upgrade
+<span class="hljs-comment"># 查看 KubeOperator 状态</span>
+$ systemctl status kubeops
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 11/28/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/2.1/KubeOperator-v2.1/concept"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/2.1/KubeOperator-v2.1/userguide-manual"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-环境要求">1 环境要求</a></li><li><a href="#2-下载离线包">2 下载离线包</a></li><li><a href="#3-安装-kubeoperator">3 安装 KubeOperator</a></li><li><a href="#4-访问-kubeoperator">4 访问 KubeOperator</a></li><li><a href="#5-升级-kubeoperator">5 升级 KubeOperator</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '478e01143cbab954ebdc8ad0a654ffa3',
+                indexName: 'kubeoperator',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
