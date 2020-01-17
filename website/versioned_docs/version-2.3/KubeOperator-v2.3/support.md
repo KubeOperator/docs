@@ -6,7 +6,7 @@ original_id: support
 
 ## 1 提交问题
 
-- 提交技术咨询请求: https://jinshuju.net/f/QrZJpt
+- 提交技术咨询请求：https://jinshuju.net/f/QrZJpt
 - 提交Github Issue：https://github.com/KubeOperator/KubeOperator/issues
 
 ## 2 加入技术群
