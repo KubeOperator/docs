@@ -22,17 +22,15 @@ AI 深度学习应用：Tensorflow 等;
 - 支持自定义 Helm Chart 仓库（比如 ChartMuseum 和 JFrog Artifactory 等）；
 - 基于 Kubernetes RBAC 的身份验证和授权；
 
-![流程图](../../../img-kubeapps-plus/user-role-process-old.png)
-
 ## 2 安装指南
 
 KubeApps Plus 安装分为两个步骤，首选安装 KubeApps Plus（自动或者手动安装），然后在 K8s 集群的 master 节点中安装 Helm Charts 离线包。下面分别介绍这两部分内容。
 
 ### 2.1 安装 KubeApps Plus
 
-KubeApps Plus 的安装方式有两种，一种是作为 KubeOperator 的内置应用，在 KubeOperator 里面安装 K8s 集群时自动安装 KubeApps plus，这里不在赘述。另外一种是使用 Helm 图表手动安装到集群。下面仅简单介绍手动安装方法。
+KubeApps Plus 的安装方式有两种，一种是作为 KubeOperator 的内置应用，在 KubeOperator 里面安装 K8s 集群时作为内置应用自动安装 KubeApps plus，这里不在赘述。另外一种是使用 Helm 图表手动安装到集群。下面仅简单介绍手动安装方法。
 
-使用 Helm 图表安装最新版本的 KubeApps Plus: 
+> 注：目前仅 K8s 1.16.4 以上版本支持 KubeApps Plus。
 
 ```bash 
 #登录 K8s 集群的 master 节点
@@ -45,68 +43,96 @@ helm install --name kubeapps-plus --namespace kubeapps-plus ./chart
 
 ### 2.2 安装 Helm Charts 离线包
 
-离线推送脚本，将 Kubeapps-plus 默认的 Chart 推送至指定的仓库。
+Helm Chart 离线包包括两个离线包，一个是 CI 相关的应用包括 Gitlab、Harbor、Jenkins 和 Sonarqube，另外一个是 AI 机器学习应用包括 Tensorflow-notebook 和 Tensorflow-serving，用户可以根据需要下载并安装。
+请自行下载 Chart 离线包，并复制到目标机器的 /tmp 目录下。
+
+- 下载链接: https://github.com/KubeOperator/KubeOperator/releases
 
 默认使用本地 ChartMuseum 仓库，如果需要修改仓库地址，请修改 kubeappsctl.sh 文件里的 repo_url、repo_username、repo_password 等参数。
+安装过程中需要手动输入的信息，选择默认值，即选择不使用外部 Docker Image registry 和不使用外部 Chart 仓库。
 
-#### 使用方法:
+#### 安装步骤:
 
-```
+```bash
 # 首先登录 master 节点，其次进入 tmp (或其他自定义)目录
 cd /tmp
-wget http://172.16.10.63/kubeapps-plus/kubeapps-offline-scripts-v1.0-38.tar.gz
+wget http://xxx.xxx.xxx.xxx/kubeapps-plus/kubeapps-plus-package-v1.0-CI-xx.tar.gz
 # 解压文件到本目录
-tar zxvf kubeapps-offline-scripts-v1.0-38.tar.gz
-# 解压后会出现一个 script 目录
-cd script
+tar zxvf kubeapps-plus-package-v1.0-CI-xx.tar.gz
+# 解压后会出现一个 kubeapps-plus-CI 目录
+cd kubeapps-plus-CI
 # 执行 kubeappsctl.sh shell 文件,将会下载镜像并推送到本地(或自定义)仓库
 ./kubeappsctl.sh start
 ```
+安装完成后，大概十分钟后，以上仓库中应用会更新到 KubeApps Plus 的应用商店中。
 
 ## 3 使用指南
 
 ### 3.1 登录 KubeApps Plus 
 
-安装 KubeApps Plus 后, 在 KubeOperator 集群概览页获取 TOKEN ，保证将内置应用 KubeApps Plus web url 添加到本地host文件。
+安装 KubeApps Plus 后, 在 KubeOperator 集群概览页获取 TOKEN ，保证将内置应用 KubeApps Plus web url 添加到本地 host 文件中。
 
-这将启动 HTTP 代理, 以安全地访问 KubeApps Plus 仪表板。 在您喜欢的网络浏览器中访问 `http://127.0.0.1:8080/` 以打开仪表板。 这是您应该看到的: 
+ 在 KubeOperator 集群【内置应用】页，单击 KubeApps 链接，可以安全地访问 KubeApps Plus 仪表板。
 
-![控制台登录页面](../../../img-kubeapps-plus/dashboard-login.png)
+![控制台登录页面](../../../img-kubeapps-plus/dashboard-login.jpeg)
 
 粘贴集群概览页获取的令牌以认证和访问 Kubernetes 的 KubeApps Plus 仪表板。
 
-![仪表板主页](../../../img-kubeapps-plus/dashboard-home.png)
+![仪表板主页](../../../img-kubeapps-plus/dashboard.png)
 
- ### 3.2 部署 WordPress
+ ### 3.2 部署 gitlab
 
-一旦 KubeApps Plus 仪表板启动并运行, 就可以开始将应用程序部署到群集中。
+登录 KubeApps Plus 仪表板后, 就可以开始将应用程序部署到集群中。
 
-- 使用仪表板中的 “目录” 页面从任何已配置的 Helm 图表存储库中的图表列表中选择一个应用程序。 本示例假定您要部署 WordPress。
+在仪表板中的【应用商店】页中可以看到系统默认自带的六个应用，可选择一个应用程序部署。 本文以部署 gitlab 应用为例说明。
 
-  ![WordPress图表](../../../img-kubeapps-plus/wordpress-search.png)
+  ![gitlab-1](../../../img-kubeapps-plus/gitlab-apps.png)
 
-- 单击 “使用 Helm 部署”按钮。
+首选根据用户需要选择一个 namespace，这里选择 kube-system namespace，然后单击部署应用，可以看到【应用商店】里面目前支持的应用列表。选择 gitlab 应用后,在应用页面右侧单击 “部署” 按钮。
 
-  ![WordPress图表](../../../img-kubeapps-plus/wordpress-chart.png)
+  ![gitlab-2](../../../img-kubeapps-plus/gitlab-deploy.png)
 
-- 系统将提示您输入应用程序的发行名称和值。
+系统将提示输入应用程序的名称，还可以看到目前版本，以及 gitlab 应用 YAML 配置文件，用户可根据自身需求修改配置文件。主要需要修改的参数有： externalUrl 和
 
-  ![WordPress安装](../../../img-kubeapps-plus/wordpress-installation.png)
+  ![gitlab-3](../../../img-kubeapps-plus/gitlab-config.png)
 
-- 点击“提交”按钮。 该应用程序将被部署。 您将能够直接从浏览器跟踪新的 Kubernetes 部署。
+在最下面点击“提交”按钮。 该应用程序将被部署。 部署成功后，应用变为就绪状态。
 
-  ![WordPress部署](../../../img-kubeapps-plus/wordpress-deployment.png)
+  ![gitlab-4](../../../img-kubeapps-plus/gitlab-submmit.png)
 
-要获取 WordPress 用户名和密码, 请参考部署页面的 “注释” 部分, 其中包含您需要运行以获取部署凭据的命令。
+要获取 gitlab 用户名和密码, 请参考部署页面的 “描述” 部分, 其中包含 gitlab 的 url、账号及密码信息。注意要将 该 url 添加到本地 host 解析。
 
-您也可以使用显示的 URL 直接访问应用程序。 
-请注意, 根据您选择的云提供商的不同, 访问URL可能需要一些时间才能用于应用程序, 并且该服务将保持“待处理”状态, 直到分配了 URL。 
-如果使用 Minikube, 则需要在终端中运行 `minikube tunnel`, 以便将 IP 地址分配给您的应用程序。
+这样即可以使用该 URL 直接访问应用程序。 
 
-![WordPress部署说明](../../../img-kubeapps-plus/wordpress-notes.png)
+![gitlab-5](../../../img-kubeapps-plus/gitlab-dashboard.png)
 
-### 3.3 删除 WordPress
+### 3.3 删除 gitlab
+
+部署完成的应用如果要删除，可以在【我的应用】进入 gitlab 应用后，单击右侧 “删除” 按钮确定即可删除。
+
+![delete-app](../../../img-kubeapps-plus/gitlab-delete.png)
 
 ### 3.4 添加存储库
 
+KubeApps Plus 支持添加外部应用仓库，在【配置】下拉菜单“应用存储库“页面，单击“添加应用仓库”。
+
+![addchart](../../../img-kubeapps-plus/add-chart.png)
+
+输入仓库名称和网址，提交后在应用商店页使用新添加仓库里面的应用。
+
+![addchart](../../../img-kubeapps-plus/chart-infor.png)
+
 ### 3.5 更新 namesapce
+
+如果在 K8s 集群中用户新建了 namespace，KubeApps Plus web 端需要手动更新 namespace，即在首页【配置】下拉菜单“更新命名空间”
+
+![update-namespace](../../../img-kubeapps-plus/update-namespace.png)
+
+更新成功后，在 namespace 列表中可以看到集群中所有的 namespace。
+
+![namespace-list](../../../img-kubeapps-plus/namespace-list.png )
+
+> 注：kube-operator 和 kubeapps-plus namespace 是 KubeOperator 系统安装内置应用使用的，仅支持查看应用，不能部署新应用和删除已有应用。
+
+
+
