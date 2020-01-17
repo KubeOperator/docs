@@ -1,10 +1,10 @@
 ---
 id: version-2.3-nvidia-gpu
-title: 九、GPU 与 AI 深度学习
+title: 九、GPU 与 AI 应用指南
 original_id: nvidia-gpu
 ---
 
-除了传统的无状态 Web 应用外，越来越多的数据库 Workload、实时计算 Workload、AI 机器学习 Workload 会跑在 K8s 之上。其中，尤其是 AI 深度学习，天然适合运行在 K8s 之上。对于一些用户，其构建 K8s 集群就是专门用来运行深度学习、通用 GPU、高性能计算，以及受益于专用硬件加速器的其他工作负载。
+除了传统的无状态 Web 应用外，越来越多的数据库 Workload、实时计算 Workload、AI 机器/深度学习 Workload 会跑在 K8s 之上。其中，尤其是AI 机器/深度学习，天然适合运行在 K8s 之上。很多企业构建 K8s 集群就是专门用来运行机器/深度学习、通用 GPU、高性能计算，以及受益于专用硬件加速器的其他工作负载。
 
 ## 1 使用 Kubeoperator 部署带有 GPU 的 Kubernetes 集群
 
