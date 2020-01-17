@@ -1,22 +1,22 @@
 ---
 id: version-2.3-nvidia-gpu
-title: 九、GPU 与机器学习
+title: 九、GPU 与 AI 深度学习
 original_id: nvidia-gpu
 ---
 
-除了传统的无状态 Web 应用外，越来越多的数据库 Workload、实时计算 Workload、AI 机器学习 Workload 会跑在 K8s 之上。其中，尤其是 AI 机器学习，天然适合运行在 K8s 之上。对于一些用户，其构建 K8s 集群就是专门用来运行机器学习、通用 GPU、高性能计算，以及受益于专用硬件加速器的其他工作负载。
+除了传统的无状态 Web 应用外，越来越多的数据库 Workload、实时计算 Workload、AI 机器学习 Workload 会跑在 K8s 之上。其中，尤其是 AI 深度学习，天然适合运行在 K8s 之上。对于一些用户，其构建 K8s 集群就是专门用来运行深度学习、通用 GPU、高性能计算，以及受益于专用硬件加速器的其他工作负载。
 
 ## 1 使用 Kubeoperator 部署带有 GPU 的 Kubernetes 集群
 
 ### 1.1 先决条件
 
-- 至少一台 Worker 节点拥有 NVIDIA GPU 显卡设备
+- 至少一台 Worker 节点带有 NVIDIA GPU 卡
 - Kubernetes 1.6.X: Package >= 1.16.4 
 - Kubernetes 1.5.X: Package >= 1.15.7
 
 ### 1.2 集群规划
 
-name | CPU (核心) |  内存 （GB） | 操作系统 | GPU (个) | 角色
+名称 | CPU (核心) |  内存 （GB） | 操作系统 | GPU (个) | 角色
 -|-|-|-|-|-
 master  | 4 | 8  | CentOS 7.6 | 0 | Master
 worker1 | 4 | 20 | CentOS 7.6 | 1 | Worker
@@ -29,9 +29,9 @@ nfs     | 1 | 2  | CentOS 7.6 | 0 | NFS
 
 ![gpu-host-detail](../../../img-nivdia/gpu-host-detail.png)
 
-### 1.4 创建集群
+### 1.4 创建 K8s 集群
 
-部署步骤请参考在自行准备的主机上部署 k8s 集群。
+部署步骤请参考在自行准备的主机上部署 K8s 集群。
 
 ### 1.5 验证 GPU 调度
 
@@ -68,8 +68,8 @@ kubectl apply -f gpu.yml
 kubectl get pod
 
 NAME                                READY   STATUS    RESTARTS   AGE
-nvidia-deployment-64589d94d-8m6rd   1/1     Running   0          119s  # 获取到显卡 Running
-nvidia-deployment-64589d94d-lzfph   0/1     Pending   0          86s   # 未获取到显卡 Pending
+nvidia-deployment-64589d94d-8m6rd   1/1     Running   0          119s  # 获取到 GPU 卡 Running
+nvidia-deployment-64589d94d-lzfph   0/1     Pending   0          86s   # 未获取到 GPU 卡 Pending
 
 kubectl exec -it nvidia-deployment-64589d94d-8m6rd nvidia-smi
 
@@ -96,11 +96,9 @@ Mon Jan 13 08:16:36 2020
 
 ## 2.Tensorflow on Kubernetes 
 
-### 2.1 关于 Tensorflow
-
 [TensorFlow](https://www.tensorflow.org/) 是一个端到端开源机器学习平台。它拥有一个包含各种工具、库和社区资源的全面灵活生态系统，可以让研究人员推动机器学习领域的先进技术的发展，并让开发者轻松地构建和部署由机器学习提供支持的应用。
 
-### 2.2 在 Kuberneters 中安装 Tensorflow
+### 2.1 在 K8s 中安装 Tensorflow
 
 使用 Webkubectl 进入集群 Terminal, 新建文件 tensorflow.yml 并输入以下内容:
 ```
@@ -185,23 +183,21 @@ tensorflow-svc   NodePort   179.10.100.67   <none>        80:32604/TCP   2m15s
 
 ![jupter-login](../../../img-nivdia/tensorflow-login.png)
 
+### 2.2 运行 Tensorflow 深度学习示例
 
-
-### 2.3 开始一个 Tensorflow 机器学习示例
-
-#### 2.3.1 打开一个终端
+#### 2.2.1 打开 Jupter 终端
 
 ![jupter-select-terminal](../../../img-nivdia/tensorflow-select-terminal.png)
 
 ![jupter-terminal](../../../img-nivdia/tensorflow-terminal.png)
 
-#### 2.3.2 使用 PIP 下载 KERAS
+#### 2.2.2 使用 PIP 下载 KERAS
 
 ```
 pip install keras==2.0.6
 ```
 
-#### 2.3.3 代码实现
+#### 2.2.3 示例代码实现
 
 ```
 import keras
@@ -215,7 +211,6 @@ from tensorflow.python.client import device_lib
 mnist = keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
-
 
 # 将模型的各层堆叠起来，以搭建 keras.Sequential 模型。为训练选择优化器和损失函数：
 model = keras.models.Sequential([
@@ -235,7 +230,7 @@ model.evaluate(x_test,  y_test, verbose=2)
 
 ```
 
-#### 2.3.4 运行学习服务
+#### 2.2.4 运行深度学习服务
 
 ```bash
 python mnist.py
