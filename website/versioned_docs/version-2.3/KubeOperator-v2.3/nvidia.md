@@ -6,7 +6,7 @@ original_id: nvidia-gpu
 
 除了传统的无状态 Web 应用外，越来越多的数据库 Workload、实时计算 Workload、AI 机器/深度学习 Workload 会跑在 K8s 之上。其中，尤其是AI 机器/深度学习，天然适合运行在 K8s 之上。很多企业构建 K8s 集群就是专门用来运行机器/深度学习、通用 GPU、高性能计算，以及受益于专用硬件加速器的其他工作负载。
 
-## 1 使用 Kubeoperator 部署带有 GPU 的 Kubernetes 集群
+## 1 部署带有 GPU 的 Kubernetes 集群
 
 ### 1.1 先决条件
 
@@ -94,7 +94,7 @@ Mon Jan 13 08:16:36 2020
 
 ```
 
-## 2.Tensorflow on Kubernetes 
+## 2 Tensorflow on Kubernetes 
 
 [TensorFlow](https://www.tensorflow.org/) 是一个端到端开源机器学习平台。它拥有一个包含各种工具、库和社区资源的全面灵活生态系统，可以让研究人员推动机器学习领域的先进技术的发展，并让开发者轻松地构建和部署由机器学习提供支持的应用。
 
