@@ -89,27 +89,27 @@ $ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['d
  - 如果是手动部署模式 + NFS，支持 vSphere 5.5 及以上版本。
  - 如果是自动模式 + vSAN，支持 vSphere 6.5 及以上版本
 
- ## 11 KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 K8s 节点的操作系统吗？
+## 11 KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 K8s 节点的操作系统吗？
 
  是。KubeOperator 的管理范围包括操作系统，比如操作系统补丁升级，其提供的离线包包括操作系统（自动模式）及其 RPM 包，一个离线包版本代表一个终态，并被充分测试和验证。
 
  > 注：KubeOperator 不支持 CentOS 8，目前支持的版本是 CentOS 7.4 7.5 7.6 7.7.
 
- ## 12 K8s 集群的升级策略是什么？
+## 12 K8s 集群的升级策略是什么？
 
  KubeOperator 支持小版本的升级，比如 1.15.2 升级到 1.15.*， 不能升级到 1.16.* 。
 
- ## 13 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
+## 13 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
 
   是的。KubeOperator 已经通过认证，具体请参加：https://landscape.cncf.io
   
- ## 14 KubeOperator 和 Rancher 有什么区别？
+## 14 KubeOperator 和 Rancher 有什么区别？
 
 Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业规划、部署和运营生产级别的 K8s 集群，和 KubeOperator 有可比性的是 Rancher RKE，而不是 Rancher 全部。
 
 KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的DevOps平台、微服务治理平台、AI平台、应用商店等是解耦的。
 
- ## 15 KubeOperator 是否支持用户自主选择 K8s 离线包版本？
+## 15 KubeOperator 是否支持用户自主选择 K8s 离线包版本？
 
   支持。
   目前支持的 K8s 离线包下载地址：https://github.com/KubeOperator/k8s-package/releases  </br>
@@ -128,3 +128,9 @@ chmod -R 777 v1-15-5
 # 在 KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可使用该版本。 
  ```
   
+## 16.已知问题
+
+- HA 方案暂不支持外部 lb 。
+
+- 手动模式使用 Ceph 的集群，卸载后请重启节点以确保清除系统残留的虚拟网卡、路由信息、iptables|ipvs 规则等，否则重复使用这些机器会安装失败。
+

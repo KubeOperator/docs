@@ -12,9 +12,7 @@
       "version-2.3-KubeOperator-v2.3/nvidia-gpu",
       "version-2.3-KubeOperator-v2.3/faq",
       "version-2.3-KubeOperator-v2.3/video",
-      "version-2.3-KubeOperator-v2.3/screenshot",      
-      "version-2.3-KubeOperator-v2.3/support",
-      "version-2.3-KubeOperator-v2.3/known-issue"
+      "version-2.3-KubeOperator-v2.3/support"
     ],
     "References": []
   }
