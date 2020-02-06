@@ -93,7 +93,7 @@ $ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['d
 
  是。KubeOperator 的管理范围包括操作系统，比如操作系统补丁升级，其提供的离线包包括操作系统（自动模式）及其 RPM 包，一个离线包版本代表一个终态，并被充分测试和验证。
 
- > 注：KubeOperator 不支持 CentOS 8，目前支持的版本是 CentOS 7.4 7.5 7.6 7.7.
+ > 注：KubeOperator 不支持 CentOS 8，目前支持的版本是 CentOS 7.4 7.5 7.6 7.7。
 
 ## 12 K8s 集群的升级策略是什么？
 
@@ -107,7 +107,7 @@ $ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['d
 
 Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业规划、部署和运营生产级别的 K8s 集群，和 KubeOperator 有可比性的是 Rancher RKE，而不是 Rancher 全部。
 
-KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的DevOps平台、微服务治理平台、AI平台、应用商店等是解耦的。
+KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的 DevOps 平台、微服务治理平台、AI 平台、应用商店等是解耦的。
 
 ## 15 KubeOperator 是否支持用户自主选择 K8s 离线包版本？
 
@@ -134,3 +134,4 @@ chmod -R 777 v1-15-5
 
 - 手动模式使用 Ceph 的集群，卸载后请重启节点以确保清除系统残留的虚拟网卡、路由信息、iptables|ipvs 规则等，否则重复使用这些机器会安装失败。
 
+- 手动模式部署集群，如果主机选择 OpenStack 虚机，Pod 网络不通，解决方案是安全组需要打开 UDP 策略。
