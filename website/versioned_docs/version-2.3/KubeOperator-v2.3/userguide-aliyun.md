@@ -255,6 +255,7 @@ WORKER_IP traefik.apps.mycluster.fit2cloud.com
 WORKER_IP scope.weave.apps.mycluster.fit2cloud.com
 WORKER_IP ceph.apps.mycluster.fit2cloud.com
 ```
+以上文本也可以直接在集群的【内置应用】页单击【点此获取】复制域名解析规则。
 
 > 注: WORKER_IP 为worker节点的外网IP
 

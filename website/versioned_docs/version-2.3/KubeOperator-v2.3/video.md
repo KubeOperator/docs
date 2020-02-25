@@ -74,7 +74,6 @@ https://kubeoperator-1256577600.file.myqcloud.com/video/KubeOperator2.1.mp4
 
 ![screenshot](../../../img-2.3/fun-recordnfs.png)
 
-
 ### 2.16 外部 Ceph
 
 ![screenshot](../../../img-2.3/fun-addceph.png)

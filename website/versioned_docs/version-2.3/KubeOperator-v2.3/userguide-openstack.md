@@ -181,7 +181,7 @@ WORKER_IP master-1.mycluster.fit2cloud.com
 WORKER_IP traefik.apps.mycluster.fit2cloud.com
 WORKER_IP scope.weave.apps.mycluster.fit2cloud.com
 ```
-以上文本也可以直接在集群的【概览】页最下角单击【域名解析规则】中获取。
+以上文本也可以直接在集群的【内置应用】页单击【点此获取】复制域名解析规则。
 
 #### 3.1.1 Dashboard
 
