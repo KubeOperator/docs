@@ -1,0 +1,21 @@
+{
+  "version-2.4-docs": {
+    "KubeOperator-v2.4": [
+      "version-2.4-KubeOperator-v2.4/introduction",
+      "version-2.4-KubeOperator-v2.4/concept",
+      "version-2.4-KubeOperator-v2.4/installation",
+      "version-2.4-KubeOperator-v2.4/userguide-manual",
+      "version-2.4-KubeOperator-v2.4/userguide-vsphere",
+      "version-2.4-KubeOperator-v2.4/userguide-openstack",
+      "version-2.4-KubeOperator-v2.4/userguide-aliyun",
+      "version-2.4-KubeOperator-v2.4/kubeapps-plus",
+      "version-2.4-KubeOperator-v2.4/nvidia-gpu",
+      "version-2.4-KubeOperator-v2.4/faq",
+      "version-2.4-KubeOperator-v2.4/video",
+      "version-2.4-KubeOperator-v2.4/support",
+      "version-2.4-KubeOperator-v2.4/release-note"
+
+    ],
+    "References": []
+  }
+}
