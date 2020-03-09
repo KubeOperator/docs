@@ -1,5 +1,5 @@
 ---
-id: version-2.3-installation
+id: version-2.4-installation
 title: 三、安装和升级 KubeOperator
 original_id: installation
 ---

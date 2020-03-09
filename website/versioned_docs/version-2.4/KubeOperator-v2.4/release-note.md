@@ -1,5 +1,5 @@
 ---
-id: version-2.3-release-note
+id: version-2.4-release-note
 title: 十三、更新日志
 original_id: release-note
 ---

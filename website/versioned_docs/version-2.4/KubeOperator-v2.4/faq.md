@@ -1,5 +1,5 @@
 ---
-id: version-2.3-faq
+id: version-2.4-faq
 title: 十、常见问题
 original_id: faq
 ---

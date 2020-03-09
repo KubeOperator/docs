@@ -1,5 +1,5 @@
 ---
-id: version-2.3-userguide-aliyun
+id: version-2.4-userguide-aliyun
 title: 七、在阿里云 平台上规划、部署及运营 K8s 集群
 original_id: userguide-aliyun
 ---

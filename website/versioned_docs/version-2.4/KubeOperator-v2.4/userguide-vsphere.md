@@ -1,5 +1,5 @@
 ---
-id: version-2.3-userguide-vsphere
+id: version-2.4-userguide-vsphere
 title:  五、在 vSphere 平台上规划、部署及运营 K8s 集群
 original_id: userguide-vsphere
 ---
