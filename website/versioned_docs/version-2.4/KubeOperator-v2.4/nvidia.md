@@ -1,5 +1,5 @@
 ---
-id: version-2.3-nvidia-gpu
+id: version-2.4-nvidia-gpu
 title: 九、GPU 与 AI 应用指南
 original_id: nvidia-gpu
 ---

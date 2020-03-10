@@ -1,5 +1,5 @@
 ---
-id: version-2.3-video
+id: version-2.4-video
 title: 十一、视频演示和功能截屏
 original_id: video
 ---

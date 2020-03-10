@@ -1,5 +1,5 @@
 ---
-id: version-2.3-kubeapps-plus
+id: version-2.4-kubeapps-plus
 title: 八、KubeApps Plus 应用商店使用指南
 original_id: kubeapps-plus
 ---
