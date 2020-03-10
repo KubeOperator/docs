@@ -1,5 +1,5 @@
 ---
-id: version-2.3-restapi
+id: version-2.4-restapi
 title: REST API
 original_id: restapi
 ---
