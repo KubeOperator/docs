@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
-id: version-img-2.4-userguide-vsphere
-=======
 id: version-2.4-userguide-vsphere
->>>>>>> effc2e285f566bd01400cc65b415c94459eb367a
 title:  五、在 vSphere 平台上规划、部署及运营 K8s 集群
 original_id: userguide-vsphere
 ---
