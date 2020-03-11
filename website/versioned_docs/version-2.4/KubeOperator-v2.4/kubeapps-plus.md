@@ -32,7 +32,7 @@ KubeApps Plus 的安装方式有两种，一种是在 KubeOperator 系统安装 
 
 在 K8s 集群【内置应用】页可以看到 Kubeapps Plus 应用。
 
-![kubeapps-plus](../../../img-kubeapps-plus/kubeapps-plus.png)
+![kubeapps-plus](../../../img-2.4/screenshot-8.png)
 
 > 注：目前仅 K8s 1.16.4 以上版本支持 KubeApps Plus。
 
