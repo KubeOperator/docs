@@ -14,112 +14,122 @@ https://kubeoperator-1256577600.file.myqcloud.com/video/KubeOperator2.1.mp4
 
 ### 2.1 概览页面
 
-![screenshot](../../../img-2.3/fun-summary.png)
+![screenshot](../../../img-2.4/screenshot-1.png)
 
 ### 2.2 集群列表
 
-![screenshot](../../../img-2.3/fun-cluster.png)
+![screenshot](../../../img-2.4/screenshot-2.png)
 
 ### 2.3 集群概览
 
-![screenshot](../../../img-2.3/fun-c-summary.png)
+![screenshot](../../../img-2.4/screenshot-3.png)
 
 ### 2.4 集群节点
 
-![screenshot](../../../img-2.3/fun-node.png)
+![screenshot](../../../img-2.4/screenshot-4.png)
 
 ### 2.5 集群存储
 
-![screenshot](../../../img-2.3/fun-storage.png)
+![screenshot](../../../img-2.4/screenshot-5.png)
 
 ### 2.6 集群任务
 
-![screenshot](../../../img-2.3/fun-task.png)
+![screenshot](../../../img-2.4/install-4.png)
 
 ### 2.7 集群历史
 
-![screenshot](../../../img-2.3/fun-history.png)
+![screenshot](../../../img-2.4/screenshot-7.png)
 
 ### 2.8 内置应用
 
-![screenshot](../../../img-2.3/fun-interapps.png)
+![screenshot](../../../img-2.4/screenshot-8.png)
 
 ### 2.9 健康状态
 
-![screenshot](../../../img-2.3/fun-healthy.png)
+![screenshot](../../../img-2.4/screenshot-9.png)
 
 ### 2.10 集群事件
 
-![screenshot](../../../img-2.3/fun-event.png)
+![screenshot](../../../img-2.4/screenshot-10.png)
 
 ### 2.11 集群备份
 
-![screenshot](../../../img-2.3/fun-backup.png)
+![screenshot](../../../img-2.4/screenshot-11.png)
 
 ### 2.12 F5 对接
 
-![screenshot](../../../img-2.3/fun-f5.png)
+![screenshot](../../../img-2.4/screenshot-12.png)
 
 ### 2.13 主机列表
 
-![screenshot](../../../img-2.3/fun-host.png)
+![screenshot](../../../img-2.4/screenshot-13.png)
 
 ### 2.14 离线包
 
-![screenshot](../../../img-2.3/fun-package.png)
+![screenshot](../../../img-2.4/screenshot-14.png)
 
 ### 2.15 外部 NFS 存储
 
-![screenshot](../../../img-2.3/fun-newnfs.png)
+![screenshot](../../../img-2.4/screenshot-15.png)
 
-![screenshot](../../../img-2.3/fun-recordnfs.png)
+![screenshot](../../../img-2.4/screenshot-16.png)
 
 ### 2.16 外部 Ceph
 
-![screenshot](../../../img-2.3/fun-addceph.png)
+![screenshot](../../../img-2.4/ceph.png)
 
 
 ### 2.17 部署计划
 
-![screenshot](../../../img-2.3/fun-plan.png)
+![screenshot](../../../img-2.4/screenshot-17.png)
 
 ### 2.18 系统日志
 
-![screenshot](../../../img-2.3/fun-systemlog.png)
+![screenshot](../../../img-2.4/screenshot-18.png)
 
-### 2.19 系统设置
+### 2.19 项目管理
 
-![screenshot](../../../img-2.3/fun-system.png)
+![screenshot](../../../img-2.4/screenshot-19.png)
 
-### 2.20 K8s Dashboard
+![screenshot](../../../img-2.4/screenshot-20.png)
 
-![screenshot](../../../img-2.3/fun-k8sdashboard.png)
+### 2.20 用户管理
 
-### 2.21 集群 Grafana 监控
+![screenshot](../../../img-2.4/screenshot-21.png)
 
-![screenshot](../../../img-2.3/fun-grafana-cluster.png)
+### 2.21 系统设置
 
-![screenshot](../../../img-2.3/fun-grafana-node.png)
+![screenshot](../../../img-2.4/screenshot-22.png)
 
-![screenshot](../../../img-2.3/fun-grafana-etcd.png)
+### 2.22 K8s Dashboard
 
-### 2.22 集群 Loki 日志
+![screenshot](../../../img-2.4/fun-k8sdashboard.png)
 
-![screenshot](../../../img-2.3/fun-grafana-loki.png)
+### 2.23 集群 Grafana 监控
 
-### 2.23 Weave Scope
+![screenshot](../../../img-2.4/fun-grafana-cluster.png)
 
-![screenshot](../../../img-2.3/fun-weavescope.png)
+![screenshot](../../../img-2.4/fun-grafana-node.png)
 
-### 2.24 Ceph Dashboard (RooK)
+![screenshot](../../../img-2.4/fun-grafana-etcd.png)
 
-![screenshot](../../../img-2.3/fun-rook-ceph.png)
+### 2.24 集群 Loki 日志
 
-### 2.25 KubeApps Plus
+![screenshot](../../../img-2.4/fun-grafana-loki.png)
 
-![screenshot](../../../img-2.3/fun-apps.png)
+### 2.25 Weave Scope
 
-![screenshot](../../../img-2.3/fun-appschart.png)
+![screenshot](../../../img-2.4/fun-weavescope.png) 
+
+### 2.26 Ceph Dashboard (RooK)
+
+![screenshot](../../../img-2.4/fun-rook-ceph.png)
+
+### 2.27 KubeApps Plus
+
+![screenshot](../../../img-2.4/gitlab-dashboard.png)
+
+![screenshot](../../../img-2.4/fun-appschart.png)
 
 
 
