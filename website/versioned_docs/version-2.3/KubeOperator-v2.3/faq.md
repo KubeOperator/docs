@@ -127,8 +127,46 @@ tar zxvf k8s-package-1.15.5.tar.gz
 chmod -R 777 v1-15-5
 # 在 KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可使用该版本。 
  ```
+## 16 KubeOperator 改了哪些 Linux 内核参数？
+
+### 内核参数
+    net.ipv4.ip_forward = 1
+    net.bridge.bridge-nf-call-iptables = 1
+    net.bridge.bridge-nf-call-ip6tables = 1
+    net.bridge.bridge-nf-call-arptables = 1
+    net.ipv4.tcp_tw_recycle = 0
+    net.ipv4.tcp_tw_reuse = 0
+    net.netfilter.nf_conntrack_max=1000000
+    vm.swappiness = 0
+    vm.max_map_count=655360
+    fs.file-max=6553600
+    <----'ipvs only start'----->
+    net.ipv4.tcp_keepalive_time = 600
+    net.ipv4.tcp_keepalive_intvl = 30
+    net.ipv4.tcp_keepalive_probes = 10
+    <----'ipvs only end'------->
+
+### 系统日志参数
+
+    Storage=persistent
+    SystemMaxUse=2G
+    SystemMaxFileSize=200M
+    MaxRetentionSec=2week
+    ForwardToSyslog=no
+    ForwardToWall=no
+
+### 系统文件数限制
+
+    DefaultLimitCORE=infinity
+    DefaultLimitNOFILE=100000
+    DefaultLimitNPROC=100000
+    
+### 其他
+禁用SELinux<br>
+关闭 swap
+
   
-## 16.已知问题
+## 17 已知问题
 
 - HA 方案暂不支持外部 lb 。
 
