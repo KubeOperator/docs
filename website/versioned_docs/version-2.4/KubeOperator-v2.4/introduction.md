@@ -6,34 +6,41 @@ original_id: introduction
 
 ## 1 什么是 KubeOperator？
 
-KubeOperator 是一个开源项目，在离线网络环境下，通过可视化 Web UI 在 VMware、Openstack 或者物理机上规划、部署和运营生产级别的 Kubernetes 集群。KubeOperator 是 [Jumpserver](https://github.com/jumpserver/jumpserver) 明星开源团队在 Kubernetes 领域的的又一全新力作。
-
-![overview](../../../img/overview.png)
-
-> 注： KubeOperator 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)。
-
-## 2 KubeOperator 的整体架构
+KubeOperator 是一个开源项目，在离线网络环境下，通过可视化 Web UI 在 VMware、Openstack 或者物理机上规划、部署和运营生产级别的 Kubernetes 集群。KubeOperator 是 [JumpServer](https://github.com/jumpserver/jumpserver) 明星开源团队在 Kubernetes 领域的的又一全新力作。
 
 KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或者虚机），通过 Ansible 完成自动化部署和变更操作，支持 Kubernetes 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营的全生命周期管理。
 
+KubeOperator 内置 [KubeApps Plus](https://github.com/KubeOperator/kubeapps-plus) 应用商店，以支撑各种基于 K8s 的应用场景，如：
+
+- CI / CD 应用场景：GitLab、Jenkins、Harbor、Sonarqube、Argo CD 等；
+- GPU / AI 应用场景：Tensorflow、PyTorch 等;
+- Serverless 应用场景：Knative 等；
+- 数据库应用场景：MySQL、Redis 等;
+
+KubeOperator 的整体架构如下图所示：
+
 ![architecture](../../../img/KubeOperator.jpeg)
 
-## 3 KubeOperator 的技术优势
+> 注： KubeOperator 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)。
 
--  简单易用：提供可视化的 Web UI，极大降低部署和管理门槛；
--  离线部署：持续更新包括 Kubernetes 及常用组件（即内置应用）的离线包；
+## 2 KubeOperator 的技术优势
+
+-  简单易用：提供可视化的 Web UI，极大降低 K8s 部署和管理门槛，内置 [Webkubectl](https://github.com/KubeOperator/webkubectl)；
+-  离线部署：持续更新包括 Kubernetes 及常用组件的离线包；
 -  按需创建：调用云平台 API，一键快速创建和部署 Kubernetes 集群；
 -  按需伸缩：快速伸缩 Kubernetes 集群，优化资源使用效率；
 -  按需修补：快速升级和修补 Kubernetes 集群，并与社区最新版本同步，保证安全性；
 -  自我修复：通过重建故障节点确保集群可用性；
 -  全栈监控：提供从Pod、Node到集群的事件、监控、告警、和日志方案；
--  Multi-AZ 支持：通过把 Kubernetes 集群 Master 节点分布在不同的故障域上确保的高可用；
+-  Multi-AZ 支持：将 Master 节点分布在不同的故障域上确保集群高可用；
+-  应用商店：内置 [KubeApps Plus](https://github.com/KubeOperator/kubeapps-plus) 应用商店，快速部署和管理常见应用；
+-  GPU 支持：支持 GPU 节点，助力运行深度学习等应用；
 
-## 4 KubeOperator 的功能列表
+## 3 KubeOperator 的功能列表
 
 <table class="subscription-level-table">
     <tr class="subscription-level-tr-border">
-        <td class="features-first-td-background-style" rowspan="13">集群 Day 0 规划</td>
+        <td class="features-first-td-background-style" rowspan="14">Day 0 规划</td>
         </td>
         <td class="features-third-td-background-style" rowspan="2">集群模式
         </td>
@@ -47,7 +54,7 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
     <tr class="subscription-level-tr-border">
         <td class="features-third-td-background-style" rowspan="3">计算方案
         </td>
-        <td class="features-third-td-background-style">独立主机：支持自行准备的虚机和物理机
+        <td class="features-third-td-background-style">独立主机：支持自行准备的虚机、公有云主机和物理机
         </td>  
     </tr>    
     <tr class="subscription-level-tr-border">
@@ -61,7 +68,7 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
     <tr class="subscription-level-tr-border">
         <td class="features-third-td-background-style" rowspan="3">存储方案
         </td>
-        <td class="features-third-td-background-style">独立主机：支持 NFS / Ceph RBD (通过 Rook) 
+        <td class="features-third-td-background-style">独立主机：支持 NFS / Ceph RBD / Local Volume
         </td>
     </tr>
     <tr class="subscription-level-tr-border">
@@ -91,13 +98,19 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
         </td>
     </tr>
     <tr class="subscription-level-tr-border">
+        <td class="features-third-td-background-style">GPU 方案
+        </td>
+        <td class="features-third-td-background-style">支持 NVIDIA GPU
+        </td>
+    </tr> 
+    <tr class="subscription-level-tr-border">
         <td class="features-third-td-background-style">操作系统
         </td>
         <td class="features-third-td-background-style">支持 CentOS 7.4 / 7.5 / 7.6 / 7.7
         </td>
     </tr>    
     <tr class="subscription-level-tr-border">
-        <td class="features-first-td-background-style" rowspan="3">集群 Day 1 部署
+        <td class="features-first-td-background-style" rowspan="3">Day 1 部署
         </td>
         <td class="features-third-td-background-style" rowspan="3">部署
         </td>  
@@ -113,13 +126,21 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
         </td>
     </tr> 
     <tr class="subscription-level-tr-border">
-        <td class="features-first-td-background-style" rowspan="13">集群 Day 2 运营
+        <td class="features-first-td-background-style" rowspan="15">Day 2 运营
         </td>
-        <td class="features-third-td-background-style" rowspan="4">管理
+        <td class="features-third-td-background-style" rowspan="6">管理
         </td>  
-        <td class="features-third-td-background-style">内置 K8s 官方的 Dashboard 管理应用
+        <td class="features-third-td-background-style">支持用户权限管理，支持对接 LDAP/AD
         </td>         
     </tr>
+    <tr class="subscription-level-tr-border">
+         <td class="features-third-td-background-style">对外开放 REST API
+        </td>
+    </tr>    
+    <tr class="subscription-level-tr-border">
+         <td class="features-third-td-background-style">内置 K8s Dashboard 管理应用
+        </td>
+    </tr>     
      <tr class="subscription-level-tr-border">
          <td class="features-third-td-background-style">内置 Weave Scope 管理应用
         </td>
@@ -147,7 +168,7 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
         </td>
     </tr> 
     <tr class="subscription-level-tr-border">
-        <td class="features-third-td-background-style"> 在 Web UI 上面查看集群事件，并可以通过钉钉、微信进行通知；
+        <td class="features-third-td-background-style">支持消息中心，通过钉钉、微信通知各种集群异常事件；
         </td>
     </tr>      
     <tr class="subscription-level-tr-border">
@@ -171,13 +192,13 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
     <tr class="subscription-level-tr-border">
         <td class="features-third-td-background-style">合规
         </td>
-         <td class="features-third-td-background-style">使用 Sonobuoy 进行合规检查并可视化展示结果
+         <td class="features-third-td-background-style">支持集群合规检查并可视化展示结果
         </td>
     </tr>      
      <tr class="subscription-level-tr-border">
         <td class="features-third-td-background-style">应用商店
         </td>
-         <td class="features-third-td-background-style">集成 KubeApps 应用商店
+         <td class="features-third-td-background-style">集成 KubeApps Plus 应用商店，快速部署 CI/CD、AI 深度学习等应用
         </td>
     </tr>     
  </table>
