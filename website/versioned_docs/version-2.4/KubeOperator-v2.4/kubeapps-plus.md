@@ -8,14 +8,11 @@ original_id: kubeapps-plus
 
 KubeApps Plus 是 KubeApps 的定制版本，基于 Web UI 界面在 Kubernetes 集群中部署和管理基于 Helm Chart 的应用程序。KubeApps 是由 Bitnami 发布的 Kubernetes 应用商店，KubeApps Plus 当前的主要定制包括前端重写、中文支持和纯离线支持。KubeApps Plus 使用 Apache License 2.0 许可, 与 KubeApps 相同。
 
-KubeApps Plus 是 KubeOperator 内置的应用商店方案，目前应用商店中的应用（支持离线部署）包括：
+KubeApps Plus 是 KubeOperator 内置的应用商店方案，通过应用商店向企业提供覆盖 CI/CD、数据库服务、AI 服务、无服务器计算等场景的云原生解决方案。
 
-DevOps 工具链应用：GitLab、Jenkins、Harbor、Sonarqube 等；
-AI 深度学习应用：Tensorflow 等;
-       
-其他的应用可以通过自定义 Helm Chart 仓库进行安装。
+![kubeapps-plus](../../../img-2.4/kubeapps-plus.png)
 
-#### 主要功能
+#### KubeApps Plus 的主要功能
 
 - 从 Helm Chart 仓库中浏览并部署 Helm Chart 应用；
 - 集群中已有 Helm chart 应用的查看、升级和卸载；
