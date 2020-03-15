@@ -48,7 +48,7 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
         <td>Worker</td>
         <td>1</td>
         <td>CentOS 7.6</td>
-        <td>4C 16G</td>
+        <td>2C 8G</td>
         <td>8C 32G</td>
         <td>运行 kubelet、应用工作负载。</td>
     </tr>
