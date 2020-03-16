@@ -19,7 +19,7 @@ KubeOperator 内置 [KubeApps Plus](https://github.com/KubeOperator/kubeapps-plu
 
 KubeOperator 的整体架构如下图所示：
 
-![architecture](../../../img/KubeOperator.jpeg)
+![architecture](../../../img-2.4/KubeOperator.jpeg)
 
 > 注： KubeOperator 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)。
 
