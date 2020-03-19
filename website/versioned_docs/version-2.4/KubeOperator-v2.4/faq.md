@@ -44,15 +44,19 @@ KubeOperator 不仅支持安装程序本身，还提供了一组工具来监视 
  - 如果是单一大集群，升级会影响所有租户，风险比较大；
  - IaaS 平台上有成熟的、基于软件定义的存储和网络方案，落地更容易和灵活；
  - KubeOperator 与 VMware、Openstack 等 IaaS 方案紧密集成，可以实现全栈的自动化，集群交付快，伸缩快；
+ 
+ ## 5 KubeOperator 是否使用二级制方式部署 Kubernetes？
+    
+ - 是
 
- ## 5 采用原生 Kubernetes 有什么好处？
+ ## 6 采用原生 Kubernetes 有什么好处？
 
  总的来说，相对于发行版，采纳原生 Kubernetes 有两个好处：
 
  - Kubernetes 迭代很快，且只维护最新的三个大版本。如果采纳其他发行版，可能很容易出现和原生版本脱节的情况。
  - 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 K8s 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
 
- ## 6 KubeOperator 支持哪些持久化存储？
+ ## 7 KubeOperator 支持哪些持久化存储？
 
  KubeOperator 支持三类存储：
 
@@ -64,7 +68,7 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
 
  https://docs.vmware.com/en/VMware-Enterprise-PKS/1.5/vmware-enterprise-pks-15/GUID-vsphere-persistent-storage.html
 
-## 7 K8s 集群里的 master 、 worker 节点以及相关内置应用默认用户名/密码？
+## 8 K8s 集群里的 master 、 worker 节点以及相关内置应用默认用户名/密码？
 
 如果是自动模式创建的 K8s 集群，集群中 master 和 worker 节点的默认用户名和密码为：`root / KubeOperator@2019` </br>
 访问 Grafana 、Registry 和 Weave Scope 应用的默认用户名和密码是相同的都是：`admin / admin123` 
@@ -76,40 +80,40 @@ $ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['d
 
 ```
 
-## 8 KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 K8s 集群吗？
+## 9 KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 K8s 集群吗？
 
 不会有任何影响。KubeOperator 是一个 100% 旁路系统，其与被管 K8s 集群完全解耦。
 
-## 9 重启 KubeOperator 部署的 K8s 集群的节点后，比如 Master 或者 Worker 节点，会自动恢复正常吗？
+## 10 重启 KubeOperator 部署的 K8s 集群的节点后，比如 Master 或者 Worker 节点，会自动恢复正常吗？
 
 会自动恢复正常。
 
-## 10 KubeOperator 支持的 vSphere 版本是什么？
+## 11 KubeOperator 支持的 vSphere 版本是什么？
 
  - 如果是手动部署模式 + NFS，支持 vSphere 5.5 及以上版本。
  - 如果是自动模式 + vSAN，支持 vSphere 6.5 及以上版本
 
-## 11 KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 K8s 节点的操作系统吗？
+## 12 KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 K8s 节点的操作系统吗？
 
  是。KubeOperator 的管理范围包括操作系统，比如操作系统补丁升级，其提供的离线包包括操作系统（自动模式）及其 RPM 包，一个离线包版本代表一个终态，并被充分测试和验证。
 
  > 注：KubeOperator 不支持 CentOS 8，目前支持的版本是 CentOS 7.4 7.5 7.6 7.7。
 
-## 12 K8s 集群的升级策略是什么？
+## 13 K8s 集群的升级策略是什么？
 
  KubeOperator 支持小版本的升级，比如 1.15.2 升级到 1.15.*， 不能升级到 1.16.* 。
 
-## 13 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
+## 14 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
 
   是的。KubeOperator 已经通过认证，具体请参加：https://landscape.cncf.io
   
-## 14 KubeOperator 和 Rancher 有什么区别？
+## 15 KubeOperator 和 Rancher 有什么区别？
 
 Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业规划、部署和运营生产级别的 K8s 集群，和 KubeOperator 有可比性的是 Rancher RKE，而不是 Rancher 全部。
 
 KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的 DevOps 平台、微服务治理平台、AI 平台、应用商店等是解耦的。
 
-## 15 KubeOperator 是否支持用户自主选择 K8s 离线包版本？
+## 16 KubeOperator 是否支持用户自主选择 K8s 离线包版本？
 
   支持。
   目前支持的 K8s 离线包下载地址：https://github.com/KubeOperator/k8s-package/releases  </br>
@@ -128,7 +132,7 @@ chmod -R 777 v1-15-5
 # 在 KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可使用该版本。 
  ```
   
-## 16.已知问题
+## 17 已知问题
 
 - HA 方案暂不支持外部 lb 。
 
