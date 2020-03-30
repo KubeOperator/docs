@@ -82,3 +82,14 @@ $ ./kubeopsctl.sh upgrade
 # 查看 KubeOperator 状态
 $ systemctl status kubeops
 ```
+
+## 6 卸载 KubeOperator
+
+如果要卸载 KubeOperator 重新安装，首先保存并记录已创建的 K8s 集群信息，然后登录到部署机器转到 /opt/kubeoperator 目录下使用如下命令卸载。
+
+``` bash
+$ cd /opt/kubeoperator
+$ ./kubeopsctl.sh uninstall
+
+```
+
