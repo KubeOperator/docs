@@ -24,6 +24,8 @@ KubeApps Plus 是 KubeOperator 内置的应用商店方案，通过应用商店�
 KubeApps Plus 安装分为两个步骤，首选安装 KubeApps Plus（自动或者手动安装），然后在 K8s 集群的 master 节点中安装 Helm Charts 离线包。下面分别介绍这两部分内容。
 
 ### 2.1 安装 KubeApps Plus
+> 注：目前仅 K8s 1.16.4 以上版本支持 KubeApps Plus。默认 KubeApps Plus 应用商店安装完成后，里面的应用默认为空，可以根据下方文档 2.2 中的安装步骤选择你需要的应用镜像上传使用，同时也支持配置连接外部应用商店仓库。
+
 
 KubeApps Plus 的安装方式有两种，一种是在 KubeOperator 系统安装 K8s 集群时作为内置应用自动安装 KubeApps plus，这里不在赘述。
 
@@ -31,7 +33,6 @@ KubeApps Plus 的安装方式有两种，一种是在 KubeOperator 系统安装 
 
 ![kubeapps-plus](../../../img-2.4/screenshot-8.png)
 
-> 注：目前仅 K8s 1.16.4 以上版本支持 KubeApps Plus。
 
 另外一种是使用 Helm 图表手动安装到集群。下面仅简单介绍手动安装方法。
 
