@@ -132,13 +132,18 @@ chmod -R 777 v1-15-5
 # 在 KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可使用该版本。 
  ```
   
-## 17 已知问题
+## 17 K8s 集群中的 master 节点的推荐配置？
 
-- HA 方案暂不支持外部 lb 。
+K8s 集群中 master 节点配置取决于 worker 节点数量，推荐配置参考如下：
 
-- 手动模式使用 Ceph 的集群，卸载后请重启节点以确保清除系统残留的虚拟网卡、路由信息、iptables|ipvs 规则等，否则重复使用这些机器会安装失败。
-
-- 手动模式部署集群，如果主机选择 OpenStack 虚机，Pod 网络不通，解决方案是安全组需要打开 UDP 策略。
+| worker 节点数量 | master 推荐配置 |
+| ---- | ---- | 
+| 1-5 | 1C 4G |
+| 6-10 | 2C 8G |
+| 11-100 | 4C 16G |
+| 101-250 | 8C 32G |
+| 251-500 | 16C 64G |
+| > 500 |32C 128G |
 
 ## 18 自动模式创建虚拟机报 'otherLinux64Guest' is not supported 错误的解决办法
 
@@ -153,4 +158,17 @@ Refer to vCenter documentation for supported configurations.
   出现此问题可能是 vCenter 或者 ESXi 的版本和 KubeOperator 的 ovf 模板冲突导致的 </br>
   解决办法是用自己的模板替换 vCenter 的 kubeoperator 目录下的模板，并修改为同一名称 </br>
   模板操作系统必须为 CentOS 7.4 / 7.5 / 7.6 / 7.7 其中一个 </br>
+
+## 19 已知问题
+
+- HA 方案暂不支持外部 lb 。
+
+- 手动模式使用 Ceph 的集群，卸载后请重启节点以确保清除系统残留的虚拟网卡、路由信息、iptables|ipvs 规则等，否则重复使用这些机器会安装失败。
+
+- 手动模式部署集群，如果主机选择 OpenStack 虚机，Pod 网络不通，解决方案是安全组需要打开 UDP 策略。
+
+- 不能修改 K8s 集群中节点 root 密码，修改后会无法获取节点的 CPU 和内存信息，节点之前无法通信。
+
+
   
+
