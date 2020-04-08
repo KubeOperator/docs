@@ -139,3 +139,18 @@ chmod -R 777 v1-15-5
 - 手动模式使用 Ceph 的集群，卸载后请重启节点以确保清除系统残留的虚拟网卡、路由信息、iptables|ipvs 规则等，否则重复使用这些机器会安装失败。
 
 - 手动模式部署集群，如果主机选择 OpenStack 虚机，Pod 网络不通，解决方案是安全组需要打开 UDP 策略。
+
+## 18 自动模式创建虚拟机报 'otherLinux64Guest' is not supported 错误的解决办法
+
+ 完整错误
+``` bash
+
+Error: error sending customization spec: Customization of the guest operating system 'otherLinux64Guest' is not supported in this configuration. 
+Microsoft Vista (TM) and Linux guests with Logical Volume Manager are supported only for recent ESX host and VMware Tools versions. 
+Refer to vCenter documentation for supported configurations.
+
+```
+  出现此问题可能是 vCenter 或者 ESXi 的版本和 KubeOperator 的 ovf 模板冲突导致的 </br>
+  解决办法是用自己的模板替换 vCenter 的 kubeoperator 目录下的模板，并修改为同一名称 </br>
+  模板操作系统必须为 CentOS 7.4 / 7.5 / 7.6 / 7.7 其中一个 </br>
+  
