@@ -145,7 +145,40 @@ K8s 集群中 master 节点配置取决于 worker 节点数量，推荐配置参
 | 251-500 | 16C 64G |
 | > 500 |32C 128G |
 
-## 18 已知问题
+## 18 应用商店部署的 Harbor ，可以通过 Web UI 访问，但是 docker login 不成功？
+
+以默认的 NodePort 访问为例：
+- 上传 Harbor 离线应用到应用商店
+- 点击 Harbor 进行部署
+- 部署前对 value.yaml 做以下修改
+  1. 开启 TLS，修改 enable = true
+![harbor_tls_enable](../../../img-2.5/harbor_tls.jpg)
+  2. 配置一个固定的 NodePort 端口，端口不要和现有环境冲突即可
+![harbor_tls_enable](../../../img-2.5/harbor_nodeport.jpg)
+  3. 修改 externalURL: https://worker:nodeport , 如图：172.16.10.100是 worker 节点的IP，30003 是第上一部设置的固定端口
+![harbor_tls_enable](../../../img-2.5/harbor_externalurl.jpg)
+  4. 点就右上角“部署”按钮，进行部署
+
+- 在本地 Docker 客户端配置 daemon.json,使之信任 Harbor 私有仓库
+```
+{
+  ... 
+  "insecure-registries" : [
+    "172.16.10.100:30003"
+  ]
+  ...
+}
+```
+- 在本地进行 docker login ，使用正确的用户名和密码进行登录
+```
+$ docker login 172.16.10.100:30003
+Username: admin
+Password:
+Login Succeeded
+```
+注意：不论你是用 Ingress 还是 ClusterIP 对 Harbor 进行服务暴露，externalURL 一定要和实际访问 Harbor 时的 URL 一致，否则 docker login 认证时将会失败。
+
+## 19 已知问题
 
 - HA 方案暂不支持外部 lb 。
 
