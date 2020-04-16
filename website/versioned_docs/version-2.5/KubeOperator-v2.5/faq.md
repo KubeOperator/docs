@@ -155,7 +155,7 @@ K8s 集群中 master 节点配置取决于 worker 节点数量，推荐配置参
 ![harbor_tls_enable](../../../img-2.5/harbor_tls.jpg)
   2. 配置一个固定的 NodePort 端口，端口不要和现有环境冲突即可
 ![harbor_tls_enable](../../../img-2.5/harbor_nodeport.jpg)
-  3. 修改 externalURL: https://worker:nodeport , 如图：172.16.10.100是 worker 节点的IP，30003 是第上一部设置的固定端口
+  3. 修改 externalURL: https://worker:port , 如图：172.16.10.100是 worker 节点的IP，30003 是第二个步骤中为 NodePort 设置的固定端口
 ![harbor_tls_enable](../../../img-2.5/harbor_externalurl.jpg)
   4. 点就右上角“部署”按钮，进行部署
 
