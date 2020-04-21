@@ -45,7 +45,7 @@ KubeOperator 不仅支持安装程序本身，还提供了一组工具来监视 
  - IaaS 平台上有成熟的、基于软件定义的存储和网络方案，落地更容易和灵活；
  - KubeOperator 与 VMware、Openstack 等 IaaS 方案紧密集成，可以实现全栈的自动化，集群交付快，伸缩快；
  
- ## 5 KubeOperator 是否使用二级制方式部署 Kubernetes？
+ ## 5 KubeOperator 是否使用二进制方式部署 Kubernetes？
     
  - 是
 
