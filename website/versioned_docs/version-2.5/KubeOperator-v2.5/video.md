@@ -46,7 +46,7 @@ https://kubeoperator-1256577600.file.myqcloud.com/video/KubeOperator2.1.mp4
 
 ### 2.9 组件状态
 
-![screenshot](../../../img-2.4/screenshot-9.png)
+![screenshot](../../../img-2.5/module-status.png)
 
 ### 2.10 集群事件
 

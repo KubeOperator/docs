@@ -29,7 +29,7 @@ KubeApps Plus 安装分为两个步骤，首选安装 KubeApps Plus（自动或�
 
 KubeApps Plus 的安装方式有两种，一种是在 KubeOperator 系统安装 K8s 集群时作为内置应用自动安装 KubeApps plus，这里不在赘述。
 
-在 K8s 集群【内置应用】页可以看到 Kubeapps Plus 应用。
+在 K8s 集群概览页可以看到 Kubeapps Plus 应用商店。
 
 ![kubeapps-plus](../../../img-2.4/screenshot-8.png)
 
@@ -74,9 +74,9 @@ cd kubeapps-plus-package
 
 ### 3.1 登录 KubeApps Plus 
 
-安装 KubeApps Plus 后, 在 KubeOperator 集群概览页获取 TOKEN ，保证将内置应用 KubeApps Plus web url 添加到本地 host 文件中。
+安装 KubeApps Plus 后, 在 KubeOperator 集群概览页获取 TOKEN ，保证将内置应用 KubeApps Plus Web URL 添加到本地 Host 文件中。
 
- 在 KubeOperator 集群【内置应用】页，单击 KubeApps 链接，可以安全地访问 KubeApps Plus 仪表板。
+ 在 KubeOperator 集群【概览】页，单击 KubeApps 应用商店链接，可以安全地访问 KubeApps Plus 仪表板。
 
 ![控制台登录页面](../../../img-kubeapps-plus/dashboard-login.jpeg)
 

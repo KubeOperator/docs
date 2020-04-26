@@ -261,8 +261,7 @@ KubeOperator 系统中默认创建 KubeOperator 项目，如果 2.3 版本及以
 
 ### 5.1 集群运维
 
-回到集群的【概览】页，该页提供了 Grafana、Prometheus、Registry-console、Dashboard 、Traefik、Weave Scope 六个管理系统快捷访问方式。这六个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 hosts 文件来达到相同的作用。如果创建集群时选择 Rook Ceph 存储方案，访问 Ceph 控制台前也需要添加该域名解析规则。
-
+超级管理员登录 KubeOperator 系统，在集群的【概览】页提供了 Grafana、Registry-console、应用商店三个管理系统快捷访问方式。其他应用可以通过 KubeApps Plus 应用商店自选安装。这三个系统的访问域名需要在 DNS 服务器中添加相应的域名记录。如没有使用 F5 BIG-IP 暴露服务，也可以通过修改本地主机的 hosts 文件来达到相同的作用。如果创建集群时选择 Rook Ceph 存储方案，访问 Ceph 控制台前也需要添加该域名解析规则。
 
 eg: 
 
@@ -273,12 +272,9 @@ testerdeMacBook-Pro:~ tester$sudo vim /etc/hosts
 WORKER_IP grafana.apps.mycluster.fit2cloud.com
 WORKER_IP prometheus.apps.mycluster.fit2cloud.com
 WORKER_IP registry-ui.apps.mycluster.fit2cloud.com
-WORKER_IP dashboard.apps.mycluster.fit2cloud.com
-WORKER_IP master-1.mycluster.fit2cloud.com
-WORKER_IP traefik.apps.mycluster.fit2cloud.com
-WORKER_IP scope.weave.apps.mycluster.fit2cloud.com
+WORKER_IP kubeapps-plus.apps.mycluster.fit2cloud.com
 ```
-以上文本也可以直接在集群的【内置应用】页单击【点此获取】复制域名解析规则。
+以上文本也可以直接单击【域名解析】复制域名解析规则。
 
 #### 5.1.1 Dashboard
 
@@ -290,7 +286,9 @@ KubeOperator 2.2 中新增功能【概览】页，该页面集中显示了集群
 
 ##### 5.1.1.2 K8s Dashboard
 
-K8s Dashboard 对应的是 Kubernetes 的控制台，从浏览器中访问 Kubernetes 控制台需要用到【令牌】。点击【概览】页下方的【获取TOKEN】按钮获取令牌信息，将令牌信息复制到粘贴板。
+K8s Dashboard 对应的是 Kubernetes 的控制台，使用 KubeOperator 2.5 版本以上用户可以在 Kubeapp Plus 应用商店中自选安装该应用。安装部署成功后，访问 K8s Dashboard Web UI 的方式是以 NodePort 方式。还包括 Argo CD 和 Harbor 应用也是 以 NodePort 方式访问。安装部署过程详情请参考 KubeApps Plus 应用商店使用指南部分内容。
+
+从浏览器中访问 Kubernetes 控制台需要用到【令牌】。点击【概览】页上方的【TOKEN】按钮获取令牌信息，将令牌信息复制到粘贴板。
 
 ![dashboard-1](../../../img-2.4/k8s-dashboard.png)
 
@@ -312,7 +310,7 @@ KubeOperator 支持获取 K8s 事件，实时更新在 KubeOperator 集群事件
 
 ##### 5.1.2.2 访问 Grafana
 
-Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化展示，更方便用户了解整个 Kubernetes 集群的运行状况。点击 Grafana 下方的【转到】按钮访问 Grafana 控制台。
+Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化展示，更方便用户了解整个 Kubernetes 集群的运行状况。集群概览页单击【监控/日志】按钮访问 Grafana 控制台。
 
 集群级别的监控面板：
 
@@ -324,7 +322,7 @@ Grafana 对 Prometheus 采集到的监控数据进行了不同维度的图形化
 
 ##### 5.1.2.3 访问 Weave Scope
 
-Weave Scope 用来监控、可视化和管理 Kubernetes 集群。点击 Weave Scope 下方的【转到】按钮即可访问 Weave Scope 控制台。点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。Weave Scope 默认的用户名是 admin，密码是 admin123。
+Weave Scope 用来监控、可视化和管理 Kubernetes 集群。使用 KubeOperator 2.5 版本以上用户可以在 Kubeapp Plus 应用商店中自选安装该应用。安装部署该应用请参考 KubeApps Plus 应用商店使用指南部分。 点击控制台的顶部【Pod】，会自动生成容器之间的关系图，方便理解容器之间的关系，也方便监控容器化和微服务化的应用。Weave Scope 默认的用户名是 admin，密码是 admin123。
 
 ![weave-scope-1](../../../img-2.4/weave-scope-2.png)
 
@@ -332,17 +330,11 @@ Weave Scope 用来监控、可视化和管理 Kubernetes 集群。点击 Weave S
 
 ![weave-scope-2](../../../img-2.4/weave-scope-1.png)
 
-##### 5.1.2.4 访问 Prometheus
+##### 5.1.2.4 组件状态
 
-Prometheus 用来对整个 kubernetes 集群进行监控数据的采集。点击 Prometheus 下方的【转到】按钮即可访问 Prometheus 控制台。
+在 K8s 集群【组件状态】栏，可以看到整体的集群状态，具体包括核心组件 Control Manager，Schedule，etcd 状态和系统组件健康状态。
 
-![prometheus-1](../../../img-2.4/prometheus-1.png)
-
-##### 5.1.2.5 健康状态
-
-在 K8s 集群【健康状态】栏，可以看到整体的集群状态，具体包括核心组件 Control Manager，Schedule，etcd 状态和系统组件健康状态。
-
-![cluster-healthy](../../../img-2.4/healthy.png)
+![cluster-healthy](../../../img-2.5/module-status.png)
 
 
 #### 5.1.3 集群日志
@@ -371,15 +363,9 @@ Registry 则用来存放 Kubernetes 集群所使用到的 Docker 镜像。Regist
 
 ![regsitry-1](../../../img-2.4/registry-1.png)
 
-##### 5.1.4.2 访问 Traefik
+##### 5.1.4.2 Webkubectl
 
-Traefik 用来作为 kubernetes 集群的HTTP反向代理、负载均衡工具。点击 Trafik 下方的【转到】按钮即可访问 Traefik 控制台。
-
-![traefik-1](../../../img-2.4/traefik.png)
-
-##### 5.1.4.3 Webkubectl
-
-KubeOperator 新增功能支持 Webkubectl 。在集群【概览】页最下面单击 WEBKUBECTL ，在弹出框中可以像在集群中节点执行命令，查询集群信息等操作。
+KubeOperator 新增功能支持 Webkubectl 。在集群【概览】页单击 WEBKUBECTL ，在弹出框中可以像在集群中节点执行命令，查询集群信息等操作。
 
 ![cluster-webkubectl](../../../img-2.4/webkubectl.png)
 
@@ -408,7 +394,7 @@ KubeOperator 支持 K8s 升级。请注意由于 1.15 和 1.16 版本之后变�
 
 KubeOperator 支持扩缩容 K8s 集群 worker 节点数量。
 
-KubeOperator 控制台【集群】页，单击要扩缩容的集群名称，即【概览】页面，Worker 状态栏右下方单击【伸缩】，在弹出框中选中扩容或者缩容的 worker 节点数量。
+KubeOperator 控制台【集群】页，单击一个要扩容的集群名称，即【概览】页面，Worker 状态栏右下方单击【扩容】，在弹出框中选中要扩容的节点，支持同时扩容多个节点。
 
 ![cluster-expand-1](../../../img-2.4/expand-3.png)
 
