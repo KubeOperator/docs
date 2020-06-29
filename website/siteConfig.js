@@ -43,7 +43,7 @@ const siteConfig = {
     ],
 
     /* path to images for header/footer */
-    headerIcon: 'img/kubeOperator-white.png',
+    headerIcon: 'img/kubeoperator-white.png',
     favicon: 'img/favicon.png',
 
     /* Colors for website */
