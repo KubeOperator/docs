@@ -51,8 +51,8 @@ $ systemctl start firewalld
 $ systemctl enable firewalld
 # 开放端口
 $ firewall-cmd --zone=public --add-port=80/tcp --permanent
-$ firewall-cmd --zone=public --add-port=8080-8089/tcp --permanent
-$ firewall-cmd --zone=public --add-port=8090-8099/tcp --permanent
+$ firewall-cmd --zone=public --add-port=8080-8099/tcp --permanent
+$ firewall-cmd --zone=public --add-port=8180-8199/tcp --permanent
 # 重新加载防火墙配置使生效
 $ firewall-cmd --reload
 # 查看防火墙状态
