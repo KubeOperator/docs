@@ -1,7 +1,7 @@
 
-# KubeOperator Documentation Website
+# KubeOperator 2.0 文档
 
-This is the KubeOperator documentation website. 
+This is the KubeOperator 2.0 documentation website. 
 
 It is built with [docusaurus](https://docusaurus.io/).
 
