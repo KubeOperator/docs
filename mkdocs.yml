@@ -35,7 +35,6 @@ nav:
     - 应用指南:
         - 应用商店: guidelines/kubeapps.md
         - Argo CD: guidelines/argocd.md
-        - GPU 与 AI: guidelines/gpu_ai.md
     - 常见问题: faq.md
     - 关于:
         - 更新说明: about/changelog.md
