@@ -1,0 +1,83 @@
+site_name: 'KubeOperator 文档'
+site_url: 'https://kubeoperator.io/'
+site_description: 'Document'
+site_author: 'wanghe'
+google_analytics: ['UA-147297392-7', 'kubeoperator.io']
+
+repo_name: 'KubeOperator Docs'
+repo_url: 'https://github.com/KubeOperator/KubeOperator'
+
+theme:
+    name: 'material'
+    logo: 'img/logo-white.png'
+    favicon: 'img/favicon.png'
+    language: 'zh'
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - django
+
+nav:
+    - 介绍: index.md
+    - 主要概念: concept.md
+    - 快速开始: quick_start.md
+    - 安装部署: 
+        - 在线安装: installation/online_installation.md
+        - 离线安装: installation/offline_installation.md
+    - 用户手册: 
+        - 系统设置: user_manual/system_management.md
+        - 用户管理: user_manual/user_management.md
+        - 部署计划: user_mauser_managementnual/plan.md
+        - 主机管理: user_manual/hosts.md
+        - 项目管理: user_manual/project.md
+        - 集群部署: user_manual/cluster_deployment.md
+        - 集群运营: user_manual/cluster_operation.md
+    - 应用指南:
+        - 应用商店: guidelines/kubeapps.md
+        - Argo CD: guidelines/argocd.md
+        - GPU 与 AI: guidelines/gpu_ai.md
+    - 常见问题: faq.md
+    - 关于:
+        - 更新说明: about/changelog.md
+        - 联系我们: about/contact.md
+
+markdown_extensions:
+    - admonition
+    - codehilite:
+        guess_lang: True
+        linenums: False
+    - toc:
+        permalink: True
+    - footnotes
+    - attr_list
+    - def_list
+    - tables
+    - abbr
+    - md_in_html
+    - pymdownx.extra
+    - pymdownx.arithmatex
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.emoji:
+        emoji_generator: !!python/name:pymdownx.emoji.to_png
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences
+    - pymdownx.tasklist
+    - pymdownx.tilde
+    - pymdownx.betterem
+    - pymdownx.superfences
+    - pymdownx.progressbar
+
+extra_css:
+    - css/extra.css
+
+copyright: Copyright &copy; 2014-2020 <a href="https://www.fit2cloud.com">杭州飞致云信息科技有限公司</a>, All Rights Reserved. <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP备15023818号</a>
+
+plugins:
+    - search
