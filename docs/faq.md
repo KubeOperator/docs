@@ -43,7 +43,7 @@ KubeOperator 不仅支持安装程序本身，还提供了一组工具来监视 
  
  ## 5 KubeOperator 是否使用二进制方式部署 Kubernetes？
     
- - 是
+ - 否。是基于 kubeadm 容器化部署 Kubernetes。
 
  ## 6 采用原生 Kubernetes 有什么好处？
 
@@ -64,71 +64,40 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
 
  https://docs.vmware.com/en/VMware-Enterprise-PKS/1.5/vmware-enterprise-pks-15/GUID-vsphere-persistent-storage.html
 
-## 8 K8s 集群里的 master 、 worker 节点以及相关内置应用默认用户名/密码？
-
-如果是自动模式创建的 K8s 集群，集群中 master 和 worker 节点的默认用户名和密码为：`root / KubeOperator@2019` </br>
-访问 Grafana 、Registry 和 Weave Scope 应用的默认用户名和密码是相同的都是：`admin / admin123` 
-访问 Ceph 控制台用户名为 admin ，密码需要执行命令获取，获取方法如下：
-
-``` bash
-#此命令可以在集群概览页下面的 WebKubectl 中或者在集群中任意节点中执行。
-$ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
-
-```
-
-## 9 KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 K8s 集群吗？
+## 8 KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 K8s 集群吗？
 
 不会有任何影响。KubeOperator 是一个 100% 旁路系统，其与被管 K8s 集群完全解耦。
 
-## 10 重启 KubeOperator 部署的 K8s 集群的节点后，比如 Master 或者 Worker 节点，会自动恢复正常吗？
+## 9 重启 KubeOperator 部署的 K8s 集群的节点后，比如 Master 或者 Worker 节点，会自动恢复正常吗？
 
 会自动恢复正常。
 
-## 11 KubeOperator 支持的 vSphere 版本是什么？
+## 10 KubeOperator 支持的 vSphere 版本是什么？
 
  - 如果是手动部署模式 + NFS，支持 vSphere 5.5 及以上版本。
  - 如果是自动模式 + vSAN，支持 vSphere 6.5 及以上版本
 
-## 12 KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 K8s 节点的操作系统吗？
+## 11 KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 K8s 节点的操作系统吗？
 
  是。KubeOperator 的管理范围包括操作系统，比如操作系统补丁升级，其提供的离线包包括操作系统（自动模式）及其 RPM 包，一个离线包版本代表一个终态，并被充分测试和验证。
 
  > 注：KubeOperator 不支持 CentOS 8，目前支持的版本是 CentOS 7.4 7.5 7.6 7.7。
 
-## 13 K8s 集群的升级策略是什么？
+## 12 K8s 集群的升级策略是什么？
 
  KubeOperator 支持小版本的升级，比如 1.15.2 升级到 1.15.*， 不能升级到 1.16.* 。
 
-## 14 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
+## 13 KubeOperator 是否已通过云原生基金会的 Kubernetes 软件一致性认证？
 
   是的。KubeOperator 已经通过认证，具体请参加：https://landscape.cncf.io
   
-## 15 KubeOperator 和 Rancher 有什么区别？
+## 14 KubeOperator 和 Rancher 有什么区别？
 
 Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业规划、部署和运营生产级别的 K8s 集群，和 KubeOperator 有可比性的是 Rancher RKE，而不是 Rancher 全部。
 
 KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的 DevOps 平台、微服务治理平台、AI 平台、应用商店等是解耦的。
-
-## 16 KubeOperator 是否支持用户自主选择 K8s 离线包版本？
-
-  支持。
-  目前支持的 K8s 离线包下载地址：https://github.com/KubeOperator/k8s-package/releases  </br>
-  选择 K8s 离线包方法举例：</br>
-  下载 kubernetes v1.15.5 离线包，目前离线包通过百度网盘下载。</br>
-  链接：https://pan.baidu.com/s/1oiDyVc9J10gUzg4vjo5oTw </br>
-  提取码：18vw 
   
- ``` bash
-# 将 K8s 离线包 copy 到 KubeOperator 部署机下面目录中
-# cd /opt/kubeoperator/data/packages
-# 解压 K8s 离线包
-tar zxvf k8s-package-1.15.5.tar.gz
-# 修改 K8s 离线包权限
-chmod -R 777 v1-15-5
-# 在 KubeOperator Web 控制台【离线包】页，刷新后可以看到新添加的离线包，新建集群即可使用该版本。 
- ```
-  
-## 17 K8s 集群中的 master 节点的推荐配置？
+## 15 K8s 集群中的 master 节点的推荐配置？
 
 K8s 集群中 master 节点配置取决于 worker 节点数量，推荐配置参考如下：
 
@@ -141,7 +110,7 @@ K8s 集群中 master 节点配置取决于 worker 节点数量，推荐配置参
 | 251-500 | 16C 64G |
 | > 500 |32C 128G |
 
-## 18 应用商店部署的 Harbor ，可以通过 Web UI 访问，但是 docker login 不成功？
+## 16 应用商店部署的 Harbor ，可以通过 Web UI 访问，但是 docker login 不成功？
 
 以默认的 NodePort 访问为例：
 - 上传 Harbor 离线应用到应用商店
@@ -173,10 +142,3 @@ Password:
 Login Succeeded
 ```
 注意：不论你是用 Ingress 还是 ClusterIP 对 Harbor 进行服务暴露，externalURL 一定要和实际访问 Harbor 时的 URL 一致，否则 docker login 认证时将会失败。
-
-## 19 已知问题
-
-- 手动模式使用 Ceph 的集群，卸载后请重启节点以确保清除系统残留的虚拟网卡、路由信息、iptables|ipvs 规则等，否则重复使用这些机器会安装失败。
-
-- 手动模式部署集群，如果主机选择 OpenStack 虚机，Pod 网络不通，解决方案是安全组需要打开 UDP 策略。
-

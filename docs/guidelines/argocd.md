@@ -1,12 +1,12 @@
 # Argo CD 应用指南
 
-## 1 CI / CD 整体流程
+## CI / CD 整体流程
 
 持续集成 Continuous Integration（CI）和持续交付 Continuous Delivery（CD）。在当前 DevOps 的趋势下，可以说具有支柱性地位。软件交付管道以快速、自动化和可重复的方式从源代码生成发布版本，就类似于工厂里的装配线以快速、自动化、可重复的方式从原材料生产出消费品，完成这项工作的总体设计我们就称之为持续交付，启动装配线的过程我们称之为持续集成。流程图如下所示：
 
 ![argocd-1](../img/guidelines/argocd/argocd-1.png )
 
-## 2 什么是 Argo CD ？
+## 什么是 Argo CD ？
 
 通过 KubeOperator 内置 KubeApps Plus 应用商店支持基于 K8s 的 CI / CD 应用场景包括：GitLab、Jenkins、Harbor、Sonarqube、Argo CD 等；
 其中 GitLab、Jenkins、Harbor 和 Sonarqube 在 KubeApps Plus 应用商店中已经是比较成熟且常见的应用，下面将详细介绍 Argo CD 应用场景。
@@ -29,30 +29,29 @@ Argo CD 可以独立于集群之外，并且支持管理多个 Kubernetes 集群
 
 ![argocd-2](../img/guidelines/argocd/ci-cd.png )
 
-
-## 3 Argo CD 安装指南
+## Argo CD 安装指南
  
 通过 KubeOperator 应用商店部署 Argo CD 非常简单，我们已经在应用商店直接支持一键部署 Argo CD，你只需要去 Github 下载离线包上传即可使用。接下来，通过以下几个步骤为大家介绍 Argo CD 的具体安装及在 CI / CD 中的使用。
 
-### 3.1 登录应用商店
+### 登录应用商店
 
 ![argocd-2](../img/guidelines/argocd/argocd-deploy.png )
 
-### 3.2  部署 Argo CD
+### 部署 Argo CD
 
 ![argocd-3](../img/guidelines/argocd/argocd-deploy02.png )
 
-### 3.3 修改默认配置
+### 修改默认配置
 
 根据需要修改默认配置，再点击提交，或者直接使用默认参数提交。
 
 ![argocd-4](../img/guidelines/argocd/argocd-deploy03.png )
 
-### 3.4 等待服务就绪
+### 等待服务就绪
 
 ![argocd-5](../img/guidelines/argocd/argocd-deploy04.png )
 
-### 3.5 访问 Argo CD
+### 访问 Argo CD
 
 我们是通过 NodePort 的方式访问 Argo CD ，获取 Argo CD 的 NodePort 信息，需要在该应用的描述信息中按照提示步骤，可以在 K8s 集群任意 master、worker 节点中执行描述中的命令。
 
@@ -60,36 +59,35 @@ Argo CD 可以独立于集群之外，并且支持管理多个 Kubernetes 集群
 
 ![argocd-7](../img/guidelines/argocd/argocd-deploy06.png )
 
-## 4 Argo CD 使用指南
+## Argo CD 使用指南
 
-### 4.1 创建 APP
+### 创建 APP
 
 ![argocd-8](../img/guidelines/argocd/argocd-deploy07.png )
 
-### 4.2 填写信息
+### 填写信息
 
 填写应用名称：guestbook ，项目：default ，同步策略：手动 。
 
 ![argocd-9](../img/guidelines/argocd/argocd-deploy08.png )
 
-### 4.3 配置来源
+### 配置来源
 
 这里配置的是 Git ，代码仓库的 URL 配置为 Github 上的项目地址：https://github.com/argoproj/argocd-example-apps.git ，Revision 选择：HEAD ，项目路径选择：guestbook 。
 
 ![argocd-10](../img/guidelines/argocd/argocd-deploy09.png )
 
-### 4.4 选择集群
+### 选择集群
 
 应用部署的目标集群：https://kubernetes.default.svc ，因为此次的 Argo CD 部署在 Kubernetes 集群当中，默认 Argo CD 已经帮我们添加好当前所在的 Kubernetes 集群，直接使用即可。Namespace 选择：my-app , Namespcae 可以在 Kubernetes 集群上使用  # kubectl create namespace my-app 命令来创建。
 
 ![argocd-11](../img/guidelines/argocd/argocd-deploy10.png )
 
-### 4.5 单击创建
+### 单击创建
 
 ![argocd-12](../img/guidelines/argocd/argocd-deploy11.png )
 
-
-### 4.6 同步（部署）
+### 同步（部署）
 
 由于尚未部署应用程序，并且尚未创建 Kubernetes 资源，所以 Status 还是 OutOfSync 状态，因此我们还需要点击 SYNC 进行同步(部署)。同时也可以安装 Argo CD 客户端，使用 Argo CD CLI 进行同步。
 
@@ -111,14 +109,4 @@ $ argocd app sync guestbook
 
 ![argocd-16](../img/guidelines/argocd/argocd-deploy16.png )
 
-
 > 注:想要了解 Argo CD 更多的详细内容，可以前往 Argo CD 官方文档查看 https://argoproj.github.io/argo-cd 。
-
-
-
-
-
-
-
-
-
