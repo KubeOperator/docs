@@ -66,6 +66,10 @@ KubeOperator部署机不能作为kubernetes集群节点使用。
 点击【项目】菜单进入目标项目，点击【集群】TAB页的【添加】按钮进行集群的创建。
 在【集群信息】里输入集群的名称，选择提供商，选择该集群所要部署的 Kubernetes 版本，选择系统架构。
 
-![deploy-1](../img/user_manual/cluster/deploy-1.png)
+![deploy-1](./img/user_manual/cluster/deploy-1.png)
 
-> 
+![deploy-2](./img/user_manual/cluster/deploy-2.png)
+
+![deploy-3](./img/user_manual/cluster/deploy-3.png)
+
+![deploy-4](./img/user_manual/cluster/deploy-4.png)
