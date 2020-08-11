@@ -1,7 +1,7 @@
 ## 环境要求
 
 !!! info "部署服务器要求"
-    * 操作系统: CentOS 7.4 - 7.7 Minimal （不支持 CentOS 8），RedHat 7.4 - 7.7 Minimal
+    * 操作系统: 任何支持 Docker 的 Linux x64
     * CPU/内存: 4核8G
     * 磁盘空间: 50G
     * 可访问互联网

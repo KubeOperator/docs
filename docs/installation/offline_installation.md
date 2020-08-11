@@ -1,10 +1,9 @@
 ## 环境要求
 
 !!! info "部署服务器要求"
-    * 操作系统: CentOS 7.4 - 7.7 Minimal （不支持 CentOS 8），RedHat 7.4 - 7.7 Minimal
+    * 操作系统: 任何支持 Docker 的 Linux x64
     * CPU/内存: 4核8G
     * 磁盘空间: 50G
-    * 可访问互联网
 
 ## 下载安装包
 
@@ -20,14 +19,14 @@
 ```sh
 cd /tmp
 # 解压安装包
-tar zxvf KubeOperator-release-v3.0.0.tar.gz
+tar zxvf KubeOperator-release-v3.x.y.tar.gz
 ```
 
 ## 执行安装脚本
 
 ```sh
 # 进入安装包目录
-cd KubeOperator-release-v3.0.0
+cd KubeOperator-release-v3.x.y
 # 运行安装脚本
 /bin/bash install.sh
 # 等待安装脚本执行完成后，查看 KubeOperator 状态

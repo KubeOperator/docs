@@ -2,7 +2,7 @@
 
 ### 创建区域(Region)
 
-Region：与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 vSphere 体系中我们使用 DataCenter 实现 Region 的划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere 和 Openstack。
+Region: 与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 vSphere 体系中我们使用 DataCenter 实现 Region 的划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere 和 Openstack。
 
 ![region-1](../img/user_manual/plan/region-1.png)
 
@@ -10,7 +10,7 @@ Region：与 公有云中的 Region 概念相似，可以简单理解为地理�
 
 ![region-2](../img/user_manual/plan/region-2.png)
 
-> 注：vCenter 的用户需要的权限比较高，建议直接绑定带有管理员角色的用户。
+> 注: vCenter 的用户需要的权限比较高，建议直接绑定带有管理员角色的用户。
 
 最后一步选择 vCenter 的一个数据中心。
 
@@ -18,7 +18,7 @@ Region：与 公有云中的 Region 概念相似，可以简单理解为地理�
 
 ### 创建可用区(Zone)
 
-Zone: 与 公有云中的 AZ 概念相似，可以简单理解为 Region 中具体的机房。在 vSphere 体系中我们使用不同的 Cluster 或者同个 Cluster 下的不同 Resource Pool 来实现 Zone 的划分。创建可用区时需要选择一个之前添加的区域，如下图：
+Zone: 与 公有云中的 AZ 概念相似，可以简单理解为 Region 中具体的机房。在 vSphere 体系中我们使用不同的 Cluster 或者同个 Cluster 下的不同 Resource Pool 来实现 Zone 的划分。创建可用区时需要选择一个之前添加的区域，如下图: 
 
 ![zone-1](../img/user_manual/plan/zone-1.png)
 
@@ -43,4 +43,4 @@ Plan: 在 KubeOperator 中用来描述在哪个区域下，哪些可用区中，
 
 ![plan-2](../img/user_manual/plan/plan-2.png)
 
-> 注：多主多节点集群可以选择多个可用区的部署计划，此时集群创建时不支持使用 vSAN 存储。
+> 注: 多主多节点集群可以选择多个可用区的部署计划，此时集群创建时不支持使用 vSAN 存储。

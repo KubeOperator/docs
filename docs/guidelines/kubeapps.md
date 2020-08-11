@@ -41,10 +41,10 @@ KubeApps 安装完成后，单击 转到 按钮，可以安全地访问 KubeApps
 
 ![gitlab-2](../img/guidelines/kubeapps/gitlab-2.png)
 
-> 注：根据实际情况，自定义存储（storageClass）、Ingress等变量
+> 注: 根据实际情况，自定义存储（storageClass）、Ingress等变量
 
 在最下面点击 “Submit” 按钮。 该应用程序将被部署。 部署成功后，应用变为就绪状态。
-要获取 GitLab 用户名和密码, 请参考部署页面的 “Notes” 部分, 其中包含 GitLab 的 URL、账号及密码信息。注意：如果 Serice 类型为 Ingress，要将该 URL 添加到本地 hosts 解析。
+要获取 GitLab 用户名和密码, 请参考部署页面的 “Notes” 部分, 其中包含 GitLab 的 URL、账号及密码信息。注意: 如果 Serice 类型为 Ingress，要将该 URL 添加到本地 hosts 解析。
 
 ![gitlab-3](../img/guidelines/kubeapps/gitlab-3.png)
 
