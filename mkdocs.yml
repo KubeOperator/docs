@@ -27,7 +27,7 @@ nav:
     - 用户手册: 
         - 系统设置: user_manual/system_management.md
         - 用户管理: user_manual/user_management.md
-        - 部署计划: user_mauser/plan.md
+        - 部署计划: user_manual/plan.md
         - 主机管理: user_manual/hosts.md
         - 项目管理: user_manual/project.md
         - 集群部署: user_manual/cluster_deployment.md
