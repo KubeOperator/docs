@@ -10,7 +10,7 @@ repo_url: 'https://github.com/KubeOperator/KubeOperator'
 theme:
     name: 'material'
     logo: 'img/kubeoerator-white.png'
-    favicon: 'img/favicon.png'
+    favicon: 'img/KubeOperator-icon.png'
     language: 'zh'
     highlightjs: true
     hljs_languages:

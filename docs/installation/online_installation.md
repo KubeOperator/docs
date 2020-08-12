@@ -13,16 +13,20 @@
 以 root 用户 ssh 登录目标服务器, 执行如下命令
 
 ```sh
-curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh | sh
+curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh -o quick_start.sh
+bash quick_start.sh
 ```
 
-安装脚本默认使用 /opt/kubeoperator 目录作为安装目录，KubeOperator 的配置文件、数据及日志等均存放在该安装目录
+安装脚本默认使用 /opt/kubeoperator 目录作为安装目录，KubeOperator 的配置文件、数据及日志等均存放在该安装目录。安装过程中也可手动指定安装目录。
 
+!!! warning "注意"
+    安装完成后，安装过程中产生的离线文件可删除，离线文件存放在当前目录，目录名: kubeoperator-relase-v3.y.z
+    
 ## 登录并使用
 
 ### 登录
 
-安装成功后，通过浏览器访问如下页面登录 KubeOperator
+安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator
 
 ```
 地址: http://目标服务器IP地址:80

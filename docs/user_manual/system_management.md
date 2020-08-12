@@ -6,8 +6,8 @@
 
 在左侧导航菜单中选择【系统设置】，默认显示系统页中。
 
-本机 IP : 指安装 KubeOperator 机器自身的 IP。KubeOperator 所管理的集群将使用该 IP 来访问 KubeOperator。
-NTP Server : 用来实现集群所有主机时间同步，默认可以为空，也可以自建或网上查找公共的 NTP Server。
+- **本机 IP** : 指安装 KubeOperator 机器自身的 IP。KubeOperator 所管理的集群将使用该 IP 来访问 KubeOperator。<br>
+- **NTP Server** : 用来实现集群所有主机时间同步，默认可以为空，也可以自建或网上查找公共的 NTP Server。
 
 ![setting-1](../img/user_manual/system_management/system-1.png)
 

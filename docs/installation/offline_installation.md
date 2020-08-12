@@ -33,8 +33,7 @@ cd KubeOperator-release-v3.x.y
 koctl status
 ```
 
-安装成功后，通过浏览器访问如下页面登录 KubeOperator
-
+安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator
 ```
 地址: http://目标服务器IP地址:80
 用户名: admin

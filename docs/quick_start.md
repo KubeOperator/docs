@@ -1,7 +1,7 @@
 我们为用户准备了可以快速部署 KubeOperator 所有组件及所需的中间件的在线安装脚本, 你可以通过该脚本部署并体验 KubeOperator 所提供的功能
 
 !!! warning "注意"
-    快速安装脚本所部署的环境仅适用于测试体验目的, 生产环境请参考本文档[「在线安装」](installation/online_installation.md)章节内容进行部署
+    快速安装脚本需要从互联网下载离线安装包，按住期间请保持网络通常！
 
 ## 部署服务器要求
 
@@ -18,7 +18,8 @@
 以 root 用户 ssh 登录目标服务器, 执行如下命令
 
 ```sh
-curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh | sh
+curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh -o quick_start.sh
+bash quick_start.sh
 ```
 
 安装脚本默认使用 /opt/kubeoperator 目录作为安装目录，kubeoperator 的配置文件、数据及日志等均存放在该安装目录
