@@ -36,3 +36,7 @@ KubeOperator 目前的备份功能支持三种不同种类的存储，即 AWS S3
 ![backup-1](../img/user_manual/system_management/backup-1.png)
 
 ### 许可
+
+导入 license ，以启用 x-pack 功能。
+
+![license-1](../img/user_manual/system_management/license-1.png)
