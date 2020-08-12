@@ -45,8 +45,6 @@ KubeOperator 支持 Webkubectl。在集群【概览】页单击 连接 按钮，
 
     vsphere: 集群服务器必须在指定Folder中，并且服务器名称要和集群node节点名称保持一致。
 
-![storage-provisioner-nfs](../img/user_manual/cluster/storage-provisioner-nfs.png)
-
 #### 存储类
 
 内置 local volume 存储提供商，如需添加其他类型，需要提前创建对应类型的存储提供商。
