@@ -61,9 +61,9 @@ KubeApps Plus 支持添加外部应用仓库，在【Configuration】下拉菜�
 
 ![kubeapps-5](../img/guidelines/kubeapps/kubeapps-5.png)
 
-### 安装 Helm Chart 离线包（可选）
+### 安装 Chart 离线包（可选）
 
-Helm Chart 离线包包括 Argo CD、Gitlab、Harbor、Jenkins 和 Sonarqube 镜像，用户可以根据需要下载并安装。
+Chart 离线包包括 Argo CD、Gitlab、Harbor、Jenkins 和 Sonarqube 镜像，用户可以根据需要下载并安装。
 
 - 下载链接: https://github.com/KubeOperator/charts/releases
 

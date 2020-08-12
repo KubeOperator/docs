@@ -40,10 +40,34 @@ KubeOperator 支持 Webkubectl。在集群【概览】页单击 连接 按钮，
 
 支持的类型有nfs、external-ceph、rook-ceph、vsphere。
 
+!!! info "注意"
+    rook-ceph: 集群所有节点都必须包含指定的磁盘。
+
+    vsphere: 集群服务器必须在指定Folder中，并且服务器名称要和集群node节点名称保持一致。
+
 ![storage-provisioner-nfs](../img/user_manual/cluster/storage-provisioner-nfs.png)
 
-> rook-ceph: 集群所有节点都必须包含指定的磁盘。
-> vsphere: 集群服务器必须在指定Folder中，并且服务器名称要和集群node节点名称保持一致。
+#### 存储类
+
+内置 local volume 存储提供商，如需添加其他类型，需要提前创建对应类型的存储提供商。
+
+!!! info "注意"
+        external-ceph: 需要在 kubernetes 中创建 admin 及 user 所需的 secret。
+
+```
+# 可在 ceph 服务端通过以下命令获得 secret key
+ceph auth get-key client.admin
+
+# 创建 admin secret
+kubectl create secret generic ceph-admin-secret \
+--namespace=kube-system \
+--type=kubernetes.io/rbd \
+--from-literal=key=AQCtabcdKvXBORAA234AREkmsrmLdY67i8vxSQ==
+```
+
+#### 持久卷
+
+可添加 hostpath 和 local volume 两种类型的持久卷。
 
 ### 工具
 
