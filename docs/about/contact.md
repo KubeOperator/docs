@@ -3,10 +3,9 @@
 [点击提交技术咨询][jinshuju]
 [点击提交 Github Issue][issue]
 
-## 加入技术群
+## 微信群
 
-- QQ 群号：825046920
-- 微信群：先加微信 wh_it0224，备注（城市-github用户名）, 验证通过会加入群聊。
+![wechat-group](../img/wechat-group.png)
 
 ## 项目地址
 
