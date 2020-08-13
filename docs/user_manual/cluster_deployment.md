@@ -17,11 +17,14 @@
 
 ![deploy-2](../img/user_manual/cluster/deploy-2.png)
 
-> 容器运行时可以选择docker、containerd，可以修改运行时数据路径。
-> 如果集群节点全部都在同一个二层网络下，可以选择选择 flannel+host-gw 或 calico+bgp。如果不是，则选择 flannel+vxlan 或 calico+ipip。
-> 选项 POD 子网、Service 子网 和 Container子网 时，要保证不和已有主机节点 IP 段冲突即可使用。
-> kube-proxy模式可以选择iptables、ipvs。
-> ingress类型可以选择nginx、traefik。
+!!! info "提示"
+    容器运行时可以选择 docker 、 containerd，可以修改运行时数据路径。
+    如果集群节点全部都在同一个二层网络下，可以选择选择 flannel + host-gw 或 calico + bgp。如果不是，则选择 flannel + vxlan 或 calico + ipip。
+    选项 POD 子网、Service 子网 和 Container子网 时，要保证不能和已有主机节点 IP 段冲突。
+    kube-proxy 模式可以选择 iptables 、ipvs。
+    ingress 类型可以选择 nginx 、traefik。
+
+> arm64 架构下，容器运行时不支持 containerd。
 
 #### 节点信息
 
@@ -30,6 +33,7 @@
 ![deploy-3](../img/user_manual/cluster/deploy-3.png)
 
 #### 确认信息
+
 所有步骤完成后，会有一个集群配置概览页对之前步骤所设参数进行汇总，用户可在此页进行集群配置的最后检查。
 
 ![deploy-4](../img/user_manual/cluster/deploy-4.png)

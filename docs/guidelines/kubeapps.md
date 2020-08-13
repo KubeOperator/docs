@@ -61,16 +61,16 @@ KubeApps Plus 支持添加外部应用仓库，在【Configuration】下拉菜�
 
 ![kubeapps-5](../img/guidelines/kubeapps/kubeapps-5.png)
 
-### 安装 Chart 离线包（可选）
+### 安装离线包（可选）
 
-Chart 离线包包括 Argo CD、Gitlab、Harbor、Jenkins 和 Sonarqube 镜像，用户可以根据需要下载并安装。
+离线包包括 Argo CD、Gitlab、Harbor、Jenkins 和 Sonarqube 镜像，用户可以根据需要下载并安装。
 
 - 下载链接: https://github.com/KubeOperator/charts/releases
 
 #### 安装步骤:
 
 ```bash
-# 首先登录 kubeoperator 部署节点，进入 tmp (或其他自定义)目录,将离线包拷贝到该目录中。
+# 首先登录 kubeoperator 部署机，进入 /tmp (或其他自定义)目录，将离线包拷贝到该目录中。
 cd /tmp
 # 解压文件到本目录。
 tar zxvf gitlab.tar.gz && cd gitlab
