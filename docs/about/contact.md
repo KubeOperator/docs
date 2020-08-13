@@ -1,7 +1,7 @@
 ## 技术咨询
 
-[点击提交技术咨询][jinshuju]
-[点击提交 Github Issue][issue]
+- [点击提交技术咨询][jinshuju]
+- [点击提交 Github Issue][issue]
 
 ## 微信群
 
