@@ -1,37 +1,27 @@
-# Argo CD 应用指南
-
-## CI / CD 整体流程
-
-持续集成 Continuous Integration（CI）和持续交付 Continuous Delivery（CD）。在当前 DevOps 的趋势下，可以说具有支柱性地位。软件交付管道以快速、自动化和可重复的方式从源代码生成发布版本，就类似于工厂里的装配线以快速、自动化、可重复的方式从原材料生产出消费品，完成这项工作的总体设计我们就称之为持续交付，启动装配线的过程我们称之为持续集成。流程图如下所示: 
-
-![argocd-1](../img/guidelines/argocd/argocd-1.png )
+# Argo CD 使用指南
 
 ## 什么是 Argo CD ？
 
-通过 KubeOperator 内置 KubeApps 应用商店支持基于 K8s 的应用场景包括: GitLab、Jenkins、Harbor、Sonarqube、Argo CD 等；
-其中 GitLab、Jenkins、Harbor 和 Sonarqube 在 KubeApps 应用商店中已经是比较成熟且常见的应用，下面将详细介绍 Argo CD 应用场景。
-
-Argo CD 是一个为 Kubernetes 而生的，遵循声明式 GitOps 理念的持续部署工具。Argo CD 可在 Git 存储库更改时自动同步和部署应用程序，其优势是: 
+Argo CD 是一个为 Kubernetes 而生的，遵循声明式 GitOps 理念的持续部署（CD）工具。Argo CD 可在 Git 存储库更改时自动同步和部署应用程序，其优势是: 
 
 - 应用定义、配置和环境信息是声明式的，并可以进行版本控制；
 - 应用部署和生命周期管理是全自动化的、是可审计的，清晰易懂。
+
+Argo CD 在 CI/CD 流程中的位置如下图所示：
+
+![argocd-1](../img/guidelines/argocd/argocd-1.png )
  
-借助 Argo CD 在 Kubernetes 集群上落地 CD，主要通过以下三个步骤来完成。
+借助 Argo CD 在 Kubernetes 集群上落地 CD，主要通过以下三个步骤来完成：
 
--  将应用的 Git 仓库分为 Application Deployment file 和 Docker file 两个库。Docker file 用于存放应用的核心代码以及 Docker build file，后续将会直接打包成 Docker image；Application Deployment file 可以 Kustomize、Helm、Ksconnet、Jsonnet 等 多种 Kubernetes 包管理工具来定义；以 Helm 为例，Chart 中所使用到的 Image 由 Docker file Code 打包完成后提供。
-
--  使用 Jenkins 或 Gitlab 等 CI 工具进行自动化构建打包，并将 Docker image push 到 Harbor 镜像仓库。
--  使用 Argo CD 部署应用
-
-Argo CD 可以独立于集群之外，并且支持管理多个 Kubernetes 集群；
-在 Argo CD 上配置好应用部署的相关信息后， Argo CD 便可以正常工作，Argo CD 会自动和代码仓库 Application deployment file 的内容进行校验，当代码仓库中应用属性等信息发生变化时，Argo CD 会自动同步更新 Kubernetes 集群中的应用；
-应用启动时，会从 Harbor 镜像仓库拉取 Docker image。
-
-![kubeapps-4](../img/guidelines/kubeapps/kubeapps-4.png)
+-  将应用的 Git 仓库分为 Application Deployment file 和 Docker file 两个库。Docker file 用于存放应用的核心代码以及 Docker build file，后续将会直接打包成 Docker image；Application Deployment file 可以 Kustomize、Helm、Ksconnet、Jsonnet 等 多种 Kubernetes 包管理工具来定义；以 Helm 为例，Chart 中所使用到的 Image 由 Docker file Code 打包完成后提供；
+-  使用 Jenkins 或 Gitlab 等 CI 工具进行自动化构建打包，并将 Docker image push 到 Harbor 镜像仓库；
+-  使用 Argo CD 部署应用。Argo CD 可以独立于集群之外，并且支持管理多个 Kubernetes 集群。在 Argo CD 上配置好应用部署的相关信息后 Argo CD 便可以正常工作，Argo CD 会自动和代码仓库 Application deployment file 的内容进行校验，当代码仓库中应用属性等信息发生变化时，Argo CD 会自动同步更新 Kubernetes 集群中的应用；应用启动时，会从 Harbor 镜像仓库拉取 Docker image。
 
 ## Argo CD 安装指南
  
-通过 KubeOperator 应用商店部署 Argo CD 非常简单，我们已经在应用商店直接支持一键部署 Argo CD。接下来，通过以下几个步骤为大家介绍 Argo CD 的具体安装及在 CI / CD 中的使用。
+通过 KubeOperator 应用商店部署 Argo CD 非常简单，我们已经在应用商店直接支持一键部署 Argo CD。
+
+![kubeapps-4](../img/guidelines/kubeapps/kubeapps-4.png)
 
 ### 部署 Argo CD
 
@@ -83,7 +73,6 @@ Argo CD 可以独立于集群之外，并且支持管理多个 Kubernetes 集群
 
 ![argocd-12](../img/guidelines/argocd/argocd-deploy11.png )
 
-
 ### 同步（部署）
 
 由于尚未部署应用程序，并且尚未创建 Kubernetes 资源，所以 Status 还是 OutOfSync 状态，因此我们还需要点击 SYNC 进行同步(部署)。同时也可以安装 Argo CD 客户端，使用 Argo CD CLI 进行同步。
@@ -105,6 +94,5 @@ $ argocd app sync guestbook
 完成后在 Kubernetes 集群中查看应用。
 
 ![argocd-16](../img/guidelines/argocd/argocd-deploy16.png )
-
 
 > 注:想要了解 Argo CD 更多的详细内容，可以前往 Argo CD 官方文档查看 https://argoproj.github.io/argo-cd 。
