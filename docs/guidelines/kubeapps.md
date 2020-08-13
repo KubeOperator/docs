@@ -9,21 +9,19 @@ Kubeapps 可以通过 Web UI 在 Kubernetes 集群中部署和管理应用程序
 - 支持自定义 Helm Chart 仓库（比如 ChartMuseum 和 JFrog Artifactory 等）；
 - 基于 Kubernetes RBAC 的身份验证和授权；
 
-## 操作指南
-
-### 安装 KubeApps
+## 安装 KubeApps
 
 进入目标集群，在【工具】tab页面点击启用 KubeApps。根据需要自定义存储。
 
 ![kubeapps-2](../img/guidelines/kubeapps/kubeapps-2.png)
 
-### 使用 KubeApps 
+## 使用 KubeApps 
 
 KubeApps 安装完成后，单击 转到 按钮，可以安全地访问 KubeApps Dashboard。
 
 ![kubeapps-3](../img/guidelines/kubeapps/kubeapps-3.png)
 
- ### 部署 GitLab 应用
+ ### 部署应用
 
 在 Dashboard 中的【Catalog】页中可以看到系统默认自带的应用，可选择一个应用程序部署。 本文以部署 GitLab 应用为例说明。
 
@@ -50,14 +48,14 @@ KubeApps 安装完成后，单击 转到 按钮，可以安全地访问 KubeApps
 
 ![gitlab-4](../img/guidelines/kubeapps/gitlab-4.png)
 
-### 添加存储库
+## 添加存储库
 
-KubeApps Plus 支持添加外部应用仓库，在【Configuration】下拉菜单“App Repositories“页面，单击“Add App Repository”。
+KubeApps 支持添加外部应用仓库，在【Configuration】下拉菜单“App Repositories“页面，单击“Add App Repository”。
 输入 Name 和 URL ，Install Repo 后在应用商店页使用新添加仓库里面的应用。
 
 ![kubeapps-5](../img/guidelines/kubeapps/kubeapps-5.png)
 
-### 安装离线包（可选）
+## 安装离线包（可选）
 
 离线包包括 Argo CD、Gitlab、Harbor、Jenkins 和 Sonarqube 镜像，用户可以根据需要下载并安装。
 
