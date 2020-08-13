@@ -2,11 +2,7 @@
 
 ## 什么是 KubeApps ？
 
-Kubeapps是一个基于web的UI，用于在Kubernetes集群中部署和管理应用程序。
-
-![kubeapps-1](../img/guidelines/kubeapps/kubeapps-1.png)
-
-### KubeApps 的主要功能
+Kubeapps 可以通过 Web UI 在 Kubernetes 集群中部署和管理应用程序。KubeApps 的主要功能包括：
 
 - 从 Helm Chart 仓库中浏览并部署 Helm Chart 应用；
 - 集群中已有 Helm chart 应用的查看、升级和卸载；
