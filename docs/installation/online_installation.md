@@ -23,9 +23,7 @@ bash quick_start.sh
 !!! warning "注意"
     安装完成后，安装过程中产生的离线文件可删除，离线文件存放在当前目录，目录名: kubeoperator-relase-v3.y.z
     
-## 登录并使用
-
-### 登录
+## 登录
 
 安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator
 
