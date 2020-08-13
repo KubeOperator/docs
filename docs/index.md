@@ -36,7 +36,7 @@ KubeOperator 的整体架构如下图所示:
 
 <table>
     <tr>
-        <td rowspan="14">Day 0 规划</td>
+        <td rowspan="15">Day 0 规划</td>
         <td rowspan="2">集群模式</td>
         <td>1 个 Master 节点 n 个 Worker 节点模式: 适合开发测试用途</td>       
     </tr>
@@ -71,7 +71,7 @@ KubeOperator 的整体架构如下图所示:
         <td>支持通过 F5 Big IP 对外暴露服务</td>
     </tr> 
     <tr>
-        <td>支持 Traefik</td>
+        <td>支持 Traefik / ingress-nginx</td>
     </tr>    
     <tr>
         <td>支持 CoreDNS</td>
@@ -82,45 +82,67 @@ KubeOperator 的整体架构如下图所示:
     </tr> 
     <tr>
         <td>操作系统</td>
-        <td>支持 CentOS 7.4 / 7.5 / 7.6 / 7.7</td>
+        <td>支持 RHEL/CentOS/EulerOS 操作系统</td>
     </tr>    
     <tr>
-        <td class="features-first-td-background-style" rowspan="3">Day 1 部署</td>
-        <td rowspan="3">部署</td>  
-        <td>提供离线环境下的完整安装包</td>         
+        <td>容器运行时</td>
+        <td>支持 Docker / Containerd</td>
+    </tr>    
+    <tr>
+        <td rowspan="6">Day 1 部署</td>
+        <td rowspan="6">部署</td>  
+        <td>支持在线和离线安装模式</td>         
     </tr>
      <tr>
+        <td>支持 Kubeadm 部署</td>
+    </tr>
+    <tr>
+        <td>支持 arm64 平台架构</td>
+    </tr> 
+    <tr>
         <td>支持可视化方式展示部署过程</td>
-    </tr>
-     <tr>
+    </tr> 
+    <tr>
         <td>支持一键自动化部署（使用 Ansible）</td>
     </tr> 
     <tr>
-        <td class="features-first-td-background-style" rowspan="15">Day 2 运营</td>
-        <td rowspan="6">管理</td>  
-        <td>支持用户权限管理，支持对接 LDAP/AD</td>         
+        <td>支持已有集群导入</td>
+    </tr> 
+    <tr>
+        <td rowspan="19">Day 2 运营</td>
+        <td rowspan="9">管理</td>  
+        <td>支持以项目为核心的分级授权管理</td>         
     </tr>
     <tr>
-        <td>对外开放 REST API</td>
+        <td>支持系统管理员和项目管理员两种角色</td>
     </tr>    
     <tr>
-        <td>内置 K8s Dashboard 管理应用</td>
+        <td>支持对接 LDAP/AD</td>
     </tr>     
-     <tr>
-        <td>内置 Weave Scope 管理应用</td>
+    <tr>
+        <td>对外开放 REST API</td>
+    </tr>  
+    <tr>
+        <td>支持国际化 i18n</td>
+    </tr> 
+    <tr>
+        <td>可通过应用商店安装 K8S Dashboard 管理应用</td>
+    </tr>   
+    <tr>
+        <td>可通过应用商店安装 Weave Scope 管理应用</td>
     </tr>  
     <tr>
         <td>提供 Web Kubectl 界面</td>
-    </tr> 
+    </tr>  
     <tr>
-        <td>内置 Helm </td>
-    </tr>   
+        <td>内置 Helm v3</td>
+    </tr> 
     <tr>
         <td rowspan="4">可观察性</td>
         <td>内置 Promethus，支持对集群、节点、Pod、Container的全方位监控和告警</td>
     </tr>
-     <tr>
-        <td>内置 Loki 日志方案</td>
+    <tr>
+        <td>内置 EFK 日志方案</td>
     </tr> 
     <tr>
         <td>内置 Grafana 作为监控和日志展示</td>
@@ -141,13 +163,16 @@ KubeOperator 的整体架构如下图所示:
         <td>支持 etcd 定期备份</td>
     </tr>  
     <tr>
-        <td>合规</td>
-        <td>支持集群合规检查并可视化展示结果</td>
+        <td>安全合规</td>
+        <td>支持 CSI 安全扫描</td>
     </tr>      
-     <tr>
-        <td>应用商店</td>
-        <td>集成 KubeApps Plus 应用商店，快速部署 CI/CD、AI 深度学习等应用</td>
-    </tr>     
+    <tr>
+        <td rowspan="2">应用商店</td>
+        <td>提供 GitLab、Jenkins、Harbor、Argo CD 等 CI/CD 工具</td>
+    </tr>
+    <tr>
+        <td>提供深度学习AI 应用，比如 TensorFlow</td>
+    </tr>      
  </table>
 
 具体版本路线图请参考: [Roadmap](https://github.com/KubeOperator/KubeOperator/blob/master/ROADMAP.md)
