@@ -12,8 +12,6 @@ KubeOperator 的整体架构:
 
 ![Architecture](https://kubeoperator.io/images/screenshot/ko-framework.svg)
 
-> 注:  KubeOperator 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)
-
 ## KubeOperator 的技术优势
 
 -  简单易用: 提供可视化的 Web UI，极大降低 Kubernetes 部署和管理门槛，内置 [Webkubectl](https://github.com/KubeOperator/webkubectl)
