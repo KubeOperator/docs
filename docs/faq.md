@@ -8,7 +8,7 @@
 -  开发模式方面: 从 瀑布模型 到 敏捷开发 到 DevOps 的演进；
 -  应用架构方面: 从 单体架构 到 多层次架构 到 微服务 的演进。
 
-KubeOperator 是一个开源的轻量级 Kubernetes 发行版。与 OpenShift 等重量级 PaaS 平台相比，KubeOperator 只专注于解决一个问题，就是帮助企业规划（Day 0）、部署（Day 1）、运营（Day 2）生产级别的 K8s 集群，并且做到极致。
+KubeOperator 是一个开源的轻量级 Kubernetes 发行版。与 OpenShift 等重量级 PaaS 平台相比，KubeOperator 只专注于解决一个问题，就是帮助企业规划（Day 0）、部署（Day 1）、运营（Day 2）生产级别的 Kubernetes 集群，并且做到极致。
 
 ## KubeOperator 与 Kubespray 等部署工具的区别是什么？
 
@@ -18,19 +18,19 @@ KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes �
 
 KubeOperator 不仅支持安装程序本身，还提供了一组工具来监视 Kubernetes 集群的持续运行。KubeOperator 的优势包括: 
 
--  提供可视化的 Web UI，大大降低部署和管理 K8s 的门槛；
+-  提供可视化的 Web UI，大大降低部署和管理 Kubernetes 的门槛；
 -  提供离线的、经过全面验证和测试的安装包；
 -  与 VMware 和 Openstack 等云平台紧密对接，能够实现一键虚机自动创建和部署（基于 Terraform 和 Ansible）；
 -  KubeOperator 会提供经过充分验证的成熟企业级存储和网络方案。
 
-## K8s 集群应该部署在物理机上面，还是 IaaS 平台上面？
+## Kubernetes 集群应该部署在物理机上面，还是 IaaS 平台上面？
 
 总的来说，企业有两种方案选择: 
 
-- 基于物理机部署大的 K8s 集群: 通过 namespace 实现租户的隔离；
-- 基于 IaaS 平台之上部署多个 K8s 集群: 为每个租户分配独立的 K8s 集群。
+- 基于物理机部署大的 Kubernetes 集群: 通过 namespace 实现租户的隔离；
+- 基于 IaaS 平台之上部署多个 Kubernetes 集群: 为每个租户分配独立的 Kubernetes 集群。
 
-这两种方案各有好处，在 K8s 采纳初期，使用第二种方案更为理性，因为: 
+这两种方案各有好处，在 Kubernetes 采纳初期，使用第二种方案更为理性，因为: 
 
  - 如果是单一大集群，升级会影响所有租户，风险比较大；
  - IaaS 平台上有成熟的、基于软件定义的存储和网络方案，落地更容易和灵活；
@@ -45,7 +45,7 @@ KubeOperator 不仅支持安装程序本身，还提供了一组工具来监视 
  总的来说，相对于发行版，采纳原生 Kubernetes 有两个好处: 
 
  - Kubernetes 迭代很快，且只维护最新的三个大版本。如果采纳其他发行版，可能很容易出现和原生版本脱节的情况。
- - 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 K8s 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
+ - 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 Kubernetes 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
 
 ## KubeOperator 支持哪些持久化存储？
 
@@ -59,11 +59,11 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
 
  https://docs.vmware.com/en/VMware-Enterprise-PKS/1.5/vmware-enterprise-pks-15/GUID-vsphere-persistent-storage.html
 
-## KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 K8s 集群吗？
+## KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 Kubernetes 集群吗？
 
-不会有任何影响。KubeOperator 是一个 100% 旁路系统，其与被管 K8s 集群完全解耦。
+不会有任何影响。KubeOperator 是一个 100% 旁路系统，其与被管 Kubernetes 集群完全解耦。
 
-## 重启 KubeOperator 部署的 K8s 集群的节点后，比如 Master 或者 Worker 节点，会自动恢复正常吗？
+## 重启 KubeOperator 部署的 Kubernetes 集群的节点后，比如 Master 或者 Worker 节点，会自动恢复正常吗？
 
 会自动恢复正常。
 
@@ -72,7 +72,7 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
  - 如果是手动部署模式 + NFS，支持 vSphere 5.5 及以上版本。
  - 如果是自动模式 + vSAN，支持 vSphere 6.5 及以上版本
 
-## KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 K8s 节点的操作系统吗？
+## KubeOperator 仅支持 CentOS 7.6 Minimal 及以上版本作为 Kubernetes 节点的操作系统吗？
 
 是。KubeOperator 的管理范围包括操作系统，比如操作系统补丁升级，其提供的离线包包括操作系统（自动模式）及其 RPM 包，一个离线包版本代表一个终态，并被充分测试和验证。
 
@@ -84,13 +84,13 @@ Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 
   
 ## KubeOperator 和 Rancher 有什么区别？
 
-Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业规划、部署和运营生产级别的 K8s 集群，和 KubeOperator 有可比性的是 Rancher RKE，而不是 Rancher 全部。
+Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业规划、部署和运营生产级别的 Kubernetes 集群，和 KubeOperator 有可比性的是 Rancher RKE，而不是 Rancher 全部。
 
 KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的 DevOps 平台、微服务治理平台、AI 平台、应用商店等是解耦的。
   
-## K8s 集群中的 master 节点的推荐配置？
+## Kubernetes 集群中的 master 节点的推荐配置？
 
-K8s 集群中 master 节点配置取决于 worker 节点数量，推荐配置参考如下: 
+Kubernetes 集群中 master 节点配置取决于 worker 节点数量，推荐配置参考如下: 
 
 | worker 节点数量 | master 推荐配置 |
 | ---- | ---- | 

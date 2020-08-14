@@ -7,15 +7,13 @@
     * 防火墙或安全组需开放端口: 80、8081-8083
 
 ## 下载安装包
-
-请自行下载 KubeOperator 最新版本的离线安装包，并复制到目标机器的 /tmp 目录下
+> 请自行下载 KubeOperator 最新版本的离线安装包，并复制到目标机器的 /tmp 目录下
 
 !!! tip ""
     安装包下载链接: https://github.com/KubeOperator/KubeOperator/releases
 
 ## 解压安装包
-
-以 root 用户 ssh 登录到目标机器, 并执行如下命令
+> 以 root 用户 ssh 登录到目标机器, 并执行如下命令
 
 ```sh
 cd /tmp
@@ -34,7 +32,7 @@ cd KubeOperator-release-v3.x.y
 koctl status
 ```
 
-安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator
+> 安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator
 ```
 地址: http://目标服务器IP地址:80
 用户名: admin

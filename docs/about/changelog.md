@@ -25,6 +25,6 @@ KubeOperator 版本号命名规则为: v大版本.功能版本.Bug修复版本
 - 支持在线部署模式
 - 支持已有集群导入
 - 集成 kubeadm
-- 支持 arm64 架构
+- 支持 ARM64 架构
 - 开放 REST API
 - 国际化支持
