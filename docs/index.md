@@ -2,30 +2,30 @@
 
 ## 什么是 KubeOperator？
 
-KubeOperator 是一个开源的轻量级 Kubernetes 发行版，专注于帮助企业规划、部署和运营生产级别的 Kubernetes 集群。
+KubeOperator 是一个开源的轻量级 Kubernetes 发行版，专注于帮助企业规划、部署和运营生产级别的 Kubernetes 集群
 
-KubeOperator 提供可视化的 Web UI，支持离线环境，支持物理机、VMware 和 OpenStack 等 IaaS 平台，支持 x86 和 ARM64 架构，支持 GPU，内置应用商店，已通过 CNCF 的 Kubernetes 软件一致性认证。
+KubeOperator 提供可视化的 Web UI，支持离线环境，支持物理机、VMware 和 OpenStack 等 IaaS 平台，支持 x86 和 ARM64 架构，支持 GPU，内置应用商店，已通过 CNCF 的 Kubernetes 软件一致性认证
 
-KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或者虚机），通过 Ansible 完成自动化部署和变更操作，支持 Kubernetes 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营的全生命周期管理。
+KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或者虚机），通过 Ansible 完成自动化部署和变更操作，支持 Kubernetes 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营的全生命周期管理
 
 KubeOperator 的整体架构: 
 
 ![Architecture](https://kubeoperator.io/images/screenshot/ko-framework.svg)
 
-> 注:  KubeOperator 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)。
+> 注:  KubeOperator 已通过云原生基金会（CNCF）的 [Kubernetes 软件一致性认证](https://landscape.cncf.io/selected=kube-operator)
 
 ## KubeOperator 的技术优势
 
--  简单易用: 提供可视化的 Web UI，极大降低 Kubernetes 部署和管理门槛，内置 [Webkubectl](https://github.com/KubeOperator/webkubectl)；
--  按需创建: 调用云平台 API，一键快速创建和部署 Kubernetes 集群；
--  按需伸缩: 快速伸缩 Kubernetes 集群，优化资源使用效率；
--  按需修补: 快速升级和修补 Kubernetes 集群，并与社区最新版本同步，保证安全性；
--  离线部署: 支持完全离线下的 Kubernetes 集群部署；
--  自我修复: 通过重建故障节点确保集群可用性；
--  全栈监控: 提供从Pod、Node到集群的事件、监控、告警、和日志方案；
--  Multi-AZ 支持: 将 Master 节点分布在不同的故障域上确保集群高可用；
--  应用商店: 内置 [KubeApps](https://github.com/kubeapps/kubeapps) 应用商店；
--  GPU 支持: 支持 GPU 节点，助力运行深度学习等应用；
+-  简单易用: 提供可视化的 Web UI，极大降低 Kubernetes 部署和管理门槛，内置 [Webkubectl](https://github.com/KubeOperator/webkubectl)
+-  按需创建: 调用云平台 API，一键快速创建和部署 Kubernetes 集群
+-  按需伸缩: 快速伸缩 Kubernetes 集群，优化资源使用效率
+-  按需修补: 快速升级和修补 Kubernetes 集群，并与社区最新版本同步，保证安全性
+-  离线部署: 支持完全离线下的 Kubernetes 集群部署
+-  自我修复: 通过重建故障节点确保集群可用性
+-  全栈监控: 提供从Pod、Node到集群的事件、监控、告警、和日志方案
+-  Multi-AZ 支持: 将 Master 节点分布在不同的故障域上确保集群高可用
+-  应用商店: 内置 [KubeApps](https://github.com/kubeapps/kubeapps) 应用商店
+-  GPU 支持: 支持 GPU 节点，助力运行深度学习等应用
 
 ## KubeOperator 的功能列表
 
@@ -174,21 +174,23 @@ KubeOperator 的整体架构:
 
 ## KubeOperator 支持的组件
 
-- 核心
-  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.18.4
-  - [etcd](https://github.com/coreos/etcd) v3.4.9
-  - [docker](https://www.docker.com/) v19.03.9
-  - [containerd](https://containerd.io/) v1.3.6
-- 网络
-  - [calico](https://github.com/projectcalico/calico) v3.14.1
-  - [flanneld](https://github.com/coreos/flannel) v0.12.0
-- 应用
-  - [coredns](https://github.com/coredns/coredns) v1.6.7
-  - [helm](https://github.com/helm/helm) v3.2.4
-  - [traefik](https://github.com/containous/traefik) v2.2.1
-  - [ingress-nginx](https://github.com/kubernetes/ingress-nginx) v0.32.0
-  - [node-problem-detector](https://github.com/kubernetes/node-problem-detector) v0.8.1
-  - [metrics-server](https://github.com/kubernetes-sigs/metrics-server) v0.3.6
-  - [nfs-provisioner](https://github.com/kubernetes-incubator/external-storage) v3.1.0-k8s1.11
-  - [rook-ceph](https://github.com/rook/rook) v1.3.6
-  - [rbd-provisioner](https://github.com/kubernetes-incubator/external-storage) v2.1.1-k8s1.11
+!!! info "核心"
+    * [kubernetes](https://github.com/kubernetes/kubernetes) v1.18.4
+    * [etcd](https://github.com/coreos/etcd) v3.4.9
+    * [docker](https://www.docker.com/) v19.03.9
+    * [containerd](https://containerd.io/) v1.3.6
+  
+!!! info "网络"
+    * [calico](https://github.com/projectcalico/calico) v3.14.1
+    * [flanneld](https://github.com/coreos/flannel) v0.12.0
+
+!!! info "应用"
+    * [coredns](https://github.com/coredns/coredns) v1.6.7
+    * [helm](https://github.com/helm/helm) v3.2.4
+    * [traefik](https://github.com/containous/traefik) v2.2.1
+    * [ingress-nginx](https://github.com/kubernetes/ingress-nginx) v0.32.0
+    * [node-problem-detector](https://github.com/kubernetes/node-problem-detector) v0.8.1
+    * [metrics-server](https://github.com/kubernetes-sigs/metrics-server) v0.3.6
+    * [nfs-provisioner](https://github.com/kubernetes-incubator/external-storage) v3.1.0-k8s1.11
+    * [rook-ceph](https://github.com/rook/rook) v1.3.6
+    * [rbd-provisioner](https://github.com/kubernetes-incubator/external-storage) v2.1.1-k8s1.11

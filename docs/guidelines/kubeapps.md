@@ -20,11 +20,11 @@
 ![kubeapps-3](../img/guidelines/kubeapps/kubeapps-3.png)
 
 ### 部署应用
-> 在 Dashboard 中的【Catalog】页中可以看到系统默认自带的应用，可选择一个应用程序部署。 本文以部署 GitLab 应用为例说明
+> 在 Dashboard 中的【Catalog】页中可以看到系统默认自带的应用，可选择一个应用程序部署
 
 ![kubeapps-4](../img/guidelines/kubeapps/kubeapps-4.png)
 
-> 注: 首选根据用户需要选择一个 namespace，这里选择 kube-operator，然后单击部署应用，可以看到【应用商店】里面目前支持的应用列表。选择 GitLab 应用后,在应用页面右侧单击“Deploy”按钮
+> 注: 首选根据用户需要选择一个 namespace，这里选择 kube-operator，然后单击部署应用，可以看到【应用商店】里面目前支持的应用列表。选择 GitLab 应用后，在应用页面右侧单击“Deploy”按钮
 
 ![gitlab-1](../img/guidelines/kubeapps/gitlab-1.png)
 
@@ -59,10 +59,10 @@
 #### 安装步骤:
 
 ```bash
-# 首先登录 kubeoperator 部署机，进入 /tmp (或其他自定义)目录，将离线包拷贝到该目录中。
+# 首先登录 kubeoperator 部署机，进入 /tmp (或其他自定义)目录，将离线包拷贝到该目录中
 cd /tmp
-# 解压文件到本目录。
+# 解压文件到本目录
 tar zxvf gitlab.tar.gz && cd gitlab
-# 执行 install.sh 文件，将镜像推送到nexus仓库。
+# 执行 install.sh 文件，将镜像推送到nexus仓库
 bash install.sh
 ```

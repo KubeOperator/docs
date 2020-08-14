@@ -17,7 +17,7 @@ curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/
 bash quick_start.sh
 ```
 
-> 注:安装脚本默认使用 /opt/kubeoperator 目录作为安装目录，KubeOperator 的配置文件、数据及日志等均存放在该安装目录。安装过程中也可手动指定安装目录。
+> 注:安装脚本默认使用 /opt/kubeoperator 目录作为安装目录，KubeOperator 的配置文件、数据及日志等均存放在该安装目录。安装过程中也可手动指定安装目录
 
 !!! warning "注意"
     安装完成后，安装过程中产生的离线文件可删除，离线文件存放在当前目录，目录名: kubeoperator-release-v3.x.y

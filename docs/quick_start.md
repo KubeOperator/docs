@@ -47,21 +47,21 @@ bash quick_start.sh
 ![setting-1](./img/user_manual/system_management/system-1.png)
 
 #### 凭据
-> 凭据为 KubeOperator 连接主机资产的凭证。支持添加 password 和 privatekey 两种方式的凭据。
+> 凭据为 KubeOperator 连接主机资产的凭证。支持添加 password 和 privatekey 两种方式的凭据
 
 ![key-1](../img/user_manual/system_management/key-1.png)
 
-> 注: 系统会初始化名称为 kubeoperator 的凭据作为自动模式所创建服务器的密码。
+> 注: 系统会初始化名称为 kubeoperator 的凭据作为自动模式所创建服务器的密码
 
 ### 添加主机
-> 主机列表页可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
+> 主机列表页可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等
 
 ![host-1](./img/user_manual/hosts/hosts-1.png)
 
-> 注: 推荐使用全新的机器。KubeOperator 部署机不能作为 Kubernetes 集群节点使用。
+> 注: 推荐使用全新的机器。KubeOperator 部署机不能作为 Kubernetes 集群节点使用
 
 ### 创建集群
-> 【项目】菜单进入目标项目，点击【集群】页【添加】按钮创建集群。
+> 【项目】菜单进入目标项目，点击【集群】页【添加】按钮创建集群
 
 ![deploy-1](./img/user_manual/cluster/deploy-1.png)
 
