@@ -50,7 +50,7 @@ KubeOperator 支持 Webkubectl。在集群【概览】页单击 连接 按钮，
 内置 local volume 存储提供商，如需添加其他类型，需要提前创建对应类型的存储提供商。
 
 !!! info "注意"
-        external-ceph: 需要在 kubernetes 中创建 admin 及 user 所需的 secret。
+        external-ceph: 需要在 Kubernetes 中创建 admin 及 user 所需的 secret。
 
 ```
 # 可在 ceph 服务端通过以下命令获得 secret key

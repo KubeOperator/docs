@@ -18,7 +18,7 @@
 
 ![key-1](../img/user_manual/system_management/key-1.png)
 
-> 注: 系统会初始化名称为kubeoperator的凭据作为自动模式所创建服务器的密码。
+> 注: 系统会初始化名称为 kubeoperator 的凭据作为自动模式所创建服务器的密码。
 
 凭据也可以使用密钥方式登录主机。单击【添加】按钮，选择 privatekey 方式登录目标主机，输入凭据名称和 root 账号，然后将 id_rsa 私钥内容复制到密钥框里，确认。
 

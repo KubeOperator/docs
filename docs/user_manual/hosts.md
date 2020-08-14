@@ -8,6 +8,6 @@
 点击【添加】按钮添加主机。输入名称和 IP 地址、指定端口号、选择对应的凭据，最后点击【提交】按钮即可完成一台主机的添加。
 
 > 注: 推荐使用全新的机器 <br/>
-KubeOperator部署机不能作为kubernetes集群节点使用。
+KubeOperator 部署机不能作为 Kubernetes 集群节点使用。
 
 ![host-1](../img/user_manual/hosts/hosts-1.png)

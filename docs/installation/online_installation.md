@@ -1,7 +1,7 @@
 ## 环境要求
 
 !!! info "部署服务器要求"
-    * 操作系统: 任何支持 Docker 的 Linux x64
+    * 操作系统: 任何支持 Docker 的 Linux x86_64
     * CPU/内存: 4核8G
     * 磁盘空间: 50G
     * 可访问互联网
@@ -21,7 +21,7 @@ bash quick_start.sh
 安装脚本默认使用 /opt/kubeoperator 目录作为安装目录，KubeOperator 的配置文件、数据及日志等均存放在该安装目录。安装过程中也可手动指定安装目录。
 
 !!! warning "注意"
-    安装完成后，安装过程中产生的离线文件可删除，离线文件存放在当前目录，目录名: kubeoperator-relase-v3.y.z
+    安装完成后，安装过程中产生的离线文件可删除，离线文件存放在当前目录，目录名: kubeoperator-release-v3.x.y
     
 ## 登录
 

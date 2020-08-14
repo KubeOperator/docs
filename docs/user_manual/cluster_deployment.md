@@ -13,7 +13,7 @@
 
 #### 配置网络
 
-【高级选项】环节，选择容器运行时、容器网络、Pod子网、Service子网、Container子网、最大POD数量、kube-proxy模式、ingress类型、是否开启Kubernetes审计等。
+【高级选项】环节，选择容器运行时、容器网络、Pod子网、Service子网、Container子网、最大POD数量、kube-proxy模式、ingress类型、是否开启 Kubernetes 审计等。
 
 ![deploy-2](../img/user_manual/cluster/deploy-2.png)
 
