@@ -1,10 +1,10 @@
 site_name: 'KubeOperator 文档'
 site_url: 'https://kubeoperator.io/'
-site_description: 'Document'
+site_description: 'KubeOperator 文档'
 site_author: 'wanghe'
 google_analytics: ['UA-147297392-7', 'kubeoperator.io']
 
-repo_name: 'KubeOperator Docs'
+repo_name: 'KubeOperator'
 repo_url: 'https://github.com/KubeOperator/KubeOperator'
 
 theme:
