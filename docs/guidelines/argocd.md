@@ -7,11 +7,11 @@ Argo CD 是一个为 Kubernetes 而生的，遵循声明式 GitOps 理念的持�
 - 应用定义、配置和环境信息是声明式的，并可以进行版本控制；
 - 应用部署和生命周期管理是全自动化的、是可审计的，清晰易懂。
 
-Argo CD 在 CI/CD 流程中的位置如下图所示：
+Argo CD 在 CI/CD 流程中的位置如下图所示: 
 
 ![argocd-1](../img/guidelines/argocd/argocd-1.png )
  
-借助 Argo CD 在 Kubernetes 集群上落地 CD，主要通过以下三个步骤来完成：
+借助 Argo CD 在 Kubernetes 集群上落地 CD，主要通过以下三个步骤来完成: 
 
 -  将应用的 Git 仓库分为 Application Deployment file 和 Docker file 两个库。Docker file 用于存放应用的核心代码以及 Docker build file，后续将会直接打包成 Docker image；Application Deployment file 可以 Kustomize、Helm、Ksconnet、Jsonnet 等 多种 Kubernetes 包管理工具来定义；以 Helm 为例，Chart 中所使用到的 Image 由 Docker file Code 打包完成后提供；
 -  使用 Jenkins 或 Gitlab 等 CI 工具进行自动化构建打包，并将 Docker image push 到 Harbor 镜像仓库；
