@@ -22,7 +22,7 @@ bash quick_start.sh
 !!! warning "注意"
     安装完成后，安装过程中产生的离线文件可删除，离线文件存放在当前目录，目录名: kubeoperator-release-v3.x.y
 
-!!! info "注意：安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 koctl start 命令进行启动"
+!!! info "注意：安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 koctl restart 命令进行启动"
     ```
     [root@kubeoperator ~]# koctl status
     
