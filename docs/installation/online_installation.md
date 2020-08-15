@@ -21,6 +21,23 @@ bash quick_start.sh
 
 !!! warning "注意"
     安装完成后，安装过程中产生的离线文件可删除，离线文件存放在当前目录，目录名: kubeoperator-release-v3.x.y
+
+!!! info "安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 $ koctl start 命令进行启动"
+    ```
+    [root@kubeoperator ~]# koctl status
+    
+             Name                        Command                  State                                       Ports
+    ------------------------------------------------------------------------------------------------------------------------------------------------
+    kubeoperator_grafana      /run.sh                          Up (healthy)   3000/tcp
+    kubeoperator_kobe         kobe-server                      Up (healthy)   8080/tcp
+    kubeoperator_kotf         kotf-server                      Up (healthy)   8080/tcp
+    kubeoperator_mysql        /entrypoint.sh mysqld            Up (healthy)   3306/tcp, 33060/tcp
+    kubeoperator_nexus        sh -c ${SONATYPE_DIR}/star ...   Up             0.0.0.0:8081->8081/tcp, 0.0.0.0:8082->8082/tcp, 0.0.0.0:8083->8083/tcp
+    kubeoperator_nginx        /docker-entrypoint.sh ngin ...   Up (healthy)   0.0.0.0:80->80/tcp
+    kubeoperator_server       ko-server                        Up (healthy)   8080/tcp
+    kubeoperator_ui           /docker-entrypoint.sh ngin ...   Up (healthy)   80/tcp
+    kubeoperator_webkubectl   sh /opt/webkubectl/start-w ...   Up (healthy)
+    ```
     
 ## 登录
 > 安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator
@@ -30,6 +47,7 @@ bash quick_start.sh
 用户名: admin
 密码: kubeoperator@admin123
 ```
+
 
 ## 升级
 
