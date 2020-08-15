@@ -32,7 +32,7 @@ cd KubeOperator-release-v3.x.y
 koctl status
 ```
 
-!!! info "注意：安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 koctl restart 命令进行启动"
+!!! info "注意：安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 koctl restart 命令进行重新启动"
     ```
     [root@kubeoperator ~]# koctl status
     
