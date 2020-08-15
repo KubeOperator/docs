@@ -32,13 +32,31 @@ cd KubeOperator-release-v3.x.y
 koctl status
 ```
 
-> 安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator
+!!! info "注意：安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 koctl start 命令进行启动"
+    ```
+    [root@kubeoperator ~]# koctl status
+    
+             Name                        Command                  State                                       Ports
+    ------------------------------------------------------------------------------------------------------------------------------------------------
+    kubeoperator_grafana      /run.sh                          Up (healthy)   3000/tcp
+    kubeoperator_kobe         kobe-server                      Up (healthy)   8080/tcp
+    kubeoperator_kotf         kotf-server                      Up (healthy)   8080/tcp
+    kubeoperator_mysql        /entrypoint.sh mysqld            Up (healthy)   3306/tcp, 33060/tcp
+    kubeoperator_nexus        sh -c ${SONATYPE_DIR}/star ...   Up             0.0.0.0:8081->8081/tcp, 0.0.0.0:8082->8082/tcp, 0.0.0.0:8083->8083/tcp
+    kubeoperator_nginx        /docker-entrypoint.sh ngin ...   Up (healthy)   0.0.0.0:80->80/tcp
+    kubeoperator_server       ko-server                        Up (healthy)   8080/tcp
+    kubeoperator_ui           /docker-entrypoint.sh ngin ...   Up (healthy)   80/tcp
+    kubeoperator_webkubectl   sh /opt/webkubectl/start-w ...   Up (healthy)
+    ```
+  
+## 登录
+> 安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator。如果网络环境中有防火墙或安全组请开启 TCP/80,8081-8083 端口。
 ```
 地址: http://目标服务器IP地址:80
 用户名: admin
 密码: kubeoperator@admin123
 ```
-
+    
 ## 升级
 
 ```sh

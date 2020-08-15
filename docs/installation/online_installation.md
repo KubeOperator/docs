@@ -22,7 +22,7 @@ bash quick_start.sh
 !!! warning "注意"
     安装完成后，安装过程中产生的离线文件可删除，离线文件存放在当前目录，目录名: kubeoperator-release-v3.x.y
 
-!!! info "安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 $ koctl start 命令进行启动"
+!!! info "注意：安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 koctl start 命令进行启动"
     ```
     [root@kubeoperator ~]# koctl status
     
@@ -40,7 +40,7 @@ bash quick_start.sh
     ```
     
 ## 登录
-> 安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator
+> 安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator。如果网络环境中有防火墙或安全组请开启 TCP/80,8081-8083 端口。
 
 ```
 地址: http://目标服务器IP地址:80
