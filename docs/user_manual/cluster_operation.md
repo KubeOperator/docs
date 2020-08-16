@@ -9,18 +9,16 @@
 
 ![overview-2](../img/user_manual/cluster/overview-2.png)
 
-### 节点
+### 集群伸缩
 > 显示集群节点相关信息。支持针对集群 worker 节点的扩缩容
 
 ![node-1](../img/user_manual/cluster/node-1.png)
 
+> worker 节点扩容
 ![node-2](../img/user_manual/cluster/node-2.png)
 
-> 注: 集群 worker 节点扩容
-
+> worker 节点缩容
 ![node-3](../img/user_manual/cluster/node-3.png)
-
-> 注: 集群 worker 节点缩容
 
 ### 命名空间
 > 集群中现有的 namespace
@@ -69,7 +67,7 @@ kubectl create secret generic ceph-admin-secret \
 
 ![tools-2](../img/user_manual/cluster/tools-2.png)
 
-### 备份
+### 集群备份
 > 可以设置备份账号、状态来实现集群备份功能。选中备份记录，可以实现集群数据恢复功能
 
 ![cluster-backup-1](../img/user_manual/cluster/cluster-backup-1.png)
@@ -78,6 +76,12 @@ kubectl create secret generic ceph-admin-secret \
 > 可以查看针对集群的操作记录以及异常时的错误日志
 
 ### 监控
-> 需要在【工具】页面安装 Prometheus 作为 Grafana 的默认数据源
+> 需要在【工具】页面安装 Prometheus 作为 Grafana 默认数据源
 
 ![monitor-1](../img/user_manual/cluster/monitor-1.png)
+
+### 集群卸载
+
+> 进入【项目】菜单，选中目标集群，点击【删除】按钮，即集群卸载
+
+![deploy-5](../img/user_manual/cluster/deploy-5.png)
