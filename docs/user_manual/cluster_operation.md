@@ -15,9 +15,11 @@
 ![node-1](../img/user_manual/cluster/node-1.png)
 
 > worker 节点扩容
+
 ![node-2](../img/user_manual/cluster/node-2.png)
 
 > worker 节点缩容
+
 ![node-3](../img/user_manual/cluster/node-3.png)
 
 ### 命名空间
