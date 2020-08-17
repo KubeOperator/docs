@@ -49,6 +49,10 @@ bash quick_start.sh
 密码: kubeoperator@admin123
 ```
 
+## 帮助
+```
+koctl --help
+```
 
 ## 升级
 

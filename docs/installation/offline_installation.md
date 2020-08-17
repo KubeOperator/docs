@@ -58,6 +58,11 @@ koctl status
 密码: kubeoperator@admin123
 ```
     
+## 帮助
+```
+koctl --help
+```
+
 ## 升级
 
 ```sh
