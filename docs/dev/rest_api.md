@@ -1,15 +1,8 @@
 # API 文档
 
 ## Api 访问地址
+> 点击帮助，查看 REST API 文档
 
-- 通过访问 http://KubeOperator的URL地址/api/docs 来访问(如 http://192.168.244.144/api/docs)
+![api_swagger](../img/dev/swagger-1.png)
 
-!!! warning "需要打开 debug 模式"
-    ```yaml
-    vi kubeoperator/app.yml
-    ```
-    ```yaml
-    DEBUG: true
-    ```
-
-![api_swagger](../img/api_swagger.jpg)
+![api_swagger](../img/dev/swagger-2.png)

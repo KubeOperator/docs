@@ -35,6 +35,8 @@ nav:
     - 应用指南:
         - 应用商店: guidelines/kubeapps.md
         - Argo CD: guidelines/argocd.md
+    - 开发文档:
+        - API文档: dev/rest_api.md
     - 常见问题: faq.md
     - 关于:
         - 更新说明: about/changelog.md

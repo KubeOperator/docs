@@ -14,6 +14,10 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
 
 ![Web UI](https://kubeoperator.io/images/screenshot/05.jpg)
 
+## 视频演示
+
+![Video Demo](https://www.bilibili.com/video/BV1jT4y1L7Ur/)
+
 ## 技术优势
 
 -  简单易用: 提供可视化的 Web UI，极大降低 Kubernetes 部署和管理门槛，内置 [Webkubectl](https://github.com/KubeOperator/webkubectl)
