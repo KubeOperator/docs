@@ -254,4 +254,5 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
 ## 更多阅读
 
 - [干货分享丨KubeOperator如何助力企业运营生产级别的Kubernetes集群？](https://blog.fit2cloud.com/?p=1255)
+- [直播回放丨KubeOperator 3.0 发布说明会？](http://live.vhall.com/601536788)
 - [PPT 介绍](https://kubeoperator.io/download/KubeOperator_Intro.pdf)
