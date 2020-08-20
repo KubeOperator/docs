@@ -35,13 +35,13 @@ token:      eyJhbGciOiJSUzI1NiIsImtcZCI6Ik9GN2U0SXhybVFVRV9JaFJYSTBzdXQ2Mi1WZmRH
 ```
 vim /etc/docker/daemon.json
 { 
-    "insecure-registries" : [ "your-server-ip:8082" ] 
+    "insecure-registries" : [ "...", "kubeoperator-ip:8082", "..." ] 
 }
+# kubeoperator-ip 为 KubeOperator 部署机 IP
 
-# 为了使得配置生效，重新启动docker服务
+# 为了使得配置生效，需要重新启动 docker 服务
 systemctl restart docker.service
 ```
-
 
 !!! warning "注意"
     KubeOperator 不能针对导入的集群进行扩缩容、备份等集群运营操作
