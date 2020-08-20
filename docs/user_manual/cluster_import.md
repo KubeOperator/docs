@@ -29,6 +29,7 @@ token:      eyJhbGciOiJSUzI1NiIsImtcZCI6Ik9GN2U0SXhybVFVRV9JaFJYSTBzdXQ2Mi1WZmRH
 ```
 
 ### 使用工具
+
 !!! info "示例"
     工具中所涉及到的镜像默认使用 KubeOperator 镜像仓库，在启用工具前，需要在 Kubernetes 节点配置私有仓库的可信任设置可以通过HTTP直接访问
 
