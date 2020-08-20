@@ -35,6 +35,10 @@ nav:
     - 应用指南:
         - 应用商店: guidelines/kubeapps.md
         - Argo CD: guidelines/argocd.md
+    - 教程:
+        - 手动模式: tutorial/manual.md
+        - 自动模式: tutorial/automatic.md
+        - 公有云平台: tutorial/public_cloud.md
     - 开发文档:
         - API文档: dev/rest_api.md
     - 常见问题: faq.md
