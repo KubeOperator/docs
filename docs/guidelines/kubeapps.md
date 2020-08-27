@@ -64,5 +64,5 @@ cd /tmp
 # 解压文件到本目录
 tar zxvf gitlab.tar.gz && cd gitlab
 # 执行 install.sh 文件，将镜像推送到nexus仓库
-bash install.sh
+/bin/bash install.sh start
 ```
