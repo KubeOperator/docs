@@ -16,7 +16,7 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
 
 ## 视频演示
 
-![Video Demo](https://www.bilibili.com/video/BV1jT4y1L7Ur/)
+[视频演示](https://www.bilibili.com/video/BV1jT4y1L7Ur/)
 
 ## 技术优势
 
@@ -250,7 +250,13 @@ KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也�
     * [nfs-provisioner](https://github.com/kubernetes-incubator/external-storage) v3.1.0-k8s1.11
     * [rook-ceph](https://github.com/rook/rook) v1.3.6
     * [rbd-provisioner](https://github.com/kubernetes-incubator/external-storage) v2.1.1-k8s1.11
-    
+
+## 企业版试用
+
+- [申请企业版试用](https://jinshuju.net/f/qc6g44)
+
+> 注: 企业版支持离线安装，申请通过后会提供高速下载链接
+
 ## 更多阅读
 
 - [干货分享丨KubeOperator如何助力企业运营生产级别的Kubernetes集群？](https://blog.fit2cloud.com/?p=1255)
