@@ -32,7 +32,9 @@
 ## 集群规划
 
 参考：[自动模式](./tutorial/automatic.md)
+
 参考：[手动模式](./tutorial/manual.md)
+
 参考：[公有云平台](./tutorial/public_cloud.md)
 
 ## 集群部署
