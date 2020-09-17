@@ -50,8 +50,8 @@
 
 ![kubeapps-5](../img/guidelines/kubeapps/kubeapps-5.png)
 
-## 安装离线包（可选）
-> 离线包包括 Argo CD、Gitlab、Harbor、Jenkins 和 Sonarqube 镜像，用户可以根据需要下载并安装
+## 推送 chart 镜像（离线包安装集群可选）
+> 包括 Argo CD、Gitlab、Harbor、Jenkins、Weave Scope 和 Sonarqube 镜像，用户可以根据需要下载并安装
 
 !!! tip ""
     安装包下载链接: https://github.com/KubeOperator/charts/releases
@@ -61,8 +61,14 @@
 ```bash
 # 首先登录 kubeoperator 部署机，进入 /tmp (或其他自定义)目录，将离线包拷贝到该目录中
 cd /tmp
+
 # 解压文件到本目录
 tar zxvf gitlab.tar.gz && cd gitlab
+
 # 执行 install.sh 文件，将镜像推送到nexus仓库
 /bin/bash install.sh start
+
+# 选择是否使用外部Docker Image Registry y/n
+# 没有外部镜像仓库的情况下，可以选择 "n" 来使用 kubeoperator 部署节点的 nexus 仓库 registry.kubeoperator.io:8083）
+# nexus 默认用户名密码为: admin/admin123
 ```
