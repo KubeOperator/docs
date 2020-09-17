@@ -13,7 +13,7 @@
     </tr>
     <tr>
         <td>部署机</td>
-        <td>2</td>
+        <td>4</td>
         <td>8G</td>
         <td>100G</td>
         <td>1</td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
         <td>部署机</td>
-        <td>2</td>
+        <td>4</td>
         <td>8G</td>
         <td>100G SSD</td>
         <td>1</td>
@@ -70,7 +70,7 @@
 
 ## 软件要求
 
-> 注: 以下要求针对部署机节点
+> 注: 以下要求针对 kubeoperator 部署机
 
 <table>
     <tr>
