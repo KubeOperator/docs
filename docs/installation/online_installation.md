@@ -1,17 +1,3 @@
-## 环境要求
-
-!!! info "服务器要求"
-    ### KubeOperator 部署服务器要求：
-    * 操作系统: 任何支持 Docker 的 Linux x86_64
-    * CPU/内存: 4核8G
-    * 磁盘空间: 50G
-    * 防火墙或安全组需开放端口: 80、8081-8083
-    * 系统：关闭 selinux
-    ### K8S 节点服务器要求：
-    * 操作系统: CentOS/RHEL 7.4 及以上版本，EulerOS 2.5（X86），EulerOS 2.8（ARM64）
-    * CPU/内存: 2核4G
-    * 磁盘空间: 50G
-    * 系统：关闭 selinux
     
 ## 安装步骤
 

@@ -18,34 +18,35 @@ theme:
         - django
 
 nav:
-    - 介绍: index.md
+    - Introduction: index.md
     - 主要概念: concept.md
-    - 快速开始: quick_start.md
-    - 安装部署: 
-        - 在线安装: installation/online_installation.md
-        - 离线安装: installation/offline_installation.md
-    - 用户手册: 
-        - 系统设置: user_manual/system_management.md
-        - 用户管理: user_manual/user_management.md
-        - 部署计划: user_manual/plan.md
-        - 主机管理: user_manual/hosts.md
-        - 项目管理: user_manual/project.md
-        - 集群部署: user_manual/cluster_deployment.md
-        - 集群导入: user_manual/cluster_import.md
-        - 集群运营: user_manual/cluster_operation.md
+    - 安装部署:
+          - 产品部署架构: installation/deploy_architecture.md
+          - 部署环境要求: installation/deploy_env.md
+          - 在线安装: installation/online_installation.md
+          - 离线安装: installation/offline_installation.md
+    - 快速入门:
+          - 手动模式: tutorial/manual.md
+          - 自动模式: tutorial/automatic.md
+          - 公有云平台: tutorial/public_cloud.md
+    - 用户手册:
+          - 系统设置: user_manual/system_management.md
+          - 用户管理: user_manual/user_management.md
+          - 部署计划: user_manual/plan.md
+          - 主机管理: user_manual/hosts.md
+          - 项目管理: user_manual/project.md
+          - 集群部署: user_manual/cluster_deployment.md
+          - 集群导入: user_manual/cluster_import.md
+          - 集群运营: user_manual/cluster_operation.md
     - 应用指南:
-        - 应用商店: guidelines/kubeapps.md
-        - Argo CD: guidelines/argocd.md
-    - 教程:
-        - 手动模式: tutorial/manual.md
-        - 自动模式: tutorial/automatic.md
-        - 公有云平台: tutorial/public_cloud.md
+          - 应用商店: guidelines/kubeapps.md
+          - Argo CD: guidelines/argocd.md
     - 开发文档:
-        - API文档: dev/rest_api.md
-    - 常见问题: faq.md
+          - API文档: dev/rest_api.md
+    - FAQ: faq.md
     - 关于:
-        - 更新说明: about/changelog.md
-        - 联系我们: about/contact.md
+          - 更新说明: about/changelog.md
+          - 联系我们: about/contact.md
     - 企业版试用: enterprise.md
 
 markdown_extensions:
