@@ -18,7 +18,7 @@ theme:
         - django
 
 nav:
-    - Introduction: index.md
+    - 总体介绍: index.md
     - 主要概念: concept.md
     - 安装部署:
           - 产品部署架构: installation/deploy_architecture.md
@@ -41,12 +41,11 @@ nav:
           - 部署计划: user_manual/plan.md
           - 主机管理: user_manual/hosts.md
           - 项目管理: user_manual/project.md
-    - 开发文档:
-          - API文档: dev/rest_api.md
+    - 开发文档: dev/rest_api.md
+    - 常见问题: faq.md
     - 教程:
           - 应用商店: guidelines/kubeapps.md
           - Argo CD: guidelines/argocd.md
-    - FAQ: faq.md
     - 关于:
           - 更新说明: about/changelog.md
           - 联系我们: about/contact.md

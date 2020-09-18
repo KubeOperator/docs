@@ -4,34 +4,38 @@
 - 最小化配置:
 
 <table>
-    <tr>
-        <td>角色</td>
-        <td>CPU核数</td>
-        <td>内存</td>
-        <td>系统盘</td>
-        <td>数量</td>
-    </tr>
-    <tr>
-        <td>部署机</td>
-        <td>4</td>
-        <td>8G</td>
-        <td>100G</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Master</td>
-        <td>2</td>
-        <td>4G</td>
-        <td>100G</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Worker</td>
-        <td>2</td>
-        <td>4G</td>
-        <td>100G</td>
-        <td>3</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>角色</th>
+            <th>CPU核数</th>
+            <th>内存</th>
+            <th>系统盘</th>
+            <th>数量</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>部署机</td>
+            <td>4</td>
+            <td>8G</td>
+            <td>100G</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Master</td>
+            <td>2</td>
+            <td>4G</td>
+            <td>100G</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Worker</td>
+            <td>2</td>
+            <td>4G</td>
+            <td>100G</td>
+            <td>3</td>
+        </tr>
+    <tbody>
 </table>
 
 - 推荐配置:
@@ -69,6 +73,10 @@
 </table>
 
 ## 软件要求
+
+!!! info "注意"
+    * 确保使用干净的操作系统
+    * 推荐使用官方 Minimal 镜像
 
 > 注: 以下要求针对 kubeoperator 部署机
 
@@ -122,9 +130,9 @@
     </tr>
     <tr>
         <td>操作系统</td>
-        <td>CentOS/RHEL 7.4 - 7.7<br>
+        <td><b>CentOS/RHEL 7.4 - 7.7 Minimal<br>
             EulerOS 2.5（x86_64）<br>
-            EulerOS 2.8（arm64）</td>
+            EulerOS 2.8（arm64）</b></td>
         <td>cat /etc/redhat-release</td>
     </tr>
     <tr>
