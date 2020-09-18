@@ -1,4 +1,3 @@
-## 创建部署计划
 
 ### 创建区域(Region)
 > 与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 vSphere 体系中我们使用 DataCenter 实现 Region 的划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere 和 Openstack

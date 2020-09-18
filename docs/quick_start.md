@@ -11,23 +11,18 @@
 
 ## 系统设置
 
-### 系统
-
-> 设置系统 IP 和 NTP Server
-
 !!! info "注意"
     * 系统 IP: 部署 KubeOperator 的服务器 IP。将使用该 IP 来访问 KubeOperator
     * NTP Server: 时间同步服务器，默认可以为空。也可以自建或使用公共 NTP Server
 
 ![setting-1](./img/user_manual/system_management/system-1.png)
 
-### 凭据
-
-> 手动模式创建集群，需要提前设置好主机凭据
+!!! info "注意"
+    手动模式创建集群，需要提前设置好主机凭据
 
 ![key-1](./img/user_manual/system_management/key-1.png)
 
-> 注: 系统会初始化名称为 kubeoperator 的凭据作为自动模式所创建服务器的密码
+> 注: 系统会初始化名称为 kubeoperator 的凭据作为自动模式所创建服务器的密码，默认密码为 KubeOperator@2019
 
 ## 集群规划
 

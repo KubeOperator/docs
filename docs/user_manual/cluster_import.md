@@ -1,4 +1,3 @@
-## 集群导入
 
 ### 基本信息
 > 输入要导入集群的名称、Api Server、Router、Token
