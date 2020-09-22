@@ -78,7 +78,7 @@
 
 ## 软件要求
 
-!!! info "注意"
+!!! info ""
     * 以下要求针对 kubeoperator 部署机
 
 <table>
@@ -125,9 +125,9 @@
     </tbody>
 </table>
 
-!!! info "注意"
+!!! info ""
     * 以下要求针对 kubernetes 集群节点
-    * 推荐使用官方 Minimal 镜像 
+    * 推荐使用官方 Minimal 镜像
 
 <table>
     <thead>

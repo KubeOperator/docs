@@ -26,20 +26,26 @@
 
 ## 集群规划
 
-参考：[自动模式](./tutorial/automatic.md)
+!!! tip ""
+    参考：[自动模式](./tutorial/automatic.md)
 
-参考：[手动模式](./tutorial/manual.md)
+!!! tip ""
+    参考：[手动模式](./tutorial/manual.md)
 
-参考：[公有云平台](./tutorial/public_cloud.md)
+!!! tip ""
+    参考：[公有云平台](./tutorial/public_cloud.md)
 
 ## 集群部署
 
-参考：[集群部署](./user_manual/cluster_deployment.md)
+!!! tip ""
+    参考：[集群部署](./user_manual/cluster_deployment.md)
 
 ## 集群导入
 
-参考：[集群导入](./user_manual/cluster_import.md)
+!!! tip ""
+    参考：[集群导入](./user_manual/cluster_import.md)
 
 ## 集群运营
 
-参考：[集群运营](./user_manual/cluster_operation.md)
+!!! tip ""
+    参考：[集群运营](./user_manual/cluster_operation.md)

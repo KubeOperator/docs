@@ -1,5 +1,6 @@
 
-> 用户可以在Web页面查看 Kubernetes 及各个组件的版本信息，方便管理员进行维护和升级
+!!! tip ""
+    用户可以在Web页面查看 Kubernetes 及各个组件的版本信息，方便管理员进行维护和升级
 
 ![region-1](../img/user_manual/version/version-1.png)
 
@@ -10,7 +11,7 @@
     * [etcd](https://github.com/coreos/etcd) v3.4.9
     * [docker](https://www.docker.com/) v19.03.9
     * [containerd](https://containerd.io/) v1.3.6
-  
+
 !!! info "网络"
     * [calico](https://github.com/projectcalico/calico) v3.14.1
     * [flanneld](https://github.com/coreos/flannel) v0.12.0

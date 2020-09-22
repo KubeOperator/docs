@@ -1,10 +1,11 @@
-# 在公有云平台上规划、部署及运营 Kubernetes 集群
+## 在公有云平台上规划、部署及运营 Kubernetes 集群
 
-KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式，另外一种是自动模式。
+!!! tip ""
+    KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式，另外一种是自动模式。
 
-在公有云平台来规划部署 kubernetes 集群，对应的是 kubeoperator 手动模式。
+    在公有云平台来规划部署 kubernetes 集群，对应的是 kubeoperator 手动模式。
 
-本章节以阿里云平台作为示例，手动模式部署一个开发测试用集群，需要至少准备三台服务器，每台服务器的用途和需求是：
+    本章节以阿里云平台作为示例，手动模式部署一个开发测试用集群，需要至少准备三台服务器，每台服务器的用途和需求是：
 
 <table>
     <tr>
@@ -37,13 +38,14 @@ KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式�
     </tr>
 </table>
 
-## 准备主机
+### 准备主机
 
-我们将准备添加两台主机，分别作为 master 节点和worker 节点。
+!!! tip ""
+    我们将准备添加两台主机，分别作为 master 节点和worker 节点。
 
-## 添加主机
+### 添加主机
 
-主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
+!!! tip ""
+    主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
 
 ![host-1](../img/user_manual/hosts/hosts-1.png)
-

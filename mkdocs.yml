@@ -6,6 +6,7 @@ google_analytics: ['UA-147297392-1', 'kubeoperator.io']
 
 repo_name: 'KubeOperator'
 repo_url: 'https://github.com/KubeOperator/KubeOperator'
+edit_uri: ''
 
 theme:
     name: 'material'
@@ -13,6 +14,8 @@ theme:
     favicon: 'img/KubeOperator-icon.png'
     language: 'zh'
     highlightjs: true
+    feature:
+        tabs: true
     hljs_languages:
         - yaml
         - django
