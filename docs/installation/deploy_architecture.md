@@ -1,14 +1,14 @@
 
 ## 总体架构
 
-!!! tip ""
+!!! warning ""
     KubeOperator 产品架构如下图所示
 
 ![Architecture](https://kubeoperator.io/images/screenshot/ko-framework.svg)
 
 ## 模块说明
 
-!!! tip ""
+!!! warning ""
     - kubeoperator_server: 提供平台业务管理相关功能的后台服务；
     - kubeoperator_ui: 提供平台业务管理相关功能的前台服务；
     - kubeoperator_kobe: 提供执行 Ansible 任务创建 Kubernetes 集群的功能；

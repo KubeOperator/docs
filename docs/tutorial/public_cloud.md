@@ -1,6 +1,6 @@
 ## 在公有云平台上规划、部署及运营 Kubernetes 集群
 
-!!! tip ""
+!!! warning ""
     KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式，另外一种是自动模式。
 
     在公有云平台来规划部署 kubernetes 集群，对应的是 kubeoperator 手动模式。
@@ -40,12 +40,12 @@
 
 ### 准备主机
 
-!!! tip ""
-    我们将准备添加两台主机，分别作为 master 节点和worker 节点。
+!!! warning ""
+    * 我们将准备添加两台主机，分别作为 master 节点和worker 节点。
 
 ### 添加主机
 
-!!! tip ""
-    主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
+!!! warning ""
+    * 主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
 
 ![host-1](../img/user_manual/hosts/hosts-1.png)

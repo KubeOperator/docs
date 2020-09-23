@@ -1,7 +1,7 @@
 
 # 总体介绍
 
-!!! tip ""
+!!! warning ""
     KubeOperator 是一个 **开源** 的轻量级 Kubernetes 发行版，专注于帮助企业规划、部署和运营生产级别的 Kubernetes 集群。
 
     KubeOperator 提供可视化的 Web UI，支持离线环境，支持物理机、VMware 和 OpenStack 等 IaaS 平台，支持 x86 和 ARM64 架构，支持 GPU，内置应用商店，已通过 CNCF 的 Kubernetes 软件一致性认证。  
@@ -10,7 +10,7 @@
 
 ## 技术优势
 
-!!! tip ""
+!!! warning ""
     -  简单易用: 提供可视化的 Web UI，极大降低 Kubernetes 部署和管理门槛，内置 [Webkubectl](https://github.com/KubeOperator/webkubectl)
     -  按需创建: 调用云平台 API，一键快速创建和部署 Kubernetes 集群
     -  按需伸缩: 快速伸缩 Kubernetes 集群，优化资源使用效率
@@ -222,17 +222,17 @@
 
 ## 支持组件
 
-!!! tip "核心"
+!!! warning ""
     * [kubernetes](https://github.com/kubernetes/kubernetes) v1.18.4
     * [etcd](https://github.com/coreos/etcd) v3.4.9
     * [docker](https://www.docker.com/) v19.03.9
     * [containerd](https://containerd.io/) v1.3.6
 
-!!! tip "网络"
+!!! warning ""
     * [calico](https://github.com/projectcalico/calico) v3.14.1
     * [flanneld](https://github.com/coreos/flannel) v0.12.0
 
-!!! tip "应用"
+!!! warning ""
     * [coredns](https://github.com/coredns/coredns) v1.6.7
     * [helm](https://github.com/helm/helm) v3.2.4
     * [traefik](https://github.com/containous/traefik) v2.2.1
@@ -245,12 +245,12 @@
 
 ## 企业版试用
 
-!!! tip ""
+!!! warning ""
     - [申请企业版试用](https://jinshuju.net/f/qc6g44)
-    > 注: 企业版支持离线安装，申请通过后会提供高速下载链接
+    - 企业版支持离线安装，申请通过后会提供高速下载链接
 
 ## 更多阅读
 
-!!! tip ""
+!!! warning ""
     - [干货分享丨KubeOperator如何助力企业运营生产级别的Kubernetes集群？](https://blog.fit2cloud.com/?p=1255)
     - [PPT 介绍](https://kubeoperator.io/download/KubeOperator_Intro.pdf)

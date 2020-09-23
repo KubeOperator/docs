@@ -1,7 +1,7 @@
 
 ### 集群信息
 
-!!! tip ""
+!!! warning ""
     - 供应商: 支持裸金属（手动模式）和部署计划（自动模式）
     - 架构: 支持 AMD64 和 ARM64
 
@@ -9,7 +9,7 @@
 
 ### 高级选项
 
-!!! tip ""
+!!! warning ""
     - 容器运行时: 支持 Docker 和 Containerd（注意: ARM64 架构下，容器运行时不支持 Containerd）
     - Docker 数据路径: 默认 /var/lib/docker
     - 容器网络: 支持 flannel 和 calico
@@ -36,13 +36,13 @@
 
 ### 节点信息
 
-!!! tip ""
-    根据不同的节点角色选择目标主机（手动模式）
+!!! warning ""
+    * 根据不同的节点角色选择目标主机（手动模式）
 
 ![deploy-3](../img/user_manual/cluster/deploy-3.png)
 
-!!! tip ""
-    选择已授权部署计划，设置 Worker 节点数量（自动模式）
+!!! warning ""
+    * 选择已授权部署计划，设置 Worker 节点数量（自动模式）
 
 ![deploy-6](../img/user_manual/cluster/deploy-6.png)
 

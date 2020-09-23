@@ -1,6 +1,6 @@
 ## 技术咨询
 
-!!! tip ""
+!!! warning ""
     - [点击提交技术咨询][jinshuju]
     - [点击提交 Github Issue][issue]
 
@@ -14,7 +14,7 @@
 
 ## 联系方式
 
-!!! tip ""
+!!! warning ""
     - 官网: http://www.kubeoperator.io
     - 邮箱: support@fit2cloud.com
     - 电话: 400-052-0755

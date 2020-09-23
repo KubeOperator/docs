@@ -1,8 +1,9 @@
 
 ## 执行安装脚本
 
-!!! tip "以 root 用户 ssh 登录目标服务器, 执行如下命令"
+!!! warning ""
     ```sh
+    # 以 root 用户 ssh 登录目标服务器, 执行如下命令
     curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh -o quick_start.sh
     bash quick_start.sh
     ```
@@ -14,7 +15,6 @@
 
 
 !!! info ""
-    安装完成后，以下服务应都处于 healthy 状态。若有服务未正常启动，可以使用 koctl restart 命令进行重新启动
     ```
     [root@kubeoperator ~]# koctl status
 
@@ -33,9 +33,9 @@
 
 ## 登录
 
-!!! tip ""
-    安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator。如果网络环境中有防火墙或安全组请开启 TCP/80,8081-8083 端口。
+!!! warning ""
     ```
+    安装成功后，通过浏览器访问，输入以下信息登录 KubeOperator。如果网络环境中有防火墙或安全组请开启 TCP/80,8081-8083 端口。
     地址: http://目标服务器IP地址:80
     用户名: admin
     密码: kubeoperator@admin123
@@ -43,14 +43,14 @@
 
 ## 帮助
 
-!!! tip ""
-    ```
+!!! warning ""
+    ```sh
     koctl --help
     ```
 
 ## 升级
 
-!!! tip ""
+!!! warning ""
     ```sh
     # 升级到最新版本
     koctl upgrade

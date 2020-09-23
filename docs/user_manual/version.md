@@ -1,5 +1,5 @@
 
-!!! tip ""
+!!! warning ""
     用户可以在Web页面查看 Kubernetes 及各个组件的版本信息，方便管理员进行维护和升级
 
 ![region-1](../img/user_manual/version/version-1.png)

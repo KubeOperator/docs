@@ -1,7 +1,7 @@
 
 ### 基本信息
 
-!!! tip ""
+!!! warning ""
     输入要导入集群的名称、Api Server、Router、Token
 
 ![deploy-1](../img/user_manual/cluster/cluster-import.png)
@@ -32,7 +32,7 @@
 ### 使用工具
 
 !!! info "示例"
-    工具中所涉及到的镜像默认使用 KubeOperator 镜像仓库，在启用工具前，需要在 Kubernetes 节点配置私有仓库的可信任设置可以通过HTTP直接访问
+    * 工具中所涉及到的镜像默认使用 KubeOperator 镜像仓库，在启用工具前，需要在 Kubernetes 节点配置私有仓库的可信任设置可以通过HTTP直接访问
     ```
     vim /etc/docker/daemon.json
     {
@@ -45,4 +45,4 @@
     ```
 
 !!! warning ""
-    KubeOperator 不能针对导入的集群进行扩缩容、备份等集群运营操作
+    * KubeOperator 不能针对导入的集群进行扩缩容、备份等集群运营操作

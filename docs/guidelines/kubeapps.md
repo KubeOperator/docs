@@ -2,7 +2,7 @@
 
 ### 什么是 KubeApps ？
 
-!!! tip ""
+!!! warning ""
     Kubeapps 是一个应用商店，可以通过 Web UI 在 Kubernetes 集群中部署和管理应用程序
 
 !!! info "主要功能"
@@ -13,73 +13,73 @@
 
 ### 安装 KubeApps
 
-!!! tip ""
-    进入目标集群，在【工具】tab页面点击启用 KubeApps。根据需要自定义存储
+!!! warning ""
+    * 进入目标集群，在【工具】tab页面点击启用 KubeApps。根据需要自定义存储
 
 ![kubeapps-2](../img/guidelines/kubeapps/kubeapps-2.png)
 
 ### 使用 KubeApps
 
-!!! tip ""
-    KubeApps 安装完成后，单击 【转到】 按钮，可以安全地访问 KubeApps Dashboard
+!!! warning ""
+    * KubeApps 安装完成后，单击 【转到】 按钮，可以安全地访问 KubeApps Dashboard
 
 ![kubeapps-3](../img/guidelines/kubeapps/kubeapps-3.png)
 
 ### 部署应用
 
-!!! tip ""
-    在 Dashboard 中的【Catalog】页中可以看到系统默认自带的应用，可选择一个应用程序部署
+!!! warning ""
+    * 在 Dashboard 中的【Catalog】页中可以看到系统默认自带的应用，可选择一个应用程序部署
 
 ![kubeapps-4](../img/guidelines/kubeapps/kubeapps-4.png)
 
 
-!!! tip ""
-    首选根据用户需要选择一个 namespace，这里选择 kube-operator，然后单击部署应用，可以看到【应用商店】里面目前支持的应用列表。选择 GitLab 应用后，在应用页面右侧单击“Deploy”按钮
+!!! warning ""
+    * 首选根据用户需要选择一个 namespace，这里选择 kube-operator，然后单击部署应用，可以看到【应用商店】里面目前支持的应用列表。选择 GitLab 应用后，在应用页面右侧单击“Deploy”按钮
 
 ![gitlab-1](../img/guidelines/kubeapps/gitlab-1.png)
 
-!!! tip ""
-    系统将提示输入应用程序的名称，还可以看到目前版本，以及 GitLab 应用 YAML 配置文件，用户可根据自身需求修改该配置文件
+!!! warning ""
+    * 系统将提示输入应用程序的名称，还可以看到目前版本，以及 GitLab 应用 YAML 配置文件，用户可根据自身需求修改该配置文件
 
 ![gitlab-2](../img/guidelines/kubeapps/gitlab-2.png)
 
-!!! tip ""
-    根据实际情况，自定义存储（storageClass）、Ingress等变量
+!!! warning ""
+    * 根据实际情况，自定义存储（storageClass）、Ingress等变量
 
-!!! tip ""
-    在最下面点击 “Submit” 按钮，该应用程序将被部署，部署成功后，应用变为就绪状态
+!!! warning ""
+    * 在最下面点击 “Submit” 按钮，该应用程序将被部署，部署成功后，应用变为就绪状态
 
 ![gitlab-3](../img/guidelines/kubeapps/gitlab-3.png)
 
-!!! tip ""
-    要获取 GitLab 用户名和密码, 请参考部署页面的 “Notes” 部分。如果 Service 类型为 Ingress，要将该 URL 添加到本地 hosts 解析
+!!! warning ""
+    * 要获取 GitLab 用户名和密码, 请参考部署页面的 “Notes” 部分。如果 Service 类型为 Ingress，要将该 URL 添加到本地 hosts 解析
 
 ### 删除应用
 
-!!! tip ""
-    部署完成的应用如果要删除，可以在【Applications】进入 GitLab 应用后，单击右侧 “Delete” 按钮确定即可删除
+!!! warning ""
+    * 部署完成的应用如果要删除，可以在【Applications】进入 GitLab 应用后，单击右侧 “Delete” 按钮确定即可删除
 
 ![gitlab-4](../img/guidelines/kubeapps/gitlab-4.png)
 
 ### 添加存储库
 
-!!! tip ""
-    KubeApps 支持添加外部应用仓库，在【Configuration】下拉菜单“App Repositories“页面，单击“Add App Repository”
+!!! warning ""
+    * KubeApps 支持添加外部应用仓库，在【Configuration】下拉菜单“App Repositories“页面，单击“Add App Repository”
 
 ![kubeapps-5](../img/guidelines/kubeapps/kubeapps-5.png)
 
 ### 推送 chart 镜像（离线包安装集群可选）
 
-!!! tip ""
-    包括 Argo CD、Gitlab、Harbor、Jenkins、Weave Scope 和 Sonarqube 镜像，用户可以根据需要下载并安装
+!!! warning ""
+    * 包括 Argo CD、Gitlab、Harbor、Jenkins、Weave Scope 和 Sonarqube 镜像，用户可以根据需要下载并安装
 
-!!! tip ""
-    安装包下载链接: https://github.com/KubeOperator/charts/releases
+!!! warning ""
+    * 安装包下载链接: https://github.com/KubeOperator/charts/releases
 
 #### 安装步骤:
 
-!!! tip ""
-    ```bash
+!!! warning ""
+    ```sh
     # 首先登录 kubeoperator 部署机，进入 /tmp (或其他自定义)目录，将离线包拷贝到该目录中
     cd /tmp
 
