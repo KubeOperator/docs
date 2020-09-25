@@ -53,8 +53,8 @@
     支持的类型有nfs、external-ceph、rook-ceph、vsphere
 
 !!! info ""
-    * rook-ceph: 集群所有节点都必须包含指定的磁盘
-    * vsphere: 集群服务器必须在指定Folder中，并且服务器名称要和集群node节点名称保持一致
+    * rook-ceph: 集群所有节点都必须包含指定的磁盘，如sdb,sdc
+    * vsphere: 集群服务器必须在指定 Folder 中（自动模式创建集群默认 Folder 为 kubeoperator），并且服务器名称要和集群 node 节点名称保持一致
 
 #### 存储类
 
@@ -77,7 +77,7 @@
 #### 持久卷
 
 !!! warning ""
-    支持添加 hostpath 和 local volume 两种类型的持久卷
+    支持添加 hostpath 和 local volume 两种类型的持久卷，需要提前目标主机创建文件目录
 
 ### 事件
 
@@ -109,7 +109,7 @@
 
 !!! warning ""
     - 集群备份: 支持立即备份、定时备份
-    - 集群恢复: 支持本地备份文件恢复（上传 etcd 快照文件）
+    - 集群恢复: 支持备份列表文件恢复和本地备份文件恢复（上传 etcd 快照文件）
 
 ![cluster-backup-1](../img/user_manual/cluster/cluster-backup-1.png)
 
