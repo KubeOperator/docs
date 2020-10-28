@@ -19,6 +19,9 @@ theme:
     hljs_languages:
         - yaml
         - django
+    features:
+        - search.suggest
+        - search.highlight
 
 nav:
     - 总体介绍: index.md
@@ -29,7 +32,7 @@ nav:
           - 在线安装: installation/online_installation.md
           - 离线安装: installation/offline_installation.md
     - 快速入门:
-          - 快速入门: quick_start.md
+          - 系统设置: system_settings.md
           - 集群规划:
                 - 自动模式: tutorial/automatic.md
                 - 手动模式: tutorial/manual.md
@@ -83,9 +86,18 @@ markdown_extensions:
     - pymdownx.superfences
     - pymdownx.tasklist
     - pymdownx.tilde
+    - pymdownx.tabbed
     - pymdownx.betterem
     - pymdownx.superfences
     - pymdownx.progressbar
+    - pymdownx.tasklist:
+        custom_checkbox: true
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/KubeOperator
 
 extra_css:
     - css/extra.css
