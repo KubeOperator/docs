@@ -14,6 +14,9 @@ theme:
     favicon: 'img/KubeOperator-icon.png'
     language: 'zh'
     highlightjs: true
+    palette:
+        primary: 'deep orange'
+        accent: 'red'
     feature:
         tabs: true
     hljs_languages:
@@ -32,14 +35,14 @@ nav:
           - 在线安装: installation/online_installation.md
           - 离线安装: installation/offline_installation.md
     - 快速入门:
-          - 系统设置: system_settings.md
+          - 系统设置: quick_start/system_settings.md
           - 集群规划:
-                - 自动模式: tutorial/automatic.md
-                - 手动模式: tutorial/manual.md
-                - 公有云平台: tutorial/public_cloud.md
-          - 集群部署: user_manual/cluster_deployment.md
-          - 集群导入: user_manual/cluster_import.md
-          - 集群运营: user_manual/cluster_operation.md
+                - 自动模式: quick_start/cluster_planning/automatic.md
+                - 手动模式: quick_start/cluster_planning/manual.md
+                - 公有云平台: quick_start/cluster_planning/public_cloud.md
+          - 集群部署: quick_start/cluster_deployment.md
+          - 集群导入: quick_start/cluster_import.md
+          - 集群运营: quick_start/cluster_operation.md
     - 使用指南:
           - 系统设置: user_manual/system_management.md
           - 版本管理: user_manual/version.md
