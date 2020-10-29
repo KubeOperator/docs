@@ -47,4 +47,4 @@
 !!! warning ""
     * 主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
 
-![host-1](../img/user_manual/hosts/hosts-1.png)
+![host-1](../../../img/user_manual/hosts/hosts-1.png)
