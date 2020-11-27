@@ -38,11 +38,7 @@
     </tr>
 </table>
 
-### 准备主机
-
-!!! warning ""
-    * 我们将准备添加两台主机，分别作为 master 节点和worker 节点。
-    * 设置系统IP 和 主机IP 建议填写内网IP
+!!! warning "系统IP 和 主机IP 填写内网IP"
 
 ### 添加主机
 
@@ -50,3 +46,10 @@
     * 主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
 
 ![host-1](../../../img/user_manual/hosts/hosts-1.png)
+
+### 授权
+
+!!! warning ""
+    * 主机需要系统管理员或项目管理员授权给集群所在项目后才可以使用。
+
+![project-4](../../img/user_manual/project/project-4.png)
