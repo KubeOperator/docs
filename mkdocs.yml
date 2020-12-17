@@ -44,12 +44,12 @@ nav:
           - 集群导入: quick_start/cluster_import.md
           - 集群运营: quick_start/cluster_operation.md
     - 使用指南:
-          - 系统设置: user_manual/system_management.md
+          - 项目管理: user_manual/project.md
+          - 主机管理: user_manual/hosts.md
+          - 部署计划: user_manual/plan.md
           - 版本管理: user_manual/version.md
           - 用户管理: user_manual/user_management.md
-          - 部署计划: user_manual/plan.md
-          - 主机管理: user_manual/hosts.md
-          - 项目管理: user_manual/project.md
+          - 系统设置: user_manual/system_management.md
     - 开发文档: dev/rest_api.md
     - 常见问题: faq.md
     - 教程:

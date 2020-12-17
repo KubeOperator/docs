@@ -43,7 +43,7 @@
 
 ![host-1](../../img/user_manual/hosts/hosts-1.png)
 
-### 授权
+## 授权
 
 !!! warning ""
     * 主机需要系统管理员或项目管理员授权给集群所在项目后才可以使用。

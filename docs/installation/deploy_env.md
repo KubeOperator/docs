@@ -23,15 +23,15 @@
         </tr>
         <tr>
             <td>Master</td>
-            <td>2</td>
-            <td>4G</td>
+            <td>4</td>
+            <td>8G</td>
             <td>100G</td>
             <td>1</td>
         </tr>
         <tr>
             <td>Worker</td>
-            <td>2</td>
-            <td>4G</td>
+            <td>4</td>
+            <td>8G</td>
             <td>100G</td>
             <td>3</td>
         </tr>
@@ -53,22 +53,22 @@
     <tbody>
         <tr>
             <td>部署机</td>
-            <td>4</td>
-            <td>8G</td>
+            <td>8</td>
+            <td>16G</td>
             <td>100G SSD</td>
             <td>1</td>
         </tr>
         <tr>
             <td>Master</td>
-            <td>4</td>
-            <td>8G</td>
+            <td>8</td>
+            <td>16G</td>
             <td>100G SSD</td>
             <td>3</td>
         </tr>
         <tr>
             <td>Worker</td>
-            <td>4</td>
-            <td>8G</td>
+            <td>8</td>
+            <td>16G</td>
             <td>系统盘: 100G<br>
                 数据盘: 300G（/var/lib/docker）</td>
             <td>>3</td>
@@ -140,7 +140,7 @@
     <tbody>
         <tr>
             <td>操作系统</td>
-            <td><b>CentOS/RHEL 7.4 - 7.7 Minimal<br>
+            <td><b>CentOS/RHEL 7.4 - 7.9 Minimal<br>
                 EulerOS 2.5（x86_64）<br>
                 EulerOS 2.8（arm64）</b></td>
             <td>cat /etc/redhat-release</td>
