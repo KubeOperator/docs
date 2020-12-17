@@ -41,11 +41,11 @@
 !!! warning ""
     * 主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
 
-![host-1](../../img/user_manual/hosts/hosts-1.png)
+![host-add](../../img/user_manual/hosts/host-add.png)
 
 ## 授权
 
-!!! warning ""
-    * 主机需要系统管理员或项目管理员授权给集群所在项目后才可以使用。
+![host-authorization](../../img/user_manual/hosts/host-authorization.png)
 
-![project-4](../../img/user_manual/project/project-4.png)
+!!! warning ""
+    * 系统管理员或项目管理员可将主机授权给目标集群所在项目
