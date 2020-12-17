@@ -45,7 +45,7 @@
 
 ## 授权
 
-![host-authorization](../../img/user_manual/hosts/host-authorization.png)
-
 !!! warning ""
     * 系统管理员或项目管理员可将主机授权给目标集群所在项目
+
+![host-authorization](../../img/user_manual/hosts/host-authorization.png)
