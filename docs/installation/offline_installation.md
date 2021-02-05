@@ -67,7 +67,7 @@
     # 进入项目目录
     cd KubeOperator-release-v3.x.y
     # 运行安装脚本
-    koctl upgrade
+    ./koctl upgrade
     # 查看 KubeOperator 状态
     koctl status
     ```
