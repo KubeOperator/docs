@@ -29,11 +29,7 @@ theme:
 nav:
     - 总体介绍: index.md
     - 主要概念: concept.md
-    - 安装部署:
-          - 产品部署架构: installation/deploy_architecture.md
-          - 部署环境要求: installation/deploy_env.md
-          - 在线安装: installation/online_installation.md
-          - 离线安装: installation/offline_installation.md
+    - 安装部署: installation/install.md
     - 快速入门:
           - 系统设置: quick_start/system_settings.md
           - 集群规划:
