@@ -21,11 +21,9 @@
 ### 资源授权
 
 !!! warning ""
-    * 在 KubeOperator 环境中的资源需要系统管理员或项目管理员授权给项目后才可以使用，包括主机、备份账号等
+    * 在 KubeOperator 环境中的资源需要系统管理员或项目管理员授权给项目后才可以使用，包括主机、部署计划和备份账号
+    * 创建手动模式集群，必须要先将 Kubernetes 节点主机授权到目标项目
 
 ![project-4](../img/user_manual/project/project-4.png)
 
 ![project-5](../img/user_manual/project/project-5.png)
-
-!!! warning ""
-    * 创建手动模式集群，必须要先将 Kubernetes 节点主机授权到目标项目
