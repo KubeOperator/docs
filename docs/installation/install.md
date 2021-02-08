@@ -235,10 +235,26 @@
     koctl --help
     ```
 
-!!! info "升级"
-    ```sh
-    # 升级到最新版本
-    koctl upgrade
-    # 升级到指定版本
-    koctl upgrade v3.x.y
-    ```
+=== "离线升级"
+
+    !!! info ""
+        ```sh
+        # 进入升级包目录
+        cd KubeOperator-release-v3.x.y
+        # 运行安装脚本
+        ./koctl upgrade
+        # 查看 KubeOperator 状态
+        koctl status
+        ```
+
+=== "在线升级"
+
+    !!! info ""
+        ```sh
+        # 升级到最新版本
+        koctl upgrade
+        # 升级到指定版本
+        koctl upgrade v3.x.y
+        # 查看 KubeOperator 状态
+        koctl status
+        ```
