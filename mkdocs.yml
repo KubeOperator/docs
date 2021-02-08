@@ -46,7 +46,7 @@ nav:
           - 版本管理: user_manual/version.md
           - 用户管理: user_manual/user_management.md
           - 系统设置: user_manual/system_management.md
-          - 日志: user_manual/system_log.md
+          - 系统日志: user_manual/system_log.md
     - 开发文档: dev/rest_api.md
     - 常见问题: faq.md
     - 教程:
