@@ -1,8 +1,39 @@
 
-### 创建区域(Region)
+### 虚拟机配置
 
 !!! warning ""
-    与 公有云中的 Region 概念相似，可以简单理解为地理上的区域。在 vSphere 体系中我们使用 DataCenter 实现 Region 的划分。创建区域时，首先选择提供商，目前仅支持 VMware vSphere 和 Openstack
+    * 支持添加和修改虚拟机配置（CPU、内存）
+    * 默认有 small、medium、large、xlarge、2xlarge 和 4xlarge 六种配置
+
+![virtual-config-list](../img/user_manual/plan/virtual-config-list.png)
+
+### IP 池
+
+!!! warning ""
+    * IP 池在创建可用区使用，池中的 IP 地址将分配给虚拟机
+
+![ip-pool-list](../img/user_manual/plan/ip-pool-list.png)
+
+#### 添加 IP 池
+
+!!! warning ""
+    * 创建 IP 池要配置好子网掩码、起止 IP、网关和 DNS 等
+
+![ip-pool-add](../img/user_manual/plan/ip-pool-add.png)
+
+#### IP 使用情况
+
+!!! warning ""
+    * 列表页点击IP 使用情况可查看IP 池中所有 IP 的状态（可达、可用和占用）
+    * 在 IP 池页面，可手动添加 IP 段、同步 IP 状态
+
+![ip-pool-use](../img/user_manual/plan/ip-pool-use.png)
+
+### 区域（Region）
+
+!!! warning ""
+    * 与公有云中的 Region 概念相似，可以简单理解为地理上的区域
+    * 创建区域时，首先选择提供商，目前支持 VMware vSphere、OpenStack 和 FusionCompute
 
 ![region-1](../img/user_manual/plan/region-1.png)
 
@@ -19,24 +50,26 @@
 !!! warning ""
     * 选择 vCenter 的目标数据中心
 
-### 创建可用区(Zone)
+### 可用区（Zone）
 
 !!! warning ""
-    * 与 公有云中的 AZ 概念相似，可以简单理解为 Region 中具体的机房。在 vSphere 体系中我们使用不同的 Cluster 或者同个 Cluster 下的不同 Resource Pool 来实现 Zone 的划分
+    * 与公有云中的 AZ 概念相似，可以简单理解为 Region 中具体的机房
+    * 在 vSphere 体系中我们使用不同的 Cluster 或者同个 Cluster 下的不同 Resource Pool 来实现 Zone 的划分
 
 ![zone-1](../img/user_manual/plan/zone-1.png)
 
 !!! warning ""
-    * 选择可用区配置参数时，需要选择计算集群，资源池，存储类型以及网络适配器等信息，这些信息依赖于 vCenter 环境配置。支持用户自定义模版"
+    * 选择可用区配置参数时，需要选择计算集群，资源池，存储类型以及网络适配器等信息，这些信息依赖于 vCenter 环境配置
+    * 支持默认模版和自定义模版（默认模版为CentOS 7.6）
 
-![zone-3](../img/user_manual/plan/zone-2.png)
+![zone-2](../img/user_manual/plan/zone-2.png)
 
-![zone-4](../img/user_manual/plan/zone-3.png)
+![zone-3](../img/user_manual/plan/zone-3.png)
 
 !!! warning ""
-    * 添加成功后会有一个初始化的过程，状态变为就绪后可以选择该可用区创建部署计划
+    * 添加成功后会有一个初始化的过程（选择默认模版时，需要上传 nexus 仓库中模版文件），同步成功之后状态变为就绪
 
-### 创建部署计划(Plan)
+### 部署计划（Plan）
 
 !!! warning ""
     * 用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念
