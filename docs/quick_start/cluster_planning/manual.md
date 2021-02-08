@@ -1,4 +1,3 @@
-## 在自行准备的主机上规划、部署及运营 Kubernetes 集群
 
 !!! warning ""
     KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式，另外一种是自动模式。手动模式下，用户需要自行准备主机。
@@ -36,14 +35,14 @@
     </tr>
 </table>
 
-## 添加主机
+### 添加主机
 
 !!! warning ""
     * 主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等。
 
 ![host-add](../../img/user_manual/hosts/host-add.png)
 
-## 授权
+### 授权
 
 !!! warning ""
     * 系统管理员或项目管理员可将主机授权给目标集群所在项目

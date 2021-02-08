@@ -3,14 +3,14 @@
 
 !!! warning ""
     * 支持添加和修改虚拟机配置（CPU、内存）
-    * 默认有 small、medium、large、xlarge、2xlarge 和 4xlarge 六种配置
+    * 默认 small、medium、large、xlarge、2xlarge 和 4xlarge 六种配置
 
 ![virtual-config-list](../img/user_manual/plan/virtual-config-list.png)
 
 ### IP 池
 
 !!! warning ""
-    * IP 池在创建可用区使用，池中的 IP 地址将分配给虚拟机
+    * IP 池在创建可用区时使用，池中的 IP 地址将分配给虚拟机
 
 ![ip-pool-list](../img/user_manual/plan/ip-pool-list.png)
 

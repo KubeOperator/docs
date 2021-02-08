@@ -1,4 +1,3 @@
-## 在 vSphere 平台上规划、部署及运营 K8s 集群
 
 !!! warning ""
     KubeOperator 支持两种 Kubernetes 集群部署方式，一种是自动模式，另外一种是手动模式，我们推荐使用自动模式。在自动模式下，用户需要准备软件定义的 IaaS 云平台，比如 VMware vSphere 和 Openstack 等  
@@ -11,14 +10,14 @@
 
 !!! warning ""
     * 支持添加和修改虚拟机配置（CPU、内存）
-    * 默认有 small、medium、large、xlarge、2xlarge 和 4xlarge 六种配置
+    * 默认 small、medium、large、xlarge、2xlarge 和 4xlarge 六种配置
 
 ![virtual-config-list](../../img/user_manual/plan/virtual-config-list.png)
 
 ### IP 池
 
 !!! warning ""
-    * IP 池在创建可用区使用，池中的 IP 地址将分配给虚拟机
+    * IP 池在创建可用区时使用，池中的 IP 地址将分配给虚拟机
 
 ![ip-pool-list](../../img/user_manual/plan/ip-pool-list.png)
 
