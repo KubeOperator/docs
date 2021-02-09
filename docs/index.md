@@ -165,7 +165,7 @@
     <tr>
         <td rowspan="4">可观察性
         </td>
-         <td>内置 Promethus，支持对集群、节点、Pod、Container的全方位监控和告警
+         <td>内置 Prometheus，支持对集群、节点、Pod、Container的全方位监控和告警
         </td>
     </tr>
      <tr>
@@ -205,7 +205,7 @@
         </td>
     </tr>   
     <tr>
-        <td>支持 CSI 安全扫描
+        <td>支持 CIS 安全扫描
         </td>
     </tr>    
     <tr>

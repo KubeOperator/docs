@@ -4,7 +4,7 @@
 !!! warning ""
     输入要导入集群的名称、Api Server、Router、Token
 
-![deploy-1](../img/user_manual/cluster/cluster-import.png)
+![cluster-import](../img/user_manual/cluster/cluster-import.png)
 
 !!! info "示例"
     * Api Server: https://172.16.10.100:8443
