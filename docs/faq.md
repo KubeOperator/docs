@@ -2,22 +2,23 @@
 ### KubeOperator 的定位是什么？
 
 !!! question ""
-    KubeOperator 是一个开源的轻量级 Kubernetes 发行版。与 OpenShift 等重量级 PaaS 平台相比，KubeOperator 只专注于解决一个问题，就是帮助企业规划（Day 0）、部署（Day 1）、运营（Day 2）生产级别的 Kubernetes 集群，并且做到极致。
+    KubeOperator 是一个开源的轻量级 Kubernetes 发行版。与 OpenShift 等重量级 PaaS 平台相比，KubeOperator 只专注于解决一个问题，就是帮助企业规划（Day 0）、部署（Day 1）、运营（Day 2）生产级别的 Kubernetes 集群，并且做到极致
 
 ![what-is-ko](img/faq/what-is-ko.png)
 
 !!! question ""
     云原生正在快速兴起，三个互相关联的领域在同步进化:
 
-    -  基础设施方面: 从 物理资源 到 虚拟化资源 到 容器化（ Kubernetes ）资源 的演进；
-    -  开发模式方面: 从 瀑布模型 到 敏捷开发 到 DevOps 的演进；
-    -  应用架构方面: 从 单体架构 到 多层次架构 到 微服务 的演进。
+    -  基础设施方面: 从 物理资源 到 虚拟化资源 到 容器化（ Kubernetes ）资源 的演进
+    -  开发模式方面: 从 瀑布模型 到 敏捷开发 到 DevOps 的演进
+    -  应用架构方面: 从 单体架构 到 多层次架构 到 微服务 的演进
 
 ### 开源版和企业版的区别？
 
 !!! question ""
-    * 和同属飞致云旗下的 JumpServer 开源堡垒机一样，KubeOperator 的核心功能全部开源，坚持按月发布新版本，永久免费使用。
-    * 相比 KubeOperator 开源版，KubeOperator 企业版提供面向企业级应用场景的 X-Pack 增强包，以及高等级的原厂企业级支持服务，有效助力企业构建并运营生产级别的 K8s 集群。
+    * 和同属飞致云旗下的 JumpServer 开源堡垒机一样，KubeOperator 的核心功能全部开源，坚持按月发布新版本，永久免费使用
+    * 相比 KubeOperator 开源版，KubeOperator 企业版提供面向企业级应用场景的 X-Pack 增强包，以及高等级的原厂企业级支持服务，有效助力企业构建并运营生产级别的 K8s 集群
+    
     !!! info "X-Pack"
         * 自定义 Logo 和 配色
         * 对接 LDAP
@@ -30,7 +31,7 @@
 ### KubeOperator 与 Kubespray 等部署工具的区别是什么？
 
 !!! question ""
-    KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 Kubernetes 集群升级、扩容、监控检查、备份恢复等功能，如下图所示。
+    KubeOperator 不仅提供 Day 1 部署功能，还提供 Day 2 的 K8s 集群升级、扩容、监控、检查、备份恢复等功能
 
 ![overview](img/faq/overview.png)
 
@@ -39,7 +40,7 @@
 
     -  提供可视化的 Web UI，大大降低部署和管理 Kubernetes 的门槛；
     -  提供离线的、经过全面验证和测试的安装包；
-    -  与 VMware 和 Openstack 等云平台紧密对接，能够实现一键虚机自动创建和部署（基于 Terraform 和 Ansible）；
+    -  与 VMware、Openstack 和 FusionCompute 等云平台紧密对接，能够实现一键虚机自动创建和部署（基于 Terraform 和 Ansible）；
     -  KubeOperator 会提供经过充分验证的成熟企业级存储和网络方案。
 
 ### Kubernetes 集群应该部署在物理机上面，还是 IaaS 平台上面？
@@ -55,7 +56,7 @@
 
     - 如果是单一大集群，升级会影响所有租户，风险比较大；
     - IaaS 平台上有成熟的、基于软件定义的存储和网络方案，落地更容易和灵活；
-    - KubeOperator 与 VMware、Openstack 等 IaaS 方案紧密集成，可以实现全栈的自动化，集群交付快，伸缩快。
+    - KubeOperator 与 VMware、Openstack和 FusionCompute 等 IaaS 方案紧密集成，可以实现全栈的自动化，集群交付快，伸缩快。
 
 ### KubeOperator 是否使用二进制方式部署 Kubernetes？
 
@@ -73,15 +74,15 @@
 ### KubeOperator 支持哪些持久化存储？
 
 !!! question "KubeOperator 支持三类存储"
-    - NFS 存储: 手动模式和自动模式下的集群都支持 NFS 作为持久化存储。
-    - 自动模式下，KubeOperator 通过 VMware 提供的 vSphere Cloud Provider 支持企业级存储，包括 [具体请参考此处文档](https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/overview.html#vsphere-storage-concepts)
-    - 自动模式下，KubeOperator 通过 Openstack 提供的 Openstack Cloud Provider 对接 Cinder。Cinder 支持的存储种类包括 [具体请参考此处文档](https://wiki.openstack.org/wiki/CinderSupportMatrix)  
+    - nfs: 手动模式和自动模式下的集群都支持 NFS 作为持久化存储
+    - local storage: 本地持久化存储
+    - external-ceph: 创建成功之后，会在集群中初始化 ceph provisioner 相关 pod
+    - rook-ceph: 需要指定 ceph 集群所需磁盘（集群所有节点都必须包含指定的磁盘，如sdb,sdc...）
+    - vsphere: 集群服务器必须在指定 Folder 中（自动模式创建集群默认 Folder 为 kubeoperator），并且服务器名称要和集群 node 节点名称保持一致
+    - oceanstor: 参考文档: https://github.com/Huawei/eSDK_K8S_Plugin/tree/master/docs/zh
 
     !!! warning ""
         Static and Dynamic PVs 的支持情况取决于所选择的存储。以 vSphere 平台为例，[各种存储选项可以参考此文章](https://docs.vmware.com/en/VMware-Enterprise-PKS/1.5/vmware-enterprise-pks-15/GUID-vsphere-persistent-storage.html)"
-
-
-
 
 ### KubeOperator 自身重启、升级或者挂掉会影响其创建和管理的 Kubernetes 集群吗？
 

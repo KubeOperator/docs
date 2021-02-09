@@ -22,7 +22,7 @@
     对于公有云厂商提供的托管 Kubernetes 服务，master 节点由公有云厂商托管并维护，其 3 个master 节点会分布在同个区域下面的 3 个不同可用区上面，实现真正的高可用
 
 !!! warning ""
-    KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware 和 Openstack 等私有云平台上面。例如，在 VMware 云平台下，区域对应为 Datacenter，可用区对应于 cluster，或者 cluster 下面的 resource pool
+    KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware、Openstack 和 FusionCompute 等私有云平台上面。例如，在 VMware 云平台下，区域对应为 Datacenter，可用区对应于 cluster，或者 cluster 下面的 resource pool
 
 !!! warning "注意事项"
     * 如果用户只有一个 vSphere 集群，那么可以在集群下面建立三个 resource pool，每个resource pool 对应于一个可用区
