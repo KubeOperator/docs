@@ -16,9 +16,16 @@
 ### 开源版和企业版的区别？
 
 !!! question ""
-    和同属飞致云旗下的 JumpServer 开源堡垒机一样，KubeOperator 的核心功能全部开源，坚持按月发布新版本，永久免费使用。
-
-    相比 KubeOperator 开源版，KubeOperator 企业版提供面向企业级应用场景的 X-Pack 增强包，以及高等级的原厂企业级支持服务，有效助力企业构建并运营生产级别的 K8s 集群。其中，X-Pack 增强包括一些企业级客户所需的附加功能，比如自定义 Logo 和主题、LDAP 对接等，X-Pack 增强包的具体功能会随新版发布持续增加。
+    * 和同属飞致云旗下的 JumpServer 开源堡垒机一样，KubeOperator 的核心功能全部开源，坚持按月发布新版本，永久免费使用。
+    * 相比 KubeOperator 开源版，KubeOperator 企业版提供面向企业级应用场景的 X-Pack 增强包，以及高等级的原厂企业级支持服务，有效助力企业构建并运营生产级别的 K8s 集群。
+    !!! info "X-Pack"
+        * 自定义 Logo 和 配色
+        * 对接 LDAP
+        * 增加消息中心
+        * 支持邮箱、钉钉、企业微信告警
+        * 集群健康评估
+        * 对接 F5
+        * 多集群配置管理
 
 ### KubeOperator 与 Kubespray 等部署工具的区别是什么？
 
