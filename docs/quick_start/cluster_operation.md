@@ -11,13 +11,10 @@
 
 ![overview-2](../img/user_manual/cluster/overview-2.png)
 
-!!! warning ""
-    在升级之前，会先检测当前 kubernetes 集群中 etcd、docker/containerd 和 kubernetes 版本。若检测结果为可升级，将会对 etcd、docker/containerd、kubernetes 进行统一升级，从而保证集群各组件之间的兼容性。
-
-### 集群伸缩
+### 集群扩容、缩容
 
 !!! warning ""
-    显示集群节点相关信息。支持针对集群 worker 节点的扩缩容
+    显示集群节点相关信息。支持针对 Kubernetes 集群 worker 节点的扩缩容
 
 ![node-1](../img/user_manual/cluster/node-1.png)
 
@@ -26,17 +23,19 @@
 
 ![node-2](../img/user_manual/cluster/node-2.png)
 
-![node-5](../img/user_manual/cluster/node-5.png)
+![node-5](../img/user_manual/cluster/node-3.png)
 
 !!! warning ""
-    worker 节点缩容
+    * 自动模式: 删除所选节点虚拟机
+    * 手动模式: 在所选节点执行卸载任务，删除该节点上安装 k8s 集群所依赖的服务（节点删除成功后，要手动重启该节点来删除虚拟网卡等信息）
 
-![node-3](../img/user_manual/cluster/node-3.png)
+![node-3](../img/user_manual/cluster/node-4.png)
 
 ### 命名空间
 
 !!! warning ""
-    集群中现有的 namespace
+    * 列表显示为集群中现有的 namespace，支持创建和删除操作
+    * 系统默认和 kube-operator namespace 不支持删除
 
 ![namespace-1](../img/user_manual/cluster/namespace-1.png)
 
@@ -50,11 +49,14 @@
 #### 存储提供商
 
 !!! warning ""
-    支持的类型有nfs、external-ceph、rook-ceph、vsphere
+    支持的类型有 nfs、external-ceph、rook-ceph、vsphere 和 oceanstor（华为 csi）
 
 !!! info ""
-    * rook-ceph: 集群所有节点都必须包含指定的磁盘，如sdb,sdc
+    * nfs: 需要指定 nfs 服务端版本、IP 和共享目录
+    * external-ceph: 创建成功之后，会在集群中初始化 ceph provisioner 相关 pod
+    * rook-ceph: 需要指定 ceph 集群所需磁盘（集群所有节点都必须包含指定的磁盘，如sdb,sdc...）
     * vsphere: 集群服务器必须在指定 Folder 中（自动模式创建集群默认 Folder 为 kubeoperator），并且服务器名称要和集群 node 节点名称保持一致
+    * oceanstor: 参考文档: https://github.com/Huawei/eSDK_K8S_Plugin/tree/master/docs/zh
 
 #### 存储类
 
@@ -86,32 +88,50 @@
 
 ![cluster-events](../img/user_manual/cluster/cluster-events.png)
 
+### 日志
+
+!!! warning ""
+    需要在【工具】页面开启 ElasticSearch 或 Loki 日志组件（不支持同时开启）
+
+![logging-1](../img/user_manual/cluster/logging-1.png)
+
 ### 监控
 
 !!! warning ""
-    需要在【工具】页面安装 Prometheus 作为 Grafana 默认数据源
+    需要在【工具】页面开启 Prometheus 作为 Grafana 默认数据源
 
 ![monitor-1](../img/user_manual/cluster/monitor-1.png)
 
 ### 工具
 
 !!! warning ""
-    提供 prometheus、chartmuseum、registry、dashboard和kubeapps 五种管理工具，可根据需要自定义安装
+    提供 prometheus、kubeapps、grafana、elasticsearch、loki、dashboard、registry和chartmuseum 八种管理工具，可根据需要自定义安装
+
+    !!! warning ""
+        * 点击启用按钮，可以设置 namespace 和是否启用存储等参数
+        * 失败状态下，可点击启用按钮重新设置参数提交（会触发更新操作）
 
 ![tools-1](../img/user_manual/cluster/tools-1.png)
 
-!!! warning ""
-    点击启用按钮，可以设置是否启用存储、设置存储值、选择存储类等参数
+### istio
 
-![tools-2](../img/user_manual/cluster/tools-2.png)
+!!! warning ""
+    默认安装版本为 1.8.0，ingress 和 egress 可根据需要手动开启
+
+![istio-1](../img/user_manual/cluster/istio-1.png)
 
 ### 备份恢复
 
 !!! warning ""
-    - 集群备份: 支持立即备份、定时备份
+    - 集群备份: 支持立即备份、定时备份（需要在系统设置中设置备份账号，并授权到目标项目）
     - 集群恢复: 支持备份列表文件恢复和本地备份文件恢复（上传 etcd 快照文件）
 
 ![cluster-backup-1](../img/user_manual/cluster/cluster-backup-1.png)
+
+!!! warning "日志"
+    可以查看针对集群的备份、恢复记录以及任务执行异常时的错误日志
+
+![cluster-backup-2](../img/user_manual/cluster/cluster-backup-2.png)
 
 ### CIS 扫描
 
@@ -120,23 +140,29 @@
 
 ![cis-scan](../img/user_manual/cluster/cis-scan.png)
 
-### 历史
-
-!!! warning ""
-    可以查看针对集群的操作记录以及异常时的错误日志
-
-![cluster-history](../img/user_manual/cluster/cluster-history.png)
-
 ### 集群升级
 
 !!! warning ""
-    进入【项目】菜单，选中目标集群，点击【升级】按钮，选择要升级到的目标版本
+    * 进入【项目】菜单，选中目标集群，点击【升级】按钮，选择要升级到的目标版本
+    * 升级之前，会先检测当前 kubernetes 集群中 etcd、docker/containerd 和 kubernetes 版本，若检测结果为可升级，将会对 etcd、docker/containerd、kubernetes 进行统一升级，从而保证集群各组件之间的兼容性
+    * 升级过程中，支持查看任务实时的日志输出
 
 ![cluster-upgrade](../img/user_manual/cluster/cluster-upgrade.png)
+
+### 集群诊断
+
+!!! warning ""
+    * 检查集群节点网络是否可用
+    * 检查 kubeoperator_server 容器内是否可以 ssh 连接到 kubernetes 集群节点
+    * 检查 kubeoperator_server 容器内是否可以正常调用 kubernetes api
+
+![cluster-diagnosis](../img/user_manual/cluster/cluster-diagnosis.png)
 
 ### 集群卸载
 
 !!! warning ""
-    进入【项目】菜单，选中目标集群，点击【删除】按钮
+    * 自动模式: 删除 KubeOperator 创建的虚拟机
+    * 手动模式: 在集群所有节点执行卸载任务，删除安装 k8s 集群所依赖的服务（集群卸载完成后，要手动重启节点来删除虚拟网卡等信息）
+    * 强制删除: 如果 k8s 集群存在失联状态的节点，可勾选强制删除来删除集群
 
-![deploy-5](../img/user_manual/cluster/deploy-5.png)
+![cluster-remove](../img/user_manual/cluster/cluster-remove.png)

@@ -8,9 +8,9 @@
     - Yum 仓库: 支持替换、共存和不操作三种类型
 
     !!! info "Yum 仓库"
-        * 替换: 此操作将会对 K8S 节点服务器原始 yum repo 文件进行备份，之后生成并仅使用 KubeOperator 的 yum repo
-        * 共存: 此操作将保持K8S节点服务器原始 yum repo 文件不变，同时生成并使用 kubeoperator 的 yum repo
-        * 不操作: 此操作将保持使用 K8S 节点服务器原始 yum repo 文件，不对K8S节点服务器的 yum repo 做任何操作
+        * 替换: 会对 K8S 节点服务器原始 yum repo 文件进行备份，之后生成并仅使用 KubeOperator 的 yum repo
+        * 共存: 将保持 K8S 节点服务器原始 yum repo 文件不变，同时生成并使用 kubeoperator 的 yum repo
+        * 不操作: 将保持使用 K8S 节点服务器原始 yum repo 文件，不对 K8S 节点服务器的 yum repo 做任何操作
 
 ![deploy-1](../img/user_manual/cluster/deploy-1.png)
 
@@ -77,3 +77,10 @@
 ### 确认信息
 
 ![deploy-review](../img/user_manual/cluster/deploy-review.png)
+
+### 日志
+
+!!! warning ""
+    集群创建过程中为 Initializing 状态，点击可查看集群安装进度并支持查看当前任务的实时日志（支持手动暂停任务日志输出）
+
+![deploy-log](../img/user_manual/cluster/deploy-log.png)
