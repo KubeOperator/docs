@@ -2,12 +2,13 @@
 ### 概览
 
 !!! warning ""
-    集中显示了集群基本信息、容量信息和统计信息
+    * 集中显示了集群基本信息、容量信息和统计信息
+    * 可下载 kubeconfig 文件（将 kubeconfig 文件中 cluster.server 地址修改为 master 节点 IP）
 
 ![overview-1](../img/user_manual/cluster/overview-1.png)
 
 !!! warning ""
-    支持 Webkubectl。在集群【概览】页点击 【连接】 按钮，在输入框中就可以执行命令查询集群信息等操作
+    支持在 web 页面执行 kubectl 命令查询集群信息等操作
 
 ![overview-2](../img/user_manual/cluster/overview-2.png)
 
@@ -84,7 +85,8 @@
 ### 事件
 
 !!! warning ""
-    支持查看目标 namespace 下的系统事件
+    * 支持查看目标 namespace 下的系统事件
+    * 支持启用 node-problem-detector
 
 ![cluster-events](../img/user_manual/cluster/cluster-events.png)
 
@@ -149,14 +151,21 @@
 
 ![cluster-upgrade](../img/user_manual/cluster/cluster-upgrade.png)
 
-### 集群诊断
+### 集群诊断、修复
 
-!!! warning ""
+!!! warning "诊断"
     * 检查集群节点网络是否可用
     * 检查 kubeoperator_server 容器内是否可以 ssh 连接到 kubernetes 集群节点
     * 检查 kubeoperator_server 容器内是否可以正常调用 kubernetes api
 
 ![cluster-diagnosis](../img/user_manual/cluster/cluster-diagnosis.png)
+
+!!! warning "修复"
+    存在异常状态的情况下，可点击修复按钮来修复相关问题
+
+![cluster-repair-1](../img/user_manual/cluster/cluster-repair-1.png)
+
+![cluster-repair-2](../img/user_manual/cluster/cluster-repair-2.png)
 
 ### 集群卸载
 
