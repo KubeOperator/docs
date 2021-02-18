@@ -12,7 +12,7 @@
 
 ## 区域和可用区
 
-![region-zone](./img/region.png)
+![region-zone](img/ko-region.png)
 
 !!! warning ""
 
