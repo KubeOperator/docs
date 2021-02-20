@@ -11,6 +11,10 @@
   padding-top: .8rem;
 }
 
+.md-main__inner {
+  margin-top: 3rem;
+}
+
 .progress-label {
   position: absolute;
   text-align: center;
