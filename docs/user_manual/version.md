@@ -13,7 +13,7 @@
 
 ![version-1](../img/user_manual/version/version-1.png)
 
-### 版本离线包
+### 离线包
 
 !!! warning ""
     离线包中 Kubernetes 默认只携带最新的两个版本。如果当前是离线环境，需要执行脚本生成旧版本 k8s 离线包，并推送至 nexus 仓库
