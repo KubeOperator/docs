@@ -95,7 +95,12 @@
                 <td>cat /etc/redhat-release</td>
             </tr>
             <tr>
-                <td>kernel版本</td>
+                <td>CPU 架构</td>
+                <td>支持 x86_64 和 aarch64 </td>
+            <td>uname -m</td>
+            </tr>
+            <tr>
+                <td>kernel 版本</td>
                 <td>>=Linux 3.10.0-957.el7.x86_64</td>
                 <td>uname -sr</td>
             </tr>
@@ -143,7 +148,12 @@
                 <td>cat /etc/redhat-release</td>
             </tr>
             <tr>
-                <td>kernel版本</td>
+                <td>CPU 架构</td>
+                <td>支持 x86_64 和 aarch64 </td>
+            <td>uname -m</td>
+            </tr>
+            <tr>
+                <td>kernel 版本</td>
                 <td>>=Linux 3.10.0-957.el7.x86_64</td>
                 <td>uname -sr</td>
             </tr>
@@ -177,10 +187,8 @@
 
 === "离线安装"
 
-    !!! info ""
-        请自行下载 KubeOperator [最新版本的离线安装包](https://github.com/KubeOperator/KubeOperator/releases)，并复制到目标机器的 /tmp 目录下
 
-    !!! info ""
+    !!! info " 请自行下载 KubeOperator [最新版本的离线安装包](https://github.com/KubeOperator/KubeOperator/releases)，并复制到目标机器的 /tmp 目录下"
         ```sh
         cd /tmp
         # 解压安装包
@@ -195,11 +203,7 @@
 
 === "在线安装"
 
-    !!! info ""
-        默认使用 /opt/kubeoperator 目录作为安装目录，配置文件、数据及日志等均存放在该安装目录  
-        安装完成后，安装过程中产生的离线文件可删除，目录名: kubeoperator-release-v3.x.y
-
-    !!! info ""
+    !!! info "默认使用 /opt/kubeoperator 目录作为安装目录，配置文件、数据及日志等均存放在该安装目录安装完成后，安装过程中产生的离线文件可删除，目录名: kubeoperator-release-v3.x.y"     
         ```sh
         # 以 root 用户 ssh 登录目标服务器, 执行如下命令
         curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh -o quick_start.sh
@@ -237,8 +241,9 @@
 
 === "离线升级"
 
-    !!! info ""
+    !!! example ""
         ```sh
+        # 离线升级需要提前下载离线安装包，并解压到KubeOperator部署机
         # 进入升级包目录
         cd KubeOperator-release-v3.x.y
         # 运行安装脚本
@@ -249,12 +254,12 @@
 
 === "在线升级"
 
-    !!! info ""
+    !!! example ""
         ```sh
-        # 升级到最新版本
-        koctl upgrade
         # 升级到指定版本
         koctl upgrade v3.x.y
+        # 升级到最新版本
+        koctl upgrade
         # 查看 KubeOperator 状态
         koctl status
         ```

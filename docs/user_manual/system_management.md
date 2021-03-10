@@ -1,15 +1,25 @@
 
-!!! warning ""
+!!! warning "注意"
     在使用 KubeOperator 之前，必须先对 KubeOperator 进行必要的参数设置。这些系统参数将影响到 Kubernetes 集群的安装及相关服务的访问
 
-### 系统
+### 仓库
 
 !!! info ""
     * 仓库协议: 支持 http 和 https，默认 http
     * 仓库 IP: 默认为部署 KubeOperator 的服务器 IP。将使用该 IP 来访问 nexus 仓库
-    * NTP Server: 时间同步服务器，默认可以为空。也可以自建或使用公共 NTP Server
+    * CPU架构: 支持 x86_64 和 arm64 ，即两种不同CPU架构的仓库
+ 
+!!! warning "注意"
+    如果部署K8S集群时需要K8S节点采用 x86_64 和 arm64 混合部署，则需要添加两个不同CPU架构的仓库
+![system](../img/user_manual/system_management/registry.png)
 
-![system](../img/user_manual/system_management/system-1.png)
+
+### NTP
+
+!!! info ""
+    * NTP Server: 时间同步服务器，默认可以为空。也可以自建或使用公共 NTP Server
+    
+![system](../img/user_manual/system_management/ntp.png)
 
 ### 凭据
 
