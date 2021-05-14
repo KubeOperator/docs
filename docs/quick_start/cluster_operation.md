@@ -163,10 +163,6 @@
 !!! warning "修复"
     存在异常状态的情况下，可点击修复按钮来修复相关问题
 
-![cluster-repair-1](../img/user_manual/cluster/cluster-repair-1.png)
-
-![cluster-repair-2](../img/user_manual/cluster/cluster-repair-2.png)
-
 ### 集群卸载
 
 !!! warning ""

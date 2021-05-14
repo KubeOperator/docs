@@ -9,6 +9,8 @@
 
 ![project-1](../img/user_manual/project/project-1.png)
 
+![project-list](../img/user_manual/project/project-list.png)
+
 ### 添加成员
 
 !!! warning ""

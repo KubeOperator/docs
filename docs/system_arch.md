@@ -14,8 +14,7 @@
     - kubeoperator_nginx: 平台统一入口，并运行控制台的 Web 界面服务；
     - kubeoperator_mysql: 数据库管理组件；
     - kubeoperator_nexus: 仓库组件，提供 Docker、Helm、Raw、Yum等资源仓库功能；
-    - kubeoperator_grafana: 监控组件，提供平台监控等相关功能；
 
 !!! warning ""
 各个组件间的关系可参考下图
-![组件说明](./img/components.png)
+![组件说明](./img/components.jpg)

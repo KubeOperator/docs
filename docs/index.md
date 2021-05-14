@@ -249,9 +249,9 @@
 ## 支持组件
 
 !!! warning ""
-    * [kubernetes](https://github.com/kubernetes/kubernetes) v1.18.14
+    * [kubernetes](https://github.com/kubernetes/kubernetes) v1.20.4
     * [etcd](https://github.com/coreos/etcd) v3.4.14
-    * [docker](https://www.docker.com/) v19.03.9
+    * [docker](https://www.docker.com/) v19.03.15
     * [containerd](https://containerd.io/) v1.4.3
 
 !!! warning ""

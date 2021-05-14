@@ -33,9 +33,9 @@
 
 ![host-authorization](../img/user_manual/hosts/host-authorization.png)
 
-### 刷新
+### 同步 
 
 !!! warning ""
-    * 如果主机状态异常或者手动更新过主机配置，可以点击刷新按钮来同步主机基本信息和磁盘信息
+    * 如果主机状态异常或者手动更新过主机配置，可以点击同步按钮来同步主机基本信息和磁盘信息
 
 ![host-refresh](../img/user_manual/hosts/host-refresh.png)
