@@ -22,6 +22,7 @@
 
 !!! warning ""
     KubeOperator当前支持的 K8S 版本
+
 <table>
     <thead>
         <tr>
@@ -39,13 +40,19 @@
             <td>v1.18.12</td>
             <td>v1.18.14</td>
             <td>v1.18.15</td>
+            <td>v1.18.18</td>
+        </tr>
+        <tr>
             <td>v1.20.4</td>
+            <td>v1.20.6</td>
+            <td></td>
+            <td></td>
         </tr>
     <tbody>
 </table>
+
 !!! warning ""
     执行构建离线包的服务器需要能够访问互联网
-
 
 === "KubeOperator 版本 >= v3.6.0"
     !!! warning ""
@@ -74,24 +81,20 @@
         ```
     !!! warning ""
         build 完成后，会生成类似 v1.18.10_offline.tar.gz的离线包
-  
 
-
-        
 #### 推送离线包
 
 !!! warning ""
     将生成的目标版本离线包上传至 KubeOperator 部署机，运行上传脚本。
 
-
-```sh
-# 解压离线包
-tar zxvf v1.18.10_offline.tar.gz
-# 执行上传脚本
-cd v1.18.10_offline
-# 例：推送 v1.18.10 版本的离线包 
-bash upload.sh
-```
+    ```sh
+    # 解压离线包
+    tar zxvf v1.18.10_offline.tar.gz
+    # 执行上传脚本
+    cd v1.18.10_offline
+    # 例：推送 v1.18.10 版本的离线包 
+    bash upload.sh
+    ```
 
 !!! warning ""
     - 仓库地址：KubeOperator 默认仓库地址（registry.kubeoperator.io）

@@ -24,13 +24,13 @@
 
 ![node-2](../img/user_manual/cluster/node-2.png)
 
-![node-5](../img/user_manual/cluster/node-3.png)
+![node-3](../img/user_manual/cluster/node-3.png)
 
 !!! warning ""
     * 自动模式: 删除所选节点虚拟机
     * 手动模式: 在所选节点执行卸载任务，删除该节点上安装 k8s 集群所依赖的服务（节点删除成功后，要手动重启该节点来删除虚拟网卡等信息）
 
-![node-3](../img/user_manual/cluster/node-4.png)
+![node-4](../img/user_manual/cluster/node-4.png)
 
 ### 命名空间
 
