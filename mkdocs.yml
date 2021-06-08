@@ -39,8 +39,8 @@ nav:
                 - 手动模式: quick_start/cluster_planning/manual.md
           - 集群部署: quick_start/cluster_deployment.md
           - 集群导入: quick_start/cluster_import.md
-          - 集群运营: quick_start/cluster_operation.md
     - 使用指南:
+          - 集群: user_manual/cluster.md
           - 主机: user_manual/hosts.md
           - 自动模式: user_manual/plan.md
           - 备份账号: user_manual/backup_account.md
