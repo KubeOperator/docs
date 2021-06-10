@@ -2,20 +2,20 @@
 # 总体介绍
 
 !!! warning ""
-    KubeOperator 是一个 **开源** 的轻量级 Kubernetes 发行版，专注于帮助企业规划、部署和运营生产级别的 Kubernetes 集群。
+    [KubeOperator][KubeOperator] 是一个开源的轻量级 [Kubernetes][Kubernetes] 发行版，专注于帮助企业规划、部署和运营生产级别的 [Kubernetes][Kubernetes] 集群。
 
-    KubeOperator 提供可视化的 Web UI，支持离线环境，支持物理机、VMware、OpenStack 和 FusionCompute 等 IaaS 平台，支持 x86 和 ARM64 架构，支持 GPU，内置应用商店，已通过 CNCF 的 Kubernetes 软件一致性认证。  
+    [KubeOperator][KubeOperator] 提供可视化的 Web UI，支持离线环境，支持物理机、[VMware][VMware]、[OpenStack][OpenStack] 和 [FusionCompute][FusionCompute] 等 IaaS 平台，支持 x86 和 ARM64 架构，支持 GPU，内置应用商店，已通过 CNCF 的 [Kubernetes][Kubernetes] 软件一致性认证。  
 
-    KubeOperator 使用 Terraform 在 IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或者虚机），通过 Ansible 完成自动化部署和变更操作，支持 Kubernetes 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营的全生命周期管理。  
+    [KubeOperator][KubeOperator] 使用 [Terraform][Terraform] 在 IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或者虚机），通过 [Ansible][Ansible] 完成自动化部署和变更操作，支持 [Kubernetes][Kubernetes] 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营的全生命周期管理。  
 
 ## 技术优势
 
 !!! warning ""
-    -  简单易用: 提供可视化的 Web UI，极大降低 Kubernetes 部署和管理门槛，内置 [Webkubectl](https://github.com/KubeOperator/webkubectl)
-    -  按需创建: 调用云平台 API，一键快速创建和部署 Kubernetes 集群
-    -  按需伸缩: 快速伸缩 Kubernetes 集群，优化资源使用效率
-    -  按需修补: 快速升级和修补 Kubernetes 集群，并与社区最新版本同步，保证安全性
-    -  离线部署: 支持完全离线下的 Kubernetes 集群部署
+    -  简单易用: 提供可视化的 Web UI，极大降低 [Kubernetes][Kubernetes] 部署和管理门槛，内置 [Webkubectl](https://github.com/KubeOperator/webkubectl)
+    -  按需创建: 调用云平台 API，一键快速创建和部署 [Kubernetes][Kubernetes] 集群
+    -  按需伸缩: 快速伸缩 [Kubernetes][Kubernetes] 集群，优化资源使用效率
+    -  按需修补: 快速升级和修补 [Kubernetes][Kubernetes] 集群，并与社区最新版本同步，保证安全性
+    -  离线部署: 支持完全离线下的 [Kubernetes][Kubernetes] 集群部署
     -  自我修复: 通过重建故障节点确保集群可用性
     -  全栈监控: 提供从Pod、Node到集群的事件、监控、告警、和日志方案
     -  Multi-AZ 支持: 将 Master 节点分布在不同的故障域上确保集群高可用
@@ -288,15 +288,23 @@
     * [tensorflow-serving](https://github.com/tensorflow/serving) v1.14.0
     * [tensorflow-notebook](https://github.com/tensorflow/tensorflow) v1.6.0
     * [weave-scope](https://github.com/weaveworks/scope) v1.12.0
-    
-## 企业版试用
-
-!!! warning ""
-    - [申请企业版试用](https://jinshuju.net/f/qc6g44)
-    - 企业版支持离线安装，申请通过后会提供高速下载链接
 
 ## 更多阅读
 
 !!! warning ""
     - [干货分享丨KubeOperator如何助力企业运营生产级别的Kubernetes集群？](https://blog.fit2cloud.com/?p=1255)
     - [PPT 介绍](https://kubeoperator.io/download/KubeOperator_Intro.pdf)
+
+## 企业版试用
+
+!!! warning ""
+    - [申请企业版试用](https://jinshuju.net/f/qc6g44)
+    - 企业版支持离线安装，申请通过后会提供高速下载链接
+
+[KubeOperator]:https://kubeoperator.io
+[Kubernetes]:https://kubernetes.io
+[VMware]:https://www.vmware.com
+[OpenStack]:https://www.openstack.org
+[FusionCompute]:https://support.huawei.com/enterprise/zh/cloud-computing/fusioncompute-pid-8576912
+[Terraform]:https://www.terraform.io
+[Ansible]:https://www.ansible.com

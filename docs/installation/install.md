@@ -187,14 +187,15 @@
 
 === "离线安装"
 
+    !!! info "请自行下载 KubeOperator [最新版本的离线安装包](https://github.com/KubeOperator/KubeOperator/releases)，并复制到目标机器的 /tmp 目录下"
 
-    !!! info " 请自行下载 KubeOperator [最新版本的离线安装包](https://github.com/KubeOperator/KubeOperator/releases)，并复制到目标机器的 /tmp 目录下"
+    !!! info ""
         ```sh
         cd /tmp
         # 解压安装包
-        tar zxvf KubeOperator-release-v3.x.y.tar.gz
-        # 进入安装包目录
-        cd KubeOperator-release-v3.x.y
+        tar zxvf KubeOperator-release-{{ kubeoperator.version }}-amd64.tar.gz
+        # arm64 的包名是 KubeOperator-release-{{ kubeoperator.version }}-arm64.tar.gz
+        cd KubeOperator-release-{{ kubeoperator.version }}
         # 运行安装脚本
         /bin/bash install.sh
         # 等待安装脚本执行完成后，查看 KubeOperator 状态
@@ -203,7 +204,9 @@
 
 === "在线安装"
 
-    !!! info "默认使用 /opt/kubeoperator 目录作为安装目录，配置文件、数据及日志等均存放在该安装目录安装完成后，安装过程中产生的离线文件可删除，目录名: kubeoperator-release-v3.x.y"     
+    !!! info "默认使用 /opt/kubeoperator 目录作为安装目录，配置文件、数据及日志等均存放在该安装目录安装完成后，安装过程中产生的离线文件可删除，目录名: kubeoperator-release-{{ kubeoperator.version }}"
+
+    !!! info ""
         ```sh
         # 以 root 用户 ssh 登录目标服务器, 执行如下命令
         curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh -o quick_start.sh
@@ -211,6 +214,8 @@
         ```
 
 !!! info "安装完成后，检查服务状态。若有有异常，可以使用 koctl restart 命令进行重新启动"
+
+!!! info ""
     ```
     [root@kubeoperator ~]# koctl status
 
@@ -244,11 +249,11 @@
 
 === "离线升级"
 
-    !!! example ""
+    !!! info ""
         ```sh
-        # 离线升级需要提前下载离线安装包，并解压到KubeOperator部署机
+        # 离线升级需要提前下载离线安装包，并解压到 KubeOperator 部署机
         # 进入升级包目录
-        cd KubeOperator-release-v3.x.y
+        cd KubeOperator-release-{{ kubeoperator.version }}
         # 运行安装脚本
         ./koctl upgrade
         # 查看 KubeOperator 状态
@@ -257,10 +262,10 @@
 
 === "在线升级"
 
-    !!! example ""
+    !!! info ""
         ```sh
         # 升级到指定版本
-        koctl upgrade v3.x.y
+        koctl upgrade {{ kubeoperator.version }}
         # 升级到最新版本
         koctl upgrade
         # 查看 KubeOperator 状态
@@ -269,9 +274,11 @@
 
 ## 混合架构说明
 
-!!! info "定义：混合架构是指使用 KubeOperator 部署同时包含 x86_64 和 arm64 架构节点的 Kubernetes 集群"   
+!!! info "定义：混合架构是指使用 KubeOperator 部署同时包含 x86_64 和 arm64 架构节点的 Kubernetes 集群"
+
+!!! info ""   
     如下图所示，混合部署需要提供 x86_64 和 arm64 架构的 nexus 仓库，以便于集群部署时可以下载到对应架构的资源，之后在 KubeOperator 系统设置添加不同架构的仓库信息即可。</br>
-    
+
     例如：</br>
     &#x2003 1.可以分别部署两台不同架构的 KubeOperator（一台 arm64,一台 x86_64）</br>&#x2003 2.使用 x86_64 架构的主机作为日常操作的主机</br>&#x2003 3.将 arm64 的主机作为 arm 仓库使用并添加到 x86_64 的 KubeOperator 系统设置中
 

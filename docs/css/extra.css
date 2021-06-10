@@ -1,10 +1,14 @@
+:root {
+  --md-primary-fg-color: #fc6554;
+}
+
 .md-header {
-  background-color: #FB6454;
+  background-color: #fc6554;
   top: 48px;
 }
 
 .md-footer {
-  background-color: #FB6454;
+  background-color: #fc6554;
 }
 
 .md-footer-nav__link {
@@ -77,3 +81,13 @@
 .progress-0plus .progress-bar {
   background-color: #f50057;
 }
+
+.md-nav__source {
+  background-color: #fc6554;
+}
+
+/*
+.md-footer-meta {
+  background-color: inherit;
+}
+/*

@@ -4,14 +4,14 @@
 !!! warning ""
     - 项目: 选择集群所属项目
     - 供应商: 支持裸金属（手动模式）和部署计划（自动模式）
-    - 版本: 支持版本管理中最新的两个 Kubernetes 版本 
+    - 版本: 支持版本管理中最新的两个 Kubernetes 版本
     - 架构: 支持 AMD64 和 ARM64
     - Yum 仓库: 支持替换、共存和不操作三种类型
 
-    !!! info "Yum 仓库"
-        * 替换: 此操作将会对 K8S 节点服务器原始 yum repo 文件进行备份，之后生成并仅使用 KubeOperator 的 yum repo
-        * 共存: 此操作将保持K8S节点服务器原始 yum repo 文件不变，同时生成并使用 kubeoperator 的 yum repo
-        * 不操作: 此操作将保持使用 K8S 节点服务器原始 yum repo 文件，不对K8S节点服务器的 yum repo 做任何操作
+!!! info "Yum 仓库"
+    * 替换: 此操作将会对 K8S 节点服务器原始 yum repo 文件进行备份，之后生成并仅使用 KubeOperator 的 yum repo
+    * 共存: 此操作将保持K8S节点服务器原始 yum repo 文件不变，同时生成并使用 kubeoperator 的 yum repo
+    * 不操作: 此操作将保持使用 K8S 节点服务器原始 yum repo 文件，不对K8S节点服务器的 yum repo 做任何操作
 
 ![deploy-1](../img/user_manual/cluster/deploy-1.png)
 
