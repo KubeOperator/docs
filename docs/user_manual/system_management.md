@@ -11,7 +11,7 @@
 
 !!! info "帮助"
     * 8081: nexus 仓库默认管理端口
-    * 8082: docker group 仓库端口（适用于 docker pul 操作）
+    * 8082: docker group 仓库端口（适用于 docker pull 操作）
     * 8083: docker hosted 仓库端口（适用于 docker push 操作）
     * 仓库默认用户名/密码: admin/admin123
 
