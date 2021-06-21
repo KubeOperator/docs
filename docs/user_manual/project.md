@@ -1,30 +1,33 @@
 
 !!! warning ""
-    KubeOperator 系统自带一个默认项目。除默认项目外，系统管理员（admin 账号和新建的系统管理员账号）可以创建其他项目，项目内可以部署多个集群，不同项目之间的集群除系统管理员以外账号是不可见的。项目管理员管理该项目的集群，通过授权资源（包括主机，部署计划和备份账号）给项目，然后可以开始创建集群
+    * 系统会初始化一个默认项目（kubeoperator）
+    * 系统管理员可以创建项目、添加项目和集群成员、授权项目和集群资源
 
 ### 创建项目
 
 !!! warning ""
-    * 创建项目完成后需要授权集群所需的资源，然后创建 Kubernetes 集群
+    * 不同项目之间的集群除系统管理员以外是不可见的
 
 ![project-1](../img/user_manual/project/project-1.png)
 
 ![project-list](../img/user_manual/project/project-list.png)
 
-### 添加成员
+### 成员管理
 
 !!! warning ""
-    * 系统管理员账号可以分配一个或多个项目管理员角色给项目，项目管理员可以对该项目创建、安装、升级等管理操作
+    * 项目管理员可以查看项目及集群成员、查看项目已授权资源、管理集群授权资源
+    * 集群管理员可以管理已授权集群
 
 ![project-2](../img/user_manual/project/project-2.png)
 
 ![project-3](../img/user_manual/project/project-3.png)
 
-### 资源授权
+### 资源管理
 
 !!! warning ""
-    * 在 KubeOperator 环境中的资源需要系统管理员或项目管理员授权给项目后才可以使用，包括主机、部署计划和备份账号
-    * 创建手动模式集群，必须要先将 Kubernetes 节点主机授权到目标项目
+    * 资源包括主机、部署计划和备份账号
+    * 手动模式集群进行扩容操作，要先将主机授权到目标集群
+    * 备份账号需要先授权到目标集群才能启用备份
 
 ![project-4](../img/user_manual/project/project-4.png)
 
