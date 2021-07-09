@@ -43,9 +43,15 @@
             <td>v1.18.18</td>
         </tr>
         <tr>
+            <td>v1.18.20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
             <td>v1.20.4</td>
             <td>v1.20.6</td>
-            <td></td>
+            <td>v1.20.8</td>
             <td></td>
         </tr>
     <tbody>
@@ -54,45 +60,31 @@
 !!! warning ""
     执行构建离线包的服务器需要能够访问互联网
 
-=== "KubeOperator 版本 >= v3.6.0"
     !!! warning ""
         ```sh
         # 使用git下载项目源码文件
         git clone https://github.com/KubeOperator/K8SVersionManage.git
         cd K8SVersionManage
-        # 切换分支
-        git checkout v3.6
-        # 例：打包 v1.18.10 版本的离线包。可根据实际情况修改构建对应版本到离线包
-        bash build.sh v1.18.10 
+        # 切换到目标分支
+        git checkout v3.9
+        # 例：打包 v1.20.6 版本的离线包。可根据实际情况修改构建对应版本到离线包
+        bash build.sh v1.20.6
         ```
     !!! warning ""
-        build 完成后，会生成类似 v1.18.10_offline.tar.gz的离线包
-
-=== "KubeOperator 版本 <= v3.5.0"
-    !!! warning ""
-        ```sh
-        # 使用git下载项目源码文件
-        git clone https://github.com/KubeOperator/K8SVersionManage.git
-        cd K8SVersionManage
-        # 切换到对应版本分支，KubeOperator当前版本小于 v3.5 时，直接切换到 v3.5 分支即可
-        git checkout v3.5
-        # 例：打包 v1.18.10 版本的离线包 
-        bash build.sh v1.18.10
-        ```
-    !!! warning ""
-        build 完成后，会生成类似 v1.18.10_offline.tar.gz的离线包
+        build 完成后，会生成类似 v1.20.6_offline.tar.gz的离线包
 
 #### 推送离线包
 
 !!! warning ""
-    将生成的目标版本离线包上传至 KubeOperator 部署机，运行上传脚本。
+    * 将生成的目标版本离线包上传至 KubeOperator 部署机，运行上传脚本
+    * 如有修改 nexus 仓库默认的 8081-8083 端口，在离线包解压后需要手动将 upload.sh 脚本中端口修改为目标端口
 
     ```sh
     # 解压离线包
-    tar zxvf v1.18.10_offline.tar.gz
+    tar zxvf v1.20.6_offline.tar.gz
     # 执行上传脚本
-    cd v1.18.10_offline
-    # 例：推送 v1.18.10 版本的离线包 
+    cd v1.20.6_offline
+    # 例：推送 v1.20.6 版本的离线包 
     bash upload.sh
     ```
 

@@ -101,7 +101,7 @@
     <tr>
         <td>操作系统
         </td>
-        <td>支持 RHEL / CentOS / EulerOS 操作系统
+        <td>支持 RHEL / CentOS / Ubuntu / EulerOS 操作系统
         </td>
     </tr>
     <tr>
@@ -249,9 +249,9 @@
 ## 支持组件
 
 !!! warning ""
-    * [kubernetes](https://github.com/kubernetes/kubernetes) v1.20.6
+    * [kubernetes](https://github.com/kubernetes/kubernetes) v1.20.8
     * [etcd](https://github.com/coreos/etcd) v3.4.14
-    * [docker](https://www.docker.com/) v19.03.15
+    * [docker](https://www.docker.com/) v20.10.7
     * [containerd](https://containerd.io/) v1.4.3
 
 !!! warning ""

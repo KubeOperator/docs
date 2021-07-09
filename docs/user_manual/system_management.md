@@ -15,10 +15,14 @@
     * 8083: docker hosted 仓库端口（适用于 docker push 操作）
     * 仓库默认用户名/密码: admin/admin123
 
+![system](../img/user_manual/system_management/registry.png)
+
 !!! warning "注意"
     如果部署K8S集群时需要K8S节点采用 x86_64 和 arm64 混合部署，则需要添加两个不同CPU架构的仓库
 
-![system](../img/user_manual/system_management/registry.png)
+!!! warning "自定义 Nexus 仓库端口"
+    * v3.9.0 版本开始，KubeOperator 支持用户自定义 Nexus 仓库端口
+    * 修改安装目录中的 kubeoperator.conf 配置文件，重启 KubeOperator 服务后即可生效。之后需要在 系统设置 - 仓库设置 的高级设置栏目中完成 Nexus 仓库端口的变更
 
 ### 凭据
 
