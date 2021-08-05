@@ -90,4 +90,14 @@
 .md-footer-meta {
   background-color: inherit;
 }
-/*
+*/
+
+.md-grid {
+  margin-left: 1rem;
+  margin-right: auto;
+  max-width: initial;
+}
+
+.md-top {
+  margin-top: 2rem;
+}
