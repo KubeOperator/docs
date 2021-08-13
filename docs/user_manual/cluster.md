@@ -12,25 +12,27 @@
 
 ![overview-2](../img/user_manual/cluster/overview-2.png)
 
-### 集群扩容、缩容
+### 节点
 
 !!! warning ""
-    显示集群节点相关信息。支持针对 Kubernetes 集群 worker 节点的扩缩容
+    集中显示了集群所有节点的基础信息
 
 ![node-1](../img/user_manual/cluster/node-1.png)
 
 !!! warning ""
-    worker 节点扩容（手动模式选择要添加的主机，自动模式输入扩容后 worker 节点数量）
+    点击节点，可查看节点标签、运行状态等具体信息
 
-![node-2](../img/user_manual/cluster/node-2.png)
+![node-detail](../img/user_manual/cluster/node-detail.png)
 
-![node-3](../img/user_manual/cluster/node-3.png)
+!!! warning "驱散"
+    * 驱散成功后，节点将处于不可调度状态
+    * 安全模式: 如果节点拥有独立的 Pod 或临时的数据，它将被隔离但不会被驱散
+    * 强制模式: 独立 Pods 和它们的数据将永久删除
 
-!!! warning ""
-    * 自动模式: 删除所选节点虚拟机
-    * 手动模式: 在所选节点执行卸载任务，删除该节点上安装 k8s 集群所依赖的服务（节点删除成功后，要手动重启该节点来删除虚拟网卡等信息）
+![node-cordon](../img/user_manual/cluster/node-cordon.png)
 
-![node-4](../img/user_manual/cluster/node-4.png)
+!!! warning "激活"
+    撤销已驱散节点的不可调度状态
 
 ### 命名空间
 
@@ -151,12 +153,32 @@
 
 ![cluster-upgrade](../img/user_manual/cluster/cluster-upgrade.png)
 
+### 集群扩容、缩容
+
+!!! warning "worker 节点扩容"
+    手动模式选择要添加的主机，自动模式输入扩容后 worker 节点数量
+
+![node-3](../img/user_manual/cluster/node-3.png)
+
+![node-2](../img/user_manual/cluster/node-2.png)
+
+!!! warning "worker 节点缩容"
+    * 自动模式: 将所选节点在集群中删除，然后删除所选节点虚拟机
+    * 手动模式: 将所选节点在集群中删除，然后在所选节点执行卸载脚本(删除节点上安装的 k8s 集群所依赖的服务)
+    * 强制删除: 将忽略脚本执行过程中的错误信息，强制删除数据
+
+![node-4](../img/user_manual/cluster/node-4.png)
+
+!!! warning "注意"
+    手动模式节点删除成功后，要手动重启该节点来删除虚拟网卡等信息
+
 ### 集群诊断、修复
 
 !!! warning "诊断"
-    * 检查集群节点网络是否可用
-    * 检查 kubeoperator_server 容器内是否可以 ssh 连接到 kubernetes 集群节点
-    * 检查 kubeoperator_server 容器内是否可以正常调用 kubernetes api
+    * 检测节点可连接性
+    * 检测集群 Token 是否匹配
+    * 检测集群 API 是否已就绪
+    * 检测集群节点是否同步
 
 ![cluster-diagnosis](../img/user_manual/cluster/cluster-diagnosis.png)
 
