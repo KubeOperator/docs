@@ -179,6 +179,7 @@
     * 检测集群 Token 是否匹配
     * 检测集群 API 是否已就绪
     * 检测集群节点是否同步
+    * 检测集群代理 IP 是否匹配
 
 ![cluster-diagnosis](../img/user_manual/cluster/cluster-diagnosis.png)
 

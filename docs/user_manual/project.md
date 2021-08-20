@@ -6,7 +6,7 @@
 ### 创建项目
 
 !!! warning ""
-    * 不同项目之间的集群除系统管理员以外是不可见的
+    不同项目之间的集群除系统管理员以外是不可见的
 
 ![project-1](../img/user_manual/project/project-1.png)
 

@@ -75,12 +75,12 @@
 ### 节点信息
 
 !!! warning ""
-    * 根据不同的节点角色选择目标主机（手动模式）
+    根据不同的节点角色选择目标主机（手动模式）
 
 ![deploy-hosts](../img/user_manual/cluster/deploy-hosts.png)
 
 !!! warning ""
-    * 选择已授权部署计划，设置 Worker 节点数量（自动模式）
+    选择已授权部署计划，设置 Worker 节点数量（自动模式）
 
 ![deploy-plan](../img/user_manual/cluster/deploy-plan.png)
 

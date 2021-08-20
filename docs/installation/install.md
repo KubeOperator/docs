@@ -220,11 +220,10 @@
 
               Name                        Command                  State                                       Ports
     ------------------------------------------------------------------------------------------------------------------------------------------------
-    kubeoperator_grafana      /run.sh                          Up (healthy)   3000/tcp
-    kubeoperator_kobe         kobe-server                      Up (healthy)   8080/tcp
+    kubeoperator_kobe         sh /root/entrypoint.sh           Up (healthy)   8080/tcp
     kubeoperator_kotf         kotf-server                      Up (healthy)   8080/tcp
     kubeoperator_mysql        /entrypoint.sh mysqld            Up (healthy)   3306/tcp, 33060/tcp
-    kubeoperator_nexus        sh -c ${SONATYPE_DIR}/star ...   Up             0.0.0.0:8081->8081/tcp, 0.0.0.0:8082->8082/tcp, 0.0.0.0:8083->8083/tcp
+    kubeoperator_nexus        sh -c ${SONATYPE_DIR}/star ...   Up (healthy)   0.0.0.0:8081->8081/tcp, 0.0.0.0:8082->8082/tcp, 0.0.0.0:8083->8083/tcp
     kubeoperator_nginx        /docker-entrypoint.sh ngin ...   Up (healthy)   0.0.0.0:80->80/tcp
     kubeoperator_server       ko-server                        Up (healthy)   8080/tcp
     kubeoperator_ui           /docker-entrypoint.sh ngin ...   Up (healthy)   80/tcp

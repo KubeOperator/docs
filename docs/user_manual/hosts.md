@@ -31,7 +31,7 @@
 ### 批量导入
 
 !!! warning ""
-    * 点击批量导入按钮，点击下载模版链接下载excel模版并添加主机信息
+    点击批量导入按钮，点击下载模版链接下载excel模版并添加主机信息
 
 ![host-import](../img/user_manual/hosts/host-import.png)
 

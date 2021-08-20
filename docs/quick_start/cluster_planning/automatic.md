@@ -17,14 +17,14 @@
 ### IP 池
 
 !!! warning ""
-    * IP 池在创建可用区时使用，池中的 IP 地址将分配给虚拟机
+    IP 池在创建可用区时使用，池中的 IP 地址将分配给虚拟机
 
 ![ip-pool-list](../../img/user_manual/plan/ip-pool-list.png)
 
 #### 添加 IP 池
 
 !!! warning ""
-    * 创建 IP 池要配置好子网掩码、起止 IP、网关和 DNS 等
+    创建 IP 池要配置好子网掩码、起止 IP、网关和 DNS 等
 
 ![ip-pool-add](../../img/user_manual/plan/ip-pool-add.png)
 
@@ -57,15 +57,13 @@
 ![zone-1](../../img/user_manual/plan/zone-1.png)
 
 !!! warning ""
-    * 添加成功后会有一个初始化的过程（选择默认模版时，需要将 nexus 仓库中的模版文件上传到 vCenter），同步成功之后状态变为就绪
+    添加成功后会有一个初始化的过程（选择默认模版时，需要将 nexus 仓库中的模版文件上传到 vCenter），同步成功之后状态变为就绪
 
 ### 部署计划（Plan）
 
 !!! warning ""
     * 用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念
     * 部署计划配置包括选择可用区（可用区可以单选或多选），并设置 Master 节点，Worker 节点的规格
+    * 多主多节点集群可以选择多个可用区的部署计划
 
 ![plan-1](../../img/user_manual/plan/plan-1.png)
-
-!!! warning ""
-    * 多主多节点集群可以选择多个可用区的部署计划

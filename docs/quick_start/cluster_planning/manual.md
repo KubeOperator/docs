@@ -38,7 +38,7 @@
 ### 主机列表
 
 !!! warning ""
-    * 主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等
+    主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等
 
 ![host-list](../../img/user_manual/hosts/host-list.png)
 

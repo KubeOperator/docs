@@ -2,14 +2,16 @@
 ### 基本信息
 
 !!! warning ""
-    输入要导入集群的名称、Api Server、Router、Token
+    * 支持导入非 KubeOperator 创建的集群
+    * 导入集群版本要在 KubeOperator 支持的版本范围内，参考: [版本管理](../user_manual/version.md#_4)
 
 ![cluster-import](../img/user_manual/cluster/cluster-import.png)
 
 !!! info "示例"
-    * Api Server: https://172.16.10.100:8443
-    * Router: 装有 kube-proxy 的任意节点的且可以被访问到的 IP 地址
-    * Token: 要具有 cluster-admin 权限
+    * 架构: 选择集群节点的 CPU 架构类型（支持 amd64、arm64 和混合架构三种类型）
+    * Api Server: https://172.16.10.123:8443
+    * Router: 装有 kube-proxy 的任意集群节点 IP 地址
+    * Token: 需要具有 cluster-admin 权限
 
     ```vi
     # 获取 cluster-admin 权限的 token
@@ -45,4 +47,4 @@
     ```
 
 !!! warning ""
-    * KubeOperator 不能针对导入的集群进行扩缩容、备份等集群运营操作
+    KubeOperator 不能针对导入的集群进行扩缩容、备份等集群运营操作
