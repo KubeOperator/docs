@@ -21,7 +21,7 @@
 #### 构建离线包
 
 !!! warning ""
-    KubeOperator当前支持的 K8S 版本
+    KubeOperator 支持的 Kubernetes 版本
 
 <table>
     <thead>

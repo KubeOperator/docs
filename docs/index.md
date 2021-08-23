@@ -28,221 +28,158 @@
 <table>
     <tr>
         <td rowspan="17">Day 0 规划</td>
-        </td>
-        <td rowspan="2">集群模式
-        </td>
-        <td>1 个 Master 节点 n 个 Worker 节点模式：适合开发测试用途
-        </td>
+        <td rowspan="2">集群模式</td>
+        <td>1 个 Master 节点 n 个 Worker 节点模式：适合开发测试用途</td>
     </tr>
     <tr>
-        <td>3 个 Master 节点 n 个 Worker 节点模式：适合生产用途
-        </td>
+        <td>3 个 Master 节点 n 个 Worker 节点模式：适合生产用途</td>
     </tr>
     <tr>
-        <td rowspan="4">计算方案
-        </td>
-        <td>独立主机：支持自行准备的虚机、公有云主机和物理机
-        </td>
+        <td rowspan="4">计算方案</td>
+        <td>独立主机：支持自行准备的虚机、公有云主机和物理机</td>
     </tr>
     <tr>
-        <td>vSphere 平台：支持自动创建主机（使用 Terraform）
-        </td>
+        <td>vSphere 平台：支持自动创建主机（使用 Terraform）</td>
     </tr>
     <tr>
-        <td>Openstack 平台：支持自动创建主机 （使用 Terraform）
-        </td>
+        <td>Openstack 平台：支持自动创建主机 （使用 Terraform）</td>
     </tr>
     <tr>
-        <td>FusionCompute 平台：支持自动创建主机 （使用 Terraform）
-        </td>
+        <td>FusionCompute 平台：支持自动创建主机 （使用 Terraform）</td>
     </tr>
     <tr>
-        <td rowspan="4">存储方案
-        </td>
-        <td>独立主机：支持 NFS / Ceph RBD / Rook Ceph / Local Volume
-        </td>
+        <td rowspan="4">存储方案</td>
+        <td>独立主机：支持 NFS / Ceph RBD / Rook Ceph / Local Volume</td>
     </tr>
     <tr>
         <td>vSphere 平台：支持 vSphere Datastore （vSAN 及 vSphere 兼容的集中存储）
         </td>
     </tr>
     <tr>
-        <td>Openstack 平台：支持 Openstack Cinder （Ceph 及 Cinder 兼容的集中存储）
-        </td>
+        <td>Openstack 平台：支持 Openstack Cinder （Ceph 及 Cinder 兼容的集中存储）</td>
     </tr>
     <tr>
-        <td>FusionCompute 平台：支持 OceanStor
-        </td>
+        <td>FusionCompute 平台：支持 OceanStor</td>
     </tr>
     <tr>
-        <td rowspan="4">网络方案
-        </td>
-        <td>支持 CoreDNS
-        </td>
+        <td rowspan="4">网络方案</td>
+        <td>支持 CoreDNS</td>
     </tr>
     <tr>
-        <td>支持 Flannel / Calico / Cilium 网络插件
-        </td>
+        <td>支持 Flannel / Calico / Cilium 网络插件</td>
     </tr>
     <tr>
-        <td>支持 ingress-nginx / traefik
-        </td>
+        <td>支持 ingress-nginx / traefik</td>
     </tr>
     <tr>
-        <td>支持通过 F5 Big IP 对外暴露服务（X-PACK）
-        </td>
+        <td>支持通过 F5 Big IP 对外暴露服务（X-PACK）</td>
     </tr>
     <tr>
-        <td>GPU 方案
-        </td>
-        <td>支持 NVIDIA GPU
-        </td>
+        <td>GPU 方案</td>
+        <td>支持 NVIDIA GPU</td>
     </tr>
     <tr>
-        <td>操作系统
-        </td>
-        <td>支持 RHEL / CentOS / Ubuntu / EulerOS 操作系统
-        </td>
+        <td>操作系统</td>
+        <td>支持 RHEL / CentOS / Ubuntu / EulerOS 操作系统</td>
     </tr>
     <tr>
-        <td>容器运行时
-        </td>
-        <td>支持 Docker / Containerd
-        </td>
+        <td>容器运行时</td>
+        <td>支持 Docker / Containerd</td>
     </tr>
     <tr>
-        <td rowspan="6">Day 1 部署
-        </td>
-        <td rowspan="6">部署
-        </td>
-        <td>支持在线和离线安装模式
-        </td>         
+        <td rowspan="6">Day 1 部署</td>
+        <td rowspan="6">部署</td>
+        <td>支持在线和离线安装模式</td>         
     </tr>
     <tr>
-        <td>支持 Kubeadm 部署
-        </td>
+        <td>支持 Kubeadm 部署</td>
     </tr>
     <tr>
-        <td>支持 x86_64 和 arm64 CPU 架构
-        </td>
+        <td>支持 x86_64 和 arm64 CPU 架构</td>
     </tr>
     <tr>
-        <td>支持可视化方式展示部署过程
-        </td>
+        <td>支持可视化方式展示部署过程</td>
     </tr>
     <tr>
-        <td>支持一键自动化部署（使用 Ansible）
-        </td>
+        <td>支持一键自动化部署（使用 Ansible）</td>
     </tr>
     <tr>
-        <td>支持已有集群导入
-        </td>
+        <td>支持已有集群导入</td>
     </tr>
     <tr>
-        <td rowspan="22">Day 2 运营
-        </td>
-        <td rowspan="9">管理
-        </td>
-        <td>支持以项目为核心的分级授权管理
-        </td>    
+        <td rowspan="22">Day 2 运营</td>
+        <td rowspan="9">管理</td>
+        <td>支持以项目为核心的分级授权管理</td>    
     </tr>
     <tr>
-        <td>支持系统管理员、项目管理员和集群管理员三种角色
-        </td>
+        <td>支持系统管理员、项目管理员和集群管理员三种角色</td>
     </tr>
     <tr>
-         <td>支持多集群配置管理（X-PACK）
-        </td>
+        <td>支持多集群配置管理（X-PACK）</td>
     </tr>
     <tr>
-        <td>支持对接 LDAP/AD（X-PACK）
-        </td>
+        <td>支持对接 LDAP/AD（X-PACK）</td>
     </tr>
     <tr>
-        <td>支持自定义 Logo 和 配色（X-PACK）
-        </td>
+        <td>支持自定义 Logo 和 配色（X-PACK）</td>
     </tr>
      <tr>
-        <td>对外开放 REST API
-        </td>
+        <td>对外开放 REST API</td>
     </tr>
     <tr>
-        <td>支持国际化 i18n
-        </td>
+        <td>支持国际化 i18n</td>
     </tr>
     <tr>
-        <td>提供 Web Kubectl 界面
-        </td>
+        <td>提供 Web Kubectl 界面</td>
     </tr>
     <tr>
-        <td>内置 Helm
-        </td>
+        <td>内置 Helm</td>
     </tr>
     <tr>
-        <td rowspan="4">可观察性
-        </td>
-        <td>内置 Prometheus，支持对集群、节点、Pod、Container的全方位监控和告警
-        </td>
+        <td rowspan="4">可观察性</td>
+        <td>内置 Prometheus，支持对集群、节点、Pod、Container的全方位监控和告警</td>
     </tr>
      <tr>
-        <td>内置 EFK、Loki 日志方案
-        </td>
+        <td>内置 EFK、Loki 日志方案</td>
     </tr>
     <tr>
-        <td>内置 Grafana 作为监控和日志展示
-        </td>
+        <td>内置 Grafana 作为监控和日志展示</td>
     </tr>
     <tr>
-        <td>支持消息中心，通过钉钉、微信通知各种集群异常事件（X-PACK）
-        </td>
+        <td>支持消息中心，通过钉钉、微信通知各种集群异常事件（X-PACK）</td>
     </tr>
     <tr>
-        <td>升级
-        </td>
-        <td>支持集群升级
-        </td>
+        <td>升级</td>
+        <td>支持集群升级</td>
     </tr>
     <tr>
-        <td>伸缩
-        </td>
-        <td>支持增加或者减少 Worker 节点
-        </td>
+        <td>伸缩</td>
+        <td>支持增加或者减少 Worker 节点</td>
     </tr>
     <tr>
-        <td>备份
-        </td>
-        <td>支持 etcd 定期备份和立即备份
-        </td>
+        <td>备份</td>
+        <td>支持 etcd 定期备份和立即备份</td>
     </tr>
     <tr>
-        <td>恢复
-        </td>
-        <td>支持 etcd 备份策略文件恢复和本地文件恢复
-        </td>
+        <td>恢复</td>
+        <td>支持 etcd 备份策略文件恢复和本地文件恢复</td>
     </tr>
     <tr>
-        <td  rowspan="2">安全合规
-        </td>
-         <td>支持集群健康评分（X-PACK）
-        </td>
+        <td  rowspan="2">安全合规</td>
+        <td>支持集群健康评分（X-PACK）</td>
     </tr>
     <tr>
-        <td>支持 CIS 安全扫描
-        </td>
+        <td>支持 CIS 安全扫描</td>
     </tr>
     <tr>
-        <td rowspan="3">应用商店
-        </td>
-        <td>提供 GitLab、Jenkins、Harbor、Argo CD、Sonarqube 等 CI/CD 工具
-        </td>
+        <td rowspan="3">应用商店</td>
+        <td>提供 GitLab、Jenkins、Harbor、Argo CD、Sonarqube 等 CI/CD 工具</td>
     </tr>
     <tr>
-        <td>提供 Kuboard、Weave Scope、Redmine 等管理工具
-        </td>
+        <td>提供 Kuboard、Weave Scope、Redmine 等管理工具</td>
     </tr>
     <tr>
-        <td>提供深度学习AI 应用，比如 TensorFlow
-        </td>
+        <td>提供深度学习AI 应用，比如 TensorFlow</td>
     </tr>
  </table>
 
