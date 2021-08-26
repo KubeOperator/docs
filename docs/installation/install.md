@@ -186,11 +186,10 @@
 
 === "离线安装"
 
-    !!! info "请自行下载 KubeOperator [最新版本的离线安装包](https://github.com/KubeOperator/KubeOperator/releases)，并复制到目标机器的 /tmp 目录下"
+    !!! info "请自行下载 KubeOperator [最新版本的离线安装包](https://community.fit2cloud.com/#/products/kubeoperator/downloads)"
 
     !!! info ""
         ```sh
-        cd /tmp
         # 解压安装包
         tar zxvf KubeOperator-release-{{ kubeoperator.version }}-amd64.tar.gz
         # arm64 的包名是 KubeOperator-release-{{ kubeoperator.version }}-arm64.tar.gz
