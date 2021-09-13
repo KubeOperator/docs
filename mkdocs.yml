@@ -61,6 +61,12 @@ nav:
     - 系统设置: user_manual/system_management.md
     - 应用商店: user_manual/kubeapps.md
     - Argo CD: user_manual/argocd.md
+  - KubePi:
+    - 总体介绍: kubepi/index.md
+    - 安装部署: kubepi/install.md
+    - 集群: kubepi/cluster.md
+    - 控制台: kubepi/dashboard.md
+    - 用户与权限: kubepi/rbac.md
   - 开发文档: dev/rest_api.md
   - 常见问题: faq.md
   - 技术咨询: https://jinshuju.net/f/qc6g44

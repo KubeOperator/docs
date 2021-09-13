@@ -111,7 +111,42 @@
 !!! warning ""
     KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的 DevOps 平台、微服务治理平台、AI 平台、应用商店等是解耦的。
 
-### master 节点的推荐配置
+### KubeOperator 部署机的推荐配置
+
+!!! warning ""
+    KubeOperator 部署机配置取决于初始化 k8s 集群节点数量，推荐配置参考如下:
+    <table>
+        <tr>
+            <td>集群节点数量</td>
+            <td>部署机推荐配置</td>
+        </tr>
+        <tr>
+            <td>1-5</td>
+            <td>2C 4G</td>
+        </tr>
+        <tr>
+            <td>6-10</td>
+            <td>4C 8G</td>
+        </tr>
+        <tr>
+            <td>11-50</td>
+            <td>8C 16G</td>
+        </tr>
+        <tr>
+            <td>51-100</td>
+            <td>16C 32G</td>
+        </tr>
+        <tr>
+            <td>101-200</td>
+            <td>32C 64G</td>
+        </tr>
+        <tr>
+            <td>> 200</td>
+            <td>64C 128G</td>
+        </tr>
+    </table>
+
+### K8s master 节点的推荐配置
 
 !!! warning ""
     Kubernetes 集群中 master 节点配置取决于 worker 节点数量，推荐配置参考如下:
@@ -144,8 +179,8 @@
             <td>> 500</td>
             <td>32C 128G</td>
         </tr>
-        </tr>
     </table>
+
 ### KubeOperator 其他说明
 
 !!! warning ""
