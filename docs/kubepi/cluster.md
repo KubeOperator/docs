@@ -6,15 +6,14 @@
 ## 集群导入
 
 !!! warning ""
-    导入集群支持 Bearer Token、 kubeconfig 文件、证书三种方式
+    - [KubePi][KubePi] 支持的 [Kubernetes][Kubernetes] 版本: v1.16 ~ v1.20
+    - 导入集群支持 Bearer Token、 kubeconfig 文件、证书三种方式
 
 ### Bearer Token
 
 !!! warning "获取 apiserver 地址"
-
-    cat /root/.kube/config | grep server: | awk '{print $2}'
-    
-    注意: 如果 server IP 为 127.0.0.1，需要将 IP 替换为任意 master 节点 IP
+    - cat /root/.kube/config | grep server: | awk '{print $2}'
+    - 注意: 如果 server IP 为 127.0.0.1，需要将 IP 替换为任意 master 节点 IP
 
 !!! warning "获取 token"
 
@@ -31,10 +30,8 @@
 ### kubeconfig
 
 !!! warning ""
-
-    kubeconfig 文件默认路径为: /root/.kube/config，可以将 config 文件拷贝到本机后导入
-
-    注意: 如果 server IP 为 127.0.0.1，需要将 IP 替换为任意 master 节点 IP
+    - kubeconfig 文件默认路径为: /root/.kube/config，可以将 config 文件拷贝到本机后导入
+    - 注意: 如果 server IP 为 127.0.0.1，需要将 IP 替换为任意 master 节点 IP
 
 ![cluster-import-kubeconfig](../img/kubepi/cluster-import-kubeconfig.png)
 
@@ -47,11 +44,9 @@
 !!! warning ""
     集群列表页点击授权按钮，支持将不同的用户添加为集群成员，并为其指定集群角色和命名空间角色
 
-![cluster-authorization](../img/kubepi/cluster-import-certificate.png)
+![cluster-authorization](../img/kubepi/cluster-authorization.png)
 
 ### 成员
-
-#### 添加成员
 
 !!! warning ""
     可将用户指定为集群管理员、只读者或者自定义权限。自定义权限需要为用户指定集群角色和命名空间角色。
@@ -68,9 +63,7 @@
 
 ### 角色
 
-#### 集群角色
-
-!!! warning ""
+!!! warning "集群角色"
     - cluster-owner: 集群拥有者,拥有所有对象权限
     - cluster-viewer: 集群只读用户,拥有所有对象的只读权限
     - manage-cluster-rbac: 集群访问控制管理员, 拥有 ClusterRole、ClusterRoleBinding 对象的所有权限
@@ -85,9 +78,7 @@
     - view-namespaces: 命名空间只读用户,拥有对 Namespace 对象的所有权限
     - view-nodes: 节点只读用户,拥有 Node 对象的只读权限
 
-#### 命名空间角色
-
-!!! warning ""
+!!! warning "命名空间角色"
     - manage-config: 配置管理员, 拥有当前命名空间 ConfigMap、Secret、ResourceQuotas、LimitRanges、HorizontalPodAutoscalers 和 PodDisruptionBudget 对象的所有权限
     - manage-rbac: 命名空间访问控制,拥有当前命名空间内 Role、RoleBinding 和 ServiceAccount 对象的所有权限
     - manage-service-discovery: 服务发现管理员,拥有当前命名空间内 Service、Endpoint、Ingress和NetworkPolicy 对象的所有权限
@@ -100,3 +91,6 @@
     - view-service-discovery: 服务发现只读用户,拥有当前命名空间内 Service、Endpoint、Ingress和NetworkPolicy 对象的只读权限
     - view-storage: 存储只读用户，拥有当前命名空间内 PersistentVolumeClaim 对象的只读权限
     - view-workload: 工作负载只读用户，拥有当前命名空间内 DaemonSet、StatefulSet、Deployment、Job、CronJob和Pod的只读权限
+
+[KubePi]:https://kubeoperator.io
+[Kubernetes]:https://kubernetes.io
