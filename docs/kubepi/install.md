@@ -38,12 +38,13 @@
 
     !!! info "持久化部署"
 
-        !!! warning ""
-            需要替换创建 pvc 时使用的 storageClass name
         ```sh
         # 安装
         sudo kubectl apply -f https://raw.githubusercontent.com/KubeOperator/KubePi/master/docs/deploy/kubectl/kubepi-pvc.yaml
         ```
+
+        !!! warning "注意"
+            需要替换创建 pvc 时使用的 storageClass
 
     !!! info "获取访问地址"
         ```

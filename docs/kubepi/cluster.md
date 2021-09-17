@@ -1,8 +1,4 @@
 
-## 集群列表
-
-![cluster-index](../img/kubepi/cluster-index.png)
-
 ## 集群导入
 
 !!! warning ""
@@ -15,15 +11,63 @@
     - cat /root/.kube/config | grep server: | awk '{print $2}'
     - 注意: 如果 server IP 为 127.0.0.1，需要将 IP 替换为任意 master 节点 IP
 
-!!! warning "获取 token"
+!!! warning "获取 Token"
 
-    ```bash
-    # 如果是通过 kubectl yaml 方式部署的 KubePi 服务，可在任意集群节点上执行此命令
-    kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep kubepi-user | awk '{print $1}') | grep token: | awk '{print $2}'
+    === "默认"
 
-    # 如果是 KubeOperator 安装的 Kuberenetes集群，可在任意集群节点上执行此命令
-    kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep ko-admin | awk '{print $1}') | grep token: | awk '{print $2}'
-    ```
+        !!! warning ""
+
+            [KubeOperator][KubeOperator] 部署的 [Kubernetes][Kubernetes] 集群，可在集群任意节点上执行如下命令
+
+            ```shell
+            kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep ko-admin | awk '{print $1}') | grep token: | awk '{print $2}'
+            ```
+
+        !!! warning ""
+
+            [Kubectl][Kubectl] 方式部署的 [KubePi][KubePi] 服务，在集群任意节点上执行如下命令
+
+            ```shell
+            kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep kubepi-user | awk '{print $1}') | grep token: | awk '{print $2}'
+            ```
+
+    === "自定义"
+        
+        !!! warning ""
+            创建 Service Account
+
+            ```yaml
+            apiVersion: v1
+            kind: ServiceAccount
+            metadata:
+              name: kubepi-user
+              namespace: kube-system
+            ```
+
+        !!! warning ""
+            创建 ClusterRoleBinding
+
+            ```yaml
+            apiVersion: rbac.authorization.k8s.io/v1
+            kind: ClusterRoleBinding
+            metadata:
+              name: kubepi-user
+            roleRef:
+              apiGroup: rbac.authorization.k8s.io
+              kind: ClusterRole
+              name: cluster-admin
+            subjects:
+              - kind: ServiceAccount
+                name: kubepi-user
+                namespace: kube-system
+            ```
+
+        !!! warning ""
+            获取 Token
+
+            ```shell
+            kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep kubepi-user | awk '{print $1}') | grep token: | awk '{print $2}'
+            ```
 
 ![cluster-import-token](../img/kubepi/cluster-import-token.png)
 
@@ -93,4 +137,6 @@
     - view-workload: 工作负载只读用户，拥有当前命名空间内 DaemonSet、StatefulSet、Deployment、Job、CronJob和Pod的只读权限
 
 [KubePi]:https://kubeoperator.io
+[Kubectl]:https://github.com/KubeOperator/KubePi/tree/master/docs/deploy/kubectl
+[KubeOperator]:https://github.com/KubeOperator/KubeOperator
 [Kubernetes]:https://kubernetes.io
