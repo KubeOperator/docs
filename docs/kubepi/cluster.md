@@ -136,7 +136,7 @@
     - view-storage: 存储只读用户，拥有当前命名空间内 PersistentVolumeClaim 对象的只读权限
     - view-workload: 工作负载只读用户，拥有当前命名空间内 DaemonSet、StatefulSet、Deployment、Job、CronJob和Pod的只读权限
 
-[KubePi]:https://kubeoperator.io
+[KubePi]:https://github.com/KubeOperator/KubePi
 [Kubectl]:https://github.com/KubeOperator/KubePi/tree/master/docs/deploy/kubectl
 [KubeOperator]:https://github.com/KubeOperator/KubeOperator
 [Kubernetes]:https://kubernetes.io

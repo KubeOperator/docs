@@ -22,7 +22,6 @@
     -  应用商店: 内置 [KubeApps](https://github.com/kubeapps/kubeapps) 应用商店
     -  GPU 支持: 支持 GPU 节点，助力运行深度学习等应用
 
-
 ## 功能列表
 
 <table>

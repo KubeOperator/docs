@@ -65,5 +65,5 @@
         密码: kubepi
         ```
 
-[KubePi]:https://kubeoperator.io
+[KubePi]:https://github.com/KubeOperator/KubePi
 [Kubernetes]:https://kubernetes.io

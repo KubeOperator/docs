@@ -8,5 +8,5 @@
 
 ![UI展示](https://kubeoperator.oss-cn-beijing.aliyuncs.com/kubepi/img/kubepi-demo.gif)
 
-[KubePi]:https://kubeoperator.io
+[KubePi]:https://github.com/KubeOperator/KubePi
 [Kubernetes]:https://kubernetes.io
