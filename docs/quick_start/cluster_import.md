@@ -193,7 +193,7 @@
 
             ```shell
             # 集群任意节点执行
-            kubectl -n kube-system get daemonsets.apps kube-flannel-ds -o yaml
+            kubectl -n kube-system get daemonsets.apps calico-node -o yaml
             ```
 
             ```yaml
