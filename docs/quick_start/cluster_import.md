@@ -7,44 +7,203 @@
 
 ![cluster-import](../img/user_manual/cluster/cluster-import.png)
 
-!!! info "示例"
-    * 架构: 选择集群节点的 CPU 架构类型（支持 amd64、arm64 和混合架构三种类型）
-    * Api Server: https://172.16.10.123:8443
-    * Router: 装有 kube-proxy 的任意集群节点 IP 地址
-    * Token: 需要具有 cluster-admin 权限
+!!! warning "获取架构"
+    选择集群节点的 CPU 架构类型（支持 amd64、arm64 和混合架构三种类型）
 
-    ```vi
-    # 获取 cluster-admin 权限的 token
-    kubectl -n kube-system describe secrets kubeoperator-admin-token-m7srm
-    Name:         kubeoperator-admin-token-m7srm
-    Namespace:    kube-system
-    Labels:       <none>
-    Annotations:  kubernetes.io/service-account.name: kubeoperator-admin
-                  kubernetes.io/service-account.uid: d3f3622-a5cb-4ad1-ab2e-53887c59007
-
-    Type:  kubernetes.io/service-account-token
-
-    Data
-    ====
-    ca.crt:     1038 bytes
-    namespace:  11 bytes
-    token:      eyJhbGciOiJSUzI1NiIsImtcZCI6Ik9GN2U0SXhybVFVRV9JaFJYSTBzdXQ2Mi1WZmRHcXpIOXNDb2Rqemt0MjAifQ.eyJpc3MiOiJrdWJlcm5ldGVzL1NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pxy9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrby1hZG1pbi10b2tlbi1tN3NybSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJrby1hZG1pbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6ImQzZjM2MzIyLWE1Y2ItNGFkMS1hYjJlLTUzODg3Y2E1OTAwNyIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTprby1hZG1pbiJ9.HvpDTAgn0nHu0ZnyPgxOFwWKiwtyYEqWaBWTrSV7EjRcToVIrN2eR8t9kw_RiDEI93S_Nnfjw-Xj1RTRsQEkRASx5uuXMAbELWnFo-rGLR8qs0ct-1t2jGkhgBQ2WtiCqczSG-o91N7PqqYa6RMebUTjy2M7bnybKGxSq0G-StH_JrgOGLHROtvV7U9JWiv32akGXqliK09YfVY6Ykv9kg4z6MeHWvpfCBTmR0qKn9wY2qC2DHynw2Nd_5LxtHeCJGYcvflaR_kcOP4bhzqxMbtGSf0xd5GXYa1iNKGm3Hu8-FtPiDc9BuViQIzR6PvsjzaIBWVRYOxD5zf0jUz_zw
+!!! warning "获取 Api Server"
+    ```shell
+    cat /root/.kube/config | grep server: | awk '{print $2}'
     ```
+
+    注意：如果 server IP 为 127.0.0.1，需要将 IP 替换为任意 master 节点 IP
+
+!!! warning "获取 Router"
+    装有 kube-proxy 的任意 K8s 集群节点的 IP 地址
+
+    ```shell
+    kubectl -n kube-system get pod -o wide | grep kube-proxy
+    ```
+
+    注意：获取任意 IP 地址
+
+!!! warning "获取 Token"
+
+    === "KubeOperator 创建集群"
+
+        ```shell
+        kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep ko-admin | awk '{print $1}') | grep token: | awk '{print $2}'
+        ```
+
+    === "自建集群"
+        
+        !!! warning ""
+            创建 Service Account
+
+            ```yaml
+            apiVersion: v1
+            kind: ServiceAccount
+            metadata:
+              name: kubeoperator-user
+              namespace: kube-system
+            ```
+
+        !!! warning ""
+            创建 ClusterRoleBinding
+
+            ```yaml
+            apiVersion: rbac.authorization.k8s.io/v1
+            kind: ClusterRoleBinding
+            metadata:
+              name: kubeoperator-user
+            roleRef:
+              apiGroup: rbac.authorization.k8s.io
+              kind: ClusterRole
+              name: cluster-admin
+            subjects:
+              - kind: ServiceAccount
+                name: kubeoperator-user
+                namespace: kube-system
+            ```
+
+        !!! warning ""
+            获取 Token
+
+            ```shell
+            kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep kubeoperator-user | awk '{print $1}') | grep token: | awk '{print $2}'
+            ```
 
 ### 使用工具
 
-!!! info "示例"
-    * 工具中所涉及到的镜像默认使用 KubeOperator 镜像仓库，在启用工具前，需要在 Kubernetes 节点配置私有仓库的可信任设置可以通过HTTP直接访问
-    ```
-    vim /etc/docker/daemon.json
-    {
-        "insecure-registries" : [ "...", "kubeoperator-ip:8082", "..." ]
-    }
-    # kubeoperator-ip 为 KubeOperator 部署机 IP
+!!! warning "仓库配置"
+    - 工具中所涉及到的镜像默认使用 nexus 镜像仓库。在启用工具之前，需要在所有 K8s 集群节点对 nexus 镜像仓库进行授信。
+    - 不能针对导入的自建集群进行扩缩容、备份等 Day2 操作
 
-    # 为了使得配置生效，需要重新启动 docker 服务
+    ```shell
+    vim /etc/docker/daemon.json
+    ```
+    
+    ```json
+    {
+        ...
+        "insecure-registries" : [ "...", "kubeoperator-ip:8082", "..." ]
+        ...
+    }
+
+    注意：kubeoperator-ip 为 KubeOperator 部署机 IP
+    ```
+
+    ```shell
+    # 重新启动 docker 服务使得配置生效
     systemctl restart docker.service
     ```
 
+### 容器运行时参数
+
+!!! warning "Docker"
+    ```shell
+    # 集群任意节点执行
+    cat /etc/docker/daemon.json
+    ```
+
+    ```json
+    {
+        ...
+        "bip": "172.17.0.1/16", # Container 子网
+        "data-root": "/var/lib/docker", # Docker 数据路径
+        ...
+    }
+    ```
+
+!!! warning "Containerd"
+
+    ```shell
+    # 集群任意节点执行
+    cat /etc/containerd/config.toml
+    ```
+
+    ```yaml
+    ...
+    root = "/var/lib/containerd" # Containerd 数据路径
+    ...
+    ```
+
+### 容器网络参数
+
 !!! warning ""
-    KubeOperator 不能针对导入的集群进行扩缩容、备份等集群运营操作
+
+    === "flannel"
+
+        !!! warning "网络模式"
+
+            ```shell
+            # 集群任意节点执行
+            kubectl -n kube-system get cm kube-flannel-cfg -o yaml
+            ```
+
+            ```json
+            {
+                ...
+                net-conf.json: |
+                {
+                  "Network": "10.0.0.0/14",
+                  "Backend": {
+                    "Type": "vxlan" # 网络模式为 vxlan
+                  }
+                }
+                ...
+            }
+            ```
+
+        !!! warning "多网络设置"
+
+            ```shell
+            # 集群任意节点执行
+            kubectl -n kube-system get daemonsets.apps kube-flannel-ds -o yaml
+            ```
+
+            ```yaml
+            ...
+            containers:
+            - args:
+              - --ip-masq
+              - --kube-subnet-mgr
+              - --iface=ens192 # 多网络设置为启用，网卡名称为 ens192
+            ...
+            ```
+
+    === "calico"
+
+        !!! warning "网络模式"
+
+            ```shell
+            # 集群任意节点执行
+            kubectl -n kube-system get cm calico-config -o yaml
+            ```
+
+            ```yaml
+            ...
+            containers:
+            - env:
+              - name: CALICO_IPV4POOL_IPIP
+                value: "off" # off 代表网络模式为 bgp，Always 代表网络模式为 ipip
+            ...
+            ```
+
+        !!! warning "多网络设置"
+
+            ```shell
+            # 集群任意节点执行
+            kubectl -n kube-system get daemonsets.apps kube-flannel-ds -o yaml
+            ```
+
+            ```yaml
+            ...
+            containers:
+            - env:
+              - name: DATASTORE_TYPE
+                value: kubernetes
+              - name: IP_AUTODETECTION_METHOD
+                value: interface=ens192 # 多网络设置为网卡，网卡名称为 ens192
+                value: cidr=192.168.64.0/24 # 多网络设置为网段，网段为 192.168.64.0/24
+            ...
+            ```    
