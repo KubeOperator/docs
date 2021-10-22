@@ -9,7 +9,7 @@
     !!! info ""
         ```sh
         # 安装
-        sudo docker run -d --restart=unless-stopped -p 80:80 kubeoperator/kubepi-server
+        sudo docker run --privileged -d --restart=unless-stopped -p 80:80 kubeoperator/kubepi-server
         ```
 
     !!! info "持久化部署"
@@ -18,7 +18,7 @@
         mkdir -p /opt/kubepi
 
         # 安装
-        sudo docker run -d -v /opt/kubepi:/var/lib/kubepi --restart=unless-stopped -p 80:80 kubeoperator/kubepi-server
+        sudo docker run --privileged -d -v /opt/kubepi:/var/lib/kubepi --restart=unless-stopped -p 80:80 kubeoperator/kubepi-server
         ```
 
     !!! info "登录"
