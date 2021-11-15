@@ -2,8 +2,9 @@
 ### 基本信息
 
 !!! warning ""
-    * 支持导入非 KubeOperator 创建的集群
-    * 导入集群版本要在 KubeOperator 支持的版本范围内，参考: [版本管理](../user_manual/version.md#_4)
+    - 支持导入非 KubeOperator 创建的集群
+    - 非 KubeOperator 创建的集群不支持扩缩容、升级、备份等 Day2 操作
+    - 导入集群版本要在 KubeOperator 支持的版本范围内，参考: [版本管理](../user_manual/version.md#_4)
 
 ![cluster-import](../img/user_manual/cluster/cluster-import.png)
 
@@ -24,7 +25,7 @@
     kubectl -n kube-system get pod -o wide | grep kube-proxy
     ```
 
-    注意：获取任意 IP 地址
+    注意：获取任意节点的 IP 地址
 
 !!! warning "获取 Token"
 
@@ -72,11 +73,12 @@
             kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep kubeoperator-user | awk '{print $1}') | grep token: | awk '{print $2}'
             ```
 
-### 使用工具
+### 非 KubeOperator 创建集群
+
+#### 使用工具
 
 !!! warning "仓库配置"
-    - 工具中所涉及到的镜像默认使用 nexus 镜像仓库。在启用工具之前，需要在所有 K8s 集群节点对 nexus 镜像仓库进行授信。
-    - 不能针对导入的自建集群进行扩缩容、备份等 Day2 操作
+    - 工具中涉及到的镜像来源于 nexus 镜像仓库。在启用工具之前，需要在所有 K8s 集群节点上对 nexus 镜像仓库进行 http 授信。
 
     ```shell
     vim /etc/docker/daemon.json
@@ -97,7 +99,9 @@
     systemctl restart docker.service
     ```
 
-### 容器运行时参数
+### KubeOperator 创建集群
+
+#### 获取容器运行时参数
 
 !!! warning "Docker"
     ```shell
@@ -127,7 +131,7 @@
     ...
     ```
 
-### 容器网络参数
+#### 获取容器网络参数
 
 !!! warning ""
 
@@ -206,4 +210,4 @@
                 value: interface=ens192 # 多网络设置为网卡，网卡名称为 ens192
                 value: cidr=192.168.64.0/24 # 多网络设置为网段，网段为 192.168.64.0/24
             ...
-            ```    
+            ```
