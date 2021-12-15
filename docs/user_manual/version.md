@@ -52,7 +52,7 @@
             <td>v1.20.4</td>
             <td>v1.20.6</td>
             <td>v1.20.8</td>
-            <td></td>
+            <td>v1.20.10</td>
         </tr>
     <tbody>
 </table>

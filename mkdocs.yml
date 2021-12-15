@@ -64,9 +64,13 @@ nav:
   - KubePi:
     - 总体介绍: kubepi/index.md
     - 安装部署: kubepi/install.md
-    - 集群列表: kubepi/cluster.md
-    - 集群控制台: kubepi/dashboard.md
-    - 用户与权限: kubepi/rbac.md
+    - 集群列表:
+      - 集群导入: kubepi/cluster_import.md
+      - 集群授权: kubepi/cluster_authorization.md
+    - 控制台: kubepi/dashboard.md
+    - 用户管理: kubepi/rbac.md
+    - 镜像仓库: kubepi/registry.md
+    - 日志审计: kubepi/log_audit.md
   - WebKubectl:
     - 总体介绍: webkubectl/index.md
     - 安装部署: webkubectl/install.md

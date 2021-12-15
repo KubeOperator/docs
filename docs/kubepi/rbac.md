@@ -4,10 +4,8 @@
 !!! warning ""
     系统会初始化 admin 超级管理员（默认密码 kubepi），拥有系统所有资源的管理权限
 
-### 创建用户
-
 !!! warning ""
-    创建用户user1，拥有集群管理员和角色与用户管理员角色
+    创建用户 user1，拥有集群管理员和用户管理员角色
 
 ![create-user](../img/kubepi/create-user.png)
 
@@ -21,9 +19,14 @@
 
 ![role-index](../img/kubepi/role-index.png)
 
-### 创建角色
-
 !!! warning ""
-    创建角色role1，拥有集群、用户、角色的所有操作权限
+    创建角色 role1，拥有用户、角色、镜像仓库和系统日志的所有操作权限
 
 ![create-role](../img/kubepi/create-role.png)
+
+## LDAP
+
+!!! warning ""
+    管理员可以将 LDAP 外部用户系统中的用户同步到系统中，同时允许最终用户在登录 KubePi 时使用其 LDAP 凭据进行身份验证
+
+![ldap](../img/kubepi/ldap.png)

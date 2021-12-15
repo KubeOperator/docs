@@ -3,8 +3,7 @@
 
 !!! warning ""
     - 支持导入非 KubeOperator 创建的集群
-    - 非 KubeOperator 创建的集群不支持扩缩容、升级、备份等 Day2 操作
-    - 导入集群版本要在 KubeOperator 支持的版本范围内，参考: [版本管理](../user_manual/version.md#_4)
+    - 导入非 KubeOperator 创建的集群不支持扩缩容、升级、备份等 Day2 操作
 
 ![cluster-import](../img/user_manual/cluster/cluster-import.png)
 
@@ -13,7 +12,7 @@
 
 !!! warning "获取 Api Server"
     ```shell
-    cat /root/.kube/config | grep server: | awk '{print $2}'
+    cat ~/.kube/config | grep server: | awk '{print $2}'
     ```
 
     注意：如果 server IP 为 127.0.0.1，需要将 IP 替换为任意 master 节点 IP

@@ -33,7 +33,7 @@
                 <td>4</td>
                 <td>8G</td>
                 <td>100G</td>
-                <td>3</td>
+                <td>1</td>
             </tr>
         <tbody>
     </table>

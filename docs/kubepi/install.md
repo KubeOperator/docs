@@ -1,7 +1,4 @@
 
-!!! info ""
-    [KubePi][KubePi] 可以使用 docker run 命令在容器内运行。它也可以使用 kubectl 安装在 [Kubernetes][Kubernetes] 集群上。
-
 ## 安装说明
 
 === "docker"
@@ -91,8 +88,7 @@
         [root@kubepi ~]# mkdir -p /opt/kubepi/db
 
         # 拷贝容器内持久化文件
-        # 注意：替换 kubepi_container_id
-        [root@kubepi ~]# docker cp kubepi_container_id:/var/lib/kubepi/db/kubepi.db /opt/kubepi/db/
+        [root@kubepi ~]# docker cp <CONTAINER_ID>:/var/lib/kubepi/db/kubepi.db /opt/kubepi/db/
         ```
 
     !!! info "升级"
@@ -102,9 +98,8 @@
         [root@kubepi ~]# docker pull kubeoperator/kubepi-server:latest
 
         # 停止 kubepi 服务（需要用到kubepi container id）
-        # 注意：替换 kubepi_container_id
-        [root@kubepi ~]# docker stop kubepi_container_id
-        [root@kubepi ~]# docker rm kubepi_container_id
+        [root@kubepi ~]# docker stop <CONTAINER_ID>
+        [root@kubepi ~]# docker rm <CONTAINER_ID>
 
         # 启动服务
         [root@kubepi ~]# sudo docker run --privileged -d -v /opt/kubepi:/var/lib/kubepi --restart=unless-stopped -p 80:80 kubeoperator/kubepi-server
