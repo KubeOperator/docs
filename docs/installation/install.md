@@ -143,8 +143,10 @@
             <tr>
                 <td>操作系统</td>
                 <td><b>CentOS/RHEL 7.4 - 7.9 Minimal<br>
+                    Ubuntu 12.04 / 18.04<br>
                     EulerOS 2.5（x86_64）<br>
-                    EulerOS 2.8（arm64）</b></td>
+                    EulerOS 2.8（arm64）<br>
+                    银河麒麟操作系统v10</b></td>
                 <td>cat /etc/redhat-release</td>
             </tr>
             <tr>
@@ -221,6 +223,7 @@
     ------------------------------------------------------------------------------------------------------------------------------------------------
     kubeoperator_kobe         sh /root/entrypoint.sh           Up (healthy)   8080/tcp
     kubeoperator_kotf         kotf-server                      Up (healthy)   8080/tcp
+    kubeoperator_kubepi       kubepi-server                    Up (healthy)   80/tcp
     kubeoperator_mysql        /entrypoint.sh mysqld            Up (healthy)   3306/tcp, 33060/tcp
     kubeoperator_nexus        sh -c ${SONATYPE_DIR}/star ...   Up (healthy)   0.0.0.0:8081->8081/tcp, 0.0.0.0:8082->8082/tcp, 0.0.0.0:8083->8083/tcp
     kubeoperator_nginx        /docker-entrypoint.sh ngin ...   Up (healthy)   0.0.0.0:80->80/tcp

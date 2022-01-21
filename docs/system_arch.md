@@ -8,6 +8,7 @@
 !!! warning ""
     - kubeoperator_server: 提供平台业务管理相关功能的后台服务；
     - kubeoperator_ui: 提供平台业务管理相关功能的前台服务；
+    - kubeoperator_kubepi: 提供 Dashboard 的功能；
     - kubeoperator_kobe: 提供执行 Ansible 任务创建 Kubernetes 集群的功能；
     - kubeoperator_kotf: 提供执行 Terraform 任务创建虚拟机的功能；
     - kubeoperator_webkubectl: 提供在 Web 浏览器中运行 kubectl 命令的功能；
