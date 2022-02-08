@@ -75,7 +75,9 @@ nav:
     - 总体介绍: webkubectl/index.md
     - 安装部署: webkubectl/install.md
     - 使用指南: webkubectl/tutorial.md
-  - 开发文档: dev/rest_api.md
+  - 开发文档:
+    - 开发环境搭建: dev/dev_manual.md
+    - API 文档: dev/rest_api.md
   - 常见问题: faq.md
   - 技术咨询: https://jinshuju.net/f/qc6g44
   - 关于:

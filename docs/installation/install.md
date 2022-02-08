@@ -143,7 +143,7 @@
             <tr>
                 <td>操作系统</td>
                 <td><b>CentOS/RHEL 7.4 - 7.9 Minimal<br>
-                    Ubuntu 12.04 / 18.04<br>
+                    Ubuntu 20.04 / 18.04<br>
                     EulerOS 2.5（x86_64）<br>
                     EulerOS 2.8（arm64）<br>
                     银河麒麟操作系统v10</b></td>
