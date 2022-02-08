@@ -71,6 +71,7 @@ nav:
     - 用户管理: kubepi/rbac.md
     - 镜像仓库: kubepi/registry.md
     - 日志审计: kubepi/log_audit.md
+    - 开发文档: kubepi/dev_manual.md
   - WebKubectl:
     - 总体介绍: webkubectl/index.md
     - 安装部署: webkubectl/install.md

@@ -149,7 +149,7 @@
 ### 前端
 
 !!! warning ""
-    - KubeOperator 前端使用了 Vue.js 作为前端框架，ElementUI 作为 UI 框架，并使用 npm 作为包管理工具
+    - [neeko](https://github.com/KubeOperator/neeko) 前端使用了 Vue.js 作为前端框架，ElementUI 作为 UI 框架，并使用 npm 作为包管理工具
     - 开发者请先下载 Node.js 作为运行环境（推荐版本：v14.x）
 
 #### 运行步骤
