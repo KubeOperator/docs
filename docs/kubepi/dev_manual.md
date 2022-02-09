@@ -31,13 +31,13 @@
       server:
         bind:
           host: 0.0.0.0
-          port: 2019
+          port: 80
         ssl:
           enable: false
           certificate:
           certificateKey:
       db:
-        path: /var/lib/kubepi/db/kukbepi.db
+        path: /var/lib/kubepi/db/kubepi.db
     ```
 
 ## 数据库文件
@@ -46,7 +46,7 @@
     [KubePi](https://github.com/KubeOperator/KubePi) 使用 [BoltDB](https://github.com/etcd-io/bbolt) 作为底层数据存储，使用 [storm](https://github.com/asdine/storm) 作为上层 ORM 框架
 
     ```
-    数据库文件地址 /var/lib/kubepi/db/kukbepi.db
+    数据库文件地址 /var/lib/kubepi/db/kubepi.db
     ```
 
 ## 构建二进制文件
