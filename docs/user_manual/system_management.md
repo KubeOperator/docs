@@ -1,19 +1,53 @@
 
 !!! warning "注意"
-    在使用 KubeOperator 之前，必须先对 KubeOperator 进行必要的参数设置。这些系统参数将影响到 Kubernetes 集群的安装及相关服务的访问
+    在使用 KubeOperator 之前，必须对 KubeOperator 进行必要的参数设置，这些系统参数将影响到 Kubernetes 集群的安装及相关服务的访问
 
 ### 仓库
 
-!!! info ""
-    * 仓库协议: 支持 http 和 https
-    * 仓库 IP: 默认为部署 KubeOperator 的服务器 IP（将使用该 IP:8081 来访问 nexus 仓库）
-    * CPU架构: 支持 x86_64 和 arm64
+!!! warning ""
+    - 仓库协议: 支持 http 和 https
+    - 仓库 IP: 默认为部署 KubeOperator 的服务器 IP（将使用该 IP:8081 来访问 nexus 仓库）
+    - CPU架构: 支持 x86_64 和 arm64
 
-!!! info "帮助"
-    * 8081: nexus 仓库默认管理端口
-    * 8082: docker group 仓库端口（适用于 docker pull 操作）
-    * 8083: docker hosted 仓库端口（适用于 docker push 操作）
-    * 仓库默认用户名/密码: admin/admin123
+#### 端口
+
+!!! warning ""
+    - 8081: nexus 仓库默认管理端口
+    - 8082: docker group 仓库端口（适用于 docker pull 操作）
+    - 8083: docker hosted 仓库端口（适用于 docker push 操作）
+    !!! warning "开启/关闭"
+        - 出于安全考虑，可以手动关闭 nexus 对外暴露的端口
+        - ./安装目录/kubeoperator/docker-compose.yml，将对应的端口注释，koctl restart 重启服务即可
+
+#### 密码
+
+!!! warning ""
+    仓库默认用户名/密码: admin/admin123（建议修改）
+    !!! warning "修改密码"
+        - 登录 nexus 系统修改默认密码
+        - 将修改后的密码同步到 KubeOperator 对应仓库（KubeOperator 系统设置 - 仓库 - 编辑 - 修改密码）
+
+#### group 仓库
+
+!!! warning ""
+    - 四个 proxy 仓库:
+    !!! warning ""
+        - docker hub: https://registry-1.docker.io
+        - quay.io: https://quay.io
+        - elastic: https://docker.elastic.co
+        - aliyun: https://registry.cn-qingdao.aliyuncs.com
+    - 一个 hosted 类型仓库:
+    !!! warning ""
+        - kubeoperator
+
+#### hosted 仓库
+
+!!! warning ""
+    该类型仓库支持用户手动 push 镜像
+    !!! warning "push 镜像"
+        - docker login ip:8083 -u admin -p admin123
+        - docker tag nginx:alpine ip:8083/nginx:alpine
+        - docker push ip:8083/nginx:alpine
 
 ![system](../img/user_manual/system_management/registry.png)
 
@@ -21,14 +55,14 @@
     如果部署K8S集群时需要K8S节点采用 x86_64 和 arm64 混合部署，则需要添加两个不同CPU架构的仓库
 
 !!! warning "自定义 Nexus 仓库端口"
-    * v3.9.0 版本开始，KubeOperator 支持用户自定义 Nexus 仓库端口
-    * 修改安装目录中的 kubeoperator.conf 配置文件，重启 KubeOperator 服务后即可生效。之后需要在 系统设置 - 仓库设置 的高级设置栏目中完成 Nexus 仓库端口的变更
+    - v3.9.0 版本开始，KubeOperator 支持用户自定义 Nexus 仓库端口
+    - 修改安装目录中的 kubeoperator.conf 配置文件，重启 KubeOperator 服务后即可生效。之后需要在 系统设置 - 仓库设置 的高级设置栏目中完成 Nexus 仓库端口的变更
 
 ### 凭据
 
 !!! warning ""
-    * 凭据为 KubeOperator 连接主机资产的凭证。支持添加 password 和 privatekey 两种方式的凭据
-    * 系统会初始化名称为 kubeoperator 的凭据作为自动模式所创建服务器的密码，默认密码为 KubeOperator@2019
+    - 凭据为 KubeOperator 连接主机资产的凭证。支持添加 password 和 privatekey 两种方式的凭据
+    - 系统会初始化名称为 kubeoperator 的凭据作为自动模式所创建服务器的密码，默认密码为 KubeOperator@2019
 
 ![password](../img/user_manual/system_management/key-1.png)
 
@@ -39,8 +73,8 @@
 
 ### NTP
 
-!!! info ""
-    * NTP Server: 时间同步服务器，默认可以为空。也可以自建或使用公共 NTP Server
+!!! warning ""
+    NTP Server: 时间同步服务器，默认可以为空。也可以自建或使用公共 NTP Server
     
 ![system](../img/user_manual/system_management/ntp.png)
 
