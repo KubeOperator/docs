@@ -84,7 +84,6 @@ nav:
   - 关于:
     - 更新说明: about/changelog.md
     - 联系我们: about/contact.md
-  - 企业版试用: enterprise.md
 
 markdown_extensions:
   - admonition
