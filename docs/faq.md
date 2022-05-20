@@ -85,14 +85,6 @@
 !!! warning ""
     是的。KubeOperator 已经通过认证，具体请参加: https://landscape.cncf.io
 
-### 与 Rancher 的区别
-
-!!! warning ""
-    Rancher 是完整的容器管理平台，KubeOperator 仅专注于帮助企业规划、部署和运营生产级别的 Kubernetes 集群，和 KubeOperator 有可比性的是 Rancher RKE，而不是 Rancher 全部
-
-!!! warning ""
-    KubeOperator 推荐企业采纳解耦的方式来实现云原生之路，也就是说容器云平台与其之上的 DevOps 平台、微服务治理平台、AI 平台、应用商店等是解耦的。
-
 ### KubeOperator 部署机的推荐配置
 
 !!! warning ""
