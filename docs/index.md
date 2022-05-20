@@ -27,3 +27,11 @@
     -  Multi-AZ 支持: 将 Master 节点分布在不同的故障域上确保集群高可用
     -  应用商店: 内置 [KubeApps](https://github.com/kubeapps/kubeapps) 应用商店
     -  GPU 支持: 支持 GPU 节点，助力运行深度学习等应用
+
+[KubeOperator]:https://kubeoperator.io
+[Kubernetes]:https://kubernetes.io
+[VMware]:https://www.vmware.com
+[OpenStack]:https://www.openstack.org
+[FusionCompute]:https://support.huawei.com/enterprise/zh/cloud-computing/fusioncompute-pid-8576912
+[Terraform]:https://www.terraform.io
+[Ansible]:https://www.ansible.com

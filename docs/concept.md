@@ -3,12 +3,12 @@
 
 !!! warning ""
     * 手动模式: 用户需要自己准备物理机或虚拟机,存储可选择 NFS 持久化存储，外部 ceph 存储等
-    * 自动模式: 用户只需要绑定云平台（比如 VMware）账号信息，KubeOperator 会根据预先定义的部署计划来自动创建主机实现一键自动化部署
+    * 自动模式: 用户只需要绑定云平台（比如 [VMware][VMware]）账号信息，[KubeOperator][KubeOperator] 会根据预先定义的部署计划来自动创建主机实现一键自动化部署
 
 ## 部署计划
 
 !!! warning ""
-    自动部署模式下，部署计划定 义了 Kubernetes 集群的部署细节，包括其部署模型、集群所在的区域、可用区、节点大小类型等
+    自动部署模式下，部署计划定义了 [Kubernetes][Kubernetes] 集群的部署细节，包括其部署模型、集群所在的区域、可用区、节点大小类型等
 
 ## 区域和可用区
 
@@ -18,10 +18,10 @@
     区域(Region)和可用区(AZ)这两个术语来自公有云。每个区域完全独立。每个可用区完全隔离，但同一个区域内的可用区之间使用低时延链路相连。区域和可用区之间的关系如下图所示
 
 !!! warning ""
-    对于公有云厂商提供的托管 Kubernetes 服务，master 节点由公有云厂商托管并维护，其 3 个master 节点会分布在同个区域下面的 3 个不同可用区上面，实现真正的高可用
+    对于公有云厂商提供的托管 [Kubernetes][Kubernetes] 服务，master 节点由公有云厂商托管并维护，其 3 个master 节点会分布在同个区域下面的 3 个不同可用区上面，实现真正的高可用
 
 !!! warning ""
-    KubeOperator 借鉴公有云厂商的思路和概念，并应用到 VMware、Openstack 和 FusionCompute 等私有云平台上面。例如，在 VMware 云平台下，区域对应为 Datacenter，可用区对应于 cluster，或者 cluster 下面的 resource pool
+    [KubeOperator][KubeOperator] 借鉴公有云厂商的思路和概念，并应用到 [VMware][VMware]、[OpenStack][OpenStack] 和 [FusionCompute][FusionCompute] 等私有云平台上面。例如，在 [VMware][VMware] 云平台下，区域对应为 Datacenter，可用区对应于 cluster，或者 cluster 下面的 resource pool
 
 !!! warning "注意事项"
     * 如果用户只有一个 vSphere 集群，那么可以在集群下面建立三个 resource pool，每个resource pool 对应于一个可用区
@@ -61,3 +61,9 @@
 !!! warning ""
     * 管理集群，查看集群概览、监控、日志、事件、添加工具、启用CSI扫描等相关操作
     * 查看系统日志
+
+[KubeOperator]:https://kubeoperator.io
+[Kubernetes]:https://kubernetes.io
+[VMware]:https://www.vmware.com
+[OpenStack]:https://www.openstack.org
+[FusionCompute]:https://support.huawei.com/enterprise/zh/cloud-computing/fusioncompute-pid-8576912
