@@ -184,23 +184,3 @@
         <td>提供深度学习AI 应用，比如 TensorFlow</td>
     </tr>
  </table>
-
-## 更多阅读
-
-!!! warning ""
-    - [干货分享丨KubeOperator如何助力企业运营生产级别的Kubernetes集群？](https://blog.fit2cloud.com/?p=1255)
-    - [PPT 介绍](https://kubeoperator.io/download/KubeOperator_Intro.pdf)
-
-## 企业版试用
-
-!!! warning ""
-    - [申请企业版试用](https://jinshuju.net/f/qc6g44)
-    - 企业版支持离线安装，申请通过后会提供高速下载链接
-
-[KubeOperator]:https://kubeoperator.io
-[Kubernetes]:https://kubernetes.io
-[VMware]:https://www.vmware.com
-[OpenStack]:https://www.openstack.org
-[FusionCompute]:https://support.huawei.com/enterprise/zh/cloud-computing/fusioncompute-pid-8576912
-[Terraform]:https://www.terraform.io
-[Ansible]:https://www.ansible.com
