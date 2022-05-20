@@ -84,10 +84,3 @@
     电子邮件服务器用于向重置密码和消息中心开启邮件功能的用户发送邮件
 
 ![email](../img/user_manual/system_management/email-1.png)
-
-### 许可证
-
-!!! warning ""
-    支持 license 导入，启用 x-pack 功能
-
-![license](../img/user_manual/system_management/license-1.png)
