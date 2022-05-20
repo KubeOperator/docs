@@ -61,7 +61,11 @@ nav:
     - 系统设置: user_manual/system_management.md
     - 应用商店: user_manual/kubeapps.md
     - Argo CD: user_manual/argocd.md
-  - KubePi:
+  - 开发文档:
+    - 开发环境搭建: dev/dev_manual.md
+    - API 文档: dev/rest_api.md
+  - 常见问题: faq.md
+  - KubePi 文档:
     - 总体介绍: kubepi/index.md
     - 安装部署: kubepi/install.md
     - 集群列表:
@@ -72,14 +76,10 @@ nav:
     - 镜像仓库: kubepi/registry.md
     - 日志审计: kubepi/log_audit.md
     - 开发文档: kubepi/dev_manual.md
-  - WebKubectl:
+  - WebKubectl 文档:
     - 总体介绍: webkubectl/index.md
     - 安装部署: webkubectl/install.md
     - 使用指南: webkubectl/tutorial.md
-  - 开发文档:
-    - 开发环境搭建: dev/dev_manual.md
-    - API 文档: dev/rest_api.md
-  - 常见问题: faq.md
   - 更新日志: about/changelog.md
   - 联系我们: about/contact.md
 
