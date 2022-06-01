@@ -45,8 +45,8 @@ nav:
   - 快速入门:
     - 系统设置: quick_start/system_settings.md
     - 集群规划:
-      - 自动模式: quick_start/cluster_planning/automatic.md
       - 手动模式: quick_start/cluster_planning/manual.md
+      - 自动模式: quick_start/cluster_planning/automatic.md
     - 集群部署: quick_start/cluster_deployment.md
     - 集群导入: quick_start/cluster_import.md
   - 使用指南:

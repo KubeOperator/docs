@@ -1,8 +1,7 @@
 
 !!! warning ""
-    KubeOperator 支持两种 Kubernetes 集群部署方式，一种是手动模式，另外一种是自动模式。手动模式下，用户需要自行准备主机。
-
-    本章节以手动模式部署一个开发测试用集群为例，需要至少准备三台服务器，每台服务器的用途和需求是：
+    - 手动模式下，用户需要自行准备主机
+    - 本章节以手动模式部署一个开发测试用集群，每台服务器的用途和需求如下表：
 
 <table>
     <tr>
@@ -35,17 +34,17 @@
     </tr>
 </table>
 
+### 添加主机
+
+!!! warning ""
+    - 推荐使用全新的机器
+    - KubeOperator 部署机不能作为 Kubernetes 集群节点使用
+
+![host-add](../../img/user_manual/hosts/host-add.png)
+
 ### 主机列表
 
 !!! warning ""
     主机列表可以看到已添加主机的详细信息，包括 IP、CPU、内存、操作系统等
 
 ![host-list](../../img/user_manual/hosts/host-list.png)
-
-### 添加主机
-
-!!! warning ""
-    * 推荐使用全新的机器
-    * KubeOperator 部署机不能作为 Kubernetes 集群节点使用
-
-![host-add](../../img/user_manual/hosts/host-add.png)
