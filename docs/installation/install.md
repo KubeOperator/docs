@@ -142,11 +142,17 @@
         <tbody>
             <tr>
                 <td>操作系统</td>
-                <td><b>CentOS/RHEL 7.4 - 7.9 Minimal<br>
-                    Ubuntu 20.04 / 18.04<br>
-                    EulerOS 2.5（x86_64）<br>
-                    EulerOS 2.8（arm64）<br>
-                    银河麒麟操作系统v10</b></td>
+                <td>
+                    <b>
+                        CentOS 7.4 - 7.9<br>
+                        RHEL 7.4 - 7.9<br>
+                        Ubuntu 20.04 / 18.04<br>
+                        Kylin v10<br>
+                        openEuler 22.03<br>
+                        EulerOS 2.5（x86_64）<br>
+                        EulerOS 2.8（aarch64）
+                    </b>
+                </td>
                 <td>cat /etc/redhat-release</td>
             </tr>
             <tr>
