@@ -1,9 +1,9 @@
 ### 仓库
 
 !!! warning ""
-    - 仓库协议: 支持 http 和 https
-    - 仓库 IP: 默认为部署 KubeOperator 的服务器 IP（将使用 IP:8081 来访问 nexus 仓库）
-    - CPU架构: 支持 x86_64 和 arm64
+    - CPU 架构: 支持 x86_64 和 aarch64
+    - 协议: 支持 http 和 https（需手动启用）
+    - 地址: 默认为部署 KubeOperator 的服务器 IP（将使用 IP:8081 来访问 nexus 仓库）
 
 #### 端口
 
@@ -45,7 +45,7 @@
         - docker tag nginx:alpine ip:8083/nginx:alpine
         - docker push ip:8083/nginx:alpine
 
-![system](../img/user_manual/system_management/registry.png)
+![registry](../img/user_manual/system_management/registry.png)
 
 !!! warning "注意"
     如果部署K8S集群时需要K8S节点采用 x86_64 和 arm64 混合部署，则需要添加两个不同CPU架构的仓库
@@ -59,7 +59,7 @@
 
 !!! warning ""
     - 凭据为 KubeOperator 连接主机资产的凭证。支持添加 password 和 privatekey 两种方式的凭据
-    - 系统会初始化名称为 kubeoperator 的凭据作为自动模式所创建服务器的密码，默认密码为 KubeOperator@2019
+    - 系统会初始化名称为 kubeoperator 的凭据（自动模式默认模版创建服务器的密码），默认密码为: KubeOperator@2019
 
 !!! warning "密钥"
     - 1、在 KubeOperator 主机通过 ssh-keygen 命令生成 id_rsa 和 id_rsa.pub 密钥对
@@ -73,13 +73,46 @@
 ### NTP
 
 !!! warning ""
-    - 时间同步服务器。可以使用自建或公共 NTP Server
+    - 支持配置多个 NTP 服务器地址
+    - 支持手动启用或禁用 NTP 服务器
     
-![system](../img/user_manual/system_management/ntp.png)
+![ntp](../img/user_manual/system_management/ntp.png)
 
-### 邮箱
+### Dashboard
 
 !!! warning ""
-    电子邮件服务器用于向重置密码和消息中心开启邮件功能的用户发送邮件
+    此处为 admin 用户登录凭据，需要和 Dashboard 用户管理中设置的密码保持一致。
 
-![email](../img/user_manual/system_management/email-1.png)
+### LDAP
+
+!!! warning ""
+    LDAP 支持 使用 LADP 与 Windows AD 的用户作为 KubeOperator 登录用户。
+
+!!! warning "选项说明"
+    | name        | explain                                  |
+    | :---------- | :----------------------------------------|
+    | 地址         | serverurl                               |
+    | 端口         | 389                                     |
+    | 用户名       | CN=account,CN=Users,DC=ko,DC=com         |
+    | 密码         | ********                                |
+    | 用户过滤 DN   | dc=kubeoperator,dc=com                  |
+    | 用户过滤器    | ((objectClass=organizationalPerson))    |
+    | 用户属性映射  | {"Name": "cn", "Email": "mail"}          |
+
+### 消息
+
+!!! warning ""
+    必须设置才能使用与消息订阅相关的功能
+
+!!! warning "邮箱"
+    | 名称 | 示例 | 备注 |
+    | ---------- | ---------------- | ---------------------------------- |
+    | SMTP地址   | smtp.qq.com      | 服务商提供的 smtp 服务器             |
+    | 端口       | 25               | 通常是 `25`                         |
+    | 用户名     | 296015668@qq.com | 通常是 `user@domain.com`            |
+    | 密码       | **************** | 每次 `测试连接` 都需要重新输入密码    |
+    | 测试用户    | 296015668@qq.com | `测试连接` 必须要输入                |
+
+!!! warning ""
+    - 企业微信: [企业微信基本概念](https://developer.work.weixin.qq.com/document/path/90665)
+    - 钉钉: [钉钉机器人消息发送设置](https://open.dingtalk.com/document/group/assign-a-webhook-url-to-an-internal-chatbot)
