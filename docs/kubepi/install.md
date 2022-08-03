@@ -3,14 +3,14 @@
 
 === "docker"
 
-    !!! info ""
+    !!! warning ""
 
         ```
         # 安装
         sudo docker run --privileged -d --restart=unless-stopped -p 80:80 kubeoperator/kubepi-server
         ```
 
-    !!! info "持久化部署"
+    !!! warning "持久化部署"
 
         ```
         # 创建持久化目录
@@ -20,7 +20,7 @@
         sudo docker run --privileged -d -v /opt/kubepi:/var/lib/kubepi --restart=unless-stopped -p 80:80 kubeoperator/kubepi-server
         ```
 
-    !!! info "登录"
+    !!! warning "登录"
 
         ```
         地址: http://localhost
@@ -30,14 +30,14 @@
 
 === "kubectl"
 
-    !!! info ""
+    !!! warning ""
 
         ```
         # 安装
         sudo kubectl apply -f https://raw.githubusercontent.com/KubeOperator/KubePi/master/docs/deploy/kubectl/kubepi.yaml
         ```
 
-    !!! info "持久化部署"
+    !!! warning "持久化部署"
 
         ```
         # 安装
@@ -47,7 +47,7 @@
         !!! warning "注意"
             需要替换创建 pvc 时使用的 storageClass
 
-    !!! info "获取访问地址"
+    !!! warning "获取访问地址"
 
         ```
         # 获取 NodeIp
@@ -60,7 +60,7 @@
         echo http://$NODE_IP:$NODE_PORT
         ```
 
-    !!! info "登录"
+    !!! warning "登录"
 
         ```
         地址: http://$NODE_IP:$NODE_PORT
@@ -72,7 +72,7 @@
 
 === "docker"
 
-    !!! info "获取 CONTAINER ID"
+    !!! warning "获取 CONTAINER ID"
 
         ```
         [root@kubepi ~]# docker ps -a | grep kubepi-server
@@ -81,7 +81,7 @@
         a953fd099001    781302f01508    "kubepi-server"     12 days ago     Up 24 minutes       0.0.0.0:8080->80/tcp    trusting_snyder
         ```
 
-    !!! info "获取 kubepi 持久化数据（持久化部署忽略此步骤）"
+    !!! warning "获取 kubepi 持久化数据（持久化部署忽略此步骤）"
 
         ```
         # 创建持久化目录
@@ -91,7 +91,7 @@
         [root@kubepi ~]# docker cp <CONTAINER_ID>:/var/lib/kubepi/db/kubepi.db /opt/kubepi/db/
         ```
 
-    !!! info "升级"
+    !!! warning "升级"
 
         ```
         # 下载最新镜像
@@ -107,7 +107,7 @@
 
 === "kubectl"
 
-    !!! info ""
+    !!! warning ""
 
         ```
         # 注意：确保 kubepi deployment 的镜像拉取策略为 imagePullPolicy: Always

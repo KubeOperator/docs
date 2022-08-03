@@ -194,9 +194,9 @@
 
 === "离线安装"
 
-    !!! info "请自行下载 KubeOperator [最新版本的离线安装包](https://community.fit2cloud.com/#/products/kubeoperator/downloads)"
+    !!! warning "请自行下载 KubeOperator [最新版本的离线安装包](https://community.fit2cloud.com/#/products/kubeoperator/downloads)"
 
-    !!! info ""
+    !!! warning ""
         ```sh
         # 解压安装包
         tar zxvf KubeOperator-release-{{ kubeoperator.version }}-amd64.tar.gz
@@ -210,18 +210,18 @@
 
 === "在线安装"
 
-    !!! info "默认使用 /opt/kubeoperator 目录作为安装目录，配置文件、数据及日志等均存放在该安装目录安装完成后，安装过程中产生的离线文件可删除，目录名: kubeoperator-release-{{ kubeoperator.version }}"
+    !!! warning "默认使用 /opt/kubeoperator 目录作为安装目录，配置文件、数据及日志等均存放在该安装目录安装完成后，安装过程中产生的离线文件可删除，目录名: kubeoperator-release-{{ kubeoperator.version }}"
 
-    !!! info ""
+    !!! warning ""
         ```sh
         # 以 root 用户 ssh 登录目标服务器, 执行如下命令
         curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh -o quick_start.sh
         bash quick_start.sh
         ```
 
-!!! info "安装完成后，检查服务状态。若有有异常，可以使用 koctl restart 命令进行重新启动"
+!!! warning "安装完成后，检查服务状态。若有有异常，可以使用 koctl restart 命令进行重新启动"
 
-!!! info ""
+!!! warning ""
     ```
     [root@kubeoperator ~]# koctl status
 
@@ -238,14 +238,14 @@
     kubeoperator_webkubectl   sh /opt/webkubectl/start-w ...   Up (healthy)
     ```
 
-!!! info "登录"
+!!! warning "登录"
     ```
     地址: http://<ko服务器_ip>:80
     用户名: admin
     密码: kubeoperator@admin123
     ```
 
-!!! info "帮助"
+!!! warning "帮助"
     ```sh
     koctl --help
     ```
@@ -254,7 +254,7 @@
 
 === "离线升级"
 
-    !!! info ""
+    !!! warning ""
         ```sh
         # 离线升级需要提前下载离线安装包，并解压到 KubeOperator 部署机
         # 进入升级包目录
@@ -267,7 +267,7 @@
 
 === "在线升级"
 
-    !!! info ""
+    !!! warning ""
         ```sh
         # 升级到指定版本
         koctl upgrade {{ kubeoperator.version }}
@@ -279,9 +279,9 @@
 
 ## 混合架构部署说明
 
-!!! info "定义：混合架构是指使用 KubeOperator 部署同时包含 x86_64 和 arm64 架构节点的 Kubernetes 集群"
+!!! warning "定义：混合架构是指使用 KubeOperator 部署同时包含 x86_64 和 arm64 架构节点的 Kubernetes 集群"
 
-!!! info ""   
+!!! warning ""   
     如下图所示，混合部署需要提供 x86_64 和 arm64 架构的 Nexus 仓库，以便于集群部署时可以下载到对应架构的资源，之后在 KubeOperator 系统设置添加不同架构的仓库信息即可。</br>
 
     例如：</br>

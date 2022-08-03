@@ -5,7 +5,7 @@
 !!! warning ""
     Kubeapps 是一个应用商店，可以通过 Web UI 在 Kubernetes 集群中部署和管理应用程序
 
-!!! info "主要功能"
+!!! warning "主要功能"
     * 从 Helm Chart 仓库中浏览并部署 Helm Chart 应用
     * 集群中已有 Helm chart 应用的查看、升级和卸载
     * 支持自定义 Helm Chart 仓库（比如 ChartMuseum 和 JFrog Artifactory 等）

@@ -8,7 +8,7 @@
     - 架构: 支持 AMD64 和 ARM64
     - Yum 仓库: 支持替换、共存和不操作三种类型
 
-!!! info "Yum 仓库"
+!!! warning "Yum 仓库"
     * 替换: 此操作将会对 K8S 节点服务器原始 yum repo 文件进行备份，之后生成并仅使用 KubeOperator 的 yum repo
     * 共存: 此操作将保持K8S节点服务器原始 yum repo 文件不变，同时生成并使用 kubeoperator 的 yum repo
     * 不操作: 此操作将保持使用 K8S 节点服务器原始 yum repo 文件，不对K8S节点服务器的 yum repo 做任何操作
@@ -42,22 +42,22 @@
     - 网卡名称: 多网卡环境需要指定使用的网卡名称，单网卡环境可不填
     - 容器网络: 支持 flannel 、 calico 和 cilium
 
-    !!! info "vxlan 和 ipip 网络模式"
+    !!! warning "vxlan 和 ipip 网络模式"
         * 基于隧道，在任何网络环境下都可以正常工作
         * 优势是对物理网络环境没有特殊要求，只要宿主机IP层可以路由互通即可
         * 劣势是封包和解包耗费CPU性能，且额外的封装导致带宽浪费
 
-    !!! info "host-gw 和 bgp 网络模式"
+    !!! warning "host-gw 和 bgp 网络模式"
         * 基于路由，不适用于公有云环境
         * 优势是没有封包和解包过程，完全基于两端宿主机的路由表进行转发
         * 劣势是要求宿主机在2层网络是互通，且路由表膨胀会导致性能降低
 
-    !!! info "cilium Overlay"
+    !!! warning "cilium Overlay"
         * 支持 vxlan 和 geneve
         * 基于封装的虚拟网络，产生所有主机。目前 VXLAN 和 Geneve 已经完成，但可以启用 Linux 支持的所有封装格式
         * 此模式具有最小的基础设施和集成要求。它几乎适用于任何网络基础设施，因为唯一的要求是主机之间的IP连接，这通常已经给出
 
-    !!! info "cilium Native Routing"
+    !!! warning "cilium Native Routing"
         * 使用 Linux 主机的常规路由表。网络必须能够路由应用程序容器的IP地址，此模式适用于高级用户，需要了解底层网络基础结构。
         * 适用于（1. 原生 IPv6 网络、2. 与云网络路由器配合使用、3. 如果您已经在运行路由守护进程）
 

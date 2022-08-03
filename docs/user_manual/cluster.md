@@ -54,7 +54,7 @@
 !!! warning ""
     支持的类型有 nfs、external-ceph、rook-ceph、vsphere 和 oceanstor（华为 csi）
 
-!!! info ""
+!!! warning ""
     * nfs: 需要指定 nfs 服务端版本、IP 和共享目录
     * external-ceph: 创建成功之后，会在集群中初始化 ceph provisioner 相关 pod
     * rook-ceph: 需要指定 ceph 集群所需磁盘（集群所有节点都必须包含指定的磁盘，如sdb,sdc...）
@@ -66,7 +66,7 @@
 !!! warning ""
     内置 local volume 存储提供商，如需添加其他类型，需要提前创建对应类型的存储提供商
 
-!!! info "external-ceph: 需要在 Kubernetes 中创建 admin 及 user 所需的 secret"
+!!! warning "external-ceph: 需要在 Kubernetes 中创建 admin 及 user 所需的 secret"
 
     ```
     # 可在 ceph 服务端通过以下命令获得 secret key
