@@ -31,19 +31,12 @@
     </thead>
     <tbody>
         <tr>
-            <td>v1.18.4</td>
-            <td>v1.18.6</td>
-            <td>v1.18.8</td>
-            <td>v1.18.10</td>
-        </tr>
-        <tr>
-            <td>v1.18.12</td>
-            <td>v1.18.14</td>
-            <td>v1.18.15</td>
-            <td>v1.18.18</td>
-        </tr>
-        <tr>
-            <td>v1.18.20</td>
+            <td>v1.22.6</td>
+            <td>v1.22.8</td>
+            <td>v1.22.10</td>
+            <td>v1.22.12</td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -53,6 +46,22 @@
             <td>v1.20.6</td>
             <td>v1.20.8</td>
             <td>v1.20.10</td>
+            <td>v1.20.12</td>
+            <td>v1.20.14</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>v1.18.4</td>
+            <td>v1.18.6</td>
+            <td>v1.18.8</td>
+            <td>v1.18.10</td>
+            <td>v1.18.12</td>
+            <td>v1.18.14</td>
+            <td>v1.18.15</td>
+            <td>v1.18.18</td>
+            <td>v1.18.20</td>
         </tr>
     <tbody>
 </table>
