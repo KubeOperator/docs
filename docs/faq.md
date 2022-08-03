@@ -33,14 +33,14 @@
 ### Kubernetes 集群方案
 
 !!! warning ""
-    * 基于物理机部署大的 Kubernetes 集群: 通过 namespace 实现租户的隔离
-    * 基于 IaaS 平台之上部署多个 Kubernetes 集群: 为每个租户分配独立的 Kubernetes 集群
+    - 基于物理机部署大的 Kubernetes 集群: 通过 namespace 实现租户的隔离
+    - 基于 IaaS 平台之上部署多个 Kubernetes 集群: 为每个租户分配独立的 Kubernetes 集群
     !!! warning ""
         这两种方案各有好处，在 Kubernetes 采纳初期，使用第二种方案更为理性，因为:
     
-        * 如果是单一大集群，升级会影响所有租户，风险比较大；
-        * IaaS 平台上有成熟的、基于软件定义的存储和网络方案，落地更容易和灵活；
-        * KubeOperator 与 VMware、Openstack 等 IaaS 方案紧密集成，可以实现全栈的自动化，集群交付快，伸缩快。
+        - 如果是单一大集群，升级会影响所有租户，风险比较大；
+        - IaaS 平台上有成熟的、基于软件定义的存储和网络方案，落地更容易和灵活；
+        - KubeOperator 与 VMware、Openstack 等 IaaS 方案紧密集成，可以实现全栈的自动化，集群交付快，伸缩快。
 
 ### KubeOperator 部署方式
 
@@ -50,9 +50,9 @@
 ### 原生 Kubernetes 的好处
 
 !!! warning ""
-    * KubeOperator 已经通过云原生基金会的 [Kubernetes 软件一致性认证](https://landscape.cncf.io)。
-    * Kubernetes 迭代很快，且只维护最新的三个大版本。如果采纳其他发行版，可能很容易出现和原生版本脱节的情况。
-    * 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 Kubernetes 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
+    - KubeOperator 已经通过云原生基金会的 [Kubernetes 软件一致性认证](https://landscape.cncf.io)。
+    - Kubernetes 迭代很快，且只维护最新的三个大版本。如果采纳其他发行版，可能很容易出现和原生版本脱节的情况。
+    - 由于 Operator 和 Helm 等日趋成熟，很多发行版的功能，比如 CI/ CD, Istio 等都可以通过 addon 方式部署到 Kubernetes 集群里面。Kubernetes 集群及其里面的应用应该是分离的，各自迭代升级。
 
 ### KubeOperator 支持的存储
 
@@ -158,8 +158,8 @@
 ### KubeOperator 其他说明
 
 !!! warning ""
-    * KubeOperator 自身重启、升级或者挂掉不会影响其创建和管理的 Kubernetes 集群（KubeOperator 是一个 100% 旁路系统，其与被管 Kubernetes 集群完全解耦）
-    * 重启 Kubernetes 集群节点后，Kubernetes 等服务会自动恢复正常
+    - KubeOperator 自身重启、升级或者挂掉不会影响其创建和管理的 Kubernetes 集群（KubeOperator 是一个 100% 旁路系统，其与被管 Kubernetes 集群完全解耦）
+    - 重启 Kubernetes 集群节点后，Kubernetes 等服务会自动恢复正常
 
 ### Harbor 访问故障
 

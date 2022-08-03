@@ -2,8 +2,8 @@
 ### 概览
 
 !!! warning ""
-    * 集中显示了集群基本信息、容量信息和统计信息
-    * 可下载 kubeconfig 文件（将 kubeconfig 文件中 cluster.server 地址修改为 master 节点 IP）
+    - 集中显示了集群基本信息、容量信息和统计信息
+    - 可下载 kubeconfig 文件（将 kubeconfig 文件中 cluster.server 地址修改为 master 节点 IP）
 
 ![overview-1](../img/user_manual/cluster/overview-1.png)
 
@@ -25,9 +25,9 @@
 ![node-detail](../img/user_manual/cluster/node-detail.png)
 
 !!! warning "驱散"
-    * 驱散成功后，节点将处于不可调度状态
-    * 安全模式: 如果节点拥有独立的 Pod 或临时的数据，它将被隔离但不会被驱散
-    * 强制模式: 独立 Pods 和它们的数据将永久删除
+    - 驱散成功后，节点将处于不可调度状态
+    - 安全模式: 如果节点拥有独立的 Pod 或临时的数据，它将被隔离但不会被驱散
+    - 强制模式: 独立 Pods 和它们的数据将永久删除
 
 ![node-cordon](../img/user_manual/cluster/node-cordon.png)
 
@@ -37,8 +37,8 @@
 ### 命名空间
 
 !!! warning ""
-    * 列表显示为集群中现有的 namespace，支持创建和删除操作
-    * 系统默认和 kube-operator namespace 不支持删除
+    - 列表显示为集群中现有的 namespace，支持创建和删除操作
+    - 系统默认和 kube-operator namespace 不支持删除
 
 ![namespace-1](../img/user_manual/cluster/namespace-1.png)
 
@@ -55,11 +55,11 @@
     支持的类型有 nfs、external-ceph、rook-ceph、vsphere 和 oceanstor（华为 csi）
 
 !!! warning ""
-    * nfs: 需要指定 nfs 服务端版本、IP 和共享目录
-    * external-ceph: 创建成功之后，会在集群中初始化 ceph provisioner 相关 pod
-    * rook-ceph: 需要指定 ceph 集群所需磁盘（集群所有节点都必须包含指定的磁盘，如sdb,sdc...）
-    * vsphere: 集群服务器必须在指定 Folder 中（自动模式创建集群默认 Folder 为 kubeoperator），并且服务器名称要和集群 node 节点名称保持一致
-    * oceanstor: 参考文档: https://github.com/Huawei/eSDK_K8S_Plugin/tree/master/docs/zh
+    - nfs: 需要指定 nfs 服务端版本、IP 和共享目录
+    - external-ceph: 创建成功之后，会在集群中初始化 ceph provisioner 相关 pod
+    - rook-ceph: 需要指定 ceph 集群所需磁盘（集群所有节点都必须包含指定的磁盘，如sdb,sdc...）
+    - vsphere: 集群服务器必须在指定 Folder 中（自动模式创建集群默认 Folder 为 kubeoperator），并且服务器名称要和集群 node 节点名称保持一致
+    - oceanstor: 参考文档: https://github.com/Huawei/eSDK_K8S_Plugin/tree/master/docs/zh
 
 #### 存储类
 
@@ -87,8 +87,8 @@
 ### 事件
 
 !!! warning ""
-    * 支持查看目标 namespace 下的系统事件
-    * 支持启用 node-problem-detector
+    - 支持查看目标 namespace 下的系统事件
+    - 支持启用 node-problem-detector
 
 ![cluster-events](../img/user_manual/cluster/cluster-events.png)
 
@@ -112,8 +112,8 @@
     提供 prometheus、kubeapps、grafana、elasticsearch、loki、dashboard、registry和chartmuseum 八种管理工具，可根据需要自定义安装
 
     !!! warning ""
-        * 点击启用按钮，可以设置 namespace 和是否启用存储等参数
-        * 失败状态下，可点击启用按钮重新设置参数提交（会触发更新操作）
+        - 点击启用按钮，可以设置 namespace 和是否启用存储等参数
+        - 失败状态下，可点击启用按钮重新设置参数提交（会触发更新操作）
 
 ![tools-1](../img/user_manual/cluster/tools-1.png)
 
@@ -147,9 +147,9 @@
 ### 集群升级
 
 !!! warning ""
-    * 进入【项目】菜单，选中目标集群，点击【升级】按钮，选择要升级到的目标版本
-    * 升级之前，会先检测当前 kubernetes 集群中 etcd、docker/containerd 和 kubernetes 版本，若检测结果为可升级，将会对 etcd、docker/containerd、kubernetes 进行统一升级，从而保证集群各组件之间的兼容性
-    * 升级过程中，支持查看任务实时的日志输出
+    - 进入【项目】菜单，选中目标集群，点击【升级】按钮，选择要升级到的目标版本
+    - 升级之前，会先检测当前 kubernetes 集群中 etcd、docker/containerd 和 kubernetes 版本，若检测结果为可升级，将会对 etcd、docker/containerd、kubernetes 进行统一升级，从而保证集群各组件之间的兼容性
+    - 升级过程中，支持查看任务实时的日志输出
 
 ![cluster-upgrade](../img/user_manual/cluster/cluster-upgrade.png)
 
@@ -164,9 +164,9 @@
 ![node-2](../img/user_manual/cluster/node-2.png)
 
 !!! warning "worker 节点缩容"
-    * 自动模式: 将所选节点在集群中删除，然后删除所选节点虚拟机
-    * 手动模式: 将所选节点在集群中删除，然后在所选节点执行卸载脚本(删除节点上安装的 k8s 集群所依赖的服务)
-    * 强制删除: 将忽略脚本执行过程中的错误信息，强制删除数据
+    - 自动模式: 将所选节点在集群中删除，然后删除所选节点虚拟机
+    - 手动模式: 将所选节点在集群中删除，然后在所选节点执行卸载脚本(删除节点上安装的 k8s 集群所依赖的服务)
+    - 强制删除: 将忽略脚本执行过程中的错误信息，强制删除数据
 
 ![node-4](../img/user_manual/cluster/node-4.png)
 
@@ -176,11 +176,11 @@
 ### 集群诊断、修复
 
 !!! warning "诊断"
-    * 检测节点可连接性
-    * 检测集群 Token 是否匹配
-    * 检测集群 API 是否已就绪
-    * 检测集群节点是否同步
-    * 检测集群代理 IP 是否匹配
+    - 检测节点可连接性
+    - 检测集群 Token 是否匹配
+    - 检测集群 API 是否已就绪
+    - 检测集群节点是否同步
+    - 检测集群代理 IP 是否匹配
 
 ![cluster-diagnosis](../img/user_manual/cluster/cluster-diagnosis.png)
 
@@ -190,8 +190,8 @@
 ### 集群卸载
 
 !!! warning ""
-    * 自动模式: 删除 KubeOperator 创建的虚拟机
-    * 手动模式: 在集群所有节点执行卸载任务，删除安装 k8s 集群所依赖的服务（集群卸载完成后，要手动重启节点来删除虚拟网卡等信息）
-    * 强制删除: 如果 k8s 集群存在失联状态的节点，可勾选强制删除来删除集群
+    - 自动模式: 删除 KubeOperator 创建的虚拟机
+    - 手动模式: 在集群所有节点执行卸载任务，删除安装 k8s 集群所依赖的服务（集群卸载完成后，要手动重启节点来删除虚拟网卡等信息）
+    - 强制删除: 如果 k8s 集群存在失联状态的节点，可勾选强制删除来删除集群
 
 ![cluster-remove](../img/user_manual/cluster/cluster-remove.png)
