@@ -1,6 +1,6 @@
 
 !!! warning ""
-    手动模式创建集群，需要先添加目标节点主机
+    手动模式创建集群，用户需要自行准备主机
 
 ### 列表
 
@@ -27,21 +27,19 @@
 
 ![host-edit](../img/user_manual/hosts/host-edit.png)
 
-
-### 批量导入
+### 导入
 
 !!! warning ""
     点击批量导入按钮，点击下载模版链接下载excel模版并添加主机信息
 
 ![host-import](../img/user_manual/hosts/host-import.png)
 
-![host-import](../img/user_manual/hosts/host-import-excel.png)
+![host-import-excel](../img/user_manual/hosts/host-import-excel.png)
 
 ### 授权
 
 !!! warning ""
-    - 点击授权按钮后，授权操作会统一在项目管理菜单中实现
-    - 系统管理员和项目管理员可以将主机授权到项目或集群，同时支持在项目和集群中取消已授权的主机
+    授权操作需要在项目管理菜单中实现（资源管理 - 备份账号），可以将主机授权到项目或集群
 
 ### 同步 
 
@@ -49,3 +47,8 @@
     如果主机状态异常或主机配置有手动更新，可以点击同步按钮来实现主机状态和配置的一致
 
 ![host-refresh](../img/user_manual/hosts/host-refresh.png)
+
+### 批量操作
+
+!!! warning ""
+    支持批量修改主机凭据和端口
