@@ -63,7 +63,18 @@
 
 ![zone-1](../../img/user_manual/plan/zone-1.png)
 
-#### 下载默认模版
+### 部署计划（Plan）
+
+!!! warning ""
+    - 用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念
+    - 部署计划配置包括选择可用区（可用区可以单选或多选），并设置 Master 节点，Worker 节点的规格
+    - 多主多节点集群可以选择多个可用区的部署计划
+
+![plan-1](../../img/user_manual/plan/plan-1.png)
+
+### 默认模版
+
+#### 下载
 
 !!! warning "默认模版"
     - 离线环境下，需要手动上传模版文件至 nexus 仓库
@@ -80,7 +91,7 @@
         - ovf: https://kubeoperator.fit2cloud.com/terraform/images/fusioncompute/kubeoperator_centos_7.6.1810/kubeoperator_centos_7.6.1810.ovf
         - vhd: https://kubeoperator.fit2cloud.com/terraform/images/fusioncompute/kubeoperator_centos_7.6.1810/kubeoperator_centos_7.6.1810-vda.vhd
 
-#### 上传默认模版
+#### 上传
 
 !!! warning ""
     - 模版文件需要上传至 binary-k8s-raw 仓库
@@ -105,12 +116,3 @@
         - 文件路径：/terraform/images/fusioncompute/kubeoperator_centos_7.6.1810
 
         ![template-fusioncompute](../../img/user_manual/plan/template-fusioncompute.png)
-
-### 部署计划（Plan）
-
-!!! warning ""
-    - 用来描述在哪个区域下，哪些可用区中，使用什么样的机器规格，部署什么类型的集群的一个抽象概念
-    - 部署计划配置包括选择可用区（可用区可以单选或多选），并设置 Master 节点，Worker 节点的规格
-    - 多主多节点集群可以选择多个可用区的部署计划
-
-![plan-1](../../img/user_manual/plan/plan-1.png)
