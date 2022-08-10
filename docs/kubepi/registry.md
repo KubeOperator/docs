@@ -3,6 +3,9 @@
     - 支持 Harbor、Nexus、Docker Registry三种类型
     - 创建 Workloads 时可以选择镜像仓库中已有镜像
 
+!!! warning "注意"
+    将镜像仓库授权到目标集群后（集群列表 - 授权），才可以选择该镜像仓库中的镜像来创建 Workloads
+
 ![registry](../img/kubepi/registry.png)
 
 !!! warning "地址"
