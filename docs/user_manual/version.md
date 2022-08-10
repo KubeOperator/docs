@@ -2,21 +2,21 @@
 ### 版本详情
 
 !!! warning ""
-    点击详情按钮，支持查看 Kubernetes 及各个组件的版本信息
+    点击详情按钮，支持查看 Kubernetes 各组件的版本信息
 
 ![version-2](../img/user_manual/version/version-2.png)
 
 ### 版本启用
 
 !!! warning ""
-    开启目标版本后，才支持创建该版本 k8s 集群
+    开启目标版本后，才支持创建该版本的 Kubernetes 集群
 
 ![version-1](../img/user_manual/version/version-1.png)
 
 ### 离线包
 
 !!! warning ""
-    离线包中 Kubernetes 默认只携带最新的两个版本。如果当前是离线环境，需要执行脚本生成旧版本 k8s 离线包，并推送至 nexus 仓库
+    离线包中默认携带一个最新的 Kubernetes 版本。如果当前是离线环境，则需要手动执行脚本来生成目标版本的 Kubernetes 离线包，并将其推送至 nexus 仓库
 
 #### 构建离线包
 
@@ -74,8 +74,8 @@
         # 使用git下载项目源码文件
         git clone https://github.com/KubeOperator/K8SVersionManage.git
         cd K8SVersionManage
-        # 切换到目标分支
-        git checkout v3.9
+        # 切换到目标分支（与 KubeOperator 版本分支保持一致）
+        git checkout v3.16
         # 例：打包 v1.20.6 版本的离线包。可根据实际情况修改构建对应版本到离线包
         bash build.sh v1.20.6
         ```
@@ -85,7 +85,7 @@
 #### 推送离线包
 
 !!! warning ""
-    - 将生成的目标版本离线包上传至 KubeOperator 部署机，运行上传脚本
+    - 将生成的目标版本离线包上传至 KubeOperator 部署机，运行 upload.sh 脚本
     - 如有修改 nexus 仓库默认的 8081-8083 端口，在离线包解压后需要手动将 upload.sh 脚本中端口修改为目标端口
 
     ```sh
