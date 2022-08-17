@@ -8,6 +8,10 @@
 
     [KubeOperator][KubeOperator] 使用 [Terraform][Terraform] 在 IaaS 平台上自动创建主机（用户也可以自行准备主机，比如物理机或者虚机），通过 [Ansible][Ansible] 完成自动化部署和变更操作，支持 [Kubernetes][Kubernetes] 集群 从 Day 0 规划，到 Day 1 部署，到 Day 2 运营的全生命周期管理。  
 
+## 页面展示
+
+![!界面展示](./img/dashboard.png)
+
 ## 组件项目
 
 !!! warning ""

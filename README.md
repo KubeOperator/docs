@@ -1,3 +1,5 @@
+[![Python3](https://img.shields.io/badge/python-3.8-green.svg?style=plastic)](https://www.python.org/)
+
 本仓库保存了 [KubeOperator 项目]() 的 [官方文档](https://kubeoperator.io/docs/)，该文档使用 [MkDocs]() 文档框架下的 [Material for MkDocs]() 主题进行构建。
 
 ## 本地开发
