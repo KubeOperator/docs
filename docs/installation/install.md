@@ -194,7 +194,9 @@
 
 === "离线安装"
 
-    !!! warning "请自行下载 KubeOperator [最新版本的离线安装包](https://community.fit2cloud.com/#/products/kubeoperator/downloads)"
+    !!! warning "请自行下载 KubeOperator 最新版本的离线安装包"
+        - amd64: https://cloud.189.cn/t/yU7BjimqmUry（访问码：rt1t）
+        - arm64: https://cloud.189.cn/t/eYrQniJRzuU3（访问码：hxz3）
 
     !!! warning ""
         ```sh

@@ -128,7 +128,7 @@ markdown_extensions:
 
 extra:
   kubeoperator:
-    version: v3.16.0
+    version: v3.16.4
   search:
     separator: '[\s\-\.]+'
     language: 'zh'
@@ -140,14 +140,10 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/KubeOperator
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/kubeoperator/
     - icon: fontawesome/solid/envelope
       link: mailto:support@fit2cloud.com
     - icon: fontawesome/brands/skype
       link: tel://400-052-0755
-    - icon: fontawesome/brands/qq
-      link: https://qm.qq.com/cgi-bin/qm/qr?k=M8tLnH-x7eel3X8pW3JcCxaHNXhPbk0X&jump_from=webapi
 
 extra_css:
     - css/extra.css
