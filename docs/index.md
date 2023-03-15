@@ -12,16 +12,10 @@
 
 ![!界面展示](./img/dashboard.png)
 
-## 组件项目
-
-!!! warning ""
-    - **[KubePi](https://github.com/KubeOperator/KubePi)**: 一个现代化的 K8s 面板
-    - **[Web Kubectl](https://github.com/KubeOperator/webkubectl)**: 在 Web 浏览器中运行 kubectl 命令
-
 ## 技术优势
 
 !!! warning ""
-    -  简单易用: 提供可视化的 Web UI，极大降低 [Kubernetes][Kubernetes] 部署和管理门槛，内置 [KubePi](https://github.com/KubeOperator/KubePi) 和  [Webkubectl](https://github.com/KubeOperator/webkubectl)
+
     -  按需创建: 调用云平台 API，一键快速创建和部署 [Kubernetes][Kubernetes] 集群
     -  按需伸缩: 快速伸缩 [Kubernetes][Kubernetes] 集群，优化资源使用效率
     -  按需修补: 快速升级和修补 [Kubernetes][Kubernetes] 集群，并与社区最新版本同步，保证安全性
