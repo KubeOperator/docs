@@ -66,7 +66,6 @@ nav:
     - API 文档: dev/rest_api.md
   - 常见问题: faq.md
   - 更新日志: about/changelog.md
-  - 联系我们: about/contact.md
 
 markdown_extensions:
   - admonition
