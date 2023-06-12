@@ -59,8 +59,6 @@ nav:
     - 用户管理: user_manual/user_management.md
     - 系统日志: user_manual/system_log.md
     - 系统设置: user_manual/system_management.md
-    - 应用商店: user_manual/kubeapps.md
-    - Argo CD: user_manual/argocd.md
   - 开发文档:
     - 开发环境搭建: dev/dev_manual.md
     - API 文档: dev/rest_api.md
