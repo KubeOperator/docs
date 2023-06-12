@@ -210,19 +210,6 @@
         koctl status
         ```
 
-=== "在线安装"
-
-    !!! warning "默认使用 /opt/kubeoperator 目录作为安装目录，配置文件、数据及日志等均存放在该安装目录安装完成后，安装过程中产生的离线文件可删除，目录名: kubeoperator-release-{{ kubeoperator.version }}"
-
-    !!! warning ""
-        ```sh
-        # 以 root 用户 ssh 登录目标服务器, 执行如下命令
-        curl -sSL https://github.com/KubeOperator/KubeOperator/releases/latest/download/quick_start.sh -o quick_start.sh
-        bash quick_start.sh
-        ```
-
-!!! warning "安装完成后，检查服务状态。若有有异常，可以使用 koctl restart 命令进行重新启动"
-
 !!! warning ""
     ```
     [root@kubeoperator ~]# koctl status
@@ -266,17 +253,6 @@
         # 查看 KubeOperator 状态
         koctl status
         ```
-
-=== "在线升级"
-
-    !!! warning ""
-        ```sh
-        # 升级到指定版本
-        koctl upgrade {{ kubeoperator.version }}
-        # 升级到最新版本
-        koctl upgrade
-        # 查看 KubeOperator 状态
-        koctl status
         ```
 
 ## 混合架构部署说明
