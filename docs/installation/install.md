@@ -254,15 +254,3 @@
         koctl status
         ```
         ```
-
-## 混合架构部署说明
-
-!!! warning "定义：混合架构是指使用 KubeOperator 部署同时包含 x86_64 和 arm64 架构节点的 Kubernetes 集群"
-
-!!! warning ""   
-    如下图所示，混合部署需要提供 x86_64 和 arm64 架构的 Nexus 仓库，以便于集群部署时可以下载到对应架构的资源，之后在 KubeOperator 系统设置添加不同架构的仓库信息即可。</br>
-
-    例如：</br>
-    &#x2003 1.可以分别部署两台不同架构的 KubeOperator（一台 arm64,一台 x86_64）</br>&#x2003 2.使用 x86_64 架构的主机作为日常操作的主机</br>&#x2003 3.将 arm64 的主机作为 arm 仓库使用并添加到 x86_64 的 KubeOperator 系统设置中
-
-![KubeOperator-mixed-arch](../img/KubeOperator-mixed-arch.png)
