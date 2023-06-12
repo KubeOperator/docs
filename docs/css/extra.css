@@ -1,14 +1,9 @@
-:root {
+:root > * {
   --md-primary-fg-color: #fc6554;
 }
 
 .md-header {
-  background-color: #fc6554;
   top: 48px;
-}
-
-.md-footer {
-  background-color: #fc6554;
 }
 
 .md-footer-nav__link {
@@ -86,12 +81,6 @@
   background-color: #fc6554;
 }
 
-/*
-.md-footer-meta {
-  background-color: inherit;
-}
-*/
-
 .md-grid {
   margin-left: 1rem;
   margin-right: auto;
@@ -100,4 +89,8 @@
 
 .md-top {
   margin-top: 2rem;
+}
+
+.md-nav--primary .md-nav__title .md-logo {
+  display: none;
 }
